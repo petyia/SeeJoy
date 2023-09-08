@@ -1,0 +1,26 @@
+/* FONT-SIZES 32px 16px 12px color */
+
+:root {
+  --primary: #ff5483;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+  --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
+  --search-bg: var(--pale-grey);
+  --body-font: "Poppins", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
