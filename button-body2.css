@@ -1,5 +1,6 @@
 :root {
   --primary: #ff5483;
+  --primary-light: #fff6f5ff;
   --black: #0e0e0e;
   --pale-grey: #f9faff;
   --grey: #aeb0ba;
@@ -188,6 +189,14 @@ button.learn-more-2-unfilled .button-text-2-unfilled {
   font-size: 2rem;
 }
 
+.fa-credit-card {
+  font-size: 2rem;
+}
+
+.fa-message {
+  font-size: 2rem;
+}
+
 /* .fa-calendar:hover {
   color: var(--white);
 } */
@@ -200,8 +209,12 @@ a.bottom-nav-link {
   text-decoration: none;
 }
 
+.icon-2-unfilled .arrow-2-unfilled {
+  font-size: 2rem;
+}
+
 .button-body-2-unfilled:hover {
-  background-color: var(--ice-blue);
+  background-color: var(--primary-light);
   color: var(--white);
 
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);

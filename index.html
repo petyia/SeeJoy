@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="floating-nav.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="button-body2.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="stories.css" />
+    <link rel="stylesheet" href="popular.css" />
+    <title>SeeJoy | Eseménykereső</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -41,49 +43,54 @@
             <input type="text" placeholder="Keresés" />
           </div>
 
-          <div class="button-body">
-            <a href="events.html">
-              <button class="learn-more">
-                <span class="circle" aria-hidden="true">
-                  <span class="icon arrow"
-                    ><i class="fa-solid fa-plus" style="color: #ffffff"></i
-                  ></span>
-                </span>
-                <span class="button-text">Új Esemény</span>
-              </button>
-            </a>
-          </div>
-
-          <div class="header-profile">
-            <div class="notification">
-              <span class="notification-number">8</span>
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="feather feather-bell"
-              >
-                <path
-                  d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
-                />
-              </svg>
+          <div class="header-right-end">
+            <div class="button-body">
+              <a href="events.html">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"
+                      ><i
+                        class="fa-solid fa-plus navi"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </span>
+                  <span class="button-text">Új Esemény</span>
+                </button>
+              </a>
             </div>
-          </div>
-          <div class="header-profile">
-            <img
-              class="profile-img"
-              src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-              alt=""
-            />
+            <div class="header-profile">
+              <div class="notification">
+                <span class="notification-number">8</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-bell"
+                >
+                  <path
+                    d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
+                  />
+                </svg>
+              </div>
+            </div>
+            <div class="header-profile">
+              <img
+                class="profile-img"
+                src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                alt=""
+              />
+            </div>
           </div>
         </div>
       </nav>
 
       <!-- <button class="main-mobile-nav"></button> -->
     </header>
+
     <main>
       <div class="container">
         <div class="phone">
@@ -117,21 +124,8 @@
                 <a href="events.html" class="bottom-nav-link">
                   <button class="learn-more-2-unfilled">
                     <span class="circle-2-unfilled" aria-hidden="true">
-                      <span class="icon-2-unfilled arrow-2-unfilled"
-                        ><svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke-width="1.5"
-                          stroke="currentColor"
-                          class="w-6 h-6"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"
-                          />
-                        </svg>
+                      <span class="icon-2-unfilled arrow-2-unfilled">
+                        <i class="fa-regular fa-credit-card"></i>
                       </span>
                     </span>
                     <div class="button-text-2-unfilled">Jegyek</div>
@@ -153,14 +147,274 @@
             </div>
           </div>
         </div>
-        <section class="hero-section">
-          <div class="hero">
-            <div class="hero-text-box"></div>
-            <div class="hero-img-box"></div>
-          </div>
-        </section>
       </div>
+      <div class="index-grid-container">
+        <div class="index-left-flex">
+          <section class="stories-section">
+            <div class="stories-container">
+              <div class="stories-first-row">
+                <h1 class="stories-title">Történetek</h1>
+                <a href="#" class="all-stories-link"
+                  >Összes<i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
 
+              <div class="nyilak-button">
+                <button class="scroll-left-stories">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="scroll-right-stories">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+
+              <div class="stories-scroll-container">
+                <div class="stories-line" id="stories-line">
+                  <div class="plus-circle">
+                    <i
+                      class="fa-regular fa-plus stories"
+                      style="color: #ffffff; font-size: 2rem"
+                    ></i>
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story1" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story2" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story3" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                  <div class="stories-card">
+                    <img src="./img" alt="story4" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="popular-section">
+            <div class="popular-container">
+              <div class="popular-first-row">
+                <h1 class="popular-title">Népszerű</h1>
+                <a href="#" class="all-popular-link"
+                  >Összes<i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+              <div class="nyilak-button">
+                <button class="scroll-left">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="scroll-right">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <div class="p-l-scroll-container">
+                <div class="popular-line" id="popular-line">
+                  <div class="popular-card first" id="card1">
+                    <div class="popular-upper-container">
+                      <div class="popular-date">
+                        <div class="popular-number">12</div>
+                        <div class="popular-month">Dec</div>
+                      </div>
+                      <div class="heart-icon" id="heart-icon1">
+                        <i
+                          class="fa-solid fa-heart popular-heart-icon-filled"
+                        ></i>
+                        <i class="fa-regular fa-heart popular-heart-icon"></i>
+                      </div>
+                    </div>
+
+                    <div class="popular-lower-container">
+                      <div class="upper-info-container">
+                        <h3 class="h3">
+                          Budapest Művészet Fesztivál: Alkoss szabadon
+                        </h3>
+                      </div>
+                      <div class="lower-info-container">
+                        <div class="popular-hour">Reggel 9:00-től</div>
+                        <a href="#"
+                          ><div class="popular-price">Ingyenes</div></a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popular-card second" id="card2">
+                    <div class="popular-upper-container">
+                      <div class="popular-date">
+                        <div class="popular-number">13</div>
+                        <div class="popular-month">Dec</div>
+                      </div>
+                      <div class="heart-icon" id="heart-icon2">
+                        <i
+                          class="fa-solid fa-heart popular-heart-icon-filled"
+                        ></i>
+                        <i class="fa-regular fa-heart popular-heart-icon"></i>
+                      </div>
+                    </div>
+
+                    <div class="popular-lower-container">
+                      <div class="upper-info-container">
+                        <h3 class="h3">
+                          Főzés Alapok: Hogyan készíts gyümölcskoktélokat
+                        </h3>
+                      </div>
+                      <div class="lower-info-container">
+                        <div class="popular-hour">Délután 18:00-től</div>
+                        <a href="#"><div class="popular-price">800 Ft</div></a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="popular-card third" id="card3">
+                    <div class="popular-upper-container">
+                      <div class="popular-date">
+                        <div class="popular-number">14</div>
+                        <div class="popular-month">Dec</div>
+                      </div>
+                      <div class="heart-icon" id="heart-icon3">
+                        <i
+                          class="fa-solid fa-heart popular-heart-icon-filled"
+                        ></i>
+                        <i class="fa-regular fa-heart popular-heart-icon"></i>
+                      </div>
+                    </div>
+
+                    <div class="popular-lower-container">
+                      <div class="upper-info-container">
+                        <h3 class="h3">
+                          Kreatív Self-Care: Egyedi sminkek készítése
+                        </h3>
+                      </div>
+                      <div class="lower-info-container">
+                        <div class="popular-hour">Délelőtt 11:00-től</div>
+                        <a href="#"><div class="popular-price">2000 Ft</div></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="popular-section">
+            <div class="popular-container">
+              <div class="popular-first-row">
+                <h1 class="popular-title">Népszerű</h1>
+                <a href="#" class="all-popular-link"
+                  >Összes<i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
+              <div class="nyilak-button">
+                <button class="left-arrow">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button class="right-arrow">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+              <div class="popular-line" id="popular-line">
+                <div class="popular-card first">
+                  <div class="popular-upper-container">
+                    <div class="popular-date">
+                      <div class="popular-number">12</div>
+                      <div class="popular-month">Dec</div>
+                    </div>
+                    <div class="heart-icon" id="heart-icon">
+                      <i
+                        class="fa-solid fa-heart popular-heart-icon-filled"
+                      ></i>
+                      <i class="fa-regular fa-heart popular-heart-icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="popular-lower-container">
+                    <div class="upper-info-container">
+                      <h3 class="h3">
+                        Budapest Művészet Fesztivál: Alkoss szabadon
+                      </h3>
+                    </div>
+                    <div class="lower-info-container">
+                      <div class="popular-hour">Reggel 9:00-től</div>
+                      <a href="#"><div class="popular-price">Ingyenes</div></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="popular-card second">
+                  <div class="popular-upper-container">
+                    <div class="popular-date">
+                      <div class="popular-number">12</div>
+                      <div class="popular-month">Dec</div>
+                    </div>
+                    <div class="heart-icon" id="heart-icon">
+                      <i
+                        class="fa-solid fa-heart popular-heart-icon-filled"
+                      ></i>
+                      <i class="fa-regular fa-heart popular-heart-icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="popular-lower-container">
+                    <div class="upper-info-container">
+                      <h3 class="h3">
+                        Budapest Művészet Fesztivál: Alkoss szabadon
+                      </h3>
+                    </div>
+                    <div class="lower-info-container">
+                      <div class="popular-hour">Reggel 9:00-től</div>
+                      <a href="#"><div class="popular-price">Ingyenes</div></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="popular-card third">
+                  <div class="popular-upper-container">
+                    <div class="popular-date">
+                      <div class="popular-number">12</div>
+                      <div class="popular-month">Dec</div>
+                    </div>
+                    <div class="heart-icon" id="heart-icon">
+                      <i
+                        class="fa-solid fa-heart popular-heart-icon-filled"
+                      ></i>
+                      <i class="fa-regular fa-heart popular-heart-icon"></i>
+                    </div>
+                  </div>
+
+                  <div class="popular-lower-container">
+                    <div class="upper-info-container">
+                      <h3 class="h3">
+                        Budapest Művészet Fesztivál: Alkoss szabadon
+                      </h3>
+                    </div>
+                    <div class="lower-info-container">
+                      <div class="popular-hour">Reggel 9:00-től</div>
+                      <a href="#"><div class="popular-price">Ingyenes</div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="index-right-flex">
+          <div class="premium"></div>
+        </div>
+      </div>
       <section class="about-section"></section>
       <section class="experience-section"></section>
       <section class="project-section"></section>
@@ -176,6 +430,10 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script defer src="script.js"></script>
+    <script src="script.js"></script>
+    <script src="stories.js"></script>
+    <script src="heart-2.js"></script>
+    <script src="heart.js"></script>
+    <script src="popular.js"></script>
   </body>
 </html>

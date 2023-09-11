@@ -1,0 +1,145 @@
+:root {
+  --primary: #ff5483;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  --grey: #aeb0ba;
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+  --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
+  --search-bg: var(--pale-grey);
+  --body-font: "Inter", sans-serif;
+}
+
+.index-left-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.stories-section {
+  width: 100%;
+
+  height: auto;
+  background-color: var(--white);
+  margin: 0 auto;
+  border-radius: 1.6rem;
+}
+
+.stories-container {
+  padding: 3.2rem 3.2rem 3.4rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.stories-title {
+  font-size: 2.4rem;
+}
+
+a.all-stories-link {
+  text-decoration: none;
+  color: var(--grey);
+  font-size: 1.6rem;
+  letter-spacing: -0.4px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+a.all-stories-link:hover {
+  color: var(--primary);
+}
+
+.fa-chevron-right {
+  margin-left: 0.8rem;
+}
+
+.stories-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nyilak-button {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+}
+
+.scroll-right-stories {
+  margin-left: 1.6rem;
+
+  transition: all 0.15s ease-in-out;
+}
+.scroll-right-stories:hover {
+  color: var(--primary);
+}
+
+.scroll-left-stories:hover {
+  color: var(--primary);
+}
+
+.stories-scroll-container {
+  overflow-x: hidden; /* Display horizontal scroll bar */
+  position: relative;
+}
+
+.stories-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 120%;
+  padding: 2.4rem 0;
+
+  flex-wrap: nowrap;
+}
+
+.plus-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+  width: 4rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+.stories-card {
+  position: relative;
+  background-color: var(--grey);
+  border-radius: 1.6rem;
+  height: 5.6rem;
+  width: 5.6rem;
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+}
+
+.stories-card::before {
+  content: " ";
+  position: absolute;
+  z-index: 51;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 3px solid var(--primary);
+  border-radius: 2rem;
+}
+
+.fa-regular .stories {
+  color: var(--white);
+  height: 4rem;
+  width: 4rem;
+  font-size: 2rem;
+}
+
+/* Hide scrollbar */
+.stories-section::-webkit-scrollbar {
+  display: none;
+}
+
+.index-right-flex {
+  background-color: var(--white);
+  border-radius: 1.6rem 0rem 0rem 1.6rem;
+}

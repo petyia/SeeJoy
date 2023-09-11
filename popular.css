@@ -1,0 +1,259 @@
+:root {
+  --primary: #ff5483;
+  --primary-light: #fff6f5ff;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  --grey: #aeb0ba;
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+  --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
+  --search-bg: var(--pale-grey);
+  --body-font: "Inter", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.popular-section {
+  width: 100%;
+
+  height: auto;
+  background-color: var(--white);
+  margin: 0 auto;
+  border-radius: 1.6rem;
+}
+
+.popular-container {
+  padding: 3.2rem 3.2rem 3.4rem 3.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.popular-title {
+  font-size: 2.4rem;
+}
+
+a.all-popular-link {
+  text-decoration: none;
+  color: var(--grey);
+  font-size: 1.6rem;
+  letter-spacing: -0.4px;
+  font-weight: 500;
+  transition: all 0.15s ease-in-out;
+}
+
+a.all-popular-link:hover {
+  color: var(--primary);
+}
+
+.fa-chevron-right {
+  margin-left: 0.8rem;
+}
+
+.popular-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nyilak-button {
+  font-size: 2rem;
+  margin-bottom: 1.6rem;
+}
+
+.scroll-right {
+  margin-left: 1.6rem;
+
+  transition: all 0.15s ease-in-out;
+}
+.scroll-right:hover {
+  color: var(--primary);
+}
+
+.scroll-left:hover {
+  color: var(--primary);
+}
+
+.p-l-scroll-container {
+  overflow-x: hidden; /* Display horizontal scroll bar */
+  position: relative;
+}
+
+.popular-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.6rem;
+  width: 110%;
+  padding: 1.6rem 0;
+
+  flex-wrap: nowrap;
+}
+
+.popular-card {
+  height: 32rem;
+  width: 32rem;
+  border-radius: 2.4rem;
+  transition: background-size 0.3s ease;
+}
+.popular-card:hover {
+  background-size: 120%; /* Increase background size to 120% on hover */
+  cursor: pointer;
+}
+.popular-card.first {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url("./img/pop1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.popular-card.second {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url("./img/pop2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.popular-card.third {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url("./img/pop3.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
+.popular-line:hover .first:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.popular-line:hover .second:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.popular-line:hover .third:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.pop-img {
+  width: 100%;
+  height: 24rem;
+  border-radius: 2.4rem;
+}
+
+.popular-upper-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.popular-date {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  justify-content: center;
+
+  border-radius: 1.6rem;
+  font-size: 1.6rem;
+  text-align: center;
+  width: 5.6rem;
+  height: 5.6rem;
+
+  box-shadow: var(--popular-sh);
+}
+
+.popular-number {
+  font-weight: 700;
+}
+
+.popular-month {
+  color: var(--grey);
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.popular-heart-icon {
+  font-size: 2.4rem;
+  color: var(--white);
+  margin-top: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popular-heart-icon-filled {
+  font-size: 2.4rem;
+  color: var(--white);
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+.popular-lower-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  background-color: var(--white);
+  border-radius: 1.6rem;
+  padding: 1.6rem 2.4em;
+  box-shadow: var(--popular-sh);
+}
+
+.upper-info-container {
+  font-size: 1.4rem;
+}
+
+.lower-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.popular-hour {
+  color: var(--grey);
+}
+
+a {
+  text-decoration: none;
+}
+
+a .popular-price {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--primary-light);
+  padding: 0.8rem;
+  border-radius: 1.6rem;
+}

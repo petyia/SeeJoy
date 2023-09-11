@@ -1,13 +1,18 @@
 :root {
   --primary: #ff5483;
+  --primary-light: #fff6f5ff;
+  --primary-light-darker: #ffd7e1;
   --black: #0e0e0e;
   --pale-grey: #f9faff;
   --grey: #aeb0ba;
+
   --white: #ffffff;
   --ice-blue: #e5e9fd;
   --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
   --search-bg: var(--pale-grey);
   --body-font: "Inter", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 * {
@@ -19,20 +24,26 @@
 body,
 html {
   height: 100%;
+  width: 100%;
   font-size: 62.5%;
+  scroll-behavior: smooth;
 
   overflow: auto;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: var(--pale-grey);
 }
 
 main {
   height: 100%;
+  width: 100%;
 }
 
 .main-nav {
+  height: 100%;
+  width: 100%;
 }
 
 .header {
@@ -42,7 +53,7 @@ main {
   flex-shrink: 0;
   height: 8rem;
   width: 100%;
-  border-bottom: 2.4rem solid var(--border-color);
+  /* border-bottom: 2.4rem solid var(--border-color); */
   padding: 0rem 3.2rem;
   white-space: nowrap;
   background-color: var(--white);
@@ -66,6 +77,7 @@ main {
   padding: 0 4rem 0 4rem;
   border-radius: 1.6rem;
 }
+
 .search-bar input {
   width: 100%;
   height: 100%;
@@ -267,6 +279,11 @@ button:hover .button-text {
   margin-right: 0;
 }
 
+.header-right-end {
+  display: flex;
+  gap: 4rem;
+}
+
 /* BOTTOM NAV  */
 
 .nav-item a {
@@ -297,6 +314,10 @@ button:hover .button-text {
   overflow: hidden;
 
   margin-bottom: 2.4rem;
+
+  z-index: 9999;
+
+  box-shadow: var(--popular-sh);
 }
 
 .phone-footer {
@@ -552,7 +573,7 @@ button:hover .button-text {
   height: 2000px;
 }
 
-.fa-plus {
+.fa-plus.navi {
   font-size: 2rem;
   position: absolute;
   top: -1.5px;
@@ -560,6 +581,12 @@ button:hover .button-text {
 }
 
 .search-bar input[type="text"]:focus {
-  outline: var(--ice-blue) solid 1px; /* Remove the default focus outline (if desired) */
-  /* Additional styles for focus state */
+  outline: var(--ice-blue) solid 2px;
+}
+
+.index-grid-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin: 4rem 0 0 8rem;
+  gap: 8rem;
 }
