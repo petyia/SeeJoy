@@ -28,14 +28,14 @@ const scrollRightStoriesButton = document.querySelector(
 
 scrollLeftStoriesButton.addEventListener("click", () => {
   storiesSection.scrollBy({
-    left: -100, // Adjust the scroll amount as needed
+    left: -150, // Adjust the scroll amount as needed
     behavior: "smooth", // Enable smooth scrolling
   });
 });
 
 scrollRightStoriesButton.addEventListener("click", () => {
   storiesSection.scrollBy({
-    left: 100, // Adjust the scroll amount as needed
+    left: 150, // Adjust the scroll amount as needed
     behavior: "smooth", // Enable smooth scrolling
   });
 });

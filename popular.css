@@ -171,21 +171,21 @@ a.all-popular-link:hover {
 }
 
 .popular-line:hover .first:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
   cursor: pointer;
 }
 
 .popular-line:hover .second:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
   cursor: pointer;
 }
 
 .popular-line:hover .third:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
   cursor: pointer;
 }
 .popular-line:hover .fourth:hover {
-  transform: scale(1.025);
+  transform: scale(1.05);
   cursor: pointer;
 }
 

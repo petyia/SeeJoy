@@ -8,6 +8,8 @@
   --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
   --search-bg: var(--pale-grey);
   --body-font: "Inter", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .index-grid-container {
@@ -136,7 +138,7 @@ a.all-stories-link:hover {
   transition: transform 0.3s ease; /* Smooth transition for card movement */
 }
 
-.stories-card::before {
+.image-border::before {
   content: " ";
   position: absolute;
   z-index: 51;
@@ -146,6 +148,186 @@ a.all-stories-link:hover {
   bottom: -5px;
   border: 3px solid var(--primary);
   border-radius: 2rem;
+
+  transition: all 0.4s ease-out;
+}
+
+.story-container {
+  position: relative;
+
+  cursor: pointer;
+}
+
+.story1 {
+  background: url("./img/story1.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease; /* Add a transition for the blur effect */
+}
+
+.story2 {
+  background: url("./img/story2.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story3 {
+  background: url("./img/story3.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story4 {
+  background: url("./img/story4.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story5 {
+  background: url("./img/story5.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story6 {
+  background: url("./img/story6.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story7 {
+  background: url("./img/story7.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story8 {
+  background: url("./img/story8.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story9 {
+  background: url("./img/story9.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story10 {
+  background: url("./img/story10.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story11 {
+  background: url("./img/story11.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story12 {
+  background: url("./img/story12.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story13 {
+  background: url("./img/story13.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.story14 {
+  background: url("./img/story14.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.2rem 0.4rem;
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 600;
+  opacity: 0; /* Initially hidden */
+
+  width: 140%;
+  height: auto;
+
+  white-space: normal; /* Allow wrapping */
+  word-wrap: break-word; /* Break words into a new line */
+  text-align: center; /* Center-align text */
+  hyphens: auto; /* Add hyphens when words break */
+
+  transition: opacity 0.5s; /* Add a transition for the text opacity */
+}
+
+.story-container:hover .image-text {
+  opacity: 1;
+}
+
+.story-container:hover .stories-card {
+  /* filter: blur(2px); Apply blur on hover */
+  filter: brightness(60%);
+  transform: scale(1.5);
+}
+
+.story-container:hover .image-border::before {
+  content: " ";
+  position: absolute;
+  z-index: 51;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border: 3px solid var(--primary);
+  border-radius: 2rem;
+
+  opacity: 0;
 }
 
 .fa-regular .stories {
