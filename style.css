@@ -584,9 +584,4 @@ button:hover .button-text {
   outline: var(--ice-blue) solid 2px;
 }
 
-.index-grid-container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  margin: 4rem 0 0 8rem;
-  gap: 8rem;
-}
+

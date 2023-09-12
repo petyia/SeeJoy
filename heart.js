@@ -60,3 +60,24 @@ heartIcon3.addEventListener("click", () => {
     unfilledHeartIcon3.style.display = "inline-block";
   }
 });
+
+// For card 4
+const card4 = document.getElementById("card4");
+const heartIcon4 = card4.querySelector(".heart-icon");
+const filledHeartIcon4 = heartIcon4.querySelector(".popular-heart-icon-filled");
+const unfilledHeartIcon4 = heartIcon4.querySelector(".popular-heart-icon");
+let isFilled4 = false;
+
+filledHeartIcon4.style.display = "none"; // Initially hide the filled icon
+
+heartIcon4.addEventListener("click", () => {
+  isFilled4 = !isFilled4;
+
+  if (isFilled4) {
+    filledHeartIcon4.style.display = "inline-block";
+    unfilledHeartIcon4.style.display = "none";
+  } else {
+    filledHeartIcon4.style.display = "none";
+    unfilledHeartIcon4.style.display = "inline-block";
+  }
+});

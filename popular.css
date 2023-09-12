@@ -84,7 +84,7 @@ a.all-popular-link:hover {
   justify-content: space-between;
   align-items: center;
   gap: 1.6rem;
-  width: 110%;
+  width: 150%;
   padding: 1.6rem 0;
 
   flex-wrap: nowrap;
@@ -93,11 +93,13 @@ a.all-popular-link:hover {
 .popular-card {
   height: 32rem;
   width: 32rem;
+  /* height: 100vh;
+  width: 100%; */
   border-radius: 2.4rem;
   transition: background-size 0.3s ease;
 }
 .popular-card:hover {
-  background-size: 120%; /* Increase background size to 120% on hover */
+  background-size: 110%; /* Increase background size to 120% on hover */
   cursor: pointer;
 }
 .popular-card.first {
@@ -151,18 +153,39 @@ a.all-popular-link:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
+.popular-card.fourth {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url("./img/pop4.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+}
+
 .popular-line:hover .first:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
   cursor: pointer;
 }
 
 .popular-line:hover .second:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
   cursor: pointer;
 }
 
 .popular-line:hover .third:hover {
-  transform: scale(1.05);
+  transform: scale(1.025);
+  cursor: pointer;
+}
+.popular-line:hover .fourth:hover {
+  transform: scale(1.025);
   cursor: pointer;
 }
 
