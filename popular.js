@@ -6,14 +6,14 @@ const scrollRightButton = document.querySelector(".scroll-right");
 
 scrollLeftButton.addEventListener("click", () => {
   popularSection.scrollBy({
-    left: -250, // Adjust the scroll amount as needed
+    left: -300, // Adjust the scroll amount as needed
     behavior: "smooth", // Enable smooth scrolling
   });
 });
 
 scrollRightButton.addEventListener("click", () => {
   popularSection.scrollBy({
-    left: 250, // Adjust the scroll amount as needed
+    left: 300, // Adjust the scroll amount as needed
     behavior: "smooth", // Enable smooth scrolling
   });
 });

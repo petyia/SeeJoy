@@ -14,7 +14,7 @@
 
 .index-grid-container {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 60fr 40fr;
   margin: 4rem 0 0 8rem;
   gap: 8rem;
 }
@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  width: 66vw !important;
+  width: 63vw !important;
 }
 
 .stories-section {
@@ -340,9 +340,4 @@ a.all-stories-link:hover {
 /* Hide scrollbar */
 .stories-section::-webkit-scrollbar {
   display: none;
-}
-
-.index-right-flex {
-  background-color: var(--white);
-  border-radius: 1.6rem 0rem 0rem 1.6rem;
 }
