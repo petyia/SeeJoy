@@ -3,7 +3,9 @@
   --primary-light: #fff6f5ff;
   --primary-light-darker: #ffd7e1;
   --black: #0e0e0e;
-  --pale-grey: #f9faff;
+  --pale-grey: #f0f2f5;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
   --grey: #aeb0ba;
 
   --white: #ffffff;
@@ -44,6 +46,7 @@ main {
 .main-nav {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 .header {
@@ -133,7 +136,9 @@ main {
   align-items: center;
   justify-content: center;
   margin: 0 0 0 2rem;
-  background-color: var(--pale-grey);
+  /* background-color: var(--pale-grey); */
+  outline: solid 2px var(--pale-grey);
+  outline-offset: -2px;
   border-radius: 8rem;
 }
 
@@ -147,7 +152,7 @@ button {
   text-decoration: none;
   background: transparent;
   padding: 0;
-  font-size: inherit;
+  font-size: 1.6rem;
   font-family: inherit;
 }
 button.learn-more {
@@ -174,7 +179,7 @@ button.learn-more .circle .icon {
 }
 button.learn-more .circle .icon.arrow {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  left: 1.35rem;
+  left: 1.3rem;
   bottom: 1.6rem;
   width: 1.125rem;
   height: 0.125rem;
@@ -194,7 +199,7 @@ button.learn-more .button-text {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
+  right: 10px;
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 3.2rem;
@@ -202,13 +207,14 @@ button.learn-more .button-text {
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
+  font-size: 1.6rem;
 }
 button:hover .circle {
   width: 100%;
 }
 button:hover .circle .icon.arrow {
   /* background: #fff; */
-  transform: translate(1.6rem, 0);
+  transform: translate(1rem, 0);
 }
 button:hover .button-text {
   color: #fff;
@@ -221,15 +227,68 @@ button:hover .button-text {
   flex-shrink: 0;
 }
 .header-profile svg {
-  width: 22px;
+  width: 2.4rem;
   color: var(--black);
   flex-shrink: 0;
 }
 
-.notification {
+.header-right-end {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.notification-container {
   position: relative;
+
+  height: auto;
+  width: 100%;
+}
+
+.notification {
+  padding: 1rem 1.3rem;
+}
+
+.notification::before,
+.notification::after {
+  --scale: 0;
+
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%) scale(var(--scale));
+
+  transition: 0.2s transform;
+  transition-delay: 50ms;
+  transform-origin: top center;
+}
+
+.notification::before {
+  content: attr(data-tooltip);
+  color: var(--white);
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  width: max-content;
+  /* max-width: 100%; */
+  text-align: center;
+  border-radius: 0.6rem;
+  background: var(--black);
+}
+
+.notification:hover::before {
+  --scale: 1;
+  z-index: 9999;
+}
+
+.notification:hover {
+  position: relative;
+
+  background-color: var(--pale-grey);
+  border-radius: 50rem;
+
   cursor: pointer;
 }
+
 .notification-number {
   position: absolute;
   background-color: var(--primary);
@@ -241,8 +300,8 @@ button:hover .button-text {
   align-items: center;
   justify-content: center;
   color: var(--white);
-  right: -6px;
-  top: -6px;
+  right: 8px;
+  top: 4px;
 }
 .notification + svg {
   margin-left: 22px;
@@ -251,6 +310,9 @@ button:hover .button-text {
   .notification + svg {
     display: none;
   }
+}
+.profile-img-container {
+  position: relative;
 }
 
 .profile-img {
@@ -261,6 +323,45 @@ button:hover .button-text {
   object-fit: cover;
   border: 2px solid var(--theme-color);
   /* margin-left: 22px; */
+  cursor: pointer;
+}
+
+.profile-img::before,
+.profile-img::after {
+  --scale: 0;
+
+  position: absolute;
+  top: 0.2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%) scale(var(--scale));
+
+  transition: 0.2s transform;
+  transition-delay: 50ms;
+  transform-origin: top center;
+}
+
+.profile-img::before {
+  content: attr(data-tooltip);
+  color: var(--white);
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  width: max-content;
+  /* max-width: 100%; */
+  text-align: center;
+  border-radius: 0.6rem;
+  background: var(--black);
+}
+
+.profile-img:hover::before {
+  --scale: 1;
+  z-index: 9999;
+}
+
+.profile-img:hover {
+  position: relative;
+
+  filter: brightness(95%);
+
   cursor: pointer;
 }
 
@@ -279,9 +380,98 @@ button:hover .button-text {
   margin-right: 0;
 }
 
-.header-right-end {
+.sub-menu-wrap {
+  position: absolute;
+  top: 88%;
+  right: 2%;
+  width: 320px;
+
+  display: none; /* Hide the submenu initially */
+
+  z-index: 0;
+
+  transition: all 0.08s;
+}
+
+.sub-menu-wrap.open-menu {
+  display: block; /* Show the submenu */
+  z-index: 9998;
+}
+
+.sub-menu {
+  background: var(--white);
+  padding: 1.6rem;
+  /* margin: 1.6rem; */
+  border-radius: 1.6rem;
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.user-info {
   display: flex;
-  gap: 4rem;
+  align-items: center;
+  border-radius: 1.6rem;
+  padding: 0.8rem;
+  margin-bottom: 1.6rem;
+
+  box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+}
+
+.user-info h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.user-info img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 1.6rem;
+  margin-right: 15px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--black);
+  padding: 1.6rem;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.sub-menu-link p {
+  width: 100%;
+}
+
+.sub-menu-link img {
+  width: 40px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link span {
+  font-size: 22px;
+  transition: transform 0.2s;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover {
+  background-color: var(--pale-grey);
+  border-radius: 1.6rem;
+}
+
+.user-info:hover {
+  background-color: var(--pale-grey);
+  border-radius: 1.6rem;
+  cursor: pointer;
 }
 
 /* BOTTOM NAV  */
@@ -581,7 +771,8 @@ button:hover .button-text {
 }
 
 .search-bar input[type="text"]:focus {
-  outline: var(--ice-blue) solid 2px;
+  outline: var(--primary) solid 2px;
+  color: var(--black);
+  font-weight: 600;
+  font-family: var(--body-font);
 }
-
-

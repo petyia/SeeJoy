@@ -61,29 +61,72 @@
               </a>
             </div>
             <div class="header-profile">
-              <div class="notification">
-                <span class="notification-number">8</span>
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-bell"
-                >
-                  <path
-                    d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
-                  />
-                </svg>
+              <div class="notification-container">
+                <div class="notification" data-tooltip="Értesítések">
+                  <span class="notification-number">8</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-bell"
+                  >
+                    <path
+                      d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
             <div class="header-profile">
-              <img
-                class="profile-img"
-                src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                alt=""
-              />
+              <div class="profile-img-container" data-tooltip="Fiók">
+                <img
+                  src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  class="profile-img"
+                  onclick="toggleMenu()"
+                  data-tooltip="Fiók"
+                />
+              </div>
+
+              <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                  <div class="user-info">
+                    <img
+                      src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                      alt="felhasználó profilképe"
+                      class="profile-img"
+                      id="profile-img"
+                    />
+                    <h2>Szabó Lilla</h2>
+                  </div>
+
+                  <a href="#" class="sub-menu-link">
+                    <img src="img/profile.png" alt="" />
+                    <p>Profil Szerkesztése</p>
+                    <span>></span>
+                  </a>
+
+                  <a href="#" class="sub-menu-link">
+                    <img src="img/setting.png" alt="" />
+                    <p>Beállítások</p>
+                    <span>></span>
+                  </a>
+
+                  <a href="" class="sub-menu-link">
+                    <img src="img/help.png" alt="" />
+                    <p>Súgó & Támogatás</p>
+                    <span>></span>
+                  </a>
+
+                  <a href="" class="sub-menu-link">
+                    <img src="img/logout.png" alt="" />
+                    <p>Kijelentkezés</p>
+                    <span>></span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -721,6 +764,11 @@
     </main>
     <footer></footer>
 
+    <script src="script.js"></script>
+    <script src="stories.js"></script>
+    <script src="heart-2.js"></script>
+    <script src="heart.js"></script>
+    <script src="popular.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -729,10 +777,5 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="script.js"></script>
-    <script src="stories.js"></script>
-    <script src="heart-2.js"></script>
-    <script src="heart.js"></script>
-    <script src="popular.js"></script>
   </body>
 </html>

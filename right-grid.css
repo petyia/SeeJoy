@@ -2,7 +2,9 @@
   --primary: #ff5483;
   --primary-light: #fff6f5ff;
   --black: #0e0e0e;
-  --pale-grey: #f9faff;
+  --pale-grey: #f0f2f5;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
   --grey: #aeb0ba;
   --white: #ffffff;
   --ice-blue: #e5e9fd;
@@ -18,10 +20,11 @@
   flex-direction: column;
   background-color: var(--white);
   border-radius: 1.6rem 0rem 0rem 1.6rem;
+  height: max-content;
 }
 
 .premium-container {
-  padding: 3.6rem 3.6rem 1.6rem 3.6rem;
+  padding: 3.6rem;
 }
 
 .premium-img-container {
@@ -79,7 +82,7 @@
 }
 
 .my-events-container {
-  padding: 3.2rem 3.2rem 0rem 3.2rem;
+  padding: 0rem 3.2rem 3.2rem 3.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -264,7 +267,7 @@ a.my-event-link:hover {
 /* MY CATEGORIES */
 
 .my-category-container {
-  padding: 3.2rem 3.2rem 0rem 3.2rem;
+  padding: 0rem 3.2rem 3.2rem 3.2rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;

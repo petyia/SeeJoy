@@ -143,3 +143,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+//Profilkép sub-menu
+
+let subMenu = document.getElementById("subMenu");
+subMenuWrap.classList.toggle("open-menu"); // Toggle the 'open-menu' class to display/hide the menu
+
+function toggleMenu() {
+  subMenu.classList.toggle("open-menu");
+}

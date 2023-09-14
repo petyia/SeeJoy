@@ -2,7 +2,10 @@
   --primary: #ff5483;
   --primary-light: #fff6f5ff;
   --black: #0e0e0e;
-  --pale-grey: #f9faff;
+  --pale-grey: #f0f2f5;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff;*/
+  --pale-grey-2: #e4e6eb;
   --grey: #aeb0ba;
   --white: #ffffff;
   --ice-blue: #e5e9fd;
@@ -214,10 +217,10 @@ a.bottom-nav-link {
 }
 
 .button-body-2-unfilled:hover {
-  background-color: var(--primary-light);
+  background-color: var(--pale-grey-2);
   color: var(--white);
 
-  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: all 0.1s;
 }
 
 /* .icon-2-unfilled {

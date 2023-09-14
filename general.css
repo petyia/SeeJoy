@@ -3,7 +3,9 @@
 :root {
   --primary: #ff5483;
   --black: #0e0e0e;
-  --pale-grey: #f9faff;
+  --pale-grey: #f0f2f5;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
   --white: #ffffff;
   --ice-blue: #e5e9fd;
   --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
