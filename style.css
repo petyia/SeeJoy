@@ -10,9 +10,16 @@
 
   --white: #ffffff;
   --ice-blue: #e5e9fd;
-  --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
+
+  --linear-gradient-1: linear-gradient(
+    to right bottom,
+    #455efd,
+    #ff5483,
+    #f46e4b
+  );
+
   --search-bg: var(--pale-grey);
-  --body-font: "Inter", sans-serif;
+  --body-font: "Nunito", sans-serif;
 
   --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -35,7 +42,7 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
   background-color: var(--pale-grey);
 }
 
@@ -103,24 +110,23 @@ main {
   font-family: var(--body-font);
   color: var(--inactive-color);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .search-bar input:-ms-input-placeholder {
   font-family: var(--body-font);
   color: var(--inactive-color);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 .search-bar input::placeholder {
   font-family: var(--body-font);
   color: var(--inactive-color);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* header button  */
 
-@import url("https://fonts.googleapis.com/css?family=Mukta:700");
 * {
   box-sizing: border-box;
 }
@@ -200,12 +206,12 @@ button.learn-more .button-text {
   position: absolute;
   top: 0;
   left: 0;
-  right: 14px;
+  right: 16px;
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 3.2rem;
   color: var(--black);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.6;
   text-align: center;
   font-size: 1.6rem;
@@ -268,6 +274,7 @@ button:hover .button-text {
   content: attr(data-tooltip);
   color: var(--white);
   padding: 0.4rem 0.8rem;
+  font-weight: 700;
   font-size: 1.2rem;
   width: max-content;
   /* max-width: 100%; */
@@ -421,7 +428,7 @@ button:hover .button-text {
 }
 
 .user-info h2 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.6rem;
 }
 
@@ -437,10 +444,10 @@ button:hover .button-text {
   align-items: center;
   text-decoration: none;
   color: var(--black);
-  padding: 1.6rem;
+  padding: 1rem;
 
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .sub-menu-link p {
@@ -627,17 +634,17 @@ button:hover .button-text {
 
 .nav-item:nth-child(1) span {
   /* color: #5b37b7; */
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .nav-item:nth-child(2) span {
-  font-weight: 700;
+  font-weight: 800;
 }
 .nav-item:nth-child(3) span {
-  font-weight: 700;
+  font-weight: 800;
 }
 .nav-item:nth-child(4) span {
-  font-weight: 700;
+  font-weight: 800;
 }
 /* .nav-item:nth-child(1) span:before {
   background-color: #5b37b7;
@@ -768,7 +775,7 @@ button:hover .button-text {
   font-size: 2rem;
   position: absolute;
   top: -1.5px;
-  right: -5px;
+  right: -4.5px;
 }
 
 .search-bar input[type="text"]:focus {

@@ -10,7 +10,8 @@
   --ice-blue: #e5e9fd;
   --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
   --search-bg: var(--pale-grey);
-  --body-font: "Poppins", sans-serif;
+  --body-font: "Nunito", sans-serif;
+  /* font-family: 'Nunito', sans-serif; */
 }
 
 * {
@@ -24,5 +25,5 @@ html {
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--body-font);
 }

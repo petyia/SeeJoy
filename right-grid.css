@@ -10,7 +10,7 @@
   --ice-blue: #e5e9fd;
   --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
   --search-bg: var(--pale-grey);
-  --body-font: "Inter", sans-serif;
+  --body-font: "Nunito", sans-serif;
 
   --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -45,7 +45,7 @@
 .title-premium {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .description-premium {
@@ -179,12 +179,12 @@
 }
 
 .my-event-number {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .my-event-month {
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--grey);
 }
 
@@ -370,7 +370,7 @@ a.my-event-link:hover {
 }
 
 .my-category-number {
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .my-category-month {

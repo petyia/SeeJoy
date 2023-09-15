@@ -11,7 +11,7 @@
   --ice-blue: #e5e9fd;
   --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
   --search-bg: var(--pale-grey);
-  --body-font: "Inter", sans-serif;
+  --body-font: "Nunito", sans-serif;
 }
 
 .button-body-2-filled {
@@ -79,7 +79,7 @@ button.learn-more-2 .button-text-2 {
   padding: 0;
   margin: 0;
   color: var(--white);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.6;
   text-align: center;
 }
@@ -172,7 +172,7 @@ button.learn-more-2-unfilled .button-text-2-unfilled {
   padding: 0;
   margin: 0;
   color: var(--black);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.6;
   text-align: center;
 }
