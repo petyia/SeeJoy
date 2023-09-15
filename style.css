@@ -463,12 +463,17 @@ button:hover .button-text {
 }
 
 .sub-menu-link span {
-  font-size: 22px;
+  font-size: 1.2rem;
   transition: transform 0.2s;
 }
 
+.sub-menu-link:hover p {
+  color: var(--primary);
+}
+
 .sub-menu-link:hover span {
-  transform: translateX(5px);
+  transform: translateX(4px);
+  color: var(--primary);
 }
 
 .sub-menu-link:hover {
