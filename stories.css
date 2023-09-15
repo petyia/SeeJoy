@@ -124,6 +124,16 @@ a.all-stories-link:hover {
   background-color: var(--black);
 }
 
+/* .story-circle {
+  background-color: var(--pale-grey);
+} */
+
+#story-plus-icon {
+  font-weight: 900;
+  color: var(--white);
+  font-size: 2rem;
+}
+
 .stories-card {
   position: relative;
   background-color: var(--grey);

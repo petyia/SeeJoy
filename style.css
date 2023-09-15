@@ -29,6 +29,7 @@ html {
   width: 100%;
   font-size: 62.5%;
   scroll-behavior: smooth;
+  cursor: default;
 
   overflow: auto;
 }
@@ -199,7 +200,7 @@ button.learn-more .button-text {
   position: absolute;
   top: 0;
   left: 0;
-  right: 10px;
+  right: 14px;
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 3.2rem;
@@ -234,7 +235,7 @@ button:hover .button-text {
 
 .header-right-end {
   display: flex;
-  gap: 4rem;
+  gap: 2.4rem;
   align-items: center;
 }
 
@@ -254,7 +255,7 @@ button:hover .button-text {
   --scale: 0;
 
   position: absolute;
-  top: 4rem;
+  top: 2.8rem;
   left: 50%;
   transform: translateX(-50%) translateY(100%) scale(var(--scale));
 
@@ -771,7 +772,7 @@ button:hover .button-text {
 }
 
 .search-bar input[type="text"]:focus {
-  outline: var(--primary) solid 2px;
+  outline: var(--grey) solid 2px transparent;
   color: var(--black);
   font-weight: 600;
   font-family: var(--body-font);
