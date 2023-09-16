@@ -158,6 +158,17 @@ let subMenuNoti = document.getElementById("subMenuNoti");
 
 function toggleMenuNoti() {
   subMenuNoti.classList.toggle("open-menu-noti");
+
+  const bellIcon = document.getElementById("bell-icon");
+
+  // Check the current fill attribute value
+  if (bellIcon.getAttribute("fill") === "none") {
+    // Change the fill attribute to "filled" when it's empty
+    bellIcon.setAttribute("fill", "filled");
+  } else {
+    // Change the fill attribute to "none" when it's filled
+    bellIcon.setAttribute("fill", "none");
+  }
 }
 
-//close
+//Notification fill

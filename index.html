@@ -67,10 +67,15 @@
               </a>
             </div>
             <div class="header-profile">
-              <div class="notification-container">
+              <div
+                class="notification-container"
+                id="notification-container"
+                onclick="toggleMenuNoti()"
+              >
                 <div class="notification" data-tooltip="Értesítések">
                   <span class="notification-number">2</span>
                   <svg
+                    id="bell-icon"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
@@ -78,7 +83,6 @@
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     class="feather feather-bell"
-                    onclick="toggleMenuNoti()"
                   >
                     <path
                       d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
@@ -116,78 +120,106 @@
                       ></i>
                     </a>
                   </div>
-                  <div class="user-info-noti">
-                    <div class="left-flex-noti-container">
-                      <div class="new-noti-circle"></div>
-                      <img
-                        src="./img/story14.webp"
-                        alt="felhasználó profilképe"
-                        class="profile-img"
-                        id="noti-img"
-                      />
-                    </div>
-
-                    <div class="right-felx-noti-container">
-                      <div class="text-info-noti">
-                        <span class="noti-name">Szabó Lilla</span> meghívott
-                        téged erre az eseményre:
-                        <a href="#"
-                          ><span class="noti-event-name"
-                            >Bulihajó Szilveszter</span
-                          ></a
-                        >
+                  <div class="noti-list-container">
+                    <div class="user-info-noti">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle"></div>
+                        <img
+                          src="./img/story14.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
                       </div>
-                      <div class="time-noti">26 perccel ezelőtt</div>
-                    </div>
-                  </div>
 
-                  <div class="user-info-noti">
-                    <div class="left-flex-noti-container">
-                      <div class="new-noti-circle"></div>
-                      <img
-                        src="./img/story5.webp"
-                        alt="felhasználó profilképe"
-                        class="profile-img"
-                        id="noti-img"
-                      />
-                    </div>
-
-                    <div class="right-felx-noti-container">
-                      <div class="text-info-noti">
-                        <span class="noti-name">Kiss Nóra</span> megjelölt ennél
-                        az eseménynél:
-                        <a href="#"
-                          ><span class="noti-event-name"
-                            >Hogyan legyünk jobb barátok?</span
-                          ></a
-                        >
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">Szabó Lilla</span> meghívott
+                          téged erre az eseményre:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >Bulihajó Szilveszter</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti">26 perccel ezelőtt</div>
                       </div>
-                      <div class="time-noti">57 perccel ezelőtt</div>
-                    </div>
-                  </div>
-
-                  <div class="user-info-noti-read">
-                    <div class="left-flex-noti-container">
-                      <div class="new-noti-circle read-circle"></div>
-                      <img
-                        src="./img/story12.webp"
-                        alt="felhasználó profilképe"
-                        class="profile-img"
-                        id="noti-img"
-                      />
                     </div>
 
-                    <div class="right-felx-noti-container">
-                      <div class="text-info-noti">
-                        <span class="noti-name">David Aarons</span> megjelölt
-                        ennél az eseménynél:
-                        <a href="#"
-                          ><span class="noti-event-name"
-                            >International Marketing Budapest 2023</span
-                          ></a
-                        >
+                    <div class="user-info-noti">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle"></div>
+                        <img
+                          src="./img/story5.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
                       </div>
-                      <div class="time-noti read">1 órával ezelőtt</div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">Kiss Nóra</span> megjelölt
+                          ennél az eseménynél:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >Hogyan legyünk jobb barátok?</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti">57 perccel ezelőtt</div>
+                      </div>
+                    </div>
+
+                    <div class="user-info-noti-read">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle read-circle"></div>
+                        <img
+                          src="./img/story12.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
+                      </div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">David Aarons</span> megjelölt
+                          ennél az eseménynél:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >International Marketing Budapest 2023</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti read">1 órával ezelőtt</div>
+                      </div>
+                    </div>
+
+                    <div class="user-info-noti-read">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle read-circle"></div>
+                        <img
+                          src="./img/story1.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
+                      </div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">Kovács Anna</span> felvette
+                          ezt eseményei közé:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >Foci EB 2024: Magyarország - Spanyolország
+                              16:00</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti read">4 órával ezelőtt</div>
+                      </div>
                     </div>
                   </div>
                 </div>

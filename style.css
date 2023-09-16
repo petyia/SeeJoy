@@ -392,7 +392,7 @@ button:hover .button-text {
   position: absolute;
   top: 88%;
   right: 2%;
-  width: 320px;
+  width: 36rem;
 
   display: none; /* Hide the submenu initially */
 
@@ -444,9 +444,9 @@ button:hover .button-text {
   align-items: center;
   text-decoration: none;
   color: var(--black);
-  padding: 1rem;
+  padding: 1.2rem;
 
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
@@ -493,15 +493,40 @@ button:hover .button-text {
   position: absolute;
   top: 88%;
   right: 8%;
-  width: 320px;
+  width: 36rem;
+  max-height: 70vh;
+
+  border-radius: 1.6rem;
 
   display: none;
 
   z-index: 9998;
 
+  overflow: auto;
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+
   transition: all 0.08s;
 }
 
+.sub-menu-wrap-noti::-webkit-scrollbar {
+  width: 0.8vw;
+}
+
+.sub-menu-wrap-noti::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 8rem;
+}
+
+.sub-menu-wrap-noti::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8rem;
+}
+
+.sub-menu-wrap-noti::-webkit-scrollbar-track:hover {
+  background: var(--grey);
+}
 .sub-menu-wrap-noti.open-menu-noti {
   display: block; /* Show the submenu */
   z-index: 9998;
@@ -509,7 +534,7 @@ button:hover .button-text {
 
 .sub-menu-noti {
   background: var(--white);
-  padding: 1.6rem;
+  padding: 1.6rem 2.4rem;
   /* margin: 1.6rem; */
   border-radius: 1.6rem;
 
@@ -521,7 +546,7 @@ button:hover .button-text {
   display: flex;
   align-items: center;
   border-radius: 1.2rem;
-  padding: 0.8rem;
+  padding: 1.2rem 0.8rem;
   margin-bottom: 1.6rem;
 
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
@@ -557,9 +582,9 @@ button:hover .button-text {
   align-items: center;
   text-decoration: none;
   color: var(--black);
-  padding: 1rem;
+  padding: 1.2rem;
 
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
@@ -620,11 +645,11 @@ button:hover .button-text {
 }
 
 a.h5 {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 #noti-tabs {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-transform: none;
   margin-right: 0.8rem;
   font-weight: 700;
@@ -637,7 +662,7 @@ a.h5 {
 }
 
 #noti-tabs-not {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-transform: none;
   font-weight: 700;
   color: var(--black);
@@ -650,7 +675,7 @@ a.h5 {
 }
 
 #stories-first-row-noti {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 1.2rem;
 }
 
@@ -663,7 +688,7 @@ a.h5 {
 }
 
 #all-stories-link-noti {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .new-noti-circle {
@@ -707,14 +732,14 @@ a.h5 {
 .right-felx-noti-container {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.4rem;
   justify-content: center;
 }
 
 .text-info-noti {
   font-weight: 500;
   line-height: 1.3;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .time-noti {

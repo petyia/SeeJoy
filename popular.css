@@ -288,5 +288,5 @@ a .popular-price {
   color: var(--primary);
   background-color: var(--primary-light);
   padding: 0.8rem;
-  border-radius: 1.6rem;
+  border-radius: 8rem;
 }
