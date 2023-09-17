@@ -81,3 +81,95 @@ heartIcon4.addEventListener("click", () => {
     unfilledHeartIcon4.style.display = "inline-block";
   }
 });
+
+// For card 5 - UPCOMING
+const card5 = document.getElementById("card5");
+const heartIcon5 = card5.querySelector(".heart-icon");
+const filledHeartIcon5 = heartIcon5.querySelector(
+  ".upcoming-heart-icon-filled"
+);
+const unfilledHeartIcon5 = heartIcon5.querySelector(".upcoming-heart-icon");
+let isFilled5 = false;
+
+filledHeartIcon5.style.display = "none"; // Initially hide the filled icon
+
+heartIcon5.addEventListener("click", () => {
+  isFilled5 = !isFilled5;
+
+  if (isFilled5) {
+    filledHeartIcon5.style.display = "inline-block";
+    unfilledHeartIcon5.style.display = "none";
+  } else {
+    filledHeartIcon5.style.display = "none";
+    unfilledHeartIcon5.style.display = "inline-block";
+  }
+});
+
+// For card 6 - UPCOMING
+const card6 = document.getElementById("card6");
+const heartIcon6 = card6.querySelector(".heart-icon");
+const filledHeartIcon6 = heartIcon6.querySelector(
+  ".upcoming-heart-icon-filled"
+);
+const unfilledHeartIcon6 = heartIcon6.querySelector(".upcoming-heart-icon");
+let isFilled6 = false;
+
+filledHeartIcon6.style.display = "none"; // Initially hide the filled icon
+
+heartIcon6.addEventListener("click", () => {
+  isFilled6 = !isFilled6;
+
+  if (isFilled6) {
+    filledHeartIcon6.style.display = "inline-block";
+    unfilledHeartIcon6.style.display = "none";
+  } else {
+    filledHeartIcon6.style.display = "none";
+    unfilledHeartIcon6.style.display = "inline-block";
+  }
+});
+
+// For card 7 - UPCOMING
+const card7 = document.getElementById("card7");
+const heartIcon7 = card7.querySelector(".heart-icon");
+const filledHeartIcon7 = heartIcon7.querySelector(
+  ".upcoming-heart-icon-filled"
+);
+const unfilledHeartIcon7 = heartIcon7.querySelector(".upcoming-heart-icon");
+let isFilled7 = false;
+
+filledHeartIcon7.style.display = "none"; // Initially hide the filled icon
+
+heartIcon7.addEventListener("click", () => {
+  isFilled7 = !isFilled7;
+
+  if (isFilled7) {
+    filledHeartIcon7.style.display = "inline-block";
+    unfilledHeartIcon7.style.display = "none";
+  } else {
+    filledHeartIcon7.style.display = "none";
+    unfilledHeartIcon7.style.display = "inline-block";
+  }
+});
+
+// For card 8 - UPCOMING
+const card8 = document.getElementById("card8");
+const heartIcon8 = card8.querySelector(".heart-icon");
+const filledHeartIcon8 = heartIcon8.querySelector(
+  ".upcoming-heart-icon-filled"
+);
+const unfilledHeartIcon8 = heartIcon8.querySelector(".upcoming-heart-icon");
+let isFilled8 = false;
+
+filledHeartIcon8.style.display = "none"; // Initially hide the filled icon
+
+heartIcon8.addEventListener("click", () => {
+  isFilled8 = !isFilled8;
+
+  if (isFilled8) {
+    filledHeartIcon8.style.display = "inline-block";
+    unfilledHeartIcon8.style.display = "none";
+  } else {
+    filledHeartIcon8.style.display = "none";
+    unfilledHeartIcon8.style.display = "inline-block";
+  }
+});

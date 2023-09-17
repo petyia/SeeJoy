@@ -15,28 +15,29 @@
   --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.popular-section {
+.upcoming-section {
   width: 100%;
 
   height: auto;
-  background-color: var(--white);
-  margin: 0 auto;
+  /* background-color: var(--white); */
+  margin: 0rem auto;
   border-radius: 1.6rem;
+  margin-bottom: 40rem;
 }
 
-.popular-container {
+.upcoming-container {
   padding: 3.2rem 3.2rem 0rem 3.2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 2.4rem;
 }
 
-.popular-title {
-  font-size: 2.4rem;
+.upcoming-title {
+  font-size: 3.2rem;
   font-weight: 800;
 }
 
-a.all-popular-link {
+a.all-upcoming-link {
   text-decoration: none;
   color: var(--grey);
   font-size: 1.6rem;
@@ -45,7 +46,7 @@ a.all-popular-link {
   transition: all 0.15s ease-in-out;
 }
 
-a.all-popular-link:hover {
+a.all-upcoming-link:hover {
   color: var(--primary);
 }
 
@@ -53,7 +54,7 @@ a.all-popular-link:hover {
   margin-left: 0.8rem;
 }
 
-.popular-first-row {
+.upcoming-first-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,37 +78,37 @@ a.all-popular-link:hover {
   color: var(--primary);
 }
 
-.p-l-scroll-container {
-  overflow-x: hidden; /* Display horizontal scroll bar */
+.up-c-scroll-container {
   position: relative;
 
-  padding: 0 2.4rem 1.2rem 2.4rem;
+  padding: 0 0 1.2rem 0;
 }
 
-.popular-line {
+.upcoming-line {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1.6rem;
-  width: 160%;
-  padding: 1.6rem 0.8rem;
+  /* align-items: center; */
+  gap: 2.4rem;
+  width: 100%;
+  padding: 1.6rem 0rem;
 
   flex-wrap: nowrap;
 }
 
-.popular-card {
-  height: 32rem;
-  width: 32rem;
+.upcoming-card {
+  height: auto;
+  width: 100%;
+  gap: 32vh;
   /* height: 100vh;
   width: 100%; */
-  border-radius: 2.4rem;
+  border-radius: 1.6rem;
   transition: background-size 0.3s ease;
 }
-.popular-card:hover {
+.upcoming-card:hover {
   background-size: 110%; /* Increase background size to 120% on hover */
   cursor: pointer;
 }
-.popular-card.first {
+.upcoming-card.first {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background: url("./img/pop1.webp");
@@ -124,7 +125,7 @@ a.all-popular-link:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.popular-card.second {
+.upcoming-card.second {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background: url("./img/pop2.webp");
@@ -141,7 +142,7 @@ a.all-popular-link:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.popular-card.third {
+.upcoming-card.third {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background: url("./img/pop3.webp");
@@ -158,7 +159,7 @@ a.all-popular-link:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.popular-card.fourth {
+.upcoming-card.fourth {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background: url("./img/pop4.webp");
@@ -175,21 +176,21 @@ a.all-popular-link:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.popular-line:hover .first:hover {
+.upcoming-line:hover .first:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.popular-line:hover .second:hover {
+.upcoming-line:hover .second:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.popular-line:hover .third:hover {
+.upcoming-line:hover .third:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
-.popular-line:hover .fourth:hover {
+.upcoming-line:hover .fourth:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
@@ -200,13 +201,13 @@ a.all-popular-link:hover {
   border-radius: 2.4rem;
 }
 
-.popular-upper-container {
+.upcoming-upper-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.popular-date {
+.upcoming-date {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
@@ -221,17 +222,17 @@ a.all-popular-link:hover {
   box-shadow: var(--popular-sh);
 }
 
-.popular-number {
+.upcoming-number {
   font-weight: 800;
 }
 
-.popular-month {
+.upcoming-month {
   color: var(--grey);
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.popular-heart-icon {
+.upcoming-heart-icon {
   font-size: 2.4rem;
   color: var(--white);
   margin-top: 0.8rem;
@@ -240,14 +241,14 @@ a.all-popular-link:hover {
   cursor: pointer;
 }
 
-.popular-heart-icon-filled {
+.upcoming-heart-icon-filled {
   font-size: 2.4rem;
   color: var(--white);
   margin-top: 0.8rem;
   cursor: pointer;
 }
 
-.popular-lower-container {
+.upcoming-lower-container {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -274,7 +275,7 @@ h3.h3 {
   font-weight: 600;
 }
 
-.popular-hour {
+.upcoming-hour {
   color: var(--grey);
 }
 
@@ -282,7 +283,7 @@ a {
   text-decoration: none;
 }
 
-a .popular-price {
+a .upcoming-price {
   text-transform: uppercase;
   font-weight: 800;
   color: var(--primary);
