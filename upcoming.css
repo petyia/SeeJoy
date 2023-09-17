@@ -102,6 +102,9 @@ a.all-upcoming-link:hover {
   /* height: 100vh;
   width: 100%; */
   border-radius: 1.6rem;
+
+  box-shadow: var(--popular-sh);
+
   transition: background-size 0.3s ease;
 }
 .upcoming-card:hover {
@@ -111,7 +114,7 @@ a.all-upcoming-link:hover {
 .upcoming-card.first {
   /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop1.webp");
+  background: url("./img/upcoming1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1.6rem;
@@ -128,9 +131,10 @@ a.all-upcoming-link:hover {
 .upcoming-card.second {
   /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop2.webp");
+  background: url("./img/upcoming2.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -145,9 +149,10 @@ a.all-upcoming-link:hover {
 .upcoming-card.third {
   /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop3.webp");
+  background: url("./img/upcoming3.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -162,9 +167,10 @@ a.all-upcoming-link:hover {
 .upcoming-card.fourth {
   /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop4.webp");
+  background: url("./img/upcoming4.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center top;
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
@@ -259,7 +265,7 @@ a.all-upcoming-link:hover {
 }
 
 .upper-info-container {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
 }
 
@@ -271,7 +277,7 @@ h3.h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
