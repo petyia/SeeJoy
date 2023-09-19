@@ -33,7 +33,7 @@
 }
 
 .events-title {
-  font-size: 3.2rem;
+  font-size: 4rem;
   font-weight: 800;
 }
 
@@ -63,13 +63,100 @@ a.all-events-link:hover {
 .location-container {
   display: flex;
   width: 100%;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-end;
   white-space: normal;
   word-break: break-word;
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
+  gap: 3.2rem;
+}
+
+.left-flex-location-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.text-info-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  font-weight: 500;
+  line-height: 1.3;
+  font-size: 1.6rem;
+  gap: 0.4rem;
+}
+
+.location {
+  color: var(--grey);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.location-name {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.right-flex-location-container {
+  display: flex;
+  align-items: flex-start;
+
+  border-radius: 1rem;
+
+  box-shadow: var(--popular-sh);
+}
+/* 
+#location-img {
+  display: block;
+  align-self: flex-start;
+  width: 5.6rem;
+  height: 5.6rem;
+
+  border: 4px solid var(--white);
+  border-radius: 1rem;
+
+  cursor: pointer;
+} */
+
+.map-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("./img/map-icon3.png");
+  background-repeat: no-repeat;
+  background-size: 350%;
+  background-position: center;
+  height: 5.6rem;
+  width: 5.6rem;
+  border: 4px solid var(--white);
+  border-radius: 0.8rem;
+  filter: brightness(105%);
+
+  transition: background-size 0.3s ease-in;
+  -moz-transition: background-size 0.3s ease-in;
+  -ms-transition: background-size 0.3s ease-in;
+  -o-transition: background-size 0.3s ease-in;
+  -webkit-transition: background-size 0.3s ease-in;
+
+  cursor: pointer;
+}
+
+.bp-location {
+  font-size: 2.4rem;
+  color: var(--primary);
+
+  transition: all 0.2s ease-in-out;
+}
+
+.map-img:hover {
+  background-size: 500%;
 }
 
 .scroll-right {
