@@ -44,23 +44,23 @@
 
 .title-premium {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
 .description-premium {
   color: rgba(255, 255, 255, 0.65);
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 300;
   margin-bottom: 1.2rem;
 }
 
 .premium-btn {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: rgba(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 0.4rem 1.2rem;
+  padding: 0.6rem 1.2rem;
   font-weight: 300;
   border-radius: 8rem;
   letter-spacing: 0.4px;
@@ -70,15 +70,15 @@
 
 .premium-btn:hover {
   display: inline-block;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 
   background-color: var(--black);
-  padding: 0.4rem 1.2rem;
   border-radius: 8rem;
 }
 
 .premium-btn-icon {
-  font-size: 1.2rem;
+  font-size: 1rem;
+  margin-left: 0.4rem !important;
 }
 
 .my-events-container {
@@ -189,7 +189,7 @@
 }
 
 .my-event-upper-info-container {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .my-event-lower-info-container {
@@ -378,7 +378,7 @@ a.my-event-link:hover {
 }
 
 .my-category-upper-info-container {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
 }
 
 .my-category-lower-info-container {
