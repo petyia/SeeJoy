@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  width: 60vw !important;
+  width: 64vw !important;
 }
 
 .stories-section {
@@ -105,7 +105,7 @@ a.all-stories-link:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 140%;
+  width: 136%;
   padding: 2.4rem 0;
   gap: 2.8rem;
 
