@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollLeftCatButton2 = document.querySelector(".scroll-left-cat2");
   const leftArrowContainer2 = document.querySelector(".cat-left-arrow2");
   const rightArrowButton2 = document.getElementById("fa-chevron-right-cat2");
-  const upcomingSection = document.querySelector(".upcoming-section");
+  const eventDateSection = document.querySelector(".event-date-section");
 
   if (
     !catSectionDate ||
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", function () {
     !scrollLeftCatButton2 ||
     !leftArrowContainer2 ||
     !rightArrowButton2 ||
-    !upcomingSection
+    !eventDateSection
   ) {
     console.error("Nem találhatóak az elemek!");
     return;
@@ -202,10 +202,10 @@ document.addEventListener("DOMContentLoaded", function () {
       // Ellenőrizzük, hogy a kattintott elem ID-ja megfelel-e
       if (this.id === "date20240811") {
         // Megjelenítjük az upcoming-section-t animáltan
-        upcomingSection.classList.add("visible");
+        eventDateSection.classList.add("visible");
       } else {
         // Elrejthetjük az upcoming-section-t, ha más elemre kattintanak
-        upcomingSection.classList.remove("visible");
+        eventDateSection.classList.remove("visible");
       }
     });
   });

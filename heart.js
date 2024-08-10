@@ -82,7 +82,7 @@ heartIcon4.addEventListener("click", () => {
   }
 });
 
-// For card 5 - UPCOMING
+// For card 5 - upcoming
 const card5 = document.getElementById("card5");
 const heartIcon5 = card5.querySelector(".heart-icon");
 const filledHeartIcon5 = heartIcon5.querySelector(
@@ -105,7 +105,7 @@ heartIcon5.addEventListener("click", () => {
   }
 });
 
-// For card 6 - UPCOMING
+// For card 6 - upcoming
 const card6 = document.getElementById("card6");
 const heartIcon6 = card6.querySelector(".heart-icon");
 const filledHeartIcon6 = heartIcon6.querySelector(
@@ -128,7 +128,7 @@ heartIcon6.addEventListener("click", () => {
   }
 });
 
-// For card 7 - UPCOMING
+// For card 7 - upcoming
 const card7 = document.getElementById("card7");
 const heartIcon7 = card7.querySelector(".heart-icon");
 const filledHeartIcon7 = heartIcon7.querySelector(
@@ -151,7 +151,7 @@ heartIcon7.addEventListener("click", () => {
   }
 });
 
-// For card 8 - UPCOMING
+// For card 8 - upcoming
 const card8 = document.getElementById("card8");
 const heartIcon8 = card8.querySelector(".heart-icon");
 const filledHeartIcon8 = heartIcon8.querySelector(

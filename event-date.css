@@ -15,28 +15,29 @@
   --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-.popular-section {
+.event-date-section {
   width: 100%;
 
   height: auto;
-  background-color: var(--white);
-  margin: 0 auto;
+  /* background-color: var(--white); */
+  margin: 0rem auto;
   border-radius: 1.6rem;
+  margin-bottom: 40rem;
 }
 
-.popular-container {
-  padding: 3.2rem 3.2rem 0rem 3.2rem;
+.event-date-container {
+  /* padding: 3.2rem 3.2rem 0rem 3.2rem; */
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 2.4rem;
 }
 
-.popular-title {
-  font-size: 2.4rem;
+.event-date-title {
+  font-size: 3.2rem;
   font-weight: 800;
 }
 
-a.all-popular-link {
+a.all-event-date-link {
   text-decoration: none;
   color: var(--grey);
   font-size: 1.6rem;
@@ -45,7 +46,7 @@ a.all-popular-link {
   transition: all 0.15s ease-in-out;
 }
 
-a.all-popular-link:hover {
+a.all-event-date-link:hover {
   color: var(--primary);
 }
 
@@ -53,7 +54,7 @@ a.all-popular-link:hover {
   margin-right: 0.8rem;
 }
 
-.popular-first-row {
+.event-date-first-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,40 +78,43 @@ a.all-popular-link:hover {
   color: var(--primary);
 }
 
-.p-l-scroll-container {
-  overflow-x: hidden; /* Display horizontal scroll bar */
+.up-c-scroll-container {
   position: relative;
 
-  padding: 0 2.4rem 1.2rem 2.4rem;
+  padding: 0 0 1.2rem 0;
 }
 
-.popular-line {
+.event-date-line {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1.6rem;
-  width: 120%;
-  padding: 1.6rem 0.8rem;
+  /* align-items: center; */
+  gap: 4.8rem;
+  width: 100%;
+  padding: 1.6rem 0rem;
 
   flex-wrap: nowrap;
 }
 
-.popular-card {
-  height: 32rem;
-  width: 32rem;
+.event-date-card {
+  height: auto;
+  width: 100%;
+  gap: 32vh;
   /* height: 100vh;
   width: 100%; */
-  border-radius: 2.4rem;
+  border-radius: 1.6rem;
+
+  box-shadow: var(--popular-sh);
+
   transition: background-size 0.3s ease;
 }
-/* .popular-card:hover {
-  background-size: 110%;
+.event-date-card:hover {
+  background-size: 110%; /* Increase background size to 120% on hover */
   cursor: pointer;
-} */
-.popular-card.first {
+}
+.event-date-card.first {
   /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop1.webp");
+  background: url("./img/event-date1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1.6rem;
@@ -123,48 +127,29 @@ a.all-popular-link:hover {
 
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
-.popular-card.second {
-  position: relative;
-  background: url(./img/pop2.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1); /* Smooth and consistent transition */
-  will-change: transform;
-}
-.popular-card.second::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url(./img/pop2.webp);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  z-index: -1;
-  border-radius: 2.4rem;
-}
 
-.popular-card.third {
+.event-date-card.second {
+  /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop3.webp");
+  background: url("./img/event-date2.webp");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
   padding: 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
-.popular-card.fourth {
+
+.event-date-card.third {
+  /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url(./img/pop4.webp);
+  background: url("./img/event-date3.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -172,45 +157,46 @@ a.all-popular-link:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.45s cubic-bezier(0.65, 0, 0.076, 1); /* Smooth and consistent transition */
-  will-change: transform;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.popular-card.fourth::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url(./img/pop4.webp);
+.event-date-card.fourth {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url("./img/event-date4.webp");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
-  z-index: -1;
-  border-radius: 2.4rem;
+  background-position: center top;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /* Adjust the minimum width of cards as needed */
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-/* Hover effect */
-.popular-card.second:hover {
-  transform: scale(1.05); /* Example hover scale */
-  cursor: pointer;
-}
-.popular-line:hover .first:hover {
+.event-date-line:hover .first:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.popular-line:hover .second:hover {
+.event-date-line:hover .second:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.popular-line:hover .third:hover {
+.event-date-line:hover .third:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
-.popular-line:hover .fourth:hover {
+.event-date-line:hover .fourth:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
@@ -221,13 +207,13 @@ a.all-popular-link:hover {
   border-radius: 2.4rem;
 }
 
-.popular-upper-container {
+.event-date-upper-container {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.popular-date {
+.event-date-date {
   display: flex;
   flex-direction: column;
   background-color: var(--white);
@@ -242,17 +228,17 @@ a.all-popular-link:hover {
   box-shadow: var(--popular-sh);
 }
 
-.popular-number {
+.event-date-number {
   font-weight: 800;
 }
 
-.popular-month {
+.event-date-month {
   color: var(--grey);
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.popular-heart-icon {
+.event-date-heart-icon {
   font-size: 2.4rem;
   color: var(--white);
   margin-top: 0.8rem;
@@ -261,14 +247,14 @@ a.all-popular-link:hover {
   cursor: pointer;
 }
 
-.popular-heart-icon-filled {
+.event-date-heart-icon-filled {
   font-size: 2.4rem;
   color: var(--white);
   margin-top: 0.8rem;
   cursor: pointer;
 }
 
-.popular-lower-container {
+.event-date-lower-container {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -279,7 +265,7 @@ a.all-popular-link:hover {
 }
 
 .upper-info-container {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 800;
 }
 
@@ -291,11 +277,11 @@ h3.h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
 }
 
-.popular-hour {
+.event-date-hour {
   color: var(--grey);
 }
 
@@ -303,11 +289,11 @@ a {
   text-decoration: none;
 }
 
-a .popular-price {
+a .event-date-price {
   text-transform: uppercase;
   font-weight: 800;
   color: var(--primary);
   background-color: var(--primary-light);
-  padding: 0.8rem 1.6rem;
+  padding: 0.8rem;
   border-radius: 8rem;
 }
