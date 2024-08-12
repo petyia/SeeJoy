@@ -130,65 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateArrowVisibility();
 });
 
-//Clicked
 document.addEventListener("DOMContentLoaded", function () {
-  const eventsDates = document.querySelectorAll(".events-date");
-
-  eventsDates.forEach((date) => {
-    date.addEventListener("click", function () {
-      // Eltávolítja a 'clicked' osztályt az összes 'events-date' elemből
-      eventsDates.forEach((d) => d.classList.remove("clicked"));
-
-      // Hozzáadja a 'clicked' osztályt a kattintott elemhez
-      this.classList.add("clicked");
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const catSectionDate = document.querySelector(".event-mini-date");
-  const scrollRightCatButton2 = document.querySelector(".scroll-right-cat2");
-  const scrollLeftCatButton2 = document.querySelector(".scroll-left-cat2");
-  const leftArrowContainer2 = document.querySelector(".cat-left-arrow2");
-  const rightArrowButton2 = document.getElementById("fa-chevron-right-cat2");
-  const eventDateSection = document.querySelector(".event-date-section");
-
-  if (
-    !catSectionDate ||
-    !scrollRightCatButton2 ||
-    !scrollLeftCatButton2 ||
-    !leftArrowContainer2 ||
-    !rightArrowButton2 ||
-    !eventDateSection
-  ) {
-    console.error("Nem találhatóak az elemek!");
-    return;
-  }
-
-  function updateArrowVisibility() {
-    const scrollLeft = catSectionDate.scrollLeft;
-    const scrollWidth = catSectionDate.scrollWidth;
-    const clientWidth = catSectionDate.clientWidth;
-
-    leftArrowContainer2.style.display = scrollLeft > 0 ? "block" : "none";
-    rightArrowButton2.style.display =
-      scrollLeft < scrollWidth - clientWidth ? "block" : "none";
-  }
-
-  scrollRightCatButton2.addEventListener("click", () => {
-    catSectionDate.scrollBy({ left: 300, behavior: "smooth" });
-    setTimeout(updateArrowVisibility, 300);
-  });
-
-  scrollLeftCatButton2.addEventListener("click", () => {
-    catSectionDate.scrollBy({ left: -300, behavior: "smooth" });
-    setTimeout(updateArrowVisibility, 300);
-  });
-
-  catSectionDate.addEventListener("scroll", updateArrowVisibility);
-  updateArrowVisibility();
-
-  // Az events-date elemek kattintásának kezelése
   const eventsDates = document.querySelectorAll(".events-date");
 
   eventsDates.forEach((date) => {
@@ -199,14 +141,32 @@ document.addEventListener("DOMContentLoaded", function () {
       // Hozzáadjuk a 'clicked' osztályt a kattintott elemhez
       this.classList.add("clicked");
 
-      // Ellenőrizzük, hogy a kattintott elem ID-ja megfelel-e
-      if (this.id === "date20240811") {
-        // Megjelenítjük az upcoming-section-t animáltan
-        eventDateSection.classList.add("visible");
-      } else {
-        // Elrejthetjük az upcoming-section-t, ha más elemre kattintanak
-        eventDateSection.classList.remove("visible");
-      }
+      // Az összes esemény szakasz fade-out animálása
+      const sections = document.querySelectorAll(".event-date-section");
+
+      sections.forEach((section) => {
+        if (section.classList.contains("visible")) {
+          section.classList.add("fading-out");
+
+          section.addEventListener("animationend", function handler() {
+            section.classList.remove("fading-out");
+            section.classList.remove("visible");
+            section.style.display = "none"; // Rejtjük a szekciót, miután az animáció befejeződött
+            section.removeEventListener("animationend", handler);
+          });
+        }
+      });
+
+      // Késleltetve megjelenítjük a kattintott dátumhoz tartozó szakaszt
+      setTimeout(() => {
+        const targetSectionId = `eventDateSection${this.id.substring(4)}`;
+        const targetSection = document.getElementById(targetSectionId);
+
+        if (targetSection) {
+          targetSection.classList.add("visible");
+          targetSection.style.display = "block"; // biztosítjuk a megjelenést
+        }
+      }, 400); // Késleltetés az animáció időtartamának megfelelően (csökkentve)
     });
   });
 });
