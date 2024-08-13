@@ -55,6 +55,7 @@ main {
   height: 100%;
   width: 100%;
   position: relative;
+  z-index: 999;
 }
 
 .header {
@@ -851,7 +852,7 @@ a.h5 {
   position: absolute;
   bottom: 0;
   display: flex;
-  width: 36em;
+  /* width: 36em; */
   height: 4.8em;
   background-color: #f3f3f3;
   border-radius: 16rem;

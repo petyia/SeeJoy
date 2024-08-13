@@ -2,22 +2,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const eventMiniDate = document.querySelector(".event-mini-date");
 
   function generateDates(year) {
+    // Get today's date in Budapest time zone
     const today = new Date();
+    const todayDate = new Date(
+      today.toLocaleString("en-US", { timeZone: "Europe/Budapest" })
+    );
     const startDate = new Date(year, 0, 1); // January 1 of the given year
     const endDate = new Date(year + 1, 0, 0); // December 31 of the given year
 
-    let currentDate = startDate;
-
-    // Move the start date to today if today is after startDate
-    if (today > startDate) {
-      currentDate = new Date(
-        today.getFullYear(),
-        today.getMonth(),
-        today.getDate()
-      );
-    }
-
-    // // Clear existing dates
+    // Clear existing dates
     eventMiniDate.innerHTML = "";
 
     // Create a single events-line element to contain all events-date
@@ -25,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
     eventsLineElem.classList.add("events-line");
     eventsLineElem.classList.add("small-gap");
 
+    // Initialize currentDate to today
+    let currentDate = new Date(todayDate); // Make a copy of todayDate
+
+    // Generate dates starting from today
     while (currentDate <= endDate) {
       const dateStr = currentDate.toISOString().split("T")[0]; // YYYY-MM-DD
       const day = currentDate.getDate();
@@ -36,7 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const eventsDateElem = document.createElement("div");
       eventsDateElem.classList.add("events-date");
       eventsDateElem.id = `date${dateStr.replace(/-/g, "")}`;
-      if (currentDate.toDateString() === today.toDateString()) {
+
+      // Add 'first' and 'today' classes only for today's date
+      if (
+        currentDate.toISOString().split("T")[0] ===
+        todayDate.toISOString().split("T")[0]
+      ) {
         eventsDateElem.classList.add("first", "today");
       }
 
@@ -55,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const dayElem = document.createElement("h3");
       dayElem.classList.add("event-day-text");
       dayElem.textContent = weekday;
-      if (["Szo", "Vas"].includes(weekday)) {
+      if (["Szo", "V"].includes(weekday)) {
         dayElem.classList.add("weekend");
       }
 
@@ -70,7 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Append event date element to events line element
       eventsLineElem.appendChild(eventsDateElem);
 
-      currentDate.setDate(currentDate.getDate() + 1); // Move to next day
+      // Move to the next day
+      currentDate.setDate(currentDate.getDate() + 1);
     }
 
     // Append events line element to event mini date container
@@ -254,5 +257,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 400); // Késleltetés az animáció időtartamának megfelelően (csökkentve)
       }
     });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const mapButton = document.getElementById("map-button");
+  const mapContainer = document.getElementById("map");
+  let mapLoaded = false;
+  let map;
+
+  mapButton.addEventListener("click", function () {
+    if (!mapLoaded) {
+      // Show the map container
+      mapContainer.style.display = "block";
+
+      // Initialize the map with a slight delay
+      setTimeout(() => {
+        // Initialize the map
+        map = L.map(mapContainer).setView([47.4979, 19.0402], 12); // Budapest coordinates
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        mapLoaded = true;
+      }, 100); // 100 ms delay to ensure the container is visible
+    } else {
+      // Toggle map visibility
+      if (mapContainer.style.display === "none") {
+        mapContainer.style.display = "block";
+        map.invalidateSize(); // Adjust map size
+      } else {
+        mapContainer.style.display = "none";
+      }
+    }
   });
 });

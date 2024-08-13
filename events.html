@@ -34,6 +34,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
   <body>
     <header>
@@ -286,74 +287,86 @@
 
       <!-- <button class="main-mobile-nav"></button> -->
     </header>
-    <main>
-      <div class="container">
-        <div class="phone">
-          <div class="phone-footer">
-            <div class="nav">
-              <div class="button-body-2-unfilled">
-                <a href="index.html" class="bottom-nav-link">
-                  <button class="learn-more-2-unfilled">
-                    <span class="circle-2" aria-hidden="true">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        height="2em"
-                        viewBox="-200 -40 1000 800"
-                      >
-                        <path
-                          d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="40"
-                        />
-                      </svg>
-                    </span>
-                    <div class="button-text-2-unfilled">Kezdőlap</div>
-                  </button>
-                </a>
-              </div>
+    <div class="container">
+      <div class="phone">
+        <div class="phone-footer">
+          <div class="nav">
+            <div class="button-body-2-unfilled">
+              <a href="index.html" class="bottom-nav-link">
+                <button class="learn-more-2-unfilled">
+                  <span class="circle-2" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="2em"
+                      viewBox="-200 -40 1000 800"
+                    >
+                      <path
+                        d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="40"
+                      />
+                    </svg>
+                  </span>
+                  <div class="button-text-2-unfilled">Kezdőlap</div>
+                </button>
+              </a>
+            </div>
 
-              <div class="button-body-2-filled">
-                <a href="events.html" class="bottom-nav-link">
-                  <button class="learn-more-2">
-                    <span class="circle-2" aria-hidden="true">
-                      <span class="icon-2 arrow-2"
-                        ><i class="fa-solid fa-calendar" style="color: #fff"></i
-                      ></span>
+            <div class="button-body-2-filled">
+              <a href="events.html" class="bottom-nav-link">
+                <button class="learn-more-2">
+                  <span class="circle-2" aria-hidden="true">
+                    <span class="icon-2 arrow-2">
+                      <i class="fa-solid fa-calendar" style="color: #fff"></i>
                     </span>
-                    <div class="button-text-2">Események</div>
-                  </button>
-                </a>
-              </div>
+                  </span>
+                  <div class="button-text-2">Események</div>
+                </button>
+              </a>
+            </div>
 
-              <div class="button-body-2-unfilled">
-                <a href="events.html" class="bottom-nav-link">
-                  <button class="learn-more-2-unfilled">
-                    <span class="circle-2-unfilled" aria-hidden="true">
-                      <span class="icon-2-unfilled arrow-2-unfilled">
-                        <i class="fa-regular fa-credit-card"></i>
-                      </span>
+            <div class="button-body-2-unfilled">
+              <a href="events.html" class="bottom-nav-link">
+                <button class="learn-more-2-unfilled">
+                  <span class="circle-2-unfilled" aria-hidden="true">
+                    <span class="icon-2-unfilled arrow-2-unfilled">
+                      <i class="fa-regular fa-credit-card"></i>
                     </span>
-                    <div class="button-text-2-unfilled">Jegyek</div>
-                  </button>
-                </a>
-              </div>
-              <div class="button-body-2-unfilled">
-                <a href="events.html" class="bottom-nav-link">
-                  <button class="learn-more-2-unfilled">
-                    <span class="circle-2-unfilled" aria-hidden="true">
-                      <span class="icon-2-unfilled arrow-2-unfilled"
-                        ><i class="fa-regular fa-message"></i
-                      ></span>
+                  </span>
+                  <div class="button-text-2-unfilled">Jegyek</div>
+                </button>
+              </a>
+            </div>
+
+            <div class="button-body-2-unfilled">
+              <a href="events.html" class="bottom-nav-link">
+                <button class="learn-more-2-unfilled">
+                  <span class="circle-2-unfilled" aria-hidden="true">
+                    <span class="icon-2-unfilled arrow-2-unfilled">
+                      <i class="fa-regular fa-message"></i>
                     </span>
-                    <div class="button-text-2-unfilled">Üzenetek</div>
-                  </button>
-                </a>
-              </div>
+                  </span>
+                  <div class="button-text-2-unfilled">Üzenetek</div>
+                </button>
+              </a>
+            </div>
+
+            <div class="button-body-2-filled black" id="map-button">
+              <button class="learn-more-2">
+                <span class="circle-2" aria-hidden="true">
+                  <span class="icon-2 arrow-2">
+                    <i class="fa-solid fa-map" style="color: #fff"></i>
+                  </span>
+                </span>
+                <div class="button-text-2">Térkép</div>
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <div id="map"></div> <!-- Térkép konténer -->
+    </div>
       <section class="events-section">
         <div class="events-container">
           <div class="events-first-row">
@@ -366,7 +379,7 @@
                 </div>
               </div>
 
-              <div class="right-flex-location-container">
+              <div class="right-flex-location-container" id="map-button">
                 <div class="map-img">
                   <i class="fa-solid fa-location-dot bp-location"></i>
                 </div>
@@ -544,339 +557,8 @@
               </button>
             </div>
             <div class="event-mini-date">
-              <div class="events-line small-gap">
-                <div class="events-date first today" id="date20240810">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">10</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Szo</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240811">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">11</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Vas</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240812">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">12</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">H</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240813">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">13</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">K</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240814">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">14</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Sze</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240815">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">15</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Cs</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240816">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">16</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">P</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240817">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">17</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Szo</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240818">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">18</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Vas</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240819">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">19</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">H</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240820">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">20</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">K</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240821">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">21</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Sze</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240822">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">22</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Csü</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240823">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">23</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">P</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240824">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">24</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Szo</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240825">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">25</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Vas</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="events-date" id="date20240826">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">26</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">H</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240827">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">27</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">K</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240828">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">28</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Sze</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240829">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">29</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Csü</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240830">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">30</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">P</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240831">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">31</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Szo</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240901">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">1</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Vas</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240902">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">2</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">H</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240903">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">3</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">K</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240904">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">4</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Sze</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240905">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">5</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">Csü</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240906">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">6</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text">P</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240907">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">7</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Szo</h3>
-                    </div>
-                  </div>
-                </div>
-                <div class="events-date" id="date20240908">
-                  <div class="events-upper-container">
-                    <div class="events-cat-date">8</div>
-                  </div>
-
-                  <div class="events-lower-container">
-                    <div class="event-upper-info-container">
-                      <h3 class="event-day-text weekend">Vas</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
+            
             </div>
           </div>
 
@@ -890,12 +572,12 @@
               </div> -->
               <div class="up-c-scroll-container">
                 <div class="event-date-line" id="popular-line">
-                  <div class="event-date-card first" id="card20">
+                  <div class="event-date-card" id="card20">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">10</div>
+                            <div class="event-date-number">13</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -979,7 +661,7 @@
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">10</div>
+                            <div class="event-date-number">13</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -1180,7 +862,7 @@
             </div>
           </div>
 
-          <div class="event-date-section" id="eventDateSection20240811">
+          <div class="event-date-section" id="eventDateSection20240813">
             <div class="event-date-container">
               <!-- <div class="event-date-first-row">
                 <h1 class="event-date-title">Augusztus 11.-i események</h1>
@@ -1190,12 +872,12 @@
               </div> -->
               <div class="up-c-scroll-container">
                 <div class="event-date-line" id="popular-line">
-                  <div class="event-date-card first" id="card9">
+                  <div class="event-date-card" id="card9">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">11</div>
+                            <div class="event-date-number">13</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -1279,7 +961,7 @@
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">11</div>
+                            <div class="event-date-number">13</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -1363,7 +1045,7 @@
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">11</div>
+                            <div class="event-date-number">13</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -1480,7 +1162,7 @@
             </div>
           </div>
 
-          <div class="event-date-section" id="eventDateSection20240812">
+          <div class="event-date-section" id="eventDateSection20240814">
             <div class="event-date-container">
               <!-- <div class="event-date-first-row">
                 <h1 class="event-date-title">Augusztus 11.-i események</h1>
@@ -1490,7 +1172,7 @@
               </div> -->
               <div class="up-c-scroll-container">
                 <div class="event-date-line" id="popular-line">
-                  <!-- <div class="event-date-card first" id="card30">
+                  <!-- <div class="event-date-card" id="card30">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
@@ -1747,7 +1429,7 @@
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">11</div>
+                            <div class="event-date-number">14</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -1864,7 +1546,7 @@
             </div>
           </div>
 
-          <div class="event-date-section" id="eventDateSection20240813">
+          <div class="event-date-section" id="eventDateSection20240815">
             <div class="event-date-container">
               <!-- <div class="event-date-first-row">
                 <h1 class="event-date-title">Augusztus 11.-i események</h1>
@@ -1874,12 +1556,12 @@
               </div> -->
               <div class="up-c-scroll-container">
                 <div class="event-date-line" id="popular-line">
-                  <div class="event-date-card first" id="card20">
+                  <div class="event-date-card" id="card20">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">10</div>
+                            <div class="event-date-number">15</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -1963,7 +1645,7 @@
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">10</div>
+                            <div class="event-date-number">15</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
@@ -2167,6 +1849,7 @@
       </section>
     </main>
     <footer></footer>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- <script src="event-date.js"></script> -->
     <script src="event-cat.js"></script>
     <!-- <script src="dynamic-dates.js"></script> -->

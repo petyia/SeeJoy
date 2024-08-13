@@ -115,6 +115,10 @@ a.bottom-nav-link {
   border-radius: 8rem;
 }
 
+.black {
+  background-color: var(--black);
+}
+
 button {
   display: inline-block;
   cursor: pointer;
