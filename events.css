@@ -671,6 +671,7 @@ a.all-events-link:hover {
 }
 
 .event-mini-date {
+  display: flex;
   overflow-x: hidden; /* Display horizontal scroll bar */
   background-color: var(--white);
   width: 100%;
@@ -785,7 +786,7 @@ a.all-events-link:hover {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background-color: transparent;
-  /* padding: 1.6rem 1.6rem 0 1.6rem; */
+  padding: 0rem 1.6rem 0 1.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

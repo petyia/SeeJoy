@@ -1,3 +1,85 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const eventMiniDate = document.querySelector(".event-mini-date");
+
+  function generateDates(year) {
+    const today = new Date();
+    const startDate = new Date(year, 0, 1); // January 1 of the given year
+    const endDate = new Date(year + 1, 0, 0); // December 31 of the given year
+
+    let currentDate = startDate;
+
+    // Move the start date to today if today is after startDate
+    if (today > startDate) {
+      currentDate = new Date(
+        today.getFullYear(),
+        today.getMonth(),
+        today.getDate()
+      );
+    }
+
+    // // Clear existing dates
+    eventMiniDate.innerHTML = "";
+
+    // Create a single events-line element to contain all events-date
+    const eventsLineElem = document.createElement("div");
+    eventsLineElem.classList.add("events-line");
+    eventsLineElem.classList.add("small-gap");
+
+    while (currentDate <= endDate) {
+      const dateStr = currentDate.toISOString().split("T")[0]; // YYYY-MM-DD
+      const day = currentDate.getDate();
+      const weekday = currentDate.toLocaleDateString("hu-HU", {
+        weekday: "short",
+      });
+
+      // Create event date element
+      const eventsDateElem = document.createElement("div");
+      eventsDateElem.classList.add("events-date");
+      eventsDateElem.id = `date${dateStr.replace(/-/g, "")}`;
+      if (currentDate.toDateString() === today.toDateString()) {
+        eventsDateElem.classList.add("first", "today");
+      }
+
+      // Create upper and lower container divs
+      const upperContainer = document.createElement("div");
+      upperContainer.classList.add("events-upper-container");
+
+      const lowerContainer = document.createElement("div");
+      lowerContainer.classList.add("events-lower-container");
+
+      // Create date and day elements
+      const dateElem = document.createElement("div");
+      dateElem.classList.add("events-cat-date");
+      dateElem.textContent = day;
+
+      const dayElem = document.createElement("h3");
+      dayElem.classList.add("event-day-text");
+      dayElem.textContent = weekday;
+      if (["Szo", "Vas"].includes(weekday)) {
+        dayElem.classList.add("weekend");
+      }
+
+      // Append elements to containers
+      upperContainer.appendChild(dateElem);
+      lowerContainer.appendChild(dayElem);
+
+      // Append containers to event date element
+      eventsDateElem.appendChild(upperContainer);
+      eventsDateElem.appendChild(lowerContainer);
+
+      // Append event date element to events line element
+      eventsLineElem.appendChild(eventsDateElem);
+
+      currentDate.setDate(currentDate.getDate() + 1); // Move to next day
+    }
+
+    // Append events line element to event mini date container
+    eventMiniDate.appendChild(eventsLineElem);
+  }
+
+  generateDates(2024);
+});
+
 //1 - Típusok
 document.addEventListener("DOMContentLoaded", function () {
   const catSection = document.querySelector(".event-mini");
@@ -135,15 +217,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   eventsDates.forEach((date) => {
     date.addEventListener("click", function () {
+      // Ellenőrizzük, hogy a kattintott elem már rendelkezik-e 'clicked' osztállyal
+      const isAlreadyClicked = this.classList.contains("clicked");
+
       // Eltávolítjuk a 'clicked' osztályt az összes 'events-date' elemből
       eventsDates.forEach((d) => d.classList.remove("clicked"));
 
-      // Hozzáadjuk a 'clicked' osztályt a kattintott elemhez
-      this.classList.add("clicked");
-
       // Az összes esemény szakasz fade-out animálása
       const sections = document.querySelectorAll(".event-date-section");
-
       sections.forEach((section) => {
         if (section.classList.contains("visible")) {
           section.classList.add("fading-out");
@@ -157,16 +238,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
 
-      // Késleltetve megjelenítjük a kattintott dátumhoz tartozó szakaszt
-      setTimeout(() => {
-        const targetSectionId = `eventDateSection${this.id.substring(4)}`;
-        const targetSection = document.getElementById(targetSectionId);
+      if (!isAlreadyClicked) {
+        // Ha az elem még nincs 'clicked' állapotban, hozzáadjuk
+        this.classList.add("clicked");
 
-        if (targetSection) {
-          targetSection.classList.add("visible");
-          targetSection.style.display = "block"; // biztosítjuk a megjelenést
-        }
-      }, 400); // Késleltetés az animáció időtartamának megfelelően (csökkentve)
+        // Késleltetve megjelenítjük a kattintott dátumhoz tartozó szakaszt
+        setTimeout(() => {
+          const targetSectionId = `eventDateSection${this.id.substring(4)}`;
+          const targetSection = document.getElementById(targetSectionId);
+
+          if (targetSection) {
+            targetSection.classList.add("visible");
+            targetSection.style.display = "block"; // biztosítjuk a megjelenést
+          }
+        }, 400); // Késleltetés az animáció időtartamának megfelelően (csökkentve)
+      }
     });
   });
 });
