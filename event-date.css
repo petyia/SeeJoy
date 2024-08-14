@@ -124,12 +124,12 @@ a.all-event-date-link:hover {
   box-shadow: var(--popular-sh);
 
   transition: background-size 0.3s ease;
+  transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
-.event-date-card:hover {
-  background-size: 110%; /* Increase background size to 120% on hover */
-  cursor: pointer;
-}
-.event-date-card.first {
+
+.event-date-card {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background-color: white;
@@ -193,21 +193,12 @@ a.all-event-date-link:hover {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.event-date-line:hover .first:hover {
-  transform: scale(1.05);
+.event-date-card:hover {
+  background-size: 110%; /* Increase background size to 120% on hover */
   cursor: pointer;
 }
 
-.event-date-line:hover .second:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-
-.event-date-line:hover .third:hover {
-  transform: scale(1.05);
-  cursor: pointer;
-}
-.event-date-line:hover .fourth:hover {
+.event-date-line:hover .event-date-card:hover {
   transform: scale(1.05);
   cursor: pointer;
 }
@@ -459,4 +450,69 @@ a .event-date-price {
   width: 100vw;
   z-index: 20; /* Térkép alacsonyabb z-index a többi elemhez képest */
   display: none; /* Kezdetben rejtve */
+}
+
+/* Lenyíló naptár stílusa */
+.calendar-dropdown {
+  display: none; /* Alapértelmezésben rejtett */
+  position: absolute;
+  top: 25%;
+  right: 2%;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.calendar-table td:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-table .selected-date {
+  background-color: #3f51b5;
+  color: white;
+}
+
+#calendar-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#calendar-header button {
+  background-color: #f0f0f0;
+  border: none;
+  padding: 31px 26px;
+  cursor: pointer;
+}
+
+#calendar-header button:hover {
+  background-color: #ddd;
+}
+
+#calendar-header #month-year {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.calendar-table th.clicked,
+.calendar-table td.clicked {
+  background-color: var(--primary); /* Példa háttérszín */
+  color: var(--white); /* Példa szövegszín */
+  border-radius: 100%; /* Példa kerekítés */
 }

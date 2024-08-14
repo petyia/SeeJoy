@@ -1,55 +1,175 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // --- Naptár Generálás ---
+  var currentYear = new Date().getFullYear();
+  var currentMonth = new Date().getMonth();
+  var selectedDate = null;
+
+  function generateCalendar(year, month) {
+    var calendarBody = document.getElementById("calendar-body");
+    var monthYear = document.getElementById("month-year");
+    calendarBody.innerHTML = "";
+
+    var firstDay = new Date(year, month, 1).getDay();
+    var daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    if (firstDay === 0) {
+      firstDay = 6;
+    } else {
+      firstDay -= 1;
+    }
+
+    var date = 1;
+    for (var i = 0; i < 6; i++) {
+      var row = document.createElement("tr");
+
+      for (var j = 0; j < 7; j++) {
+        var cell = document.createElement("td");
+        if (i === 0 && j < firstDay) {
+          cell.textContent = "";
+        } else if (date > daysInMonth) {
+          break;
+        } else {
+          var cellDate = new Date(year, month, date);
+          cell.textContent = date;
+          cell.dataset.date = cellDate.toDateString();
+          cell.id = `date${cellDate
+            .toISOString()
+            .split("T")[0]
+            .replace(/-/g, "")}`; // Egyedi ID hozzáadása
+
+          if (cellDate.toDateString() === new Date().toDateString()) {
+            cell.classList.add("today");
+          }
+
+          cell.addEventListener("click", function () {
+            var selectedDateString = this.dataset.date;
+            selectedDate = new Date(selectedDateString);
+            setClickedDate(selectedDate);
+            showCardsForDate(selectedDate);
+          });
+
+          row.appendChild(cell);
+          date++;
+        }
+      }
+
+      calendarBody.appendChild(row);
+    }
+
+    var monthNames = [
+      "Január",
+      "Február",
+      "Március",
+      "Április",
+      "Május",
+      "Június",
+      "Július",
+      "Augusztus",
+      "Szeptember",
+      "Október",
+      "November",
+      "December",
+    ];
+    monthYear.textContent = monthNames[month] + " " + year;
+  }
+
+  function setClickedDate(date) {
+    var cells = document.querySelectorAll("#calendar-body td");
+    cells.forEach(function (cell) {
+      cell.classList.remove("clicked");
+      if (cell.dataset.date === date.toDateString()) {
+        cell.classList.add("clicked");
+      }
+    });
+  }
+
+  function showCardsForDate(date) {
+    var dateId = `eventDateSection${date.getFullYear()}${(
+      "0" +
+      (date.getMonth() + 1)
+    ).slice(-2)}${("0" + date.getDate()).slice(-2)}`;
+    var sections = document.querySelectorAll(".event-date-section");
+
+    sections.forEach(function (section) {
+      if (section.id === dateId) {
+        section.classList.remove("fading-out");
+        section.classList.add("visible");
+        section.style.display = "block"; // biztosítjuk a megjelenést
+      } else {
+        section.classList.remove("visible");
+        section.classList.add("fading-out");
+        section.style.display = "none"; // biztosítjuk a rejtést
+      }
+    });
+  }
+
+  document.getElementById("prev-month").addEventListener("click", function () {
+    currentMonth--;
+    if (currentMonth < 0) {
+      currentMonth = 11;
+      currentYear--;
+    }
+    generateCalendar(currentYear, currentMonth);
+  });
+
+  document.getElementById("next-month").addEventListener("click", function () {
+    currentMonth++;
+    if (currentMonth > 11) {
+      currentMonth = 0;
+      currentYear++;
+    }
+    generateCalendar(currentYear, currentMonth);
+  });
+
+  document
+    .getElementById("fa-calendar-days-cat")
+    .addEventListener("click", function () {
+      var calendarDropdown = document.getElementById("calendar-dropdown");
+      calendarDropdown.style.display =
+        calendarDropdown.style.display === "block" ? "none" : "block";
+    });
+
+  generateCalendar(currentYear, currentMonth);
+
+  // --- Mini Dátumok Generálása ---
   const eventMiniDate = document.querySelector(".event-mini-date");
 
   function generateDates(year) {
-    // Get today's date in Budapest time zone
     const today = new Date();
     const todayDate = new Date(
       today.toLocaleString("en-US", { timeZone: "Europe/Budapest" })
     );
-    const startDate = new Date(year, 0, 1); // January 1 of the given year
-    const endDate = new Date(year + 1, 0, 0); // December 31 of the given year
+    const startDate = new Date(year, 0, 1);
+    const endDate = new Date(year + 1, 0, 0);
 
-    // Clear existing dates
     eventMiniDate.innerHTML = "";
 
-    // Create a single events-line element to contain all events-date
     const eventsLineElem = document.createElement("div");
-    eventsLineElem.classList.add("events-line");
-    eventsLineElem.classList.add("small-gap");
+    eventsLineElem.classList.add("events-line", "small-gap");
 
-    // Initialize currentDate to today
-    let currentDate = new Date(todayDate); // Make a copy of todayDate
+    let currentDate = new Date(todayDate);
 
-    // Generate dates starting from today
     while (currentDate <= endDate) {
-      const dateStr = currentDate.toISOString().split("T")[0]; // YYYY-MM-DD
+      const dateStr = currentDate.toISOString().split("T")[0];
       const day = currentDate.getDate();
       const weekday = currentDate.toLocaleDateString("hu-HU", {
         weekday: "short",
       });
 
-      // Create event date element
       const eventsDateElem = document.createElement("div");
       eventsDateElem.classList.add("events-date");
       eventsDateElem.id = `date${dateStr.replace(/-/g, "")}`;
 
-      // Add 'first' and 'today' classes only for today's date
-      if (
-        currentDate.toISOString().split("T")[0] ===
-        todayDate.toISOString().split("T")[0]
-      ) {
+      if (dateStr === todayDate.toISOString().split("T")[0]) {
         eventsDateElem.classList.add("first", "today");
       }
 
-      // Create upper and lower container divs
       const upperContainer = document.createElement("div");
       upperContainer.classList.add("events-upper-container");
 
       const lowerContainer = document.createElement("div");
       lowerContainer.classList.add("events-lower-container");
 
-      // Create date and day elements
       const dateElem = document.createElement("div");
       dateElem.classList.add("events-cat-date");
       dateElem.textContent = day;
@@ -61,37 +181,67 @@ document.addEventListener("DOMContentLoaded", function () {
         dayElem.classList.add("weekend");
       }
 
-      // Append elements to containers
       upperContainer.appendChild(dateElem);
       lowerContainer.appendChild(dayElem);
 
-      // Append containers to event date element
       eventsDateElem.appendChild(upperContainer);
       eventsDateElem.appendChild(lowerContainer);
 
-      // Append event date element to events line element
       eventsLineElem.appendChild(eventsDateElem);
 
-      // Move to the next day
       currentDate.setDate(currentDate.getDate() + 1);
     }
 
-    // Append events line element to event mini date container
     eventMiniDate.appendChild(eventsLineElem);
   }
 
   generateDates(2024);
-});
 
-//1 - Típusok
-document.addEventListener("DOMContentLoaded", function () {
+  // --- Események Kattintása ---
+  const eventsDates = document.querySelectorAll(".events-date");
+
+  eventsDates.forEach((date) => {
+    date.addEventListener("click", function () {
+      const isAlreadyClicked = this.classList.contains("clicked");
+
+      eventsDates.forEach((d) => d.classList.remove("clicked"));
+
+      const sections = document.querySelectorAll(".event-date-section");
+      sections.forEach((section) => {
+        if (section.classList.contains("visible")) {
+          section.classList.add("fading-out");
+
+          section.addEventListener("animationend", function handler() {
+            section.classList.remove("fading-out", "visible");
+            section.style.display = "none";
+            section.removeEventListener("animationend", handler);
+          });
+        }
+      });
+
+      if (!isAlreadyClicked) {
+        this.classList.add("clicked");
+
+        setTimeout(() => {
+          const targetSectionId = `eventDateSection${this.id.substring(4)}`;
+          const targetSection = document.getElementById(targetSectionId);
+
+          if (targetSection) {
+            targetSection.classList.add("visible");
+            targetSection.style.display = "block";
+          }
+        }, 400);
+      }
+    });
+  });
+
+  // --- Görgetés Kezelése ---
   const catSection = document.querySelector(".event-mini");
   const scrollRightCatButton = document.querySelector(".scroll-right-cat");
   const scrollLeftCatButton = document.querySelector(".scroll-left-cat");
   const leftArrowContainer = document.querySelector(".cat-left-arrow");
   const rightArrowButton = document.getElementById("fa-chevron-right-cat");
 
-  // Ellenőrizzük, hogy az elemek léteznek-e
   if (
     !catSection ||
     !scrollRightCatButton ||
@@ -107,57 +257,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollWidth = catSection.scrollWidth;
     const clientWidth = catSection.clientWidth;
 
-    // Bal nyíl láthatóságának frissítése
-    if (scrollLeft > 0) {
-      leftArrowContainer.style.display = "block";
-    } else {
-      leftArrowContainer.style.display = "none";
-    }
-
-    // Jobb nyíl láthatóságának frissítése
-    if (scrollLeft < scrollWidth - clientWidth) {
-      rightArrowButton.style.display = "block";
-    } else {
-      rightArrowButton.style.display = "none";
-    }
+    leftArrowContainer.style.display = scrollLeft > 0 ? "block" : "none";
+    rightArrowButton.style.display =
+      scrollLeft < scrollWidth - clientWidth ? "block" : "none";
   }
 
-  // Görgetés jobbra
   scrollRightCatButton.addEventListener("click", () => {
-    catSection.scrollBy({
-      left: 300,
-      behavior: "smooth",
-    });
-    // Frissítjük a nyíl gombok láthatóságát a görgetés után
-    setTimeout(updateArrowVisibility, 300); // Várunk egy kicsit, hogy a görgetés befejeződjön
+    catSection.scrollBy({ left: 300, behavior: "smooth" });
+    setTimeout(updateArrowVisibility, 300);
   });
 
-  // Görgetés balra
   scrollLeftCatButton.addEventListener("click", () => {
-    catSection.scrollBy({
-      left: -300,
-      behavior: "smooth",
-    });
-    // Frissítjük a nyíl gombok láthatóságát a görgetés után
-    setTimeout(updateArrowVisibility, 300); // Várunk egy kicsit, hogy a görgetés befejeződjön
+    catSection.scrollBy({ left: -300, behavior: "smooth" });
+    setTimeout(updateArrowVisibility, 300);
   });
 
-  // Eseményfigyelő a scroll eseményhez a dinamikus frissítéshez
   catSection.addEventListener("scroll", updateArrowVisibility);
-
-  // Frissítjük a nyíl gombok láthatóságát kezdetben
   updateArrowVisibility();
-});
 
-//2 - Dátumok
-document.addEventListener("DOMContentLoaded", function () {
+  // --- Görgetés Kezelése Másik Szekcióban ---
   const catSectionDate = document.querySelector(".event-mini-date");
   const scrollRightCatButton2 = document.querySelector(".scroll-right-cat2");
   const scrollLeftCatButton2 = document.querySelector(".scroll-left-cat2");
   const leftArrowContainer2 = document.querySelector(".cat-left-arrow2");
   const rightArrowButton2 = document.getElementById("fa-chevron-right-cat2");
 
-  // Ellenőrizzük, hogy az elemek léteznek-e
   if (
     !catSectionDate ||
     !scrollRightCatButton2 ||
@@ -168,98 +292,31 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  function updateArrowVisibility() {
+  function updateArrowVisibilityDate() {
     const scrollLeft = catSectionDate.scrollLeft;
     const scrollWidth = catSectionDate.scrollWidth;
     const clientWidth = catSectionDate.clientWidth;
 
-    // Bal nyíl láthatóságának frissítése
-    if (scrollLeft > 0) {
-      leftArrowContainer2.style.display = "block";
-    } else {
-      leftArrowContainer2.style.display = "none";
-    }
-
-    // Jobb nyíl láthatóságának frissítése
-    if (scrollLeft < scrollWidth - clientWidth) {
-      rightArrowButton2.style.display = "block";
-    } else {
-      rightArrowButton2.style.display = "none";
-    }
+    leftArrowContainer2.style.display = scrollLeft > 0 ? "block" : "none";
+    rightArrowButton2.style.display =
+      scrollLeft < scrollWidth - clientWidth ? "block" : "none";
   }
 
-  // Görgetés jobbra
   scrollRightCatButton2.addEventListener("click", () => {
-    catSectionDate.scrollBy({
-      left: 300,
-      behavior: "smooth",
-    });
-    // Frissítjük a nyíl gombok láthatóságát a görgetés után
-    setTimeout(updateArrowVisibility, 300); // Várunk egy kicsit, hogy a görgetés befejeződjön
+    catSectionDate.scrollBy({ left: 300, behavior: "smooth" });
+    setTimeout(updateArrowVisibilityDate, 300);
   });
 
-  // Görgetés balra
   scrollLeftCatButton2.addEventListener("click", () => {
-    catSectionDate.scrollBy({
-      left: -300,
-      behavior: "smooth",
-    });
-    // Frissítjük a nyíl gombok láthatóságát a görgetés után
-    setTimeout(updateArrowVisibility, 300); // Várunk egy kicsit, hogy a görgetés befejeződjön
+    catSectionDate.scrollBy({ left: -300, behavior: "smooth" });
+    setTimeout(updateArrowVisibilityDate, 300);
   });
 
-  // Eseményfigyelő a scroll eseményhez a dinamikus frissítéshez
-  catSectionDate.addEventListener("scroll", updateArrowVisibility);
-
-  // Frissítjük a nyíl gombok láthatóságát kezdetben
-  updateArrowVisibility();
+  catSectionDate.addEventListener("scroll", updateArrowVisibilityDate);
+  updateArrowVisibilityDate();
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const eventsDates = document.querySelectorAll(".events-date");
-
-  eventsDates.forEach((date) => {
-    date.addEventListener("click", function () {
-      // Ellenőrizzük, hogy a kattintott elem már rendelkezik-e 'clicked' osztállyal
-      const isAlreadyClicked = this.classList.contains("clicked");
-
-      // Eltávolítjuk a 'clicked' osztályt az összes 'events-date' elemből
-      eventsDates.forEach((d) => d.classList.remove("clicked"));
-
-      // Az összes esemény szakasz fade-out animálása
-      const sections = document.querySelectorAll(".event-date-section");
-      sections.forEach((section) => {
-        if (section.classList.contains("visible")) {
-          section.classList.add("fading-out");
-
-          section.addEventListener("animationend", function handler() {
-            section.classList.remove("fading-out");
-            section.classList.remove("visible");
-            section.style.display = "none"; // Rejtjük a szekciót, miután az animáció befejeződött
-            section.removeEventListener("animationend", handler);
-          });
-        }
-      });
-
-      if (!isAlreadyClicked) {
-        // Ha az elem még nincs 'clicked' állapotban, hozzáadjuk
-        this.classList.add("clicked");
-
-        // Késleltetve megjelenítjük a kattintott dátumhoz tartozó szakaszt
-        setTimeout(() => {
-          const targetSectionId = `eventDateSection${this.id.substring(4)}`;
-          const targetSection = document.getElementById(targetSectionId);
-
-          if (targetSection) {
-            targetSection.classList.add("visible");
-            targetSection.style.display = "block"; // biztosítjuk a megjelenést
-          }
-        }, 400); // Késleltetés az animáció időtartamának megfelelően (csökkentve)
-      }
-    });
-  });
-});
-
+//Térkép
 document.addEventListener("DOMContentLoaded", function () {
   const mapButton = document.getElementById("map-button");
   const mapContainer = document.getElementById("map");

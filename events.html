@@ -515,17 +515,39 @@
             <div class="cat-date-btn">
               <h2 class="date-title">Mikor szeretnél programokat találni?</h2>
               <!-- <button class="scroll-right-cat">
-                <i
-                  class="fa-solid fa-chevron-right"
-                  id="fa-chevron-right-cat"
-                ></i>
+                <i class="fa-solid fa-chevron-right" id="fa-chevron-right-cat"></i>
               </button> -->
-
-              <i
-                class="fa-solid fa-calendar-days"
-                id="fa-calendar-days-cat"
-              ></i>
+              <div class="calendar-btn">
+                <i class="fa-solid fa-calendar-days" id="fa-calendar-days-cat"></i>
+              </div>
             </div>
+          
+            <!-- Naptár lenyíló tartalma -->
+            <div id="calendar-dropdown" style="display: none;">
+              <div id="calendar-header">
+                <button id="prev-month">&lt;</button>
+                <span id="month-year"></span>
+                <button id="next-month">&gt;</button>
+            </div>
+              <!-- Ide jön a naptár struktúrája, pl. egy táblázat, ami a napokat tartalmazza -->
+              <table class="calendar-table">
+                <thead>
+                  <tr>
+                    <th>H</th>
+                    <th>K</th>
+                    <th>Sze</th>
+                    <th>Cs</th>
+                    <th>P</th>
+                    <th>Szo</th>
+                    <th>V</th>
+                  </tr>
+                </thead>
+                <tbody id="calendar-body">
+                  <!-- JS generálja a hónap napjait -->
+                </tbody>
+              </table>
+            </div>
+            <!-- <div class="calendar-popup" id="calendar-popup" style="display: none;"></div> -->
             <div class="cat-date-line">
               <p class="date-year-month">Augusztus, 2024</p>
               <!-- <button class="scroll-right-cat">
@@ -561,6 +583,7 @@
             
             </div>
           </div>
+
 
           <div class="event-date-section" id="eventDateSection20240813">
             <div class="event-date-container">
@@ -1163,13 +1186,7 @@
           </div>
 
           <div class="event-date-section" id="eventDateSection20240814">
-            <div class="event-date-container">
-              <!-- <div class="event-date-first-row">
-                <h1 class="event-date-title">Augusztus 11.-i események</h1>
-                <a href="#" class="all-event-date-link"
-                  >Összes<i class="fa-solid fa-chevron-right"></i>
-                </a>
-              </div> -->
+            <div class="event-date-container">          
               <div class="up-c-scroll-container">
                 <div class="event-date-line" id="popular-line">
                   <!-- <div class="event-date-card" id="card30">
@@ -1424,7 +1441,7 @@
                       </div>
                     </div>
                   </div> -->
-                  <div class="event-date-card fourth" id="card33">
+                  <div class="event-date-card" id="card33">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
@@ -1433,7 +1450,7 @@
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
-                        <div class="heart-icon" 33">
+                        <div class="heart-icon">
                           <i
                             class="fa-solid fa-heart event-date-heart-icon-filled"
                           ></i>
