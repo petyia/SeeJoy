@@ -86,10 +86,10 @@ a.all-popular-link:hover {
 
 .popular-line {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
-  gap: 1.6rem;
-  width: 120%;
+  gap: 3.2rem;
+  width: 184%;
   padding: 1.6rem 0.8rem;
 
   flex-wrap: nowrap;
@@ -189,6 +189,12 @@ a.all-popular-link:hover {
   background-position: center center;
   z-index: -1;
   border-radius: 2.4rem;
+}
+
+.long-word {
+  overflow-wrap: break-word; /* Szó törése, ha szükséges */
+  word-break: break-all; /* Törés minden karakter előtt */
+  hyphens: auto; /* Automatikus szóelválasztás, ha támogatott */
 }
 
 /* Hover effect */

@@ -105,9 +105,9 @@ a.all-stories-link:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 132%;
+  width: 102%;
   padding: 2.4rem 0;
-  gap: 1.6rem;
+  gap: 5.6rem;
   margin-left: 0.4rem;
 
   flex-wrap: nowrap;
