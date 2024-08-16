@@ -100,10 +100,21 @@
 
 /* Reszponzív stílusok */
 @media screen and (max-width: 693px) {
+  body {
+    font-family: var(--body-font);
+    background-color: white;
+  }
+
+  .phone {
+    display: none;
+  }
+
   .header {
+    display: block;
     flex-direction: column;
     height: auto;
-    padding: 1.6rem;
+    padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+    width: 100%;
   }
 
   .img-logo-container {
@@ -116,13 +127,15 @@
   }
 
   .search-bar2 {
-    display: block;
+    display: flex !important;
   }
 
   .header-right-end {
     display: flex;
-    justify-content: flex-start; /* Balra igazítás */
+    justify-content: space-between; /* Balra igazítás */
     align-items: center; /* Függőleges középre igazítás */
+    padding: 1.6rem 0rem 0rem 0;
+    gap: 0;
   }
 
   .header-profile {
@@ -130,8 +143,7 @@
   }
 
   #head1 {
-    order: 2;
-    margin-left: auto; /* Jobb szélhez igazítás */
+    order: 3;
   }
 
   #head2 {
@@ -139,20 +151,187 @@
   }
 
   #head3 {
-    order: 3;
-    margin-left: 1rem; /* Távolság a #head1-től */
+    order: 2;
+    margin-left: auto; /* Jobb szélhez igazítás */
   }
 
   .button-body {
     display: none;
   }
+
+  .header-hello-container {
+    display: block !important;
+  }
+
+  h3.header-hello {
+    font-size: 2.8rem;
+    letter-spacing: -0.4px;
+    font-weight: 800;
+  }
+
+  .index-left-flex {
+    gap: 1.2rem;
+    width: 100% !important;
+  }
+
+  .container {
+    margin-bottom: 0.4rem;
+  }
+
+  .index-grid-container {
+    display: block;
+    margin: 0 1.6rem 0 1.6rem;
+  }
+
+  .stories-container {
+    padding: 0.8rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .stories-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+  }
+
+  .stories-scroll-container {
+    overflow-x: hidden;
+    padding: 0rem 0rem 0rem 0rem;
+    position: relative;
+  }
+
+  .nyilak-button {
+    display: none;
+  }
+
+  .stories-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 102%;
+    padding: 2.4rem 0 0.8rem 0;
+    gap: 3.6rem;
+    flex-wrap: nowrap;
+  }
+  .all-stories-link {
+    margin-right: 0.8rem;
+  }
+
+  .fa-solid.fa-chevron-right {
+    display: none;
+  }
+
+  .plus-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+    background-color: var(--primary);
+    border-radius: 50%;
+    transform: translate(15%, 0%);
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+  }
+
+  #story-plus-icon {
+    font-weight: 500;
+    color: var(--white);
+    font-size: 2rem;
+  }
+
+  .stories-card {
+    position: relative;
+    background-color: var(--grey);
+    border-radius: 1.6rem;
+    height: 4.8rem;
+    width: 4.8rem;
+    cursor: pointer;
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+
+  .popular-container {
+    padding: 0.8rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .p-l-scroll-container {
+    overflow-x: hidden;
+    position: relative;
+    padding: 0 0rem 0.8rem 0rem;
+  }
+
+  .popular-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+  }
+
+  .popular-line {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 2.4rem;
+    width: 300%;
+    padding: 1.6rem 0.4rem 0rem 0rem;
+    flex-wrap: nowrap;
+  }
+
+  .all-popular-link {
+    display: none;
+  }
+
+  .popular-lower-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background-color: var(--white);
+    border-radius: 1.6rem;
+    padding: 1.6em;
+    box-shadow: var(--popular-sh);
+  }
+
+  .popular-date {
+    border-radius: 1.2rem;
+    font-size: 1.6rem;
+
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .popular-card {
+    padding: 1.2rem !important;
+  }
+
+  .upcoming-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+  }
+
+  a.all-upcoming-link {
+    margin-right: 0.8rem;
+  }
+
+  .upcoming-line {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 2.4rem;
+    width: 100%;
+    padding: 0rem;
+    flex-wrap: nowrap;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  .header {
-    padding: 0 1rem;
-  }
-
   .img-logo {
     width: 7rem; /* kisebb logó a kisebb képernyőkön */
   }
@@ -176,5 +355,15 @@
 
   .notification-number {
     font-size: 8px; /* kisebb számok a jelzőn */
+  }
+
+  .popular-line {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1.6rem;
+    width: 350%;
+    padding: 1.6rem 0.4rem 0rem 0rem;
+    flex-wrap: nowrap;
   }
 }
