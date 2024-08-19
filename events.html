@@ -75,7 +75,7 @@
                 </button>
               </a>
             </div>
-            <div class="header-profile">
+            <div class="header-profile" id="head1">
               <div
                 class="notification-container"
                 id="notification-container"
@@ -234,7 +234,21 @@
                 </div>
               </div>
             </div>
-            <div class="header-profile">
+            <div class="header-profile" id="head3">
+              <form class="search-container" action="text" style="display: none;">
+                <input id="search-box" type="search"  class="search-box" name="q" />
+                <label for="search-box" >
+                  <i class="fa-solid fa-magnifying-glass search-icon"></i></label>
+                <input type="submit" id="search-submit" />
+              </form>
+              <!-- <form action="" class="search-bar2" style="display: none;" >
+              <input type="search" name="search" pattern=".*\S.*" required>
+              <button class="search-btn" type="submit">
+                <span>Search</span>
+              </button>
+            </form> -->
+          </div>
+            <div class="header-profile" id="head2">
               <div class="profile-img-container" data-tooltip="Fiók">
                 <img
                   src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
@@ -283,6 +297,8 @@
               </div>
             </div>
           </div>
+          <div class="header-hello-container" style="display: none;"><h3 class="header-hello" style="opacity: 0;">Helló, Lilla!</h3></div>
+        </div>
         </div>
       </nav>
 

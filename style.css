@@ -1355,9 +1355,10 @@ input[type="submit"]:hover {
   border: none;
   outline: none;
   box-shadow: none;
-  padding-left: 15px;
+  padding-left: 16px;
+  padding-right: 40px;
   cursor: text;
-  width: 200px;
+  width: 240px;
   border-radius: auto;
   background: var(--search-bg);
   color: var(--black);

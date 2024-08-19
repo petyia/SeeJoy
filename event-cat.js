@@ -351,3 +351,47 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// Érintőesemények inicializálása görgethető konténerekhez
+const initTouchEvents = (container, leftButton, rightButton) => {
+  let startX = 0;
+  let startScrollLeft = 0;
+  const scrollAmount = 1.5; // A görgetés mértékének beállítása
+
+  container.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    startScrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener("touchmove", (e) => {
+    const deltaX = (e.touches[0].clientX - startX) * scrollAmount;
+    container.scrollLeft = startScrollLeft - deltaX;
+    updateButtonStates(container, leftButton, rightButton);
+  });
+
+  container.addEventListener("scroll", () => {
+    updateButtonStates(container, leftButton, rightButton);
+  });
+};
+
+// Az események inicializálása a megfelelő HTML elemekhez
+
+const catSectionDate = document.querySelector(".cat-date-line"); // cat-date-line szekció
+const scrollLeftButton2 = document.querySelector(".scroll-left-cat2"); // balra gomb
+const scrollRightButton2 = document.querySelector(".scroll-right-cat2"); // jobbra gomb
+
+if (catSectionDate && scrollLeftButton2 && scrollRightButton2) {
+  initTouchEvents(catSectionDate, scrollLeftButton2, scrollRightButton2);
+}
+
+const storiesSection = document.querySelector(".events-line"); // events-line szekció
+const scrollLeftStoriesButton = document.querySelector(".scroll-left-cat"); // balra gomb
+const scrollRightStoriesButton = document.querySelector(".scroll-right-cat"); // jobbra gomb
+
+if (storiesSection && scrollLeftStoriesButton && scrollRightStoriesButton) {
+  initTouchEvents(
+    storiesSection,
+    scrollLeftStoriesButton,
+    scrollRightStoriesButton
+  );
+}

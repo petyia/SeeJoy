@@ -74,8 +74,8 @@ a.all-events-link:hover {
   width: 100%;
   align-items: center;
   justify-content: flex-end;
-  white-space: normal;
-  word-break: break-word;
+  /* white-space: normal;
+  word-break: break-word; */
   user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

@@ -518,3 +518,18 @@ a .event-date-price {
   color: var(--white); /* Példa szövegszín */
   border-radius: 100%; /* Példa kerekítés */
 }
+
+.cat-date-line,
+.events-line {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap; /* A sorban lévő elemek ne törjenek új sorba */
+  scroll-behavior: smooth; /* Sima görgetés */
+  -webkit-overflow-scrolling: touch; /* Jobb görgetési élmény érintőképernyőn */
+}
+
+/* Elrejti a görgetősávot, ha nem szükséges */
+.cat-date-line::-webkit-scrollbar,
+.events-line::-webkit-scrollbar {
+  display: none;
+}
