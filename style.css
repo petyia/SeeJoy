@@ -1120,7 +1120,7 @@ a.h5 {
   right: -4.5px;
 }
 
-.search-bar input[type="text"]:focus {
+/* .search-bar input[type="text"]:focus {
   outline: var(--grey) solid 2px transparent;
   color: var(--black);
   font-weight: 600;
@@ -1145,7 +1145,7 @@ input {
 }
 
 .search-bar2 {
-  display: none; /* Elrejti az elemet alapértelmezett állapotban */
+  display: none; /* Elrejti az elemet alapértelmezett állapotban 
 }
 
 .search-bar2 input,
@@ -1198,15 +1198,15 @@ input {
   background: var(--pale-grey);
   border-radius: 8rem;
   box-shadow: 0 0 0 0.1em #d9d9d9 inset;
-  transform: translate(20%, 0) scale(1);
+  transform: translate(0%, 0%) scale(1);
 }
 .search-btn {
   background: #171717;
   border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
   padding: 2em;
   position: relative;
-  transform: translate(0.25em, 0.25em) rotate(45deg) scale(0.3, 0.125);
-  transform-origin: 0 90%;
+  transform: translate(0%, 0%) rotate(45deg) scale(0.3, 0.115);
+  transform-origin: 0 100 %;
 }
 .search-btn:before,
 .search-btn:after {
@@ -1227,7 +1227,7 @@ input {
   background: #f1f1f1;
   border-radius: 0 0.25em 0.25em 0;
   top: 50%;
-  left: 46%;
+  left: 50%;
   width: 0.9em;
   height: 0.24em;
   transform: translate(0.2em, 0) rotate(45deg);
@@ -1241,11 +1241,11 @@ input {
 }
 
 /* Active state */
-.search-bar2 input:focus + .search-btn,
+/* .search-bar2 input:focus + .search-btn,
 .search-bar2 input:valid + .search-btn {
   background: var(--primary);
   border-radius: 50%;
-  transform: translate(-15%, 46%) scale(1.5);
+  transform: translate(-50%, 50%) scale(1.5);
 }
 .search-bar2 input:focus + .search-btn:before,
 .search-bar2 input:focus + .search-btn:after,
@@ -1326,4 +1326,67 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   opacity: 0.8;
+}  */
+
+.search-box {
+  transition: width 0.6s, border-radius 0.6s, background 0.6s, box-shadow 0.6s;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  /* background: #ebebeb; */
+}
+
+.search-box + label .search-icon {
+  color: black;
+}
+.search-box:hover {
+  /* color: white; */
+  background: var(--pale-grey);
+  /* box-shadow: 0 0 0 5px var(--primary); */
+}
+/* .search-box:hover + label .search-icon {
+  color: white;
+} */
+.search-box:focus {
+  transition: width 0.6s cubic-bezier(0, 1.22, 0.66, 1.39), border-radius 0.6s,
+    background 0.6s;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding-left: 15px;
+  cursor: text;
+  width: 200px;
+  border-radius: auto;
+  background: var(--search-bg);
+  color: var(--black);
+}
+.search-box:focus + label .search-icon {
+  color: var(--black);
+}
+.search-box:not(:focus) {
+  text-indent: -5000px;
+}
+
+#search-submit {
+  position: relative;
+  left: -5000px;
+}
+
+.search-icon {
+  position: relative;
+  top: 1px;
+  left: -32px;
+  color: white;
+  cursor: pointer;
+}
+
+.fa-magnifying-glass {
+  font-size: 2rem;
+}
+
+#search-submit {
+  position: absolute;
+  left: -9999px;
 }

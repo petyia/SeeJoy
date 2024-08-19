@@ -126,8 +126,12 @@
     display: none;
   }
 
-  .search-bar2 {
+  /* .search-bar2 {
     display: flex !important;
+  } */
+
+  .search-container {
+    display: block !important;
   }
 
   .header-right-end {
@@ -155,12 +159,43 @@
     display: none;
   }
 
+  .header-profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: auto; /* Csak annyi helyet foglaljon, amennyit szükséges */
+  }
+
+  .notification {
+    padding: 0.8rem;
+  }
+
+  .sub-menu-wrap-noti {
+    top: 60%;
+    right: 0%;
+
+    min-height: 90vh;
+    min-width: 100vw;
+  }
+
+  .sub-menu-wrap {
+    top: 60%;
+    right: 0%;
+    width: 100vw;
+  }
+
+  .profile-img {
+    width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 0.8rem;
+  }
+
   .header-hello-container {
     display: block !important;
   }
 
   h3.header-hello {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     letter-spacing: -0.4px;
     font-weight: 800;
   }
@@ -187,7 +222,7 @@
   }
 
   .stories-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: -0.4px;
   }
@@ -207,7 +242,7 @@
     justify-content: space-between;
     align-items: center;
     width: 102%;
-    padding: 2.4rem 0 0.8rem 0;
+    padding: 2.4rem 0 1.6rem 0;
     gap: 3.6rem;
     flex-wrap: nowrap;
   }
@@ -251,7 +286,7 @@
   }
 
   .popular-container {
-    padding: 0.8rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
@@ -264,7 +299,7 @@
   }
 
   .popular-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: -0.4px;
   }
@@ -305,8 +340,17 @@
     padding: 1.2rem !important;
   }
 
+  .up-c-scroll-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 22;
+    padding: 0 0 1.2rem 0;
+    gap: 2.4rem;
+  }
+
   .upcoming-title {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: -0.4px;
   }
@@ -319,8 +363,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: center; */
-    gap: 2.4rem;
+    align-items: center;
     width: 100%;
     padding: 0rem;
     flex-wrap: nowrap;
@@ -361,5 +404,17 @@
     width: 350%;
     padding: 1.6rem 0.4rem 0rem 0rem;
     flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .search-box:focus {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 295px) {
+  .search-box:focus {
+    width: 120px;
   }
 }

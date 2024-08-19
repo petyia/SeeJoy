@@ -231,6 +231,7 @@ a.all-popular-link:hover {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  z-index: 1;
 }
 
 .popular-date {

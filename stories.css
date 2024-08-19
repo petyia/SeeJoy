@@ -168,7 +168,7 @@ a.all-stories-link:hover {
   transition: all 0.4s ease-out;
 }
 
-.story-container {
+.story-link {
   position: relative;
 
   cursor: pointer;
@@ -322,17 +322,20 @@ a.all-stories-link:hover {
   transition: opacity 0.5s; /* Add a transition for the text opacity */
 }
 
-.story-container:hover .image-text {
+.story-link:hover .image-text,
+.story-link:active .image-text {
   opacity: 1;
 }
 
-.story-container:hover .stories-card {
+.story-link:hover .stories-card,
+.story-link:active .stories-card {
   /* filter: blur(2px); Apply blur on hover */
   filter: brightness(55%);
   transform: scale(1.5);
 }
 
-.story-container:hover .image-border::before {
+.story-link:hover .image-border::before,
+.story-link:active .image-border::before {
   content: " ";
   position: absolute;
   z-index: 51;
