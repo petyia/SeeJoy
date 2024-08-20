@@ -97,17 +97,16 @@ a.all-stories-link:hover {
 
 .stories-scroll-container {
   overflow-x: hidden; /* Display horizontal scroll bar */
-  padding: 0 2.4rem 1.2rem 2.4rem;
   position: relative;
 
-  -webkit-overflow-scrolling: touch;
+  padding: 0 2.4rem 1.2rem 2.4rem;
 }
 
 .stories-line {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 102%;
+  width: 122%;
   padding: 2.4rem 0;
   gap: 5.6rem;
   margin-left: 0.4rem;

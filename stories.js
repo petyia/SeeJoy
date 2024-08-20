@@ -1,34 +1,65 @@
-// const storiesLine = document.getElementById("stories-line");
-// let isDragging = false;
-// let startPositionX = 0;
-// let scrollLeft = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const storiesSection = document.querySelector(".stories-scroll-container");
+  const scrollLeftStoriesButton = document.querySelector(
+    ".scroll-left-stories"
+  );
+  const scrollRightStoriesButton = document.querySelector(
+    ".scroll-right-stories"
+  );
 
-// storiesLine.addEventListener("mousedown", (e) => {
-//   isDragging = true;
-//   startPositionX = e.clientX;
-//   scrollLeft = storiesLine.scrollLeft;
+  if (storiesSection && scrollLeftStoriesButton && scrollRightStoriesButton) {
+    const updateStoriesButtonStates = () => {
+      const maxScrollLeft =
+        storiesSection.scrollWidth - storiesSection.clientWidth;
+      scrollLeftStoriesButton.disabled = storiesSection.scrollLeft <= 0;
+      scrollRightStoriesButton.disabled =
+        storiesSection.scrollLeft >= maxScrollLeft;
+    };
 
-//   storiesLine.style.cursor = "grabbing";
-//   storiesLine.style.userSelect = "none";
-// });
+    scrollLeftStoriesButton.addEventListener("click", () => {
+      storiesSection.scrollBy({
+        left: -150,
+        behavior: "smooth",
+      });
+      setTimeout(updateStoriesButtonStates, 300);
+    });
 
-// document.addEventListener("mousemove", (e) => {
-//   if (!isDragging) return;
+    scrollRightStoriesButton.addEventListener("click", () => {
+      storiesSection.scrollBy({
+        left: 150,
+        behavior: "smooth",
+      });
+      setTimeout(updateStoriesButtonStates, 300);
+    });
 
-//   const deltaX = e.clientX - startPositionX;
-//   storiesLine.scrollLeft = scrollLeft - deltaX;
-// });
+    storiesSection.addEventListener("scroll", updateStoriesButtonStates);
+    updateStoriesButtonStates();
 
-// document.addEventListener("mouseup", () => {
-//   isDragging = false;
-//   storiesLine.style.cursor = "grab";
-//   storiesLine.style.userSelect = "auto";
-// });
+    // Touch Events
+    const initTouchEventsStories = (container, leftButton, rightButton) => {
+      let startX = 0;
+      let startScrollLeft = 0;
 
-// document.addEventListener("mouseleave", () => {
-//   if (isDragging) {
-//     isDragging = false;
-//     storiesLine.style.cursor = "grab";
-//     storiesLine.style.userSelect = "auto";
-//   }
-// });
+      container.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+        startScrollLeft = container.scrollLeft;
+      });
+
+      container.addEventListener("touchmove", (e) => {
+        const deltaX = e.touches[0].clientX - startX;
+        container.scrollLeft = startScrollLeft - deltaX;
+        updateStoriesButtonStates();
+      });
+
+      container.addEventListener("touchend", () => {
+        // Additional logic if needed
+      });
+    };
+
+    initTouchEventsStories(
+      storiesSection,
+      scrollLeftStoriesButton,
+      scrollRightStoriesButton
+    );
+  }
+});

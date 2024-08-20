@@ -849,7 +849,7 @@ a.h5 {
 
   margin-bottom: 2.4rem;
 
-  z-index: 9999;
+  z-index: 9998;
 
   box-shadow: var(--popular-sh);
 }
@@ -1390,4 +1390,14 @@ input[type="submit"]:hover {
 #search-submit {
   position: absolute;
   left: -9999px;
+}
+
+.fa-solid.filled {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.icon-inactive {
+  color: transparent; /* Szín elrejtése */
+  -webkit-text-stroke: 2px var(--black); /* Kontúros hatás */
 }

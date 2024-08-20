@@ -109,3 +109,6 @@ function toggleMenuNoti() {
 }
 
 //Notification fill
+
+//Search bar
+document.addEventListener("touchstart", function () {}, true);
