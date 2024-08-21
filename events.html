@@ -297,12 +297,20 @@
             <form class="search2-container" action="text" style="display: none;"  autocomplete="off">
               <input id="search2-box" type="search"  class="search2-box" name="q" placeholder="Keresés..."  autocomplete="off" />
               <label for="search2-box" >
-                <i class="fa-solid fa-magnifying-glass search-icon2"></i></label>
+                <i class="fa-solid fa-magnifying-glass search-icon2"></i>
+                </label>
+                <div class="right-flex-location-container phone-absolute" id="map-button">
+                  <div class="map-img event-phone-size-display-none">
+                    <i class="fa-solid fa-location-dot bp-location"></i>
+                  </div>
+                  <i class="fa-solid fa-location-dot bp-location event-phone-size-display-show"></i>
+                  <span class="location-name event-phone-size-display-show">Székesfehérvár</span>
+                </div>
               <input type="submit" id="search2-submit" />
             </form>
 
         </div>
-          <div class="header-hello-container" style="display: none;"><h3 class="header-hello" style="opacity: 0;">Helló, Lilla!</h3></div>
+          
         </div>
         </div>
       </nav>
@@ -396,20 +404,20 @@
     </div>
       <section class="events-section">
         <div class="events-container">
-          <div class="events-first-row">
-            <h1 class="events-title">Események</h1>
-            <div class="location-container">
-              <div class="left-flex-location-container">
-                <div class="text-info-location">
-                  <div class="location">Tartózkodási Hely</div>
-                  <span class="location-name">Budapest, HUN</span>
+          <div class="events-first-row phone-block">
+            <h1 class="events-title event-phone-size-display-none">Események</h1>
+            <div class="location-container phone-block">
+              <div class="left-flex-location-container phone-block">
+                <div class="text-info-location phone-block">
+                  <div class="location event-phone-size-display-none">Tartózkodási Hely</div>
+                  <span class="location-name event-phone-size-display-none">Budapest, HUN</span>
                 </div>
               </div>
 
-              <div class="right-flex-location-container" id="map-button">
-                <div class="map-img">
+              <div class="right-flex-location-container event-phone-size-display-none" id="map-button">
+                <div class="map-img event-phone-size-display-none">
                   <i class="fa-solid fa-location-dot bp-location"></i>
-                </div>
+                </div>   
               </div>
             </div>
           </div>
@@ -442,7 +450,7 @@
 
                   <div class="events-lower-container">
                     <div class="event-upper-info-container">
-                      <h3 class="h3 active">Neked ajánlott</h3>
+                      <h3 class="h3 active">Neked</h3>
                     </div>
                   </div>
                 </div>
@@ -550,8 +558,8 @@
             </div>
           
             <!-- Naptár lenyíló tartalma -->
-            <div id="calendar-dropdown" style="display: none;">
-              <div id="calendar-header">
+            <div class="calendar-dropdown" id="calendar-dropdown" style="display: none;">
+              <div class="calendar-header" id="calendar-header">
                 <button id="prev-month">&lt;</button>
                 <span id="month-year"></span>
                 <button id="next-month">&gt;</button>
@@ -569,7 +577,7 @@
                     <th>V</th>
                   </tr>
                 </thead>
-                <tbody id="calendar-body">
+                <tbody class="calendar-body" id="calendar-body">
                   <!-- JS generálja a hónap napjait -->
                 </tbody>
               </table>
@@ -583,7 +591,7 @@
                   id="fa-chevron-right-cat"
                 ></i>
               </button> -->
-              <p class="date-year-month">Szeptember, 2024</p>
+              <p class="date-year-month event-phone-size-display-none">Szeptember, 2024</p>
               <!-- <i
                 class="fa-solid fa-calendar-days"
                 id="fa-calendar-days-cat"

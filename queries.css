@@ -584,27 +584,30 @@
   /* EVENTS OLDAL */
 
   .events-container {
-    padding: 0rem 3.2rem;
+    padding: 0;
     padding-bottom: 24rem;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 1.6rem;
+  }
+
+  .scroll-container {
+    padding: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .scroll-container2 {
+    padding: 0.8rem 0rem 0rem 0rem;
+    border-radius: 0rem;
   }
 
   .event-mini::before {
-    content: "";
-    position: absolute;
-    width: 32px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 11;
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 5%,
-      rgba(255, 255, 255, 0) 100%
-    );
+    display: none;
+  }
+
+  .event-mini::after {
+    display: none;
   }
 
   .events-card.first {
@@ -632,45 +635,78 @@
     z-index: 11;
   }
 
+  .date-title {
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+
   .cat-date-line {
     gap: 3.2rem;
-    margin: 0.8rem 0rem 0 2.4rem;
+    margin: 0.8rem 2.4rem 0 2.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 11;
   }
 
-  .date-year-month {
+  .events-date {
+    height: 8.8rem;
+    width: 5.6rem;
+    /* height: 100vh;
+  width: 100%; */
+    border-radius: 3.2rem;
+    user-select: none; /* Megakadályozza a szöveg kijelölését */
+
+    /* box-shadow: var(--popular-sh); */
+  }
+  .events-date:hover {
+    background-color: var(--pale-grey);
+    cursor: pointer;
+  }
+  .events-date {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: transparent;
+    padding: 0rem 1.6rem 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: -0.8px;
+
+    transition: all 0.15s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-cat-date {
+    font-size: 2.4rem;
+  }
+
+  .event-day-text {
     font-size: 1.4rem;
+  }
+
+  .date-year-month {
+    font-size: 1.6rem;
     color: var(--grey);
     font-weight: 600;
     letter-spacing: -0.4px;
   }
 
-  .event-mini-date::before {
-    content: "";
-    position: absolute;
-    width: 36px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 11;
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 6%,
-      rgba(255, 255, 255, 0) 100%
-    );
+  .event-mini-date {
+    padding-bottom: 0rem;
   }
 
+  .event-mini-date::before {
+    display: none;
+  }
   .events-date.first {
     margin-left: 2.4rem;
   }
 
   .cat-date-btn {
     gap: 6.4rem;
-    margin: 0 0rem 0 2.4rem;
+    margin: 0 2.4rem 0 2.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -692,6 +728,57 @@
     display: flex;
     flex-direction: column;
     padding: 0rem 0.8rem 0.4rem 0.8rem;
+  }
+
+  .upper-img1-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/event-date1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .upper-img1-1-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/e-d1-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .upper-img1-2-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/e-d1-2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .upper-img2-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/event-date2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .upper-img3-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/event-date3.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .upper-img4-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/event-date4.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   .phone {
@@ -850,6 +937,27 @@
     display: none;
   }
 
+  /* #event-phone-size-display-none {
+    display: none;
+  }
+
+  #event-phone-size-display-show {
+    display: block;
+  } */
+
+  .bp-location.event-phone-size-display-show {
+    display: block;
+    font-size: 2.6rem;
+  }
+
+  .location-name.event-phone-size-display-show {
+    display: block;
+  }
+
+  .phone-block {
+    display: block;
+  }
+
   .events-title.event-phone-size-display-show {
     font-size: 2.4rem;
     display: block;
@@ -866,6 +974,379 @@
 
   #fa-sliders-cat.no-bx {
     box-shadow: none;
+  }
+
+  .cat-btns {
+    display: none;
+  }
+
+  .event-mini {
+    overflow-x: hidden; /* Display horizontal scroll bar */
+    background-color: var(--white);
+    width: 100%;
+  }
+
+  .events-line {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    gap: 1.6rem;
+    width: 100%;
+    padding: 0rem 1.6rem 0rem 0rem;
+
+    flex-wrap: nowrap;
+  }
+
+  .events-line.small-gap {
+    gap: 0.4rem;
+    padding: 1.6rem 1.6rem 2rem 0rem;
+  }
+
+  .events-card {
+    display: flex;
+    width: 16.8rem;
+    height: 5.2rem;
+
+    background-color: var(--white);
+    flex-shrink: 0; /* Ne zsugorodjon */
+    white-space: nowrap; /* Megakadályozza a szöveg törését, ha fontos */
+    overflow: hidden; /* Elrejti a szöveget, ha az túlnyúlik */
+    text-overflow: ellipsis; /* Három ponttal jelzi, ha túl hosszú a szöveg */
+    /* height: 100vh;
+    width: 100%; */
+    gap: 1.2rem;
+    border-radius: 1.6rem;
+
+    box-shadow: var(--popular-sh);
+
+    transition: background-size 0.3s ease;
+  }
+  .events-card:hover {
+    background-size: 110%; /* Increase background size to 120% on hover */
+    cursor: pointer;
+  }
+  .events-card.first {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--primary);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.second {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--yellow-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.third {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--pink-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.fourth {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--blue-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.fifth {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--green-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.sixth {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--purple-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-line:hover .first:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .events-line:hover .second:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .events-line:hover .third:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .events-line:hover .fourth:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .events-line:hover .fifth:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+  .events-line:hover .sixth:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+  }
+
+  .pop-img {
+    width: 100%;
+    height: 24rem;
+    border-radius: 2.4rem;
+  }
+
+  .events-upper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scroll-container::before {
+    left: 0;
+  }
+
+  .scroll-container::after {
+    right: 0;
+  }
+
+  .events-cat-img-1 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/myfeed.svg");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-2 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/funny.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-3 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/sports.svg");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-4 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/fashion.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-5 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/art.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-6 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/travel.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-lower-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-radius: 0.8rem;
+    /* padding: 1.6rem 0rem; */
+  }
+
+  .event-upper-info-container {
+    display: flex;
+    justify-content: center;
+
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  .h3 {
+    color: var(--black);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .active {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .clicked {
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px 1px !important;
+  }
+
+  .event-date-line {
+    padding: 0px 20px 20px 20px;
+  }
+
+  .event-mini-date::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 6%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .event-mini-date::after {
+    display: none;
   }
 }
 
@@ -945,54 +1426,6 @@
       to left,
       rgba(255, 255, 255, 1) 0%,
       rgba(255, 255, 255, 1) 60%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-
-  .event-mini-date {
-    padding-bottom: 0;
-  }
-
-  .events-line {
-    padding: 1.6rem 0rem 3.2rem 0rem;
-  }
-
-  .clicked {
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px 1px !important;
-  }
-
-  .event-date-line {
-    padding: 0px 20px 20px 20px;
-  }
-
-  .event-mini-date::before {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 11;
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 6%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-
-  .event-mini-date::after {
-    content: "";
-    position: absolute;
-    width: 40px;
-    height: 100%;
-    top: 0;
-    right: 0;
-    z-index: 10;
-    background: linear-gradient(
-      to left,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 1) 65%,
       rgba(255, 255, 255, 0) 100%
     );
   }

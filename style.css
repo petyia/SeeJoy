@@ -1244,7 +1244,7 @@ a.h5 {
 .search2-box {
   transition: border-radius 0.6s, background 0.6s, box-shadow 0.6s;
   width: 90vw;
-  height: 5.6rem;
+  height: 6.4rem;
   border-radius: 8rem;
 
   font-size: 1.6rem;
@@ -1255,7 +1255,7 @@ a.h5 {
   background: var(--search-bg);
   color: var(--black);
 
-  padding: 0.8rem 1.6rem 0.8rem 4.8rem;
+  padding: 0.8rem 1.6rem 0.8rem 5.6rem;
 
   box-sizing: border-box; /* Annak érdekében, hogy a padding ne növelje a teljes méretet */
 }
@@ -1263,7 +1263,7 @@ a.h5 {
 .search2-box + label .search-icon2 {
   color: var(--grey);
   margin-left: 0.8rem;
-  font-size: 2rem;
+  font-size: 2.6rem;
 }
 
 .search2-box:hover {
@@ -1282,6 +1282,26 @@ a.h5 {
   transform: translateY(-50%); /* Függőlegesen középre igazítva */
   color: var(--black);
   cursor: pointer;
+}
+
+.right-flex-location-container.phone-absolute {
+  position: absolute;
+  top: 50%;
+  right: 10px; /* Az ikon helyzetének beállítása a bal oldalra */
+  transform: translateY(-50%); /* Függőlegesen középre igazítva */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.6rem;
+  border-radius: 8rem;
+  min-width: 10rem; /* Minimális szélesség, hogy ne legyen túl kicsi */
+  max-width: 90%; /* Maximális szélesség, hogy ne legyen túl nagy */
+  background-color: var(--white);
+  flex-shrink: 0; /* Ne zsugorodjon */
+  white-space: nowrap; /* Megakadályozza a szöveg törését, ha fontos */
+  overflow: hidden; /* Elrejti a szöveget, ha az túlnyúlik */
+  text-overflow: ellipsis; /* Három ponttal jelzi, ha túl hosszú a szöveg */
 }
 
 .fa-magnifying-glass {
@@ -1317,3 +1337,15 @@ a.h5 {
 .event-phone-size-display-show {
   display: none;
 }
+
+.bp-location.event-phone-size-display-show {
+  display: none;
+}
+
+.location-name.event-phone-size-display-show {
+  display: none;
+}
+
+/* #event-phone-size-display-show {
+  display: none;
+} */
