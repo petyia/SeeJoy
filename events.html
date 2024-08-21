@@ -77,7 +77,7 @@
             </div>
             <div class="header-profile" id="head1">
               <div
-                class="notification-container"
+                class="notification-container event-phone-size-display-none"
                 id="notification-container"
                 onclick="toggleMenuNoti()"
               >
@@ -91,7 +91,7 @@
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    class="feather feather-bell"
+                    class="feather feather-bell event-phone-size-display-none"
                   >
                     <path
                       d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
@@ -99,7 +99,7 @@
                   </svg>
                 </div>
               </div>
-              <div class="sub-menu-wrap-noti" id="subMenuNoti">
+              <div class="sub-menu-wrap-noti event-phone-size-display-none" id="subMenuNoti">
                 <div class="sub-menu-noti">
                   <div class="stories-title">Értesítések</div>
 
@@ -233,31 +233,25 @@
                   </div>
                 </div>
               </div>
+
+              <div class="event-phone-icon"><i class="fa-solid fa-map" id="map-button"></i></div>
+              
             </div>
-            <div class="header-profile" id="head3">
-              <form class="search-container" action="text" style="display: none;">
-                <input id="search-box" type="search"  class="search-box" name="q" />
-                <label for="search-box" >
-                  <i class="fa-solid fa-magnifying-glass search-icon"></i></label>
-                <input type="submit" id="search-submit" />
-              </form>
-              <!-- <form action="" class="search-bar2" style="display: none;" >
-              <input type="search" name="search" pattern=".*\S.*" required>
-              <button class="search-btn" type="submit">
-                <span>Search</span>
-              </button>
-            </form> -->
+            <div class="header-profile" id="head4">
+            
+
+             <h1 class="events-title event-phone-size-display-show">Események</h1>
+
           </div>
             <div class="header-profile" id="head2">
-              <div class="profile-img-container" data-tooltip="Fiók">
+              <div class="profile-img-container event-phone-size-display-none" data-tooltip="Fiók" >
                 <img
                   src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
                   class="profile-img"
                   onclick="toggleMenu()"
                   data-tooltip="Fiók"
                 />
-              </div>
-
+              </div>   
               <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                   <div class="user-info">
@@ -295,8 +289,19 @@
                   </a>
                 </div>
               </div>
+
+              <div class="event-phone-icon"><i class="fa-solid fa-sliders" id="fa-sliders-cat no-bx"></i></div>
             </div>
           </div>
+          <div class="header-profile">
+            <form class="search2-container" action="text" style="display: none;"  autocomplete="off">
+              <input id="search2-box" type="search"  class="search2-box" name="q" placeholder="Keresés..."  autocomplete="off" />
+              <label for="search2-box" >
+                <i class="fa-solid fa-magnifying-glass search-icon2"></i></label>
+              <input type="submit" id="search2-submit" />
+            </form>
+
+        </div>
           <div class="header-hello-container" style="display: none;"><h3 class="header-hello" style="opacity: 0;">Helló, Lilla!</h3></div>
         </div>
         </div>

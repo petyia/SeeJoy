@@ -3,7 +3,7 @@
   --primary-light: #fff6f5ff;
   --primary-light-darker: #ffd7e1;
   --black: #0e0e0e;
-  --pale-grey: #f0f2f5;
+  --pale-grey: #f9faff;
   /* --pale-grey: #e4e6eb; */
   /* --pale-grey: #f9faff; */
   --grey: #aeb0ba;
@@ -39,14 +39,25 @@
     top: 88%;
     right: 6%;
     width: 32rem;
-    max-height: 64vh;
+    max-height: 80vh;
     border-radius: 1.6rem;
     display: none;
     z-index: 9998;
     overflow: auto;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-      rgba(17, 17, 26, 0.05) 0px 8px 32px;
     transition: all 0.08s;
+    z-index: 999999;
+    box-shadow: none;
+  }
+
+  .sub-menu {
+    box-shadow: rgba(17, 17, 26, 0.2) 0px 12px 10px;
+  }
+
+  .sub-menu-noti {
+    background: var(--white);
+    padding: 1.6rem 2.4rem;
+    /* margin: 1.6rem; */
+    border-radius: 1.6rem;
   }
 
   .sub-menu-wrap {
@@ -287,7 +298,8 @@
     display: block;
     flex-direction: column;
     height: auto;
-    padding: 0.8rem 1.6rem 0.8rem 1.6rem;
+    /* padding: 0.8rem 1.6rem 0.8rem 1.6rem; */
+    padding: 0;
     width: 100%;
   }
 
@@ -300,11 +312,19 @@
     display: none;
   }
 
+  .search2-bar {
+    display: none;
+  }
+
   /* .search-bar2 {
     display: flex !important;
   } */
 
   .search-container {
+    display: block !important;
+  }
+
+  .search2-container {
     display: block !important;
   }
 
@@ -314,6 +334,14 @@
     align-items: center; /* Függőleges középre igazítás */
     padding: 1.6rem 0rem 0rem 0;
     gap: 0;
+  }
+
+  .profile-img-container {
+    margin-left: 1.6rem;
+  }
+
+  .notification-container {
+    margin-right: 1.6rem;
   }
 
   #head1 {
@@ -327,6 +355,10 @@
   #head3 {
     order: 2;
     margin-left: auto; /* Jobb szélhez igazítás */
+  }
+
+  #head4 {
+    order: 2;
   }
 
   .button-body {
@@ -345,15 +377,17 @@
   }
 
   .sub-menu-wrap-noti {
-    top: 60%;
+    top: 64%;
     right: 0%;
 
-    min-height: 90vh;
+    height: 100vh;
     min-width: 100vw;
+
+    box-shadow: none;
   }
 
   .sub-menu-wrap {
-    top: 60%;
+    top: 64%;
     right: 0%;
     width: 100vw;
   }
@@ -365,6 +399,8 @@
   }
 
   .header-hello-container {
+    margin-left: 1.6rem;
+    margin-top: 0.8rem;
     display: block !important;
   }
 
@@ -657,12 +693,7 @@
     flex-direction: column;
     padding: 0rem 0.8rem 0.4rem 0.8rem;
   }
-}
 
-@media screen and (max-width: 660px) {
-  #map-button {
-    display: none;
-  }
   .phone {
     margin-bottom: 0;
     border-radius: 0;
@@ -671,6 +702,10 @@
     width: 100%;
 
     overflow: visible; /* Engedi a tartalom kilógását */
+  }
+
+  .phone #map-button {
+    display: none;
   }
 
   .phone-footer {
@@ -793,8 +828,44 @@
     z-index: 9999;
 
     margin: 0 auto; /* Középre igazítás */
+    /* 
+    border: 4px solid var(--white);
+    box-shadow: var(--popular-sh); */
 
-    box-shadow: 0 0 0 5px var(--white); /* Fehér kör a háttérként */
+    box-shadow: 0 0 0 5px var(--white), 0 -9px 14px -5px rgba(0, 0, 0, 0.25); /* Árnyék, ami csak felül látszik */
+  }
+
+  .plus-circle.story-circle.tr-nav.bx-sh::before {
+    box-shadow: var(--white);
+    height: 6rem;
+    width: 6rem;
+    background-color: var(--white);
+  }
+
+  .bx-sh {
+    box-shadow: var(--popular-sh);
+  }
+
+  .event-phone-size-display-none {
+    display: none;
+  }
+
+  .events-title.event-phone-size-display-show {
+    font-size: 2.4rem;
+    display: block;
+  }
+
+  .event-phone-icon {
+    display: block;
+    font-size: 2rem;
+
+    background-color: var(--white);
+    border-radius: 50%;
+    padding: 2.4rem;
+  }
+
+  #fa-sliders-cat.no-bx {
+    box-shadow: none;
   }
 }
 
@@ -812,7 +883,16 @@
     height: 3.6rem; /* kisebb magasság mobilon */
   }
 
+  .search2-bar {
+    padding: 0 2rem; /* csökkentett padding */
+    height: 3.6rem; /* kisebb magasság mobilon */
+  }
+
   .search-bar input {
+    font-size: 1.4rem; /* kisebb betűméret mobilon */
+  }
+
+  .search2-bar input {
     font-size: 1.4rem; /* kisebb betűméret mobilon */
   }
 
@@ -1062,8 +1142,10 @@
   .sub-menu-wrap-noti {
     top: 60%;
     right: 0%;
-    min-height: 90vh;
+    height: 100vh;
     width: 100vw;
+
+    box-shadow: none;
   }
 
   .user-info {

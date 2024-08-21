@@ -2,7 +2,7 @@
   --primary: #ff5483;
   --primary-light: #fff6f5ff;
   --black: #0e0e0e;
-  --pale-grey: #f0f2f5;
+  --pale-grey: #f9faff;
   /* --pale-grey: #e4e6eb; */
   /* --pale-grey: #f9faff; */
   --grey: #aeb0ba;
@@ -198,25 +198,60 @@ a.all-popular-link:hover {
 }
 
 /* Hover effect */
-.popular-card.second:hover {
+.popular-card:link,
+.popular-card:visited {
+  transform: none; /* Example hover scale */
+  cursor: pointer;
+}
+
+.popular-card:hover,
+.popular-card:active {
   transform: scale(1.05); /* Example hover scale */
   cursor: pointer;
 }
-.popular-line:hover .first:hover {
+
+.popular-line:link .first:link,
+.popular-line:visited .first:visited {
+  transform: none;
+  cursor: pointer;
+}
+
+.popular-line:link .second:link,
+.popular-line:visited .second:visited {
+  transform: none;
+  cursor: pointer;
+}
+
+.popular-line:link .third:link,
+.popular-line:visited .third:visited {
+  transform: none;
+  cursor: pointer;
+}
+.popular-line:link .fourth:link,
+.popular-line:visited .fourth:visited {
+  transform: none;
+  cursor: pointer;
+}
+
+.popular-line:hover .first:hover,
+.popular-line:active .first:active {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.popular-line:hover .second:hover {
+.popular-line:hover .second:hover,
+.popular-line:active .second:active {
   transform: scale(1.05);
   cursor: pointer;
 }
 
-.popular-line:hover .third:hover {
+.popular-line:hover .third:hover,
+.popular-line:active .third:active {
   transform: scale(1.05);
   cursor: pointer;
 }
-.popular-line:hover .fourth:hover {
+.popular-line:hover .fourth:hover,
+.popular-line:active .fourth:active {
   transform: scale(1.05);
   cursor: pointer;
 }
