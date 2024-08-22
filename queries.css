@@ -31,6 +31,22 @@
     margin: 2rem 0 0 4rem;
     gap: 4rem;
   }
+
+  .event-mini-date::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
 }
 
 @media (max-width: 956px) {
@@ -268,7 +284,7 @@
   .event-mini-date::after {
     content: "";
     position: absolute;
-    width: 160px;
+    width: 60px;
     height: 100%;
     top: 0;
     right: 0;
@@ -332,7 +348,7 @@
     display: flex;
     justify-content: space-between; /* Balra igazítás */
     align-items: center; /* Függőleges középre igazítás */
-    padding: 1.6rem 0rem 0rem 0;
+    padding: 0.8rem 0rem 0.8rem 0;
     gap: 0;
   }
 
@@ -342,6 +358,10 @@
 
   .notification-container {
     margin-right: 1.6rem;
+  }
+
+  .sub-menu-noti {
+    border-radius: 0;
   }
 
   #head1 {
@@ -369,7 +389,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: auto; /* Csak annyi helyet foglaljon, amennyit szükséges */
+    min-width: auto;
+    margin-top: 1.6rem;
   }
 
   .notification {
@@ -400,7 +421,7 @@
 
   .header-hello-container {
     margin-left: 1.6rem;
-    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
     display: block !important;
   }
 
@@ -421,7 +442,7 @@
 
   .index-grid-container {
     display: block;
-    margin: 0 1.6rem 0 1.6rem;
+    margin: 0;
   }
 
   .stories-container {
@@ -435,6 +456,7 @@
     font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: -0.4px;
+    margin-left: 1.6rem;
   }
 
   .stories-scroll-container {
@@ -464,6 +486,28 @@
     display: none;
   }
 
+  #next-month .fa-solid.fa-chevron-right {
+    display: block;
+    font-size: 2.4rem;
+  }
+
+  #next-month .fa-solid.fa-chevron-left {
+    display: block;
+    font-size: 2.4rem;
+  }
+
+  #next-month .fa-solid.fa-chevron-right:hover {
+    color: var(--primary);
+  }
+
+  #calendar-header button {
+    background-color: transparent;
+    border: none;
+    padding: 1.6rem;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
   .plus-circle {
     display: flex;
     justify-content: center;
@@ -475,6 +519,7 @@
     transform: translate(15%, 0%);
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+    margin-left: 1.6rem;
   }
 
   #story-plus-icon {
@@ -514,6 +559,7 @@
     font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: -0.4px;
+    margin-left: 1.6rem;
   }
 
   .popular-line {
@@ -552,6 +598,10 @@
     padding: 1.2rem !important;
   }
 
+  .popular-card.first {
+    margin-left: 1.6rem;
+  }
+
   .up-c-scroll-container {
     display: flex;
     flex-direction: column;
@@ -559,6 +609,15 @@
     z-index: 22;
     padding: 0 0 1.2rem 0;
     gap: 2.4rem;
+  }
+
+  .upcoming-section {
+    width: auto;
+    height: auto;
+    /* background-color: var(--white); */
+    margin: 0rem auto;
+    border-radius: 1.6rem;
+    margin: 0 1.6rem 12rem 1.6rem;
   }
 
   .upcoming-title {
@@ -588,7 +647,7 @@
     padding-bottom: 24rem;
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
+    gap: 0;
   }
 
   .scroll-container {
@@ -598,7 +657,7 @@
   }
 
   .scroll-container2 {
-    padding: 0.8rem 0rem 0rem 0rem;
+    padding: 1.6rem 0rem 0rem 0rem;
     border-radius: 0rem;
   }
 
@@ -701,7 +760,7 @@
     display: none;
   }
   .events-date.first {
-    margin-left: 2.4rem;
+    margin-left: 0.8rem;
   }
 
   .cat-date-btn {
@@ -919,7 +978,7 @@
     border: 4px solid var(--white);
     box-shadow: var(--popular-sh); */
 
-    box-shadow: 0 0 0 5px var(--white), 0 -9px 14px -5px rgba(0, 0, 0, 0.25); /* Árnyék, ami csak felül látszik */
+    box-shadow: 0 0 0 5px var(--white), 0 -5px 10px -6px rgba(0, 0, 0, 0.6);
   }
 
   .plus-circle.story-circle.tr-nav.bx-sh::before {
@@ -952,6 +1011,7 @@
 
   .location-name.event-phone-size-display-show {
     display: block;
+    font-size: 1.4rem;
   }
 
   .phone-block {
@@ -969,7 +1029,8 @@
 
     background-color: var(--white);
     border-radius: 50%;
-    padding: 2.4rem;
+    padding: 0.8rem;
+    margin: 0 1.6rem;
   }
 
   #fa-sliders-cat.no-bx {
@@ -992,7 +1053,7 @@
     align-items: center;
     gap: 1.6rem;
     width: 100%;
-    padding: 0rem 1.6rem 0rem 0rem;
+    padding: 1.6rem 1.6rem 1.6rem 0rem;
 
     flex-wrap: nowrap;
   }
@@ -1454,16 +1515,7 @@
     flex-wrap: nowrap;
   }
   .cat-btns {
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-    gap: 0.8rem;
-    margin-right: 2.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 11;
+    display: none;
   }
 
   .event-mini::after {

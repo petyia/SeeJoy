@@ -304,7 +304,7 @@
                     <i class="fa-solid fa-location-dot bp-location"></i>
                   </div>
                   <i class="fa-solid fa-location-dot bp-location event-phone-size-display-show"></i>
-                  <span class="location-name event-phone-size-display-show">Székesfehérvár</span>
+                  <span class="location-name event-phone-size-display-show">Budapest</span>
                 </div>
               <input type="submit" id="search2-submit" />
             </form>
@@ -560,9 +560,15 @@
             <!-- Naptár lenyíló tartalma -->
             <div class="calendar-dropdown" id="calendar-dropdown" style="display: none;">
               <div class="calendar-header" id="calendar-header">
-                <button id="prev-month">&lt;</button>
+                <button id="prev-month"><i
+                  class="fa-solid fa-chevron-left ny-date"
+                  id="fa-chevron-left-cat"
+                ></i></button>
                 <span id="month-year"></span>
-                <button id="next-month">&gt;</button>
+                <button id="next-month"><i
+                  class="fa-solid fa-chevron-right ny-date"
+                  id="fa-chevron-right-cat"
+                ></i></button>
             </div>
               <!-- Ide jön a naptár struktúrája, pl. egy táblázat, ami a napokat tartalmazza -->
               <table class="calendar-table">
@@ -1697,11 +1703,11 @@
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number"23</div>
+                            <div class="event-date-number">23</div>
                             <div class="event-date-month">Aug</div>
                           </div>
                         </div>
-                        <div class="heart-icon" 21">
+                        <div class="heart-icon">
                           <i
                             class="fa-solid fa-heart event-date-heart-icon-filled"
                           ></i>
@@ -1901,20 +1907,21 @@
       </section>
     </main>
     <footer></footer>
+    <script src="gombok-ani.js"></script>
+    <script src="script.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- <script src="event-date.js"></script> -->
-    <script src="event-cat.js"></script>
     <!-- <script src="dynamic-dates.js"></script> -->
-    <script src="script.js"></script>
     <script src="heart.js"></script>
     
     <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    type="module"
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
     ></script>
     <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    nomodule
+    src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="event-cat.js"></script>
   </body>
 </html>

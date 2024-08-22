@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // --- Naptár Generálás ---
   var currentYear = new Date().getFullYear();
   var currentMonth = new Date().getMonth();
-  var selectedDate = null;
 
   function generateCalendar(year, month) {
     var calendarBody = document.getElementById("calendar-body");
@@ -11,31 +9,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var firstDay = new Date(year, month, 1).getDay();
     var daysInMonth = new Date(year, month + 1, 0).getDate();
-
-    if (firstDay === 0) {
-      firstDay = 6;
-    } else {
-      firstDay -= 1;
-    }
-
+    var lastDayOfPreviousMonth = new Date(year, month, 0).getDate();
+    var totalDays = daysInMonth + (firstDay === 0 ? 6 : firstDay - 1);
+    var startDay = firstDay === 0 ? 6 : firstDay - 1;
     var date = 1;
-    for (var i = 0; i < 6; i++) {
+
+    // Kiszámítjuk, hány sorra lesz szükség
+    var rowsNeeded = Math.ceil(totalDays / 7);
+
+    for (var i = 0; i < rowsNeeded; i++) {
       var row = document.createElement("tr");
 
       for (var j = 0; j < 7; j++) {
         var cell = document.createElement("td");
-        if (i === 0 && j < firstDay) {
-          cell.textContent = "";
+
+        if (i === 0 && j < startDay) {
+          // Az előző hónap napjai az első sorban
+          var previousMonthDate = new Date(
+            year,
+            month - 1,
+            lastDayOfPreviousMonth - startDay + j + 1
+          );
+          cell.textContent = previousMonthDate.getDate();
+          cell.dataset.date = previousMonthDate.toDateString();
+          cell.classList.add("inactive");
         } else if (date > daysInMonth) {
-          break;
+          // A következő hónap napjai
+          var nextMonthDate = new Date(year, month + 1, date - daysInMonth);
+          cell.textContent = nextMonthDate.getDate();
+          cell.dataset.date = nextMonthDate.toDateString();
+          cell.classList.add("inactive");
+          date++;
         } else {
+          // Az aktuális hónap napjai
           var cellDate = new Date(year, month, date);
           cell.textContent = date;
           cell.dataset.date = cellDate.toDateString();
-          cell.id = `date${cellDate
-            .toISOString()
-            .split("T")[0]
-            .replace(/-/g, "")}`; // Egyedi ID hozzáadása
 
           if (cellDate.toDateString() === new Date().toDateString()) {
             cell.classList.add("today");
@@ -43,14 +52,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
           cell.addEventListener("click", function () {
             var selectedDateString = this.dataset.date;
-            selectedDate = new Date(selectedDateString);
+            var selectedDate = new Date(selectedDateString);
             setClickedDate(selectedDate);
             showCardsForDate(selectedDate);
           });
 
-          row.appendChild(cell);
           date++;
         }
+
+        row.appendChild(cell);
       }
 
       calendarBody.appendChild(row);
@@ -94,11 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (section.id === dateId) {
         section.classList.remove("fading-out");
         section.classList.add("visible");
-        section.style.display = "block"; // biztosítjuk a megjelenést
+        section.style.display = "block";
       } else {
         section.classList.remove("visible");
         section.classList.add("fading-out");
-        section.style.display = "none"; // biztosítjuk a rejtést
+        section.style.display = "none";
       }
     });
   }

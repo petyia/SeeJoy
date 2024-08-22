@@ -699,7 +699,7 @@ a.all-events-link:hover {
 .event-mini-date::after {
   content: "";
   position: absolute;
-  width: 240px; /* Adjust the size of the soft edge */
+  width: 100px; /* Adjust the size of the soft edge */
   height: 100%;
   top: 0;
   right: 0;
@@ -707,29 +707,32 @@ a.all-events-link:hover {
   background: linear-gradient(
     to left,
     rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 1) 50%,
+    rgba(255, 255, 255, 1) 60%,
     rgba(255, 255, 255, 0) 100%
   );
 }
 
 #fa-calendar-days-cat {
   font-size: 2.4rem;
-
   background-color: var(--white);
   border-radius: 50%;
   padding: 1.6rem;
-
-  /* box-shadow: rgba(12, 9, 41, 0.24) 0px 48px 100px 0px; */
-
-  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 16px 48px 0px; */
-
   transition: all 0.2s ease-in-out;
 }
 
 #fa-calendar-days-cat:hover {
+  background-color: var(--pale-grey);
+  cursor: pointer;
+}
+
+#fa-calendar-days-cat.active {
   color: var(--white);
   background-color: var(--primary);
-  cursor: pointer;
+}
+
+/* Animáció a kattintásra */
+#fa-calendar-days-cat.button-animation {
+  animation: scaleUp 0.2s ease-in-out;
 }
 
 .date-cat-btn {

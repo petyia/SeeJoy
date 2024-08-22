@@ -8,7 +8,7 @@
   --grey: #aeb0ba;
   --white: #ffffff;
   --ice-blue: #e5e9fd;
-  --gradient: linear-gradient(to right bottom, #455efd, #ff5483#f46e4b);
+  --gradient: linear-gradient(to right bottom, #455efd, #ff5483, #f46e4b);
   --search-bg: var(--pale-grey);
   --body-font: "Nunito", sans-serif;
 
@@ -480,12 +480,13 @@ a .event-date-price {
 }
 
 .calendar-table {
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 
 .calendar-table th {
-  padding: 5px;
+  padding: 8px;
   text-align: center;
   border: none;
   background-color: var(--primary);
@@ -493,15 +494,16 @@ a .event-date-price {
   cursor: pointer;
 }
 .calendar-table th:first-child {
-  border-top-left-radius: 2rem;
+  border-top-left-radius: 1.4rem;
 }
 
 .calendar-table th:last-child {
-  border-top-right-radius: 2rem;
+  border-top-right-radius: 1.4rem;
 }
 
 .calendar-table td {
-  padding: 5px;
+  padding: 8px;
+  width: auto;
   text-align: center;
   border: none;
   background-color: var(--pale-grey);
@@ -521,7 +523,7 @@ a .event-date-price {
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   margin-bottom: 10px;
   padding: 0.8rem;
@@ -532,11 +534,11 @@ a .event-date-price {
   border: none;
   padding: 1.2rem;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 5 0%;
 }
 
 #calendar-header button:hover {
-  background-color: var(--primary);
+  background-color: transparent;
 }
 
 #calendar-header #month-year {
@@ -548,7 +550,12 @@ a .event-date-price {
 .calendar-table td.clicked {
   background-color: var(--primary); /* Példa háttérszín */
   color: var(--white); /* Példa szövegszín */
-  border-radius: 100%; /* Példa kerekítés */
+  border-radius: 50%;
+}
+
+.calendar-table td.inactive {
+  color: var(--grey); /* Halvány szín a szövegnek */
+  cursor: default;
 }
 
 .cat-date-line,
