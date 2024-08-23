@@ -41,7 +41,7 @@
   gap: 4.8rem;
 }
 
-.events-title {
+.page-title {
   font-size: 4rem;
   font-weight: 800;
 }
@@ -814,7 +814,7 @@ a.all-events-link:hover {
   border-radius: 8rem;
 
   /* box-shadow: rgba(12, 9, 41, 0.24) 0px 48px 100px 0px; */
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 16px 48px 0px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 12px 0px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -823,7 +823,7 @@ a.all-events-link:hover {
   border-radius: 8rem;
 
   /* box-shadow: rgba(12, 9, 41, 0.24) 0px 48px 100px 0px; */
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 16px 48px 0px;
+  /* box-shadow: rgba(0, 0, 0, 0.12) 0px 16px 48px 0px; */
   transition: all 0.2s ease-in-out;
 }
 
@@ -877,7 +877,7 @@ a.all-events-link:hover {
 .clicked {
   background-color: var(--white); /* Kattintott elem háttérszíne */
   border-radius: 8rem;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 16px 48px 0px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 12px 0px;
   transition: all 0.2s ease-in-out;
 }
 

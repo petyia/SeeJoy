@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="general.css" />
+    <!-- <link rel="stylesheet" href="floating-nav.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="button-body2.css" />
+    <link rel="stylesheet" href="stories.css" />
+    <link rel="stylesheet" href="popular.css" />
+    <link rel="stylesheet" href="right-grid.css" />
+    <link rel="stylesheet" href="upcoming.css" />
+    <link rel="stylesheet" href="event-date.css" />
+    <link rel="stylesheet" href="queries.css" />
+    <link rel="stylesheet" href="events.css" />
+    <link rel="stylesheet" href="stories-page.css" />
+    <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
+    <title>SeeJoy | Eseménykereső</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <!-- <a href="">
+          <img src="" alt="" />
+        </a> -->
+        <div class="header">
+          <div class="img-logo-container">
+            <a href="index.html" class="img-logo-container">
+              <img src="./img/logo.svg" alt="logo-grafika" class="logo-ill" />
+              <div class="logo-text">SeeJoy</div>
+              <!-- <img
+                src="./img/SeeJoy-logo.png"
+                alt="SeeJoy logó"
+                class="img-logo"
+              /> -->
+            </a>
+          </div>
+          <div class="search-bar">
+            <input type="text" placeholder="Keresés" />
+          </div>
+
+          <div class="header-right-end">
+            <div class="button-body">
+              <a href="events.html">
+                <button class="learn-more">
+                  <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"
+                      ><i
+                        class="fa-solid fa-plus navi"
+                        style="color: #ffffff"
+                      ></i
+                    ></span>
+                  </span>
+                  <span class="button-text">Új Esemény</span>
+                </button>
+              </a>
+            </div>
+            <div class="header-profile" id="head1">
+              <!-- search-bar2 IDE -->
+
+              <div
+                class="notification-container"
+                id="notification-container"
+                onclick="toggleMenuNoti()"
+              >
+                <div class="notification" data-tooltip="Értesítések">
+                  <span class="notification-number">2</span>
+                  <svg
+                    id="bell-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-bell"
+                  >
+                    <path
+                      d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="sub-menu-wrap-noti" id="subMenuNoti">
+                <div class="sub-menu-noti">
+                  <div class="stories-title">Értesítések</div>
+
+                  <div class="noti-tabs-flex">
+                    <div class="flex-row">
+                      <a href="#">
+                        <div class="popular-price" id="noti-tabs">Összes</div>
+                      </a>
+                      <a href="">
+                        <div class="popular-price noti-not" id="noti-tabs-not">
+                          Olvasatlan
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="stories-first-row" id="stories-first-row-noti">
+                    <h1 class="stories-title" id="stories-title-noti">
+                      Legutóbbiak
+                    </h1>
+                    <a
+                      href="#"
+                      class="all-stories-link"
+                      id="all-stories-link-noti"
+                      >Összes<i
+                        class="fa-solid fa-chevron-right"
+                        id="fa-chevron-right-noti"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="noti-list-container">
+                    <div class="user-info-noti">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle"></div>
+                        <img
+                          src="./img/story14.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
+                      </div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">Szabó Lilla</span> meghívott
+                          téged erre az eseményre:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >Bulihajó Szilveszter</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti">26 perccel ezelőtt</div>
+                      </div>
+                    </div>
+
+                    <div class="user-info-noti">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle"></div>
+                        <img
+                          src="./img/story5.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
+                      </div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">Kiss Nóra</span> megjelölt
+                          ennél az eseménynél:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >Hogyan legyünk jobb barátok?</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti">57 perccel ezelőtt</div>
+                      </div>
+                    </div>
+
+                    <div class="user-info-noti-read">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle read-circle"></div>
+                        <img
+                          src="./img/story12.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
+                      </div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">David Aarons</span> megjelölt
+                          ennél az eseménynél:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >International Marketing Budapest 2023</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti read">1 órával ezelőtt</div>
+                      </div>
+                    </div>
+
+                    <div class="user-info-noti-read">
+                      <div class="left-flex-noti-container">
+                        <div class="new-noti-circle read-circle"></div>
+                        <img
+                          src="./img/story1.webp"
+                          alt="felhasználó profilképe"
+                          class="profile-img"
+                          id="noti-img"
+                        />
+                      </div>
+
+                      <div class="right-felx-noti-container">
+                        <div class="text-info-noti">
+                          <span class="noti-name">Kovács Anna</span> felvette
+                          ezt eseményei közé:
+                          <a href="#"
+                            ><span class="noti-event-name"
+                              >Foci EB 2024: Magyarország - Spanyolország
+                              16:00</span
+                            ></a
+                          >
+                        </div>
+                        <div class="time-noti read">4 órával ezelőtt</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="header-profile" id="head3">
+              <form
+                class="search-container"
+                action="text"
+                style="display: none"
+              >
+                <input
+                  id="search-box"
+                  type="search"
+                  class="search-box"
+                  name="q"
+                />
+                <label for="search-box">
+                  <i class="fa-solid fa-magnifying-glass search-icon"></i
+                ></label>
+                <input type="submit" id="search-submit" />
+              </form>
+              <!-- <form action="" class="search-bar2" style="display: none;" >
+              <input type="search" name="search" pattern=".*\S.*" required>
+              <button class="search-btn" type="submit">
+                <span>Search</span>
+              </button>
+            </form> -->
+            </div>
+            <div class="header-profile" id="head2">
+              <div class="profile-img-container" data-tooltip="Fiók">
+                <img
+                  src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                  class="profile-img"
+                  onclick="toggleMenu()"
+                  data-tooltip="Fiók"
+                />
+              </div>
+
+              <div class="sub-menu-wrap" id="subMenu">
+                <div class="sub-menu">
+                  <div class="user-info">
+                    <img
+                      src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                      alt="felhasználó profilképe"
+                      class="profile-img"
+                      id="profile-img"
+                    />
+                    <h2>Szabó Lilla</h2>
+                  </div>
+
+                  <a href="#" class="sub-menu-link">
+                    <img src="img/profile.png" alt="" />
+                    <p>Profil Szerkesztése</p>
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                  </a>
+
+                  <a href="#" class="sub-menu-link">
+                    <img src="img/setting.png" alt="" />
+                    <p>Beállítások</p>
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                  </a>
+
+                  <a href="" class="sub-menu-link">
+                    <img src="img/help.png" alt="" />
+                    <p>Súgó & Támogatás</p>
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                  </a>
+
+                  <a href="" class="sub-menu-link">
+                    <img src="img/logout.png" alt="" />
+                    <p>Kijelentkezés</p>
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="header-hello-container" style="display: none">
+            <h3 class="header-hello">Helló, Lilla!</h3>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <button class="main-mobile-nav"></button> -->
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="phone">
+          <div class="phone-footer">
+            <div class="nav">
+              <div class="button-body-2-filled">
+                <a href="index.html" class="bottom-nav-link">
+                  <button class="learn-more-2">
+                    <span class="circle-2" aria-hidden="true">
+                      <span class="icon-2 arrow-2"
+                        ><i class="fa-solid fa-home filled"></i
+                      ></span>
+                    </span>
+                    <div class="button-text-2">Kezdőlap</div>
+                  </button>
+                </a>
+              </div>
+              <div class="button-body-2-unfilled">
+                <a href="events.html" class="bottom-nav-link">
+                  <button class="learn-more-2-unfilled">
+                    <span class="circle-2-unfilled" aria-hidden="true">
+                      <span class="icon-2-unfilled arrow-2-unfilled"
+                        ><i class="fa-regular fa-calendar"></i
+                      ></span>
+                    </span>
+                    <div class="button-text-2-unfilled">Események</div>
+                  </button>
+                </a>
+              </div>
+              <div
+                class="button-body-2-unfilled phone-nav"
+                style="display: none"
+              >
+                <a href="events.html" class="bottom-nav-link">
+                  <button class="learn-more-2-unfilled">
+                    <span class="circle-2-unfilled" aria-hidden="true">
+                      <span class="icon-2-unfilled arrow-2-unfilled"
+                        ><div class="plus-circle story-circle tr-nav bx-sh">
+                          <i
+                            class="fa-regular fa-plus stories"
+                            id="story-plus-icon"
+                          ></i></div
+                      ></span>
+                    </span>
+                    <div class="button-text-2-unfilled">Új Esemény</div>
+                  </button>
+                </a>
+              </div>
+              <div class="button-body-2-unfilled">
+                <a href="events.html" class="bottom-nav-link">
+                  <button class="learn-more-2-unfilled">
+                    <span class="circle-2-unfilled" aria-hidden="true">
+                      <span class="icon-2-unfilled arrow-2-unfilled">
+                        <i class="fa-regular fa-credit-card"></i>
+                      </span>
+                    </span>
+                    <div class="button-text-2-unfilled">Jegyek</div>
+                  </button>
+                </a>
+              </div>
+              <div class="button-body-2-unfilled">
+                <a href="events.html" class="bottom-nav-link">
+                  <button class="learn-more-2-unfilled">
+                    <span class="circle-2-unfilled" aria-hidden="true">
+                      <span class="icon-2-unfilled arrow-2-unfilled"
+                        ><i class="fa-regular fa-message"></i
+                      ></span>
+                    </span>
+                    <div class="button-text-2-unfilled">Üzenetek</div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="events-section">
+        <div class="events-container">
+          <div class="events-first-row phone-block">
+            <h1 class="page-title event-phone-size-display-none">Történetek</h1>
+          </div>
+          <div class="container-stories-page">
+            <div class="card tabs">
+              <input
+                id="tab-1"
+                type="radio"
+                class="tab tab-selector"
+                checked="checked"
+                name="tab"
+              />
+              <label for="tab-1" class="tab tab-primary">Neked</label>
+              <input
+                id="tab-2"
+                type="radio"
+                class="tab tab-selector"
+                name="tab"
+              />
+              <label for="tab-2" class="tab tab-success">Követés</label>
+              <input
+                id="tab-3"
+                type="radio"
+                class="tab tab-selector"
+                name="tab"
+              />
+              <label for="tab-3" class="tab tab-default">Népszerű</label>
+              <input
+                id="tab-4"
+                type="radio"
+                class="tab tab-selector"
+                name="tab"
+              />
+              <label for="tab-4" class="tab tab-warning">Kiemelt</label>
+              <input
+                id="tab-5"
+                type="radio"
+                class="tab tab-selector"
+                name="tab"
+              />
+              <label for="tab-5" class="tab tab-warning">Élő</label>
+              <input
+                id="tab-6"
+                type="radio"
+                class="tab tab-selector"
+                name="tab"
+              />
+              <label for="tab-6" class="tab tab-default">Folytasd</label>
+              <div class="tabsShadow"></div>
+              <!-- <div class="glider"></div> -->
+
+              <div class="content">
+                <div class="item" id="content-1">
+                  <h2 class="tab-title tab-primary">Sweep + Slide Dog Toy</h2>
+                  <p>
+                    <span class="numit">1</span> The Sweep + Slide is an indoor
+                    dog toy with a sleek base designed to glide across any
+                    floor. Not only does this toy stimulate your dog's natural
+                    chase instincts, but it also sweeps away floor dust and
+                    grime with a replaceable sweeper bottom cover.
+                  </p>
+                </div>
+                <div class="item" id="content-2">
+                  <h2 class="tab-title tab-success">Tab 2</h2>
+                  <p>
+                    <span class="numit">2</span> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                  </p>
+                </div>
+                <div class="item" id="content-3">
+                  <h2 class="tab-title tab-default">Tab 3</h2>
+                  <p>
+                    <span class="numit">3</span> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat. Duis
+                  </p>
+                </div>
+                <div class="item" id="content-4">
+                  <h2 class="tab-title tab-warning">Tab 4</h2>
+                  <p>
+                    <span class="numit">4</span> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="item" id="content-5">
+                  <h2 class="tab-title tab-default">Tab 5</h2>
+                  <p>
+                    <span class="numit">5</span> Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi
+                    ut aliquip ex ea commodo consequat. Duis
+                  </p>
+                </div>
+                <div class="item" id="content-6">
+                  <h2 class="tab-title tab-primary">Sweep + Slide Dog Toy</h2>
+                  <p>
+                    <span class="numit">6</span> The Sweep + Slide is an indoor
+                    dog toy with a sleek base designed to glide across any
+                    floor. Not only does this toy stimulate your dog's natural
+                    chase instincts, but it also sweeps away floor dust and
+                    grime with a replaceable sweeper bottom cover.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <script src="event-cat.js"></script>
+    <script src="search-bar2.js"></script>
+    <script src="script.js"></script>
+    <script src="popular.js"></script>
+    <script src="stories.js"></script>
+    <script src="heart.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

@@ -167,7 +167,7 @@
     gap: 3.2rem;
   }
 
-  .events-title {
+  .page-title {
     font-size: 2.8rem;
     font-weight: 800;
   }
@@ -484,28 +484,6 @@
 
   .fa-solid.fa-chevron-right {
     display: none;
-  }
-
-  #next-month .fa-solid.fa-chevron-right {
-    display: block;
-    font-size: 2.4rem;
-  }
-
-  #next-month .fa-solid.fa-chevron-left {
-    display: block;
-    font-size: 2.4rem;
-  }
-
-  #next-month .fa-solid.fa-chevron-right:hover {
-    color: var(--primary);
-  }
-
-  #calendar-header button {
-    background-color: transparent;
-    border: none;
-    padding: 1.6rem;
-    cursor: pointer;
-    border-radius: 50%;
   }
 
   .plus-circle {
@@ -1018,7 +996,7 @@
     display: block;
   }
 
-  .events-title.event-phone-size-display-show {
+  .page-title.event-phone-size-display-show {
     font-size: 2.4rem;
     display: block;
   }

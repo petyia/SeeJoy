@@ -1237,6 +1237,36 @@ a.h5 {
   left: -9999px;
 }
 
+.fa-solid.filled {
+  font-size: 2rem;
+  color: var(--white);
+}
+
+.icon-inactive {
+  color: transparent; /* Szín elrejtése */
+  -webkit-text-stroke: 2px var(--black); /* Kontúros hatás */
+}
+
+.event-phone-icon {
+  display: none;
+}
+
+.event-phone-size-display-show {
+  display: none;
+}
+
+.bp-location.event-phone-size-display-show {
+  display: none;
+}
+
+.location-name.event-phone-size-display-show {
+  display: none;
+}
+
+/* #event-phone-size-display-show {
+  display: none;
+} */
+
 .search2-container {
   position: relative; /* A konténer pozicionálása a mező és az ikon összehangolásához */
 }
@@ -1319,33 +1349,3 @@ a.h5 {
   font-family: var(--body-font);
   font-size: 1.6rem;
 }
-
-.fa-solid.filled {
-  font-size: 2rem;
-  color: var(--white);
-}
-
-.icon-inactive {
-  color: transparent; /* Szín elrejtése */
-  -webkit-text-stroke: 2px var(--black); /* Kontúros hatás */
-}
-
-.event-phone-icon {
-  display: none;
-}
-
-.event-phone-size-display-show {
-  display: none;
-}
-
-.bp-location.event-phone-size-display-show {
-  display: none;
-}
-
-.location-name.event-phone-size-display-show {
-  display: none;
-}
-
-/* #event-phone-size-display-show {
-  display: none;
-} */
