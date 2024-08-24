@@ -54,6 +54,9 @@ main {
 }
 
 .container-stories-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 10px 0;
   text-align: center;
@@ -102,7 +105,9 @@ main {
   visibility: hidden;
   transition: all 0.3s;
   position: absolute;
-  padding: 10px 20px;
+  padding: 2.4rem;
+  width: 100%;
+  height: 100%;
 }
 
 #tab-1:checked ~ .glider {
@@ -158,11 +163,11 @@ main {
   margin: 0px auto;
   text-align: left;
   line-height: 20px;
-  height: 240px;
+  height: 5000px;
   border-radius: 3.2rem;
   /* box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%); */
   display: block;
-  padding: 1.25rem;
+  /* padding: 1.25rem; */
   z-index: 2;
   background-color: var(--white);
   position: relative;
@@ -306,4 +311,124 @@ span.numit {
   padding: 0;
   color: aliceblue;
   text-shadow: 0.5pt 0.5pt 0.5pt #2d3748;
+}
+.story-card-container {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
+  padding: 0.8rem;
+
+  justify-items: center;
+}
+
+.story-card-img-container {
+  position: relative;
+  width: 100%;
+  height: 48rem;
+  background-size: cover;
+  border-radius: 3.2rem;
+  overflow: hidden;
+}
+
+/* Add the transparent black overlay */
+.story-card-img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Adjust the opacity as needed */
+  z-index: 1; /* Overlay should sit just below the text/content */
+  border-radius: inherit; /* Ensures the overlay follows the container's rounded corners */
+  transition: opacity 0.3s ease; /* Smooth transition for the opacity change */
+}
+
+/* Hover effect to hide the overlay */
+.story-card-img-container:hover::before {
+  opacity: 0; /* Hide the overlay on hover */
+}
+
+/* Full card link styling */
+.story-full-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  text-decoration: none;
+}
+
+/* Inner link styling */
+.story-profile-link {
+  position: relative;
+  z-index: 2; /* Higher z-index to be above the full card link */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.story-card-profile-pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.story-profile-text-container {
+  text-align: center;
+}
+
+h5.name-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.image-border-none {
+  /* any specific styles for the image container */
+}
+
+.story-card1 {
+  background-image: url("img/story-event1.webp");
+}
+.story-card2 {
+  background-image: url("img/story-event2.webp");
+}
+.story-card3 {
+  background-image: url("img/story-event3.webp");
+}
+.story-card4 {
+  background-image: url("img/story-event4.webp");
+}
+.story-card5 {
+  background-image: url("img/story-event5.webp");
+}
+.story-card6 {
+  background-image: url("img/story-event6.webp");
+}
+.story-card7 {
+  background-image: url("img/story-event7.webp");
+}
+.story-card8 {
+  background-image: url("img/story-event8.webp");
+}
+
+.story-profile-img-container {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 5;
+}
+
+.image-border-none .stories-card.st-bigger {
+  height: 6.4rem;
+  width: 6.4rem;
+  border-radius: 2rem;
 }

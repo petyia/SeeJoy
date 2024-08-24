@@ -47,6 +47,25 @@
       rgba(255, 255, 255, 0) 100%
     );
   }
+
+  .story-card-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.4rem;
+    padding: 0.8rem;
+
+    justify-items: center;
+  }
+  .story-card-img-container {
+    position: relative;
+    width: 100%;
+    height: 40rem;
+    background-size: cover;
+    border-radius: 3.2rem;
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 956px) {
@@ -170,6 +189,11 @@
   .page-title {
     font-size: 2.8rem;
     font-weight: 800;
+  }
+  .page-title.stories-t {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-left: 1.6rem;
   }
 
   .location-container {
@@ -295,6 +319,16 @@
       rgba(255, 255, 255, 1) 65%,
       rgba(255, 255, 255, 0) 100%
     );
+  }
+  .story-card-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.4rem;
+    padding: 0.8rem;
+
+    justify-items: center;
   }
 }
 
@@ -1387,6 +1421,38 @@
   .event-mini-date::after {
     display: none;
   }
+
+  .container-stories-page .card {
+    margin: 0 auto;
+    margin-top: 0.8rem;
+  }
+
+  .content {
+    margin: 0px auto;
+    text-align: left;
+    line-height: 20px;
+    height: 5000px;
+    border-radius: 3.2rem;
+    /* box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%); */
+    display: block;
+    /* padding: 1.25rem; */
+    z-index: 2;
+    background-color: var(--white);
+    position: relative;
+    margin-top: 0rem;
+  }
+
+  /* Történetek oldal */
+  .story-card-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+    padding: 0.8rem;
+
+    justify-items: center;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -1468,6 +1534,46 @@
       rgba(255, 255, 255, 0) 100%
     );
   }
+  .story-card-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.6rem;
+    padding: 0.8rem;
+
+    justify-items: center;
+  }
+  .story-card-img-container {
+    position: relative;
+    width: 100%rem;
+    height: 28rem;
+    background-size: cover;
+    border-radius: 3.2rem;
+    overflow: hidden;
+  }
+  .image-border-none .stories-card.st-bigger {
+    height: 4.8rem;
+    width: 4.8rem;
+    border-radius: 1.6rem;
+  }
+
+  h5.name-text {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .container-stories-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding: 0px 0px;
+    text-align: center;
+    margin: auto;
+  }
 }
 
 @media screen and (max-width: 340px) {
@@ -1475,23 +1581,6 @@
     width: 150px;
   }
 
-  .events-container {
-    padding: 0rem 1.6rem;
-    padding-bottom: 12rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-
-  .events-line {
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-    gap: 2.4rem;
-    width: 160%;
-    padding: 1.6rem 0rem;
-    flex-wrap: nowrap;
-  }
   .cat-btns {
     display: none;
   }
@@ -1598,6 +1687,24 @@
   .event-date-line:hover .event-date-card:hover {
     transform: scale(0.95);
     cursor: pointer;
+  }
+  .story-card-container {
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+    padding: 0.8rem;
+
+    justify-items: center;
+  }
+  .story-card-img-container {
+    position: relative;
+    width: 100%rem;
+    height: 32rem;
+    background-size: cover;
+    border-radius: 3.2rem;
+    overflow: hidden;
   }
 }
 
