@@ -144,7 +144,7 @@ main {
   color: var(--grey);
   display: inline-flex;
   -webkit-box-pack: center;
-  padding: 5pt 10pt;
+  padding: 10pt 10pt;
   vertical-align: top;
   justify-content: flex-start;
   background: #333;
@@ -163,7 +163,8 @@ main {
   margin: 0px auto;
   text-align: left;
   line-height: 20px;
-  height: 5000px;
+  height: 1600px;
+  width: 100%;
   border-radius: 3.2rem;
   /* box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%); */
   display: block;
@@ -188,8 +189,9 @@ main {
 
 .content p {
   font-size: 24pt;
+  line-height: 1.2;
 
-  color: var(--black);
+  color: var(--grey);
 }
 h2.tab-title.tab-warning,
 h2.tab-title.tab-success,
@@ -250,14 +252,40 @@ label.tab.tab-primary {
 label.tab.tab-warning {
   border-radius: 0 6pt 6pt 0;
 }
-#tab-1:checked + label,
-#tab-2:checked + label,
-#tab-3:checked + label,
-#tab-4:checked + label,
-#tab-5:checked + label,
-#tab-6:checked + label {
-  color: var(--primary);
+
+/* Style the dot for active tabs */
+.tabs input:checked + label::after {
+  content: "";
+  position: absolute;
+  bottom: 4px; /* Adjust this to control the vertical positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px; /* Diameter of the dot */
+  height: 4px; /* Diameter of the dot */
+  background-color: var(
+    --primary
+  ); /* Color of the dot, use CSS variable or color code */
+  border-radius: 50%; /* Makes it a circle */
 }
+
+/* Adjust the color of the label based on the checked state */
+.card #tab-1:checked + label,
+.card #tab-2:checked + label,
+.card #tab-3:checked + label,
+.card #tab-4:checked + label,
+.card #tab-5:checked + label,
+.card #tab-6:checked + label {
+  color: var(--primary); /* Color when active */
+}
+
+/* Make sure the label is positioned relative to accommodate the dot */
+.tabs label {
+  position: relative; /* This makes the dot position relative to the label */
+  display: inline-block;
+  padding: 10px; /* Adjust padding as needed */
+}
+
+/* Move the glider based on which tab is checked */
 #tab-1:checked ~ .glider {
   left: 0.4%;
 }
@@ -265,26 +293,21 @@ label.tab.tab-warning {
 #tab-2:checked ~ .glider {
   left: 16%;
 }
+
 #tab-3:checked ~ .glider {
-  background-color: var(--primary);
   left: 32.15%;
-  box-shadow: 0px 0px 8px 0px hsl(17.72deg 100% 70% / 70%);
 }
 
 #tab-4:checked ~ .glider {
-  background-color: var(--primary);
-  left: 46.365% !important;
+  left: 46.365%;
 }
 
 #tab-5:checked ~ .glider {
-  background-color: var(--primary);
   left: 61.15%;
-  box-shadow: 0px 0px 8px 0px hsl(17.72deg 100% 70% / 70%);
 }
 
 #tab-6:checked ~ .glider {
-  background-color: var(--primary);
-  left: 76.365% !important;
+  left: 76.365%;
 }
 
 .glider {
@@ -378,8 +401,12 @@ span.numit {
   flex-direction: column;
   align-items: center;
   gap: 1.6rem;
-}
 
+  transition: all 0.35s cubic-bezier(0.65, 0, 0.076, 1);
+}
+.story-card-profile-pic:hover {
+  transform: scale(1.05);
+}
 .story-profile-text-container {
   text-align: center;
 }

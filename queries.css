@@ -1425,6 +1425,7 @@
   .container-stories-page .card {
     margin: 0 auto;
     margin-top: 0.8rem;
+    text-align: center;
   }
 
   .content {
@@ -1439,7 +1440,7 @@
     z-index: 2;
     background-color: var(--white);
     position: relative;
-    margin-top: 0rem;
+    margin-top: 0.8rem;
   }
 
   /* Történetek oldal */
