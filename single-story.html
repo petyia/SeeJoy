@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="event-date.css" />
     <link rel="stylesheet" href="events.css" />
     <link rel="stylesheet" href="all-stories.css" />
+    <link rel="stylesheet" href="single-story.css" />
     <link rel="stylesheet" href="queries.css" />
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
@@ -395,26 +396,79 @@
         </div>
       </div>
       <section class="events-section">
-        <div class="events-container">
-          <div class="events-first-row phone-block">
-            <h1 class="page-title stories-t">Történetek</h1>
-          </div>
-          <div class="story-card-container">
-            <div class="story-card-img-container story-card1">
-              <!-- Full card link -->
-              <a href="events.html" class="story-full-link"></a>
-              <div class="story-profile-img-container">
-                <!-- Inner link -->
-                <a href="index.html" class="story-profile-link">
-                  <div class="story-card-profile-pic">
-                    <div class="image-border-none">
-                      <div class="stories-card story1 st-bigger"></div>
-                    </div>
-                    <div class="story-profile-text-container">
-                      <h5 class="name-text">Fodor Anna</h5>
-                    </div>
+        <div class="events-container single-story">
+          <div class="events-first-row single-story phone-block">
+            <div class="story-profile-img-container single-story">
+              <!-- Inner link -->
+              <a href="index.html" class="story-profile-link">
+                <div class="story-card-profile-pic single-story">
+                  <div class="image-border-none">
+                    <div class="stories-card story1"></div>
                   </div>
-                </a>
+                  <div class="story-profile-text-container">
+                    <h5 class="name-text single-st">Fodor Anna</h5>
+                    <p class="single-story-post-date">16 órával ezelőtt</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="single-story-btns">
+              <div class="like-btn-container">
+                <button class="like__btn">
+                  <span id="like-icon"
+                    ><i class="fa-regular fa-heart"></i
+                  ></span>
+                  <span id="like-count">0</span> Kedvelés
+                </button>
+              </div>
+              <div class="comment-btn-container">
+                <button class="comment__btn">
+                  <span id="comment-icon"
+                    ><i class="fa-regular fa-comments"></i
+                  ></span>
+                  <span id="comment-count">0</span> Kommentek
+                </button>
+              </div>
+              <div class="share-btn-container">
+                <button class="share__btn">
+                  <span id="share-icon"
+                    ><i
+                      class="fa-solid fa-share"
+                      style="color: var(--black)"
+                    ></i
+                  ></span>
+                  <span id="share-count">0</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="single-story-card-container">
+            <div class="story-card-img-container single-story">
+              <div id="vue-component">
+                <div class="vue-nav">
+                  <div
+                    v-for="(media, index) in mediaList"
+                    :key="index"
+                    class="nav-item-single-story"
+                  >
+                    <div class="nav-progress"></div>
+                  </div>
+                </div>
+                <div
+                  v-for="(media, index) in mediaList"
+                  :key="index"
+                  v-if="current == index"
+                  class="vue-section"
+                >
+                  <img v-if="media.type === 'image'" :src="media.url" alt="" />
+                  <video
+                    v-if="media.type === 'video'"
+                    :src="media.url"
+                    autoplay
+                    muted
+                    loop
+                  ></video>
+                </div>
               </div>
             </div>
           </div>
@@ -428,6 +482,7 @@
     <script src="popular.js"></script>
     <script src="stories.js"></script>
     <script src="heart.js"></script>
+    <script src="single-story.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -436,5 +491,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="vue-script.js"></script>
   </body>
 </html>
