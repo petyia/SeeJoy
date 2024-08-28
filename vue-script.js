@@ -3,9 +3,9 @@ const app = new Vue({
   data() {
     return {
       mediaList: [
-        { url: "img/story-event1.webp", type: "image" },
-        { url: "img/story-event2.webp", type: "image" },
-        { url: "img/story-event3.webp", type: "image" },
+        { url: "img/story-event6.webp", type: "image" },
+        { url: "img/e-d1-1.webp", type: "image" },
+        { url: "img/pop4.webp", type: "image" },
       ],
       current: 0,
       timeline: null, // Add this to store the timeline reference
@@ -15,7 +15,7 @@ const app = new Vue({
     // Create a timeline animation with Anime.js
     this.timeline = anime.timeline({
       autoplay: true,
-      duration: 10000,
+      duration: 8000,
       easing: "linear",
       loop: true,
     });
@@ -33,8 +33,11 @@ const app = new Vue({
       });
     });
 
-    // Initialize Hammer.js for gesture control
-    let hammertime = new Hammer(document.querySelector("#vue-component"));
+    // Initialize Hammer.js for gesture control on the specific container
+    let container = document.querySelector(
+      ".story-card-img-container.single-story"
+    );
+    let hammertime = new Hammer(container);
 
     // Pause animation on press
     hammertime.on("press", () => {
@@ -46,9 +49,13 @@ const app = new Vue({
       this.timeline.play();
     });
 
-    // Handle tap gesture for navigation
+    // Handle tap gesture for navigation within the container
     hammertime.on("tap", (e) => {
-      if (e.center.x > window.innerWidth / 2) {
+      let containerRect = container.getBoundingClientRect();
+      let containerCenter = containerRect.left + containerRect.width / 2;
+
+      if (e.center.x > containerCenter) {
+        // User tapped on the right side of the container
         if (this.current < this.mediaList.length - 1) {
           this.current += 1;
 
@@ -57,6 +64,7 @@ const app = new Vue({
           this.timeline.play();
         }
       } else {
+        // User tapped on the left side of the container
         if (this.current > 0) {
           this.current -= 1;
 

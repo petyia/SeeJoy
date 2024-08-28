@@ -54,7 +54,7 @@ main {
 }
 
 .events-container.single-story {
-  padding: 0rem 8rem;
+  padding: 0rem 0 0 8rem;
   display: flex;
   flex-direction: column;
   height: auto;
@@ -74,6 +74,18 @@ h5.name-text.single-st {
   align-items: center;
 }
 
+.single-story-card-container {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+  padding: 0;
+  margin-bottom: 20rem;
+
+  justify-items: center;
+}
+
 .story-profile-img-container.single-story {
   display: flex;
   flex-direction: row;
@@ -85,18 +97,39 @@ h5.name-text.single-st {
 }
 .story-card-img-container.single-story {
   position: relative;
-  width: 100%;
-  height: 100%;
+  width: 48rem;
+  height: 72rem;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom;
+  background-position: center;
   border-radius: 1.6rem;
   overflow: hidden;
+  background-color: var(--black);
+
+  align-self: center;
 }
 
 /* Add the transparent black overlay */
 .story-card-img-container::before {
   display: none;
+}
+
+.popular-lower-container.single-story {
+  position: absolute;
+  top: 16%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(
+    100% - 3.2rem
+  ); /* 100% szélesség, de a padding miatt csökkentve */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: var(--white);
+  border-radius: 1.6rem;
+  padding: 1.2rem 2.4em 1.2rem 2.4rem;
+  box-shadow: var(--popular-sh);
 }
 
 .story-card-profile-pic.single-story {
@@ -178,17 +211,6 @@ h5.name-text.single-st {
   border-radius: 0.8rem;
 }
 
-.single-story-card-container {
-  display: grid;
-  width: 100%;
-  height: auto;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 4rem;
-  padding: 0.8rem;
-
-  justify-items: center;
-}
-
 .vue-component {
   position: relative;
 }
@@ -221,23 +243,76 @@ h5.name-text.single-st {
   width: 0;
   height: 100%;
   background: var(--white);
-  /* Transition removed - handled by anime.js */
-  border-radius: 0.8rem; /* Kerekített sarkok, opcionális */
+
+  border-radius: 0.8rem;
 }
 
 /* Média szekciók stílusai */
 .vue-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: auto; /* Teljes nézetmagasság, módosítsd az igényeid szerint */
-  background-color: #000; /* Háttérszín, opcionális */
+  height: 72rem;
+  width: 48rem;
+  margin: auto;
+  background-color: var(--black);
 }
 
 .vue-section img,
 .vue-section video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: auto;
+}
+
+.grid-2-column {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.index-right-flex.single-story {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 1.6rem 0rem 0rem 1.6rem;
+  height: max-content;
   width: 100%;
-  height: auto;
-  object-fit: contain; /* Kép és videó arányainak megtartása */
+}
+
+.my-event-card.first.single-story {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url(./img/myevents1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  margin-left: 0;
+}
+
+.my-category-card.first.single-story {
+  /* border: var(--primary) solid 2px; */
+  position: relative;
+  background: url(./img/mycategory1.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease;
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  margin-left: 0;
+}
+
+.flex-container-single-story {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 4rem;
+  width: 100%;
 }

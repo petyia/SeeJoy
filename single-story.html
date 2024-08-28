@@ -397,77 +397,281 @@
       </div>
       <section class="events-section">
         <div class="events-container single-story">
-          <div class="events-first-row single-story phone-block">
-            <div class="story-profile-img-container single-story">
-              <!-- Inner link -->
-              <a href="index.html" class="story-profile-link">
-                <div class="story-card-profile-pic single-story">
-                  <div class="image-border-none">
-                    <div class="stories-card story1"></div>
+          <div class="single-story-card-container">
+            <div class="flex-container-single-story">
+              <div class="events-first-row single-story phone-block">
+                <div class="story-profile-img-container single-story">
+                  <!-- Inner link -->
+                  <a href="index.html" class="story-profile-link">
+                    <div class="story-card-profile-pic single-story">
+                      <div class="image-border-none">
+                        <div class="stories-card story1"></div>
+                      </div>
+                      <div class="story-profile-text-container">
+                        <h5 class="name-text single-st">Fodor Anna</h5>
+                        <p class="single-story-post-date">16 órával ezelőtt</p>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="single-story-btns">
+                  <div class="like-btn-container">
+                    <button class="like__btn">
+                      <span id="like-icon"
+                        ><i class="fa-regular fa-heart"></i
+                      ></span>
+                      <span id="like-count">0</span> Kedvelés
+                    </button>
                   </div>
-                  <div class="story-profile-text-container">
-                    <h5 class="name-text single-st">Fodor Anna</h5>
-                    <p class="single-story-post-date">16 órával ezelőtt</p>
+                  <div class="comment-btn-container">
+                    <button class="comment__btn">
+                      <span id="comment-icon"
+                        ><i class="fa-regular fa-comments"></i
+                      ></span>
+                      <span id="comment-count">0</span> Kommentek
+                    </button>
+                  </div>
+                  <div class="share-btn-container">
+                    <button class="share__btn">
+                      <span id="share-icon"
+                        ><i
+                          class="fa-solid fa-share"
+                          style="color: var(--black)"
+                        ></i
+                      ></span>
+                      <span id="share-count">0</span>
+                    </button>
                   </div>
                 </div>
-              </a>
-            </div>
-            <div class="single-story-btns">
-              <div class="like-btn-container">
-                <button class="like__btn">
-                  <span id="like-icon"
-                    ><i class="fa-regular fa-heart"></i
-                  ></span>
-                  <span id="like-count">0</span> Kedvelés
-                </button>
               </div>
-              <div class="comment-btn-container">
-                <button class="comment__btn">
-                  <span id="comment-icon"
-                    ><i class="fa-regular fa-comments"></i
-                  ></span>
-                  <span id="comment-count">0</span> Kommentek
-                </button>
-              </div>
-              <div class="share-btn-container">
-                <button class="share__btn">
-                  <span id="share-icon"
-                    ><i
-                      class="fa-solid fa-share"
-                      style="color: var(--black)"
-                    ></i
-                  ></span>
-                  <span id="share-count">0</span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="single-story-card-container">
-            <div class="story-card-img-container single-story">
-              <div id="vue-component">
-                <div class="vue-nav">
+              <div class="story-card-img-container single-story">
+                <div id="vue-component">
+                  <div class="vue-nav">
+                    <div
+                      v-for="(media, index) in mediaList"
+                      :key="index"
+                      class="nav-item-single-story"
+                    >
+                      <div class="nav-progress"></div>
+                    </div>
+                  </div>
                   <div
                     v-for="(media, index) in mediaList"
                     :key="index"
-                    class="nav-item-single-story"
+                    v-if="current == index"
+                    class="vue-section"
                   >
-                    <div class="nav-progress"></div>
+                    <img
+                      v-if="media.type === 'image'"
+                      :src="media.url"
+                      alt=""
+                    />
+                    <video
+                      v-if="media.type === 'video'"
+                      :src="media.url"
+                      autoplay
+                      muted
+                      loop
+                    ></video>
                   </div>
                 </div>
-                <div
-                  v-for="(media, index) in mediaList"
-                  :key="index"
-                  v-if="current == index"
-                  class="vue-section"
-                >
-                  <img v-if="media.type === 'image'" :src="media.url" alt="" />
-                  <video
-                    v-if="media.type === 'video'"
-                    :src="media.url"
-                    autoplay
-                    muted
-                    loop
-                  ></video>
+
+                <div class="popular-lower-container single-story">
+                  <div class="upper-info-container">
+                    <div class="popular-hour">2024 Aug 30 - 16:00</div>
+                    <h3 class="h3">Izgalmas 30 perces hőlégballon utazás</h3>
+                  </div>
+                  <div class="lower-info-container">
+                    <div class="my-event-lower-info-container">
+                      <a href="#">
+                        <div class="my-event-line" id="stories-line">
+                          <div class="story-container">
+                            <div class="my-event-card-medium my-event2-7"></div>
+                          </div>
+                          <div class="story-container">
+                            <div class="my-event-card-medium my-event2-3"></div>
+                          </div>
+                          <div class="story-container">
+                            <div class="my-event-card-medium my-event3">
+                              <span id="my-event-plus-number-medium">+9</span>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <a href="#"><div class="popular-price">15000 Ft</div></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-2-column">
+              <div></div>
+              <div class="index-right-flex single-story">
+                <div class="premium-container">
+                  <div class="premium-img-container">
+                    <div class="title-premium">Irány a Prémium!</div>
+                    <div class="description-premium">
+                      Próbáld ki a prémiumot és élvezd egy teljesen új közösség
+                      élményét.
+                    </div>
+
+                    <a href="#" class="premium-btn-link"
+                      ><div class="premium-btn">
+                        Fizess elő
+                        <i
+                          class="fa-solid fa-chevron-right premium-btn-icon"
+                        ></i></div
+                    ></a>
+                  </div>
+                </div>
+                <div class="my-events-container">
+                  <div class="my-events-first-row">
+                    <h1 class="stories-title">Eseményeim</h1>
+                    <a href="#" class="all-stories-link"
+                      >Összes<i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                  <div class="my-events-flex-container">
+                    <div class="my-event-line" id="popular-line">
+                      <div class="my-event-card first single-story" id="card1">
+                        <div class="my-event-upper-container">
+                          <div class="my-upcoming">
+                            <div class="my-event-number">01</div>
+                            <div class="my-event-month">Jan</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="my-event-right-container">
+                      <div class="my-event-upper-info-container">
+                        <a href="#" class="my-event-link">
+                          <h3 class="h3">Új Év: Beöltözős Marvel Parti</h3></a
+                        >
+                      </div>
+                      <div class="my-event-lower-info-container">
+                        <a href="#">
+                          <div class="my-event-line" id="stories-line">
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event1"></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event2"></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event3">
+                                <span id="my-event-plus-number">+10</span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-events-flex-container">
+                    <div class="my-event-line" id="popular-line">
+                      <div class="my-event-card second" id="card1">
+                        <div class="my-event-upper-container">
+                          <div class="my-upcoming">
+                            <div class="my-event-number">07</div>
+                            <div class="my-event-month">Jan</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="my-event-right-container">
+                      <div class="my-event-upper-info-container">
+                        <a href="#" class="my-event-link"
+                          ><h3 class="h3">Autós Show: 2024 Budapest</h3></a
+                        >
+                      </div>
+                      <div class="my-event-lower-info-container">
+                        <a href="#">
+                          <div class="my-event-line" id="stories-line">
+                            <div class="story-container">
+                              <div
+                                class="my-event-card-little my-event2-1"
+                              ></div>
+                            </div>
+                            <div class="story-container">
+                              <div
+                                class="my-event-card-little my-event2-2"
+                              ></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event3">
+                                <span id="my-event-plus-number">+26</span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-category-container">
+                  <div class="my-category-first-row">
+                    <h1 class="stories-title">Kategóriáim</h1>
+                    <a href="#" class="all-stories-link"
+                      >Összes<i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                  <div class="my-category-flex-container">
+                    <div class="my-category-line" id="popular-line">
+                      <div
+                        class="my-category-card first single-story"
+                        id="card1"
+                      >
+                        <div class="my-category-upper-container"></div>
+                      </div>
+                      <div class="my-category-upper-info-container">
+                        <a href="#" class="my-category-link">
+                          <h3 class="h3">Étel</h3></a
+                        >
+                      </div>
+                    </div>
+                    <div class="my-category-right-container">
+                      <div class="my-category-lower-info-container">
+                        <a href="#">
+                          <div class="my-category-line" id="stories-line">
+                            <div class="story-container">
+                              <div class="my-category-card-little my-category3">
+                                <span id="my-category-checked"
+                                  ><i class="fa-solid fa-check"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-category-flex-container">
+                    <div class="my-category-line" id="popular-line">
+                      <div class="my-category-card second" id="card1">
+                        <div class="my-category-upper-container"></div>
+                      </div>
+                      <div class="my-category-upper-info-container">
+                        <a href="#" class="my-category-link">
+                          <h3 class="h3">Gaming</h3></a
+                        >
+                      </div>
+                    </div>
+                    <div class="my-category-right-container">
+                      <div class="my-category-lower-info-container">
+                        <a href="#">
+                          <div class="my-category-line" id="stories-line">
+                            <div class="story-container">
+                              <div class="my-category-card-little my-category3">
+                                <span id="my-category-checked"
+                                  ><i class="fa-solid fa-check"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

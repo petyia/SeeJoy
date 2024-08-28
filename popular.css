@@ -339,6 +339,7 @@ h3.h3 {
 
 .popular-hour {
   color: var(--grey);
+  font-weight: 600;
 }
 
 a {
