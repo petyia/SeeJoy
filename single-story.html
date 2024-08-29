@@ -426,9 +426,9 @@
                   <div class="comment-btn-container">
                     <button class="comment__btn" id="openComments">
                       <span id="comment-icon"
-                        ><i class="fa-regular fa-comments"></i
+                        ><i class="fa-regular fa-comment"></i
                       ></span>
-                      <span id="comment-count">0</span> Kommentek
+                      <span id="comment-count">0</span> Komment
                     </button>
                   </div>
                   <div class="share-btn-container">
@@ -476,15 +476,16 @@
                       ></video>
                     </div>
                   </div>
-
-                  <div class="popular-lower-container single-story">
-                    <div class="upper-info-container">
-                      <div class="popular-hour">2024 Aug 30 - 16:00</div>
-                      <h3 class="h3">Izgalmas 30 perces hőlégballon utazás</h3>
-                    </div>
-                    <div class="lower-info-container">
-                      <div class="my-event-lower-info-container">
-                        <a href="#">
+                  <a href="events.html">
+                    <div class="popular-lower-container single-story">
+                      <div class="upper-info-container">
+                        <div class="popular-hour">2024 Aug 30 - 16:00</div>
+                        <h3 class="h3">
+                          Izgalmas 30 perces hőlégballon utazás
+                        </h3>
+                      </div>
+                      <div class="lower-info-container">
+                        <div class="my-event-lower-info-container">
                           <div class="my-event-line" id="stories-line">
                             <div class="story-container">
                               <div
@@ -502,11 +503,11 @@
                               </div>
                             </div>
                           </div>
-                        </a>
+                        </div>
+                        <div class="popular-price">15000 Ft</div>
                       </div>
-                      <a href="#"><div class="popular-price">15000 Ft</div></a>
                     </div>
-                  </div>
+                  </a>
                 </div>
                 <!-- Komment szekció -->
                 <div id="commentsSection" class="comments-section-container">
@@ -524,9 +525,38 @@
                       id="newCommentText"
                       placeholder="Írj megjegyzést..."
                     ></textarea>
-                    <button id="postComment" class="comment__btn">
-                      Komment
-                    </button>
+                    <button id="postComment">Komment</button>
+                  </div>
+                </div>
+
+                <!-- Szerkesztés modális ablak -->
+                <div id="editCommentModal" class="modal">
+                  <div class="modal-content">
+                    <div class="edit-line">
+                      <span class="close-edit-modal">&times;</span>
+                      <h2>Szerkesztés</h2>
+                    </div>
+                    <textarea
+                      id="editCommentText"
+                      rows="4"
+                      cols="50"
+                    ></textarea>
+                    <button id="saveEditComment">Mentés</button>
+                  </div>
+                </div>
+
+                <!-- Törlés megerősítő modális ablak -->
+                <div id="deleteCommentModal" class="modal">
+                  <div class="modal-content">
+                    <div>
+                      <span class="close-delete-modal">&times;</span>
+                      <h2>Komment törlése</h2>
+                    </div>
+                    <p>Biztos, hogy törölni szeretnéd ezt a kommentet?</p>
+                    <div class="delete-or-not">
+                      <button id="cancelDeleteComment">Mégse</button>
+                      <button id="confirmDeleteComment">Törlés</button>
+                    </div>
                   </div>
                 </div>
               </div>
