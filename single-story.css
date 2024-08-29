@@ -165,7 +165,7 @@ h5.name-text.single-st {
   padding: 12px 16px;
   background: var(--white);
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
+  font-family: var(--body-font);
   border-radius: 5px;
   color: var(--grey);
   outline: none;
@@ -183,7 +183,6 @@ h5.name-text.single-st {
   padding: 12px 16px;
   background: var(--white);
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
   border-radius: 5px;
   color: var(--grey);
   outline: none;
@@ -202,7 +201,6 @@ h5.name-text.single-st {
   padding: 12px 16px;
   background: var(--white);
   font-size: 18px;
-  font-family: "Open Sans", sans-serif;
   border-radius: 5px;
   color: var(--grey);
   outline: none;
@@ -314,5 +312,162 @@ h5.name-text.single-st {
   flex-direction: column;
   justify-content: flex-start;
   gap: 4rem;
+  width: 100%;
+}
+
+/* Meglévő gomb stílusok */
+.comment-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment__btn {
+  padding: 12px 16px;
+  background: var(--white);
+  font-size: 18px;
+  border-radius: 5px;
+  color: var(--grey);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+}
+
+/* Komment Szekció Stílusok */
+/* A konténer stílusa */
+.sigle-story-contaner-comments {
+  display: flex;
+  justify-content: center; /* Balra igazítás */
+  align-items: center; /* Fent kezdődjenek a gyermekelemek */
+  position: relative;
+  z-index: 1;
+}
+
+/* Komment Szekció Stílusok */
+.comments-section-container {
+  position: relative; /* Flexbox konténeren belül marad */
+  transform: translateX(-105%); /* Aktív állapotban a helyén marad */
+  width: 400px;
+  height: 72rem; /* Magasság igazodjon a szülőelemhez */
+  max-width: 100%;
+  background: var(--white);
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+
+  padding: 0.8rem 1.6rem 0.8rem 4.8rem;
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+
+  box-shadow: var(--popular-sh);
+  display: none;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.comments-section-container.active {
+  transform: translateX(-5%); /* Aktív állapotban a helyén marad */
+  display: block;
+}
+
+.comments-section-container.active::-webkit-scrollbar {
+  width: 0.6vw;
+}
+
+.comments-section-container.active::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 8rem;
+}
+
+.comments-section-container.active::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8rem;
+}
+
+.comments-section-container.active::-webkit-scrollbar-track:hover {
+  background: var(--grey);
+}
+
+.comments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  color: var(--black);
+  font-family: var(--body-font);
+  font-size: 1.6rem;
+}
+
+.close-comments-btn {
+  font-size: 24px;
+  color: var(--black);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 50%;
+}
+
+.close-comments-btn:hover {
+  background-color: var(--pale-grey);
+}
+
+.comment-form textarea {
+  width: 100%;
+  height: 80px;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  font-family: var(--body-font);
+}
+
+.comment-form button {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: var(--black);
+}
+
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.comment-avatar {
+  border-radius: 50%;
+}
+
+.comment-author {
+  font-size: 1.6rem;
+  color: var(--black);
+}
+
+.comment-text {
+  font-size: 1.6rem;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
   width: 100%;
 }

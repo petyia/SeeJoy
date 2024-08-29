@@ -66,6 +66,106 @@
     border-radius: 3.2rem;
     overflow: hidden;
   }
+
+  .single-story-card-container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .events-container.single-story {
+    padding: 0rem 4rem 0 4rem;
+
+    gap: 4rem;
+  }
+
+  .grid-2-column {
+    display: none;
+  }
+
+  .story-card-img-container.single-story {
+    width: 32rem;
+    height: 56rem;
+  }
+
+  .popular-lower-container.single-story {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 3.2rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    background-color: var(--white);
+    border-radius: 1.6rem;
+    padding: 0.8rem 1.6em 0.8rem 1.2rem;
+    box-shadow: var(--popular-sh);
+  }
+
+  .comments-section-container {
+    position: relative;
+    transform: translateX(-105%);
+    width: 32rem;
+    height: 56rem;
+    max-width: 100%;
+    background: var(--white);
+    overflow-y: auto;
+    transition: transform 0.3s ease-in-out;
+    z-index: -1;
+    padding: 0.8rem 1.6rem 0.8rem 4.8rem;
+    border-top-right-radius: 1.6rem;
+    border-bottom-right-radius: 1.6rem;
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-container.single-story {
+    padding: 0rem 1.6rem 0 1.6rem;
+    gap: 2.4rem;
+  }
+
+  .story-card-profile-pic.single-story {
+    gap: 0.8rem;
+  }
+
+  h5.name-text.single-st {
+    font-size: 1.6rem;
+    text-align: left;
+    line-height: 1.1;
+  }
+
+  .single-story-post-date {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.1;
+  }
+
+  .events-first-row {
+    gap: 0.8rem !important;
+  }
+  .single-story-btns {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .like__btn {
+    padding: 12px 16px;
+    background: var(--white);
+    font-size: 16px;
+  }
+
+  .comment__btn {
+    padding: 12px 16px;
+    background: var(--white);
+    font-size: 16px;
+  }
+
+  .share__btn {
+    padding: 12px 16px;
+    background: var(--white);
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 956px) {

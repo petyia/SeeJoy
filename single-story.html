@@ -424,7 +424,7 @@
                     </button>
                   </div>
                   <div class="comment-btn-container">
-                    <button class="comment__btn">
+                    <button class="comment__btn" id="openComments">
                       <span id="comment-icon"
                         ><i class="fa-regular fa-comments"></i
                       ></span>
@@ -444,62 +444,89 @@
                   </div>
                 </div>
               </div>
-              <div class="story-card-img-container single-story">
-                <div id="vue-component">
-                  <div class="vue-nav">
+              <div class="sigle-story-contaner-comments">
+                <div class="story-card-img-container single-story">
+                  <div id="vue-component">
+                    <div class="vue-nav">
+                      <div
+                        v-for="(media, index) in mediaList"
+                        :key="index"
+                        class="nav-item-single-story"
+                      >
+                        <div class="nav-progress"></div>
+                      </div>
+                    </div>
                     <div
                       v-for="(media, index) in mediaList"
                       :key="index"
-                      class="nav-item-single-story"
+                      v-if="current == index"
+                      class="vue-section"
                     >
-                      <div class="nav-progress"></div>
+                      <img
+                        v-if="media.type === 'image'"
+                        :src="media.url"
+                        alt=""
+                      />
+                      <video
+                        v-if="media.type === 'video'"
+                        :src="media.url"
+                        autoplay
+                        muted
+                        loop
+                      ></video>
                     </div>
                   </div>
-                  <div
-                    v-for="(media, index) in mediaList"
-                    :key="index"
-                    v-if="current == index"
-                    class="vue-section"
-                  >
-                    <img
-                      v-if="media.type === 'image'"
-                      :src="media.url"
-                      alt=""
-                    />
-                    <video
-                      v-if="media.type === 'video'"
-                      :src="media.url"
-                      autoplay
-                      muted
-                      loop
-                    ></video>
-                  </div>
-                </div>
 
-                <div class="popular-lower-container single-story">
-                  <div class="upper-info-container">
-                    <div class="popular-hour">2024 Aug 30 - 16:00</div>
-                    <h3 class="h3">Izgalmas 30 perces hőlégballon utazás</h3>
-                  </div>
-                  <div class="lower-info-container">
-                    <div class="my-event-lower-info-container">
-                      <a href="#">
-                        <div class="my-event-line" id="stories-line">
-                          <div class="story-container">
-                            <div class="my-event-card-medium my-event2-7"></div>
-                          </div>
-                          <div class="story-container">
-                            <div class="my-event-card-medium my-event2-3"></div>
-                          </div>
-                          <div class="story-container">
-                            <div class="my-event-card-medium my-event3">
-                              <span id="my-event-plus-number-medium">+9</span>
+                  <div class="popular-lower-container single-story">
+                    <div class="upper-info-container">
+                      <div class="popular-hour">2024 Aug 30 - 16:00</div>
+                      <h3 class="h3">Izgalmas 30 perces hőlégballon utazás</h3>
+                    </div>
+                    <div class="lower-info-container">
+                      <div class="my-event-lower-info-container">
+                        <a href="#">
+                          <div class="my-event-line" id="stories-line">
+                            <div class="story-container">
+                              <div
+                                class="my-event-card-medium my-event2-7"
+                              ></div>
+                            </div>
+                            <div class="story-container">
+                              <div
+                                class="my-event-card-medium my-event2-3"
+                              ></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-medium my-event3">
+                                <span id="my-event-plus-number-medium">+9</span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      </a>
+                        </a>
+                      </div>
+                      <a href="#"><div class="popular-price">15000 Ft</div></a>
                     </div>
-                    <a href="#"><div class="popular-price">15000 Ft</div></a>
+                  </div>
+                </div>
+                <!-- Komment szekció -->
+                <div id="commentsSection" class="comments-section-container">
+                  <div class="comments-header">
+                    <h2>Kommentek</h2>
+                    <button id="closeComments" class="close-comments-btn">
+                      &times;
+                    </button>
+                  </div>
+                  <div class="comments-list">
+                    <!-- Kommentek ide kerülnek -->
+                  </div>
+                  <div class="comment-form">
+                    <textarea
+                      id="newCommentText"
+                      placeholder="Írj megjegyzést..."
+                    ></textarea>
+                    <button id="postComment" class="comment__btn">
+                      Komment
+                    </button>
                   </div>
                 </div>
               </div>
