@@ -78,8 +78,58 @@ document.body.addEventListener("click", function (event) {
       likeCount.textContent = parseInt(likeCount.textContent) + 1;
     } else {
       likeBtn.dataset.clickedLike = "false";
-      likeIcon.innerHTML = `<i class="fa-regular fa-heart"></i>`;
+      likeIcon.innerHTML = `</i><i class="fa-regular fa-heart"></i>`;
       likeCount.textContent = parseInt(likeCount.textContent) - 1;
+    }
+  }
+});
+
+// Eseménydelegálás a válasz gombokra
+document.body.addEventListener("click", function (event) {
+  if (
+    event.target.matches(".answer__btn") ||
+    event.target.closest(".answer__btn")
+  ) {
+    const answerBtn = event.target.matches(".answer__btn")
+      ? event.target
+      : event.target.closest(".answer__btn");
+    const answerIcon = answerBtn.querySelector("#answer-icon");
+    const answerCount = answerBtn.querySelector("#answer-count");
+
+    let clickedAnswer = answerBtn.dataset.clickedAnswer === "true";
+    if (!clickedAnswer) {
+      answerBtn.dataset.clickedAnswer = "true";
+      answerIcon.innerHTML = `<i class="fa-solid fa-comment-dots" style="color: var(--black);"></i>`;
+
+      // Hozzáadunk egy új válasz input mezőt
+      const replyForm = document.createElement("div");
+      replyForm.classList.add("reply-form");
+      replyForm.innerHTML = `
+        <textarea placeholder="Írj egy választ..."></textarea>
+        <button class="post-reply-btn">Küldés</button>
+      `;
+      answerBtn.closest(".comment-header").appendChild(replyForm);
+
+      // Válasz elküldése
+      replyForm
+        .querySelector(".post-reply-btn")
+        .addEventListener("click", function () {
+          const replyText = replyForm.querySelector("textarea").value.trim();
+          if (replyText) {
+            const replyList = document.createElement("div");
+            replyList.classList.add("reply-list");
+            replyList.innerHTML = `<div class="comment-header-img-username">
+            <img src="https://via.placeholder.com/24" alt="Avatar" class="comment-avatar">
+            <span class="comment-author answer-line">Vendég Felhasználó</span>
+          </div><p class="reply-text">${replyText}</p>`;
+            answerBtn.closest(".comment-header").appendChild(replyList);
+            replyForm.remove(); // Válasz form eltávolítása
+          }
+        });
+    } else {
+      answerBtn.dataset.clickedAnswer = "false";
+      answerIcon.innerHTML = `<i class="fa-regular fa-comment-dots"></i>`;
+      // Itt nem csökkentjük a számlálót, mivel nem távolítunk el válaszokat
     }
   }
 });
@@ -94,29 +144,59 @@ document.body.addEventListener("click", function (event) {
   }
 });
 
+// Idő formázása emberi olvashatóságúvá
+function timeSince(date) {
+  const seconds = Math.floor((new Date() - date) / 1000);
+  let interval = seconds / 31536000;
+
+  if (interval > 1) return Math.floor(interval) + " éve";
+  interval = seconds / 2592000;
+  if (interval > 1) return Math.floor(interval) + " hónapja";
+  interval = seconds / 604800;
+  if (interval > 1) return Math.floor(interval) + " hete";
+  interval = seconds / 86400;
+  if (interval > 1) return Math.floor(interval) + " napja";
+  interval = seconds / 3600;
+  if (interval > 1) return Math.floor(interval) + " órája";
+  interval = seconds / 60;
+  if (interval > 1) return Math.floor(interval) + " perce";
+  return "éppen most";
+}
+
 // Komment hozzáadása
 document.getElementById("postComment").addEventListener("click", function () {
   const commentText = document.getElementById("newCommentText").value.trim();
   if (commentText) {
     const commentsList = document.querySelector(".comments-list");
+    const currentTime = new Date();
 
     const newComment = document.createElement("div");
     newComment.classList.add("comment");
+    newComment.dataset.timestamp = currentTime; // Időbélyeg hozzáadása
     newComment.innerHTML = `
       <div class="comment-header">
-        <img src="https://via.placeholder.com/40" alt="Avatar" class="comment-avatar">
-        <div class="comment-texts">
-          <span class="comment-author">Vendég Felhasználó</span>
-          <p class="comment-text">${commentText}</p>
-        </div>
+        <div class="comment-header-first-row">
+          <div class="comment-header-img-username">
+            <img src="https://via.placeholder.com/32" alt="Avatar" class="comment-avatar">
+            <span class="comment-author">Vendég Felhasználó</span>
+          </div>
+          <div class="comment-time">${timeSince(currentTime)}</div>
+        </div>  
+        <p class="comment-text">${commentText}</p>
+        <div class="like-btn-container">
+          <button class="like__btn withcomment" data-clicked-like="false">
+              <span id="like-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
+              <span id="like-count">0</span>
+          </button>
+          <button class="answer__btn withcomment" data-clicked-like="false">
+              <span id="answer-icon">
+                <i class="fa-regular fa-comment-dots"></i>
+              </span>
+              <span id="answer-count">0</span>
+          </button>
       </div>
-      <div class="like-btn-container">
-        <button class="like__btn withcomment" data-clicked-like="false">
-            <span id="like-icon">
-              <i class="fa-regular fa-heart"></i>
-            </span>
-            <span id="like-count">0</span>
-        </button>
       </div>
       <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
       <div class="comment-options-menu">
@@ -132,6 +212,16 @@ document.getElementById("postComment").addEventListener("click", function () {
     updateCommentCount(1);
   }
 });
+
+// Idő frissítése időközönként
+setInterval(() => {
+  const comments = document.querySelectorAll(".comment");
+  comments.forEach((comment) => {
+    const timestamp = new Date(comment.dataset.timestamp);
+    const timeElem = comment.querySelector(".comment-time");
+    timeElem.textContent = timeSince(timestamp);
+  });
+}, 60000); // Minden percben frissít
 
 // Eseménydelegálás a kommentek opciós gombjaira
 document.body.addEventListener("click", function (event) {
