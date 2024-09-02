@@ -26,6 +26,26 @@ function updateCommentCount(delta) {
   }
 }
 
+// Funkció a válaszok számának frissítésére
+function updateAnswerCount(answerBtn, delta) {
+  const answerCountElem = answerBtn.querySelector("#answer-count");
+  if (answerCountElem) {
+    const currentCount = parseInt(answerCountElem.textContent);
+    answerCountElem.textContent = currentCount + delta;
+  }
+
+  // Keressük meg a fő komment számlálót, és frissítsük azt is
+  const parentComment = answerBtn.closest(".comment");
+  const parentAnswerCountElem = parentComment.querySelector("#answer-count");
+  if (parentAnswerCountElem && parentAnswerCountElem !== answerCountElem) {
+    const parentCurrentCount = parseInt(parentAnswerCountElem.textContent);
+    parentAnswerCountElem.textContent = parentCurrentCount + delta;
+  }
+
+  // Frissítsük az összes komment számát is, mivel egy válasz egy új kommentnek számít
+  updateCommentCount(delta);
+}
+
 // Funkció az ikon állapotának frissítésére
 function updateCommentIcon(isActive) {
   const commentIcon = commentBtn.querySelector("#comment-icon");
@@ -118,12 +138,40 @@ document.body.addEventListener("click", function (event) {
           if (replyText) {
             const replyList = document.createElement("div");
             replyList.classList.add("reply-list");
+
             replyList.innerHTML = `<div class="comment-header-img-username">
             <img src="https://via.placeholder.com/24" alt="Avatar" class="comment-avatar">
             <span class="comment-author answer-line">Vendég Felhasználó</span>
-          </div><p class="reply-text">${replyText}</p>`;
+            </div>
+            <div class="comment-second-row">
+             <p class="reply-text">${replyText}</p>  
+              <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+              <div class="comment-options-menu asnwer">
+                <button class="edit-comment"><i class="fa-solid fa-pen"></i>Szerkesztés</button>
+                <button class="delete-comment"><i class="fa-solid fa-trash-can"></i>Törlés</button>
+              </div>
+            </div>
+        
+        <div class="like-btn-container">
+          <button class="like__btn withcomment" data-clicked-like="false">
+              <span id="like-icon">
+                <i class="fa-regular fa-heart"></i>
+              </span>
+              <span id="like-count">0</span>
+          </button>
+          <button class="answer__btn withcomment" data-clicked-like="false">
+              <span id="answer-icon">
+                <i class="fa-regular fa-comment-dots"></i>
+              </span>
+              <span id="answer-count">0</span>
+          </button>
+      </div>
+      </div>`;
             answerBtn.closest(".comment-header").appendChild(replyList);
             replyForm.remove(); // Válasz form eltávolítása
+
+            // Frissítsük a válaszok számát
+            updateAnswerCount(answerBtn, 1);
           }
         });
     } else {
@@ -181,8 +229,15 @@ document.getElementById("postComment").addEventListener("click", function () {
             <span class="comment-author">Vendég Felhasználó</span>
           </div>
           <div class="comment-time">${timeSince(currentTime)}</div>
-        </div>  
-        <p class="comment-text">${commentText}</p>
+        </div>
+        <div class="comment-second-row">  
+          <p class="comment-text">${commentText}</p>
+          <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+          <div class="comment-options-menu">
+            <button class="edit-comment"><i class="fa-solid fa-pen"></i>Szerkesztés</button>
+            <button class="delete-comment"><i class="fa-solid fa-trash-can"></i>Törlés</button>
+          </div>
+        </div>
         <div class="like-btn-container">
           <button class="like__btn withcomment" data-clicked-like="false">
               <span id="like-icon">
@@ -198,11 +253,7 @@ document.getElementById("postComment").addEventListener("click", function () {
           </button>
       </div>
       </div>
-      <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-      <div class="comment-options-menu">
-        <button class="edit-comment"><i class="fa-solid fa-pen"></i>Szerkesztés</button>
-        <button class="delete-comment"><i class="fa-solid fa-trash-can"></i>Törlés</button>
-      </div>
+      
     `;
 
     commentsList.appendChild(newComment);
