@@ -348,45 +348,48 @@ h5.name-text.single-st {
 
 /* Komment Szekció Stílusok */
 .comments-section-container {
-  position: relative; /* Flexbox konténeren belül marad */
   transform: translateX(-105%); /* Kezdetben kívülről indul */
   width: 400px;
   height: 72rem; /* Magasság igazodjon a szülőelemhez */
   max-width: 100%;
   background: var(--white);
-  overflow-y: auto;
+  overflow: hidden; /* Elrejti a scroll-t az egész szekcióra */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: -1;
-
-  padding: 0.8rem 1.6rem 0.8rem 2.6rem;
+  padding: 0.8rem 0rem 0rem 0rem;
   border-top-right-radius: 1.6rem;
   border-bottom-right-radius: 1.6rem;
-
   box-shadow: var(--popular-sh);
   display: none;
   opacity: 0; /* Kezdetben átlátszó */
 }
 
 .comments-section-container.active {
+  flex-direction: column;
+  justify-content: space-between;
   transform: translateX(-3%); /* Aktív állapotban a helyén marad */
   opacity: 1; /* Megjelenés */
 }
 
-.comments-section-container.active::-webkit-scrollbar {
-  width: 0.5vw;
+.comments-list {
+  padding: 1.6rem 1.6rem 1.6rem 3.2rem;
 }
 
-.comments-section-container.active::-webkit-scrollbar-thumb {
+.comments-list::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+.comments-list::-webkit-scrollbar-thumb {
   background-color: var(--primary);
   border-radius: 8rem;
 }
 
-.comments-section-container.active::-webkit-scrollbar-track {
+.comments-list::-webkit-scrollbar-track {
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 8rem;
 }
 
-.comments-section-container.active::-webkit-scrollbar-track:hover {
+.comments-list::-webkit-scrollbar-track:hover {
   background: var(--grey);
 }
 
@@ -394,13 +397,16 @@ h5.name-text.single-st {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
+  padding: 1.6rem 1.6rem 1.6rem 3.2rem;
   color: var(--black);
   font-family: var(--body-font);
   font-size: 1.6rem;
 }
 
 .comments-title {
+}
+.flex-separation {
+  overflow-y: hidden;
 }
 
 .close-comments-btn {
@@ -416,6 +422,11 @@ h5.name-text.single-st {
 
 .close-comments-btn:hover {
   background-color: var(--pale-grey);
+}
+
+.comment-field-container {
+  box-shadow: rgba(99, 99, 99, 0.1) 0px -2px 8px 0px;
+  padding: 1.6rem 1.6rem 1.6rem 3.2rem;
 }
 
 .comment-form {
@@ -515,6 +526,10 @@ h5.name-text.single-st {
   flex-direction: column;
   gap: 1.6rem;
   margin-bottom: 2.4rem;
+  overflow-y: auto; /* Görgethető a kommentek listája */
+  max-height: calc(
+    100% - 80px
+  ); /* Magasság korlátozása a fejléc és a beviteli mező között */
 }
 
 .comment-avatar {
@@ -542,7 +557,6 @@ h5.name-text.single-st {
   width: 100%; /* A teljes szélességet lefedi */
   word-wrap: break-word; /* Törés a szavak közepén, ha szükséges */
   overflow-wrap: break-word; /* Alternatív megoldás a szavak törésére */
-
   line-height: 1.25;
   letter-spacing: -0.2px;
 }
@@ -571,8 +585,6 @@ h5.name-text.single-st {
   display: none;
   position: absolute;
   right: 0;
-  top: 0;
-  transform: translate(0, 165%);
   background: var(--white);
   box-shadow: var(--popular-sh);
   border-radius: 1.6rem;

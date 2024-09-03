@@ -21,7 +21,7 @@ let currentComment = null; // Hozzáadva a szerkesztéshez és törléshez
 function updateCommentCount(delta) {
   const commentCountElem = document.querySelector("#comment-count");
   if (commentCountElem) {
-    const currentCount = parseInt(commentCountElem.textContent);
+    const currentCount = parseInt(commentCountElem.textContent, 10);
     commentCountElem.textContent = currentCount + delta;
   }
 }
@@ -30,16 +30,21 @@ function updateCommentCount(delta) {
 function updateAnswerCount(answerBtn, delta) {
   const answerCountElem = answerBtn.querySelector("#answer-count");
   if (answerCountElem) {
-    const currentCount = parseInt(answerCountElem.textContent);
+    const currentCount = parseInt(answerCountElem.textContent, 10);
     answerCountElem.textContent = currentCount + delta;
   }
 
   // Keressük meg a fő komment számlálót, és frissítsük azt is
   const parentComment = answerBtn.closest(".comment");
-  const parentAnswerCountElem = parentComment.querySelector("#answer-count");
-  if (parentAnswerCountElem && parentAnswerCountElem !== answerCountElem) {
-    const parentCurrentCount = parseInt(parentAnswerCountElem.textContent);
-    parentAnswerCountElem.textContent = parentCurrentCount + delta;
+  if (parentComment) {
+    const parentAnswerCountElem = parentComment.querySelector("#answer-count");
+    if (parentAnswerCountElem && parentAnswerCountElem !== answerCountElem) {
+      const parentCurrentCount = parseInt(
+        parentAnswerCountElem.textContent,
+        10
+      );
+      parentAnswerCountElem.textContent = parentCurrentCount + delta;
+    }
   }
 
   // Frissítsük az összes komment számát is, mivel egy válasz egy új kommentnek számít
@@ -49,10 +54,12 @@ function updateAnswerCount(answerBtn, delta) {
 // Funkció az ikon állapotának frissítésére
 function updateCommentIcon(isActive) {
   const commentIcon = commentBtn.querySelector("#comment-icon");
-  if (isActive) {
-    commentIcon.innerHTML = `<i class="fa-solid fa-comment" style="color: var(--black);"></i>`;
-  } else {
-    commentIcon.innerHTML = `<i class="fa-regular fa-comment"></i>`;
+  if (commentIcon) {
+    if (isActive) {
+      commentIcon.innerHTML = `<i class="fa-solid fa-comment" style="color: var(--black);"></i>`;
+    } else {
+      commentIcon.innerHTML = `<i class="fa-regular fa-comment"></i>`;
+    }
   }
 }
 
@@ -60,7 +67,7 @@ function updateCommentIcon(isActive) {
 function toggleCommentsSection() {
   if (!clickedComment) {
     clickedComment = true;
-    commentsSection.style.display = "block";
+    commentsSection.style.display = "flex";
     requestAnimationFrame(() => {
       commentsSection.classList.add("active");
     });
@@ -91,15 +98,17 @@ document.body.addEventListener("click", function (event) {
     const likeIcon = likeBtn.querySelector("#like-icon");
     const likeCount = likeBtn.querySelector("#like-count");
 
-    let clickedLike = likeBtn.dataset.clickedLike === "true";
-    if (!clickedLike) {
-      likeBtn.dataset.clickedLike = "true";
-      likeIcon.innerHTML = `<i class="fa-solid fa-heart" style="color: var(--primary);"></i>`;
-      likeCount.textContent = parseInt(likeCount.textContent) + 1;
-    } else {
-      likeBtn.dataset.clickedLike = "false";
-      likeIcon.innerHTML = `</i><i class="fa-regular fa-heart"></i>`;
-      likeCount.textContent = parseInt(likeCount.textContent) - 1;
+    if (likeIcon && likeCount) {
+      let clickedLike = likeBtn.dataset.clickedLike === "true";
+      if (!clickedLike) {
+        likeBtn.dataset.clickedLike = "true";
+        likeIcon.innerHTML = `<i class="fa-solid fa-heart" style="color: var(--primary);"></i>`;
+        likeCount.textContent = parseInt(likeCount.textContent, 10) + 1;
+      } else {
+        likeBtn.dataset.clickedLike = "false";
+        likeIcon.innerHTML = `<i class="fa-regular fa-heart"></i>`;
+        likeCount.textContent = parseInt(likeCount.textContent, 10) - 1;
+      }
     }
   }
 });
@@ -116,68 +125,74 @@ document.body.addEventListener("click", function (event) {
     const answerIcon = answerBtn.querySelector("#answer-icon");
     const answerCount = answerBtn.querySelector("#answer-count");
 
-    let clickedAnswer = answerBtn.dataset.clickedAnswer === "true";
-    if (!clickedAnswer) {
-      answerBtn.dataset.clickedAnswer = "true";
-      answerIcon.innerHTML = `<i class="fa-solid fa-comment-dots" style="color: var(--black);"></i>`;
+    if (answerIcon && answerCount) {
+      let clickedAnswer = answerBtn.dataset.clickedAnswer === "true";
+      if (!clickedAnswer) {
+        answerBtn.dataset.clickedAnswer = "true";
+        answerIcon.innerHTML = `<i class="fa-solid fa-comment-dots" style="color: var(--black);"></i>`;
 
-      // Hozzáadunk egy új válasz input mezőt
-      const replyForm = document.createElement("div");
-      replyForm.classList.add("reply-form");
-      replyForm.innerHTML = `
-        <textarea placeholder="Írj egy választ..."></textarea>
-        <button class="post-reply-btn">Küldés</button>
-      `;
-      answerBtn.closest(".comment-header").appendChild(replyForm);
+        // Hozzáadunk egy új válasz input mezőt
+        const replyForm = document.createElement("div");
+        replyForm.classList.add("reply-form");
+        replyForm.innerHTML = `
+          <textarea placeholder="Írj egy választ..."></textarea>
+          <button class="post-reply-btn">Küldés</button>
+        `;
+        answerBtn.closest(".comment-header").appendChild(replyForm);
 
-      // Válasz elküldése
-      replyForm
-        .querySelector(".post-reply-btn")
-        .addEventListener("click", function () {
-          const replyText = replyForm.querySelector("textarea").value.trim();
-          if (replyText) {
-            const replyList = document.createElement("div");
-            replyList.classList.add("reply-list");
+        // Válasz elküldése
+        replyForm
+          .querySelector(".post-reply-btn")
+          .addEventListener("click", function () {
+            const replyText = replyForm.querySelector("textarea").value.trim();
+            if (replyText) {
+              const replyList = document.createElement("div");
+              replyList.classList.add("reply-list");
 
-            replyList.innerHTML = `<div class="comment-header-img-username">
-            <img src="https://via.placeholder.com/24" alt="Avatar" class="comment-avatar">
-            <span class="comment-author answer-line">Vendég Felhasználó</span>
-            </div>
-            <div class="comment-second-row">
-             <p class="reply-text">${replyText}</p>  
-              <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-              <div class="comment-options-menu asnwer">
-                <button class="edit-comment"><i class="fa-solid fa-pen"></i>Szerkesztés</button>
-                <button class="delete-comment"><i class="fa-solid fa-trash-can"></i>Törlés</button>
-              </div>
-            </div>
-        
-        <div class="like-btn-container">
-          <button class="like__btn withcomment" data-clicked-like="false">
-              <span id="like-icon">
-                <i class="fa-regular fa-heart"></i>
-              </span>
-              <span id="like-count">0</span>
-          </button>
-          <button class="answer__btn withcomment" data-clicked-like="false">
-              <span id="answer-icon">
-                <i class="fa-regular fa-comment-dots"></i>
-              </span>
-              <span id="answer-count">0</span>
-          </button>
-      </div>
-      </div>`;
-            answerBtn.closest(".comment-header").appendChild(replyList);
-            replyForm.remove(); // Válasz form eltávolítása
+              replyList.innerHTML = `
+                <div class="comment-header-img-username">
+                  <img src="https://via.placeholder.com/24" alt="Avatar" class="comment-avatar">
+                  <span class="comment-author answer-line">Vendég Felhasználó</span>
+                </div>
+                <div class="comment-second-row">
+                 <p class="reply-text">${replyText}</p>  
+                  <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                  <div class="comment-options-menu answer">
+                    <button class="edit-comment"><i class="fa-solid fa-pen"></i>Szerkesztés</button>
+                    <button class="delete-comment"><i class="fa-solid fa-trash-can"></i>Törlés</button>
+                  </div>
+                </div>
+            
+            <div class="like-btn-container">
+              <button class="like__btn withcomment" data-clicked-like="false">
+                  <span id="like-icon">
+                    <i class="fa-regular fa-heart"></i>
+                  </span>
+                  <span id="like-count">0</span>
+              </button>
+              <button class="answer__btn withcomment" data-clicked-like="false">
+                  <span id="answer-icon">
+                    <i class="fa-regular fa-comment-dots"></i>
+                  </span>
+                  <span id="answer-count">0</span>
+              </button>
+          </div>
+          </div>`;
+              answerBtn.closest(".comment-header").appendChild(replyList);
+              replyForm.remove(); // Válasz form eltávolítása
 
-            // Frissítsük a válaszok számát
-            updateAnswerCount(answerBtn, 1);
-          }
-        });
-    } else {
-      answerBtn.dataset.clickedAnswer = "false";
-      answerIcon.innerHTML = `<i class="fa-regular fa-comment-dots"></i>`;
-      // Itt nem csökkentjük a számlálót, mivel nem távolítunk el válaszokat
+              // Frissítsük a válaszok számát
+              updateAnswerCount(answerBtn, 1);
+
+              // Válasz ikon visszaállítása
+              answerBtn.dataset.clickedAnswer = "false";
+              answerIcon.innerHTML = `<i class="fa-regular fa-comment-dots"></i>`;
+            }
+          });
+      } else {
+        answerBtn.dataset.clickedAnswer = "false";
+        answerIcon.innerHTML = `<i class="fa-regular fa-comment-dots"></i>`;
+      }
     }
   }
 });
@@ -253,7 +268,6 @@ document.getElementById("postComment").addEventListener("click", function () {
           </button>
       </div>
       </div>
-      
     `;
 
     commentsList.appendChild(newComment);
@@ -270,12 +284,19 @@ setInterval(() => {
   comments.forEach((comment) => {
     const timestamp = new Date(comment.dataset.timestamp);
     const timeElem = comment.querySelector(".comment-time");
-    timeElem.textContent = timeSince(timestamp);
+    if (timeElem) {
+      timeElem.textContent = timeSince(timestamp);
+    }
   });
 }, 60000); // Minden percben frissít
 
-// Eseménydelegálás a kommentek opciós gombjaira
+// Globalis változók
+
+let currentReply = null;
+
+// Eseménydelegálás a kommentek és válaszok opciós gombjaira
 document.body.addEventListener("click", function (event) {
+  // Komment opciós menü megjelenítése
   if (
     event.target.matches(".comment-options-btn") ||
     event.target.closest(".comment-options-btn")
@@ -298,10 +319,17 @@ document.body.addEventListener("click", function (event) {
       menu.style.display = "none";
     });
   }
-});
 
-// Szerkesztés funkció
-document.body.addEventListener("click", function (event) {
+  // Szerkesztés funkció a válaszoknál
+  if (event.target.matches(".edit-reply")) {
+    const reply = event.target.closest(".reply-list");
+    currentReply = reply;
+    const replyTextElem = reply.querySelector(".reply-text");
+    editCommentText.value = replyTextElem.textContent;
+    editCommentModal.style.display = "block";
+  }
+
+  // Szerkesztés funkció a kommenteknél
   if (event.target.matches(".edit-comment")) {
     const comment = event.target.closest(".comment");
     currentComment = comment;
@@ -309,32 +337,85 @@ document.body.addEventListener("click", function (event) {
     editCommentText.value = commentTextElem.textContent;
     editCommentModal.style.display = "block";
   }
-});
 
-// Mentés szerkesztés után
-saveEditCommentBtn.addEventListener("click", function () {
-  if (currentComment) {
-    const commentTextElem = currentComment.querySelector(".comment-text");
-    commentTextElem.textContent = editCommentText.value;
-    editCommentModal.style.display = "none";
-  }
-});
-
-// Törlés funkció
-document.body.addEventListener("click", function (event) {
+  // Komment törlés funkció
   if (event.target.matches(".delete-comment")) {
     const comment = event.target.closest(".comment");
     currentComment = comment;
     deleteCommentModal.style.display = "block";
   }
+
+  // Reply törlés funkció
+  if (event.target.matches(".delete-reply")) {
+    const reply = event.target.closest(".reply-list");
+    if (reply) {
+      currentReply = reply;
+      deleteCommentModal.style.display = "block";
+    }
+  }
+});
+
+// Mentés szerkesztés után
+saveEditCommentBtn.addEventListener("click", function () {
+  if (currentReply) {
+    const replyTextElem = currentReply.querySelector(".reply-text");
+    const newReplyText = editCommentText.value.trim();
+
+    if (replyTextElem && newReplyText) {
+      replyTextElem.textContent = newReplyText;
+      editCommentModal.style.display = "none";
+      currentReply = null; // Reset currentReply
+    } else {
+      alert("A válasz szövege nem lehet üres!");
+    }
+  }
+
+  if (currentComment) {
+    const commentTextElem = currentComment.querySelector(".comment-text");
+    const newCommentText = editCommentText.value.trim();
+
+    if (commentTextElem && newCommentText) {
+      commentTextElem.textContent = newCommentText;
+      editCommentModal.style.display = "none";
+      currentComment = null; // Reset currentComment
+    } else {
+      alert("A komment szövege nem lehet üres!");
+    }
+  }
 });
 
 // Törlés megerősítése
 confirmDeleteCommentBtn.addEventListener("click", function () {
+  if (currentReply) {
+    // Törlés reply-k esetén
+    const parentComment = currentReply.closest(".comment");
+    if (parentComment) {
+      const parentAnswerCountElem =
+        parentComment.querySelector("#answer-count");
+      if (parentAnswerCountElem) {
+        const parentCurrentCount = parseInt(
+          parentAnswerCountElem.textContent,
+          10
+        );
+        parentAnswerCountElem.textContent = parentCurrentCount - 1;
+      }
+    }
+
+    currentReply.remove();
+    updateCommentCount(-1); // Csökkentjük a kommentek számát
+    deleteCommentModal.style.display = "none";
+    currentReply = null; // Reset currentReply
+  }
+
   if (currentComment) {
+    // Törlés kommentek esetén
+    currentComment
+      .querySelectorAll(".reply-list")
+      .forEach((reply) => reply.remove()); // Törli a hozzátartozó reply-kat
     currentComment.remove();
     updateCommentCount(-1); // Csökkentjük a kommentek számát
     deleteCommentModal.style.display = "none";
+    currentComment = null; // Reset currentComment
   }
 });
 
@@ -370,12 +451,16 @@ document.getElementById("closeComments").addEventListener("click", function () {
 const textarea = document.querySelector(".comment-form textarea");
 
 function adjustTextareaHeight() {
-  textarea.style.height = "auto"; // Alapértelmezett magasság visszaállítása
-  textarea.style.height = `${textarea.scrollHeight}px`; // Állítsd be a magasságot a tartalom méretének megfelelően
+  if (textarea) {
+    textarea.style.height = "auto"; // Alapértelmezett magasság visszaállítása
+    textarea.style.height = `${textarea.scrollHeight}px`; // Állítsd be a magasságot a tartalom méretének megfelelően
+  }
 }
 
 // Figyeljük az input eseményeket a textarea-n
-textarea.addEventListener("input", adjustTextareaHeight);
+if (textarea) {
+  textarea.addEventListener("input", adjustTextareaHeight);
 
-// Alkalmazzuk a magasságot az oldal betöltődésekor is, ha van már előre kitöltött szöveg
-window.addEventListener("load", adjustTextareaHeight);
+  // Alkalmazzuk a magasságot az oldal betöltődésekor is, ha van már előre kitöltött szöveg
+  window.addEventListener("load", adjustTextareaHeight);
+}

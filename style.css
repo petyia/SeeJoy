@@ -899,11 +899,13 @@ a.h5 {
   border-radius: 16rem;
   overflow: hidden;
 
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.6rem;
 
   z-index: 9998;
 
   box-shadow: var(--popular-sh);
+
+  display: none;
 }
 
 .phone-footer {
