@@ -2,13 +2,13 @@
 const commentBtn = document.querySelector(".comment__btn");
 const commentsSection = document.getElementById("commentsSection");
 
-// Szerkesztés modális ablak
+// Szerkesztés modális ablak kommentnél
 const editCommentModal = document.getElementById("editCommentModal");
 const closeEditModal = document.querySelector(".close-edit-modal");
 const saveEditCommentBtn = document.getElementById("saveEditComment");
 const editCommentText = document.getElementById("editCommentText");
 
-// Törlés megerősítő modális ablak
+// Törlés megerősítő modális ablak kommentnél
 const deleteCommentModal = document.getElementById("deleteCommentModal");
 const closeDeleteModal = document.querySelector(".close-delete-modal");
 const confirmDeleteCommentBtn = document.getElementById("confirmDeleteComment");
@@ -136,7 +136,12 @@ document.body.addEventListener("click", function (event) {
         replyForm.classList.add("reply-form");
         replyForm.innerHTML = `
           <textarea placeholder="Írj egy választ..."></textarea>
-          <button class="post-reply-btn">Küldés</button>
+          <div class="emoji-panel">
+            <button id="newEmojiAnswer" class="----chat-input-tool---">
+              <i class="fa-regular fa-face-smile"></i>
+            </button>
+          </div>
+          <button class="post-reply-btn"><i class="fa-solid fa-paper-plane"></i></button>
         `;
         answerBtn.closest(".comment-header").appendChild(replyForm);
 
@@ -155,29 +160,28 @@ document.body.addEventListener("click", function (event) {
                   <span class="comment-author answer-line">Vendég Felhasználó</span>
                 </div>
                 <div class="comment-second-row">
-                 <p class="reply-text">${replyText}</p>  
+                  <p class="reply-text">${replyText}</p>
                   <button class="comment-options-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
                   <div class="comment-options-menu answer">
                     <button class="edit-comment"><i class="fa-solid fa-pen"></i>Szerkesztés</button>
                     <button class="delete-comment"><i class="fa-solid fa-trash-can"></i>Törlés</button>
                   </div>
                 </div>
-            
-            <div class="like-btn-container">
-              <button class="like__btn withcomment" data-clicked-like="false">
-                  <span id="like-icon">
-                    <i class="fa-regular fa-heart"></i>
-                  </span>
-                  <span id="like-count">0</span>
-              </button>
-              <button class="answer__btn withcomment" data-clicked-like="false">
-                  <span id="answer-icon">
-                    <i class="fa-regular fa-comment-dots"></i>
-                  </span>
-                  <span id="answer-count">0</span>
-              </button>
-          </div>
-          </div>`;
+                <div class="like-btn-container">
+                  <button class="like__btn withcomment" data-clicked-like="false">
+                    <span id="like-icon">
+                      <i class="fa-regular fa-heart"></i>
+                    </span>
+                    <span id="like-count">0</span>
+                  </button>
+                  <button class="answer__btn withcomment" data-clicked-like="false">
+                    <span id="answer-icon">
+                      <i class="fa-regular fa-comment-dots"></i>
+                    </span>
+                    <span id="answer-count">0</span>
+                  </button>
+                </div>
+              </div>`;
               answerBtn.closest(".comment-header").appendChild(replyList);
               replyForm.remove(); // Válasz form eltávolítása
 
@@ -192,6 +196,14 @@ document.body.addEventListener("click", function (event) {
       } else {
         answerBtn.dataset.clickedAnswer = "false";
         answerIcon.innerHTML = `<i class="fa-regular fa-comment-dots"></i>`;
+
+        // Töröljük a válasz formot, ha létezik
+        const existingReplyForm = answerBtn
+          .closest(".comment-header")
+          .querySelector(".reply-form");
+        if (existingReplyForm) {
+          existingReplyForm.remove();
+        }
       }
     }
   }
@@ -464,3 +476,45 @@ if (textarea) {
   // Alkalmazzuk a magasságot az oldal betöltődésekor is, ha van már előre kitöltött szöveg
   window.addEventListener("load", adjustTextareaHeight);
 }
+
+// Emojipanel megjelenítése
+document.getElementById("newEmoji").addEventListener("click", function (e) {
+  e.stopPropagation();
+  document
+    .querySelector(".intercom-composer-popover")
+    .classList.toggle("active");
+});
+
+// Emojipanel elrejtése, ha kívülre kattintunk
+document.addEventListener("click", function (e) {
+  if (
+    !e.target.closest(".emoji-panel") &&
+    !e.target.closest(".intercom-composer-popover")
+  ) {
+    document
+      .querySelector(".intercom-composer-popover")
+      .classList.remove("active");
+  }
+});
+
+// Emoji hozzáadása a szövegmezőhöz
+document
+  .querySelectorAll(".intercom-emoji-picker-emoji")
+  .forEach(function (emoji) {
+    emoji.addEventListener("click", function () {
+      document.getElementById("newCommentText").value += this.innerHTML;
+    });
+  });
+
+// Keresés az emoji között
+document
+  .querySelector(".intercom-composer-popover-input")
+  .addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    document
+      .querySelectorAll(".intercom-emoji-picker-emoji")
+      .forEach(function (emoji) {
+        const title = emoji.getAttribute("title").toLowerCase();
+        emoji.style.display = title.includes(query) ? "inline-table" : "none";
+      });
+  });
