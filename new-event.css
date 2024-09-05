@@ -1,0 +1,258 @@
+:root {
+  --primary: #ff5483;
+  --primary-light: #fff6f5ff;
+  --primary-light-darker: #ffd7e1;
+  --primary-lightest: #fff6f9;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
+  --grey: #aeb0ba;
+
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+
+  --yellow: #fdf5eb;
+
+  --linear-gradient-1: linear-gradient(
+    to right bottom,
+    #455efd,
+    #ff5483,
+    #f46e4b
+  );
+
+  --search-bg: var(--pale-grey);
+  --body-font: "Nunito", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --fixed-bottom: rgba(99, 99, 99, 0.1) 0px -2px 8px 0px;
+}
+
+@import url("https://use.typekit.net/ovt6ynt.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  cursor: default;
+
+  overflow: auto;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--pale-grey);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+
+  margin-bottom: 80rem;
+}
+
+.new-event-form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 2.4rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 20px 10px 20px;
+}
+
+.new-event-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.new-close-icon {
+  background: none;
+  border: none;
+  font-size: 24px;
+}
+
+.new-menu-icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 5px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  margin: 15px 0;
+  padding: 0 20px;
+}
+
+.progress {
+  width: 25%;
+  height: 100%;
+  background-color: #ff4b5c;
+  border-radius: 10px;
+}
+
+.upload-section {
+  text-align: center;
+}
+
+.upload-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.upload-subtitle {
+  color: var(--grey);
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.upload-area {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 200px;
+  border: 2px dashed var(--ice-blue);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #ff4b5c;
+  cursor: pointer;
+}
+
+.upload-placeholder {
+  font-size: 1.6rem;
+  color: var(--grey);
+  font-weight: 700;
+}
+
+.thumbnail-uploads {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.thumbnail-box {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed var(--ice-blue);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ff4b5c;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.thumbnail-box.no {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  font-size: 36px;
+  cursor: pointer;
+}
+
+.requirements-section h3 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.requirements-list {
+  list-style-type: none;
+  font-size: 14px;
+  color: var(--grey);
+  font-weight: 600;
+}
+
+.requirements-list li {
+  list-style-type: disc; /* Pontok a lista előtt */
+  margin-bottom: 2px;
+  margin-left: 16px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--white);
+  width: 100%;
+  box-shadow: var(--fixed-bottom);
+  padding: 20px;
+  border-bottom-left-radius: 2.4rem;
+  border-bottom-right-radius: 2.4rem;
+}
+
+.back-button,
+.next-button {
+  width: 32%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.back-button {
+  background-color: var(--white);
+  border: 2px solid var(--ice-blue);
+}
+
+.next-button {
+  background-color: var(--primary);
+  color: white;
+}
+
+.new-event-scroll-container {
+  overflow-y: auto;
+  max-height: 600px;
+  padding: 2rem;
+}
+
+.new-event-scroll-container::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+.new-event-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 8rem;
+}
+
+.new-event-scroll-container::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 8rem;
+}
+
+.new-event-scroll-container::-webkit-scrollbar-track:hover {
+  background: var(--grey);
+}

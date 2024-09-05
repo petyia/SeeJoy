@@ -25,7 +25,11 @@
     <link rel="stylesheet" href="upcoming.css" />
     <link rel="stylesheet" href="event-date.css" />
     <link rel="stylesheet" href="events.css" />
-    <link rel="stylesheet" href="all-stories.css  " />
+    <link rel="stylesheet" href="all-stories.css" />
+    <link rel="stylesheet" href="single-story.css" />
+    <link rel="stylesheet" href="single-event.css" />
+    <link rel="stylesheet" href="new-event.css" />
+
     <link rel="stylesheet" href="queries.css" />
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
@@ -395,320 +399,78 @@
         </div>
       </div>
       <section class="events-section">
-        <div class="events-container">
-          <div class="events-first-row phone-block">
-            <h1 class="page-title stories-t">Történetek</h1>
+        <div class="new-event-form-container">
+          <header class="event-header">
+            <button class="new-menu-icon">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <h1 class="new-event-title">Új Esemény Létrehozása</h1>
+            <button class="new-close-icon">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </header>
+
+          <div class="progress-bar">
+            <div class="progress"></div>
           </div>
-          <div class="container-stories-page">
-            <div class="card tabs">
-              <input
-                id="tab-1"
-                type="radio"
-                class="tab tab-selector"
-                checked="checked"
-                name="tab"
-              />
-              <label for="tab-1" class="tab tab-primary">Neked</label>
-              <input
-                id="tab-2"
-                type="radio"
-                class="tab tab-selector"
-                name="tab"
-              />
-              <label for="tab-2" class="tab tab-success">Követés</label>
-              <input
-                id="tab-3"
-                type="radio"
-                class="tab tab-selector"
-                name="tab"
-              />
-              <label for="tab-3" class="tab tab-default">Népszerű</label>
-              <input
-                id="tab-4"
-                type="radio"
-                class="tab tab-selector"
-                name="tab"
-              />
-              <label for="tab-4" class="tab tab-warning">Kiemelt</label>
-              <input
-                id="tab-5"
-                type="radio"
-                class="tab tab-selector"
-                name="tab"
-              />
-              <label for="tab-5" class="tab tab-warning">Élő</label>
-              <input
-                id="tab-6"
-                type="radio"
-                class="tab tab-selector"
-                name="tab"
-              />
-              <label for="tab-6" class="tab tab-default">Folytasd</label>
-              <div class="tabsShadow"></div>
-              <!-- <div class="glider"></div> -->
 
-              <div class="content">
-                <div class="item" id="content-1">
-                  <div class="story-card-container">
-                    <div class="story-card-img-container story-card1">
-                      <!-- Full card link -->
-                      <a href="single-story.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="index.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story1 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Fodor Anna</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
+          <div class="new-event-scroll-container">
+            <div class="upload-section">
+              <h2 class="upload-title">Tölts fel fényképeket és videókat</h2>
+              <p class="upload-subtitle">
+                Minden fényképet és videót ellenőrzünk, mielőtt az oldalon
+                közzétennénk.
+              </p>
 
-                    <div class="story-card-img-container story-card2">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story2 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Nagy Bogi</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card3">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story3 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kőrösi Ilona</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card4">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story4 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Tátási András</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card6">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story6 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Réti Krisztián</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item" id="content-2">
-                  <div class="story-card-container">
-                    <div class="story-card-img-container story-card7">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story7 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kén Gréti</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card5">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="index.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story5 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kalandos Nóra</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card4">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story4 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Tátási András</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card6">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story6 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Réti Krisztián</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card8">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story8 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Olajos Johanna</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item" id="content-3">
-                  <div class="story-card-container">
-                    <div class="story-card-img-container story-card3">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story3 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kőrösi Ilona</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card2">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story2 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Nagy Bogi</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item" id="content-4">
-                  <div class="story-card-container">
-                    <div class="story-card-img-container story-card8">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story8 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Olajos Johanna</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item" id="content-5">
-                  <h2 class="tab-title tab-default">Tab 5</h2>
-                  <p>
-                    <span class="numit"></span> Jelenleg nincs egy élő adás sem.
-                  </p>
-                </div>
-                <div class="item" id="content-6">
-                  <h2 class="tab-title tab-primary">Sweep + Slide Dog Toy</h2>
-                  <p>
-                    <span class="numit"></span> Még nem tekintettél meg egy
-                    történetet sem...
-                  </p>
+              <div class="upload-area" id="main-upload">
+                <div class="thumbnail-box no">+</div>
+                <div class="upload-placeholder">
+                  Kattints vagy húzd ide a képeket és videókat
                 </div>
               </div>
+
+              <div class="thumbnail-uploads">
+                <div class="thumbnail-box">+</div>
+                <div class="thumbnail-box">+</div>
+                <div class="thumbnail-box">+</div>
+                <div class="thumbnail-box">+</div>
+              </div>
             </div>
+
+            <div class="requirements-section">
+              <h3>Követelmények</h3>
+              <ul class="requirements-list">
+                <li>
+                  Különböző részletek és szögek, beleértve az emberek
+                  tevékenység közbeni képeit.
+                </li>
+                <li>
+                  Egy nyugodt helyzet bemutatása, amely pontosan leírja az
+                  eseményt.
+                </li>
+                <li>
+                  Jó minőség: Nincs szükségtelen szűrő, torzítás, ráhelyezett
+                  szöveg vagy szimbólum.
+                </li>
+                <li>
+                  Különböző részletek és szögek, beleértve az emberek
+                  tevékenység közbeni képeit.
+                </li>
+                <li>
+                  Egy nyugodt helyzet bemutatása, amely pontosan leírja az
+                  eseményt.
+                </li>
+                <li>
+                  Jó minőség: Nincs szükségtelen szűrő, torzítás, ráhelyezett
+                  szöveg vagy szimbólum.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="navigation-buttons">
+            <button class="back-button">Vissza</button>
+            <button class="next-button">Tovább</button>
           </div>
         </div>
       </section>
@@ -720,6 +482,8 @@
     <script src="popular.js"></script>
     <script src="stories.js"></script>
     <script src="heart.js"></script>
+    <script src="single-story.js"></script>
+    <script src="single-event.js"></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -728,5 +492,11 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="vue-script.js"></script>
+    <script src="emoji-picker.js"></script>
+    <script src="new-event.js"></script>
   </body>
 </html>
