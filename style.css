@@ -904,8 +904,6 @@ a.h5 {
   z-index: 9998;
 
   box-shadow: var(--popular-sh);
-
-  display: none;
 }
 
 .phone-footer {
