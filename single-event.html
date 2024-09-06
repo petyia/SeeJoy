@@ -398,101 +398,3876 @@
         </div>
       </div>
       <section class="events-section">
-        <div class="event-card">
-          <div class="event-banner">
-            <div class="slider-container">
-              <div class="slider">
-                <div class="slide">
-                  <img src="img/event-date4.webp" alt="Slide 1" />
+        <div class="events-container single-story">
+          <div class="single-story-card-container">
+            <div class="flex-container-single-story">
+              <div class="events-first-row single-story phone-block">
+                <div class="story-profile-img-container single-story">
+                  <!-- Inner link -->
+                  <a href="index.html" class="story-profile-link">
+                    <div class="story-card-profile-pic single-story">
+                      <div class="image-border-none">
+                        <div class="stories-card story6"></div>
+                      </div>
+                      <div class="story-profile-text-container">
+                        <h5 class="name-text single-st">Vágó András</h5>
+                        <p class="single-story-post-date">1 órával ezelőtt</p>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-                <div class="slide">
-                  <img src="img/event-date4_1.webp" alt="Slide 2" />
-                </div>
-                <div class="slide">
-                  <video autoplay muted>
-                    <source src="vid/tarsas.mp4" type="video/mp4" />
-                    A böngésződ nem támogatja a videót.
-                  </video>
-                </div>
-                <!-- Add more slides here -->
-              </div>
-              <div class="dots-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <!-- Add more dots as needed -->
-              </div>
-            </div>
-          </div>
-          <div class="event-details">
-            <div class="organizer-section">
-              <div alt="Szervező" class="organizer-avatar"></div>
-              <div class="organizer-info">
-                <h2 class="organizer-name">Vágó András</h2>
-                <p class="organizer-role">Szervező</p>
-              </div>
-              <button class="follow-button">Követés</button>
-            </div>
-            <div class="event-description">
-              <h1 class="event-title">
-                Játsszunk híres társasjátékokat, találkozzunk minden vasárnap!
-              </h1>
-              <div class="single-event-info-container">
-                <div class="event-left-info-container">
-                  <div class="clock-container" alt="Óra kép">
-                    <i class="fa-regular fa-clock"></i>
+                <div class="single-story-btns">
+                  <div class="like-btn-container">
+                    <button class="like__btn">
+                      <span id="like-icon"
+                        ><i class="fa-regular fa-heart"></i
+                      ></span>
+                      <span id="like-count">3</span> Kedvelés
+                    </button>
                   </div>
-                  <div class="event-date-time">
-                    <p class="event-date">2024 Szeptember 5.</p>
-                    <p class="event-time">23:00-tól 6:00-ig</p>
+                  <div class="comment-btn-container">
+                    <button class="comment__btn" id="openComments">
+                      <span id="comment-icon"
+                        ><i class="fa-regular fa-comment"></i
+                      ></span>
+                      <span id="comment-count">0</span> Komment
+                    </button>
+                  </div>
+                  <div class="share-btn-container">
+                    <button class="share__btn">
+                      <span id="share-icon"
+                        ><i
+                          class="fa-solid fa-share"
+                          style="color: var(--black)"
+                        ></i
+                      ></span>
+                      <span id="share-count">1</span>
+                    </button>
                   </div>
                 </div>
-                <a href="#">
-                  <div class="my-event-line" id="stories-line">
-                    <div class="story-container">
-                      <div class="my-event-card-medium my-event2-7"></div>
+              </div>
+              <div class="sigle-story-contaner-comments">
+                <div class="event-card-container">
+                  <div class="event-card">
+                    <div class="event-banner">
+                      <div class="slider-container">
+                        <div class="slider">
+                          <div class="slide">
+                            <img src="img/event-date4.webp" alt="Slide 1" />
+                          </div>
+                          <div class="slide">
+                            <img src="img/event-date4_1.webp" alt="Slide 2" />
+                          </div>
+                          <div class="slide">
+                            <video autoplay muted loop>
+                              <source src="vid/tarsas.mp4" type="video/mp4" />
+                              A böngésződ nem támogatja a videót.
+                            </video>
+                          </div>
+                          <!-- Add more slides here -->
+                        </div>
+                        <div class="dots-container">
+                          <span class="dot" onclick="currentSlide(1)"></span>
+                          <span class="dot" onclick="currentSlide(2)"></span>
+                          <span class="dot" onclick="currentSlide(3)"></span>
+                          <!-- Add more dots as needed -->
+                        </div>
+                      </div>
                     </div>
-                    <div class="story-container">
-                      <div class="my-event-card-medium my-event2-3"></div>
+                    <div class="event-details">
+                      <div class="organizer-section">
+                        <div alt="Szervező" class="organizer-avatar"></div>
+                        <div class="organizer-info">
+                          <h2 class="organizer-name">Vágó András</h2>
+                          <p class="organizer-role">Szervező</p>
+                        </div>
+                        <button class="follow-button">Követés</button>
+                      </div>
+                      <div class="event-description">
+                        <h1 class="event-title">
+                          Játsszunk híres társasjátékokat, találkozzunk minden
+                          vasárnap!
+                        </h1>
+                        <div class="single-event-info-container">
+                          <div class="event-left-info-container">
+                            <div class="icon-container" alt="Óra kép">
+                              <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div class="event-date-time">
+                              <p class="event-date">
+                                2024 Szeptember 5. Szerda
+                              </p>
+                              <p class="event-time">23:00-tól 6:00-ig</p>
+                            </div>
+                          </div>
+                          <div class="event-center-info-container">
+                            <div class="icon-container money" alt="Óra kép">
+                              <i class="fa-solid fa-money-bill"></i>
+                            </div>
+                            <div class="event-date-time">
+                              <p class="event-date">INGYENES</p>
+                              <p class="event-time">0% Adók</p>
+                            </div>
+                          </div>
+                          <a href="#">
+                            <div class="my-event-line" id="stories-line">
+                              <div class="story-container">
+                                <div
+                                  class="my-event-card-big my-event2-7"
+                                ></div>
+                              </div>
+                              <div class="story-container">
+                                <div
+                                  class="my-event-card-big my-event2-3"
+                                ></div>
+                              </div>
+                              <div class="story-container">
+                                <div class="my-event-card-big my-event3">
+                                  <span id="my-event-plus-number-medium"
+                                    >+9</span
+                                  >
+                                </div>
+                              </div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="event-about">
+                        <h3>Az eseményről</h3>
+                        <p id="about-text" class="event-about-text">
+                          Csatlakozz hozzánk minden vasárnap egy szórakoztató
+                          napra, amikor klasszikus és jól ismert társasjátékokat
+                          játszunk! Hozd el versenyszellemedet és a stratégia
+                          iránti szeretetedet, mert kihívjuk egymást olyan
+                          játékokban, mint a Monopoly, a Scrabble és még sok
+                          más. Ez egy remek lehetőség arra, hogy új emberekkel
+                          találkozz, fejleszd társasjáték-tudásodat, és élvezd a
+                          barátságos versengést! Hozhatsz saját társasjátékokat
+                          és rágcsálnivalókat is.
+                        </p>
+                        <button id="toggle-text-btn" class="show-more">
+                          Továbbiak
+                        </button>
+                      </div>
+                      <div class="event-address">
+                        <h3>Cím</h3>
+                        <p>Evergreen Park, 50. sugárút és 78. utca</p>
+                      </div>
+                      <div class="event-address">
+                        <h3>Képek</h3>
+                        <div class="gallery">
+                          <figure>
+                            <img src="img/gallery1 (1).webp" alt="" />
+                            <figcaption>
+                              Jenga
+                              <small
+                                >Játsszunk híres társasjátékokat, találkozzunk
+                                minden vasárnap!</small
+                              >
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img src="img/gallery1 (2).webp" alt="" />
+                            <figcaption>
+                              Uno
+                              <small
+                                >Játsszunk híres társasjátékokat, találkozzunk
+                                minden vasárnap!</small
+                              >
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img src="img/gallery1 (3).webp" alt="" />
+                            <figcaption>
+                              Monopoly
+                              <small
+                                >Játsszunk híres társasjátékokat, találkozzunk
+                                minden vasárnap!</small
+                              >
+                            </figcaption>
+                          </figure>
+                          <!--<figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1439798060585-62ab242d7724?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Yellowstone National Park
+                              <small>United States</small>
+                            </figcaption>
+                          </figure>
+                           <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Quiraing, Portree <small>United Kingdom</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1441906363162-903afd0d3d52?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Highlands <small>United States</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1448814100339-234df1d4005d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Daytona Beach <small>United States</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1443890923422-7819ed4101c0?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Териберка, gorod Severomorsk <small>Russia</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1445964047600-cdbdb873673d?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Bad Pyrmont <small>Deutschland</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1439798060585-62ab242d7724?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Yellowstone National Park
+                              <small>United States</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1440339738560-7ea831bf5244?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Quiraing, Portree <small>United Kingdom</small>
+                            </figcaption>
+                          </figure>
+                          <figure>
+                            <img
+                              src="https://images.unsplash.com/photo-1441906363162-903afd0d3d52?crop=entropy&fit=crop&fm=jpg&h=400&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=600"
+                              alt=""
+                            />
+                            <figcaption>
+                              Highlands <small>United States</small>
+                            </figcaption>
+                          </figure> -->
+                        </div>
+
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          xmlns:xlink="http://www.w3.org/1999/xlink"
+                          style="display: none"
+                        >
+                          <symbol id="close" viewBox="0 0 18 18">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              fill="#FFFFFF"
+                              d="M9,0.493C4.302,0.493,0.493,4.302,0.493,9S4.302,17.507,9,17.507
+			S17.507,13.698,17.507,9S13.698,0.493,9,0.493z M12.491,11.491c0.292,0.296,0.292,0.773,0,1.068c-0.293,0.295-0.767,0.295-1.059,0
+			l-2.435-2.457L6.564,12.56c-0.292,0.295-0.766,0.295-1.058,0c-0.292-0.295-0.292-0.772,0-1.068L7.94,9.035L5.435,6.507
+			c-0.292-0.295-0.292-0.773,0-1.068c0.293-0.295,0.766-0.295,1.059,0l2.504,2.528l2.505-2.528c0.292-0.295,0.767-0.295,1.059,0
+			s0.292,0.773,0,1.068l-2.505,2.528L12.491,11.491z"
+                            />
+                          </symbol>
+                        </svg>
+                      </div>
                     </div>
-                    <div class="story-container">
-                      <div class="my-event-card-medium my-event3">
-                        <span id="my-event-plus-number-medium">+9</span>
+                    <div class="event-pricing">
+                      <p class="price-range">
+                        INGYENES <span class="tax-info">+0% Adók</span>
+                      </p>
+                      <button class="buy-ticket-button">Jegyvásárlás</button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Komment szekció -->
+                <div id="commentsSection" class="comments-section-container">
+                  <div
+                    class="intercom-composer-popover intercom-composer-emoji-popover"
+                  >
+                    <div class="intercom-emoji-picker">
+                      <div class="intercom-composer-popover-header">
+                        <input
+                          class="intercom-composer-popover-input"
+                          placeholder="Keresés"
+                          value=""
+                        />
+                      </div>
+                      <div class="intercom-composer-popover-body-container">
+                        <div class="intercom-composer-popover-body">
+                          <div class="intercom-emoji-picker-groups">
+                            <div class="intercom-emoji-picker-group">
+                              <div class="intercom-emoji-picker-group-title">
+                                Gyakran Használt
+                              </div>
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lájkolás"
+                                >👍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem tetszik"
+                                >👎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sírás"
+                                >😭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zavarodott"
+                                >😕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="semleges arc"
+                                >😐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pirulás"
+                                >😊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szívszemek"
+                                >😍</span
+                              >
+                            </div>
+                            <div class="intercom-emoji-picker-group">
+                              <div class="intercom-emoji-picker-group-title">
+                                Emberek
+                              </div>
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mosoly"
+                                >😄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mosolygós"
+                                >😃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nevetős"
+                                >😀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pirulás"
+                                >😊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kacsintás"
+                                >😉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szívszemek"
+                                >😍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="puszi szívvel"
+                                >😘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="puszi csukott szemekkel"
+                                >😚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="puszi"
+                                >😗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="puszi mosolygó szemekkel"
+                                >😙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyelv kiöltése kacsintás"
+                                >😜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyelv kiöltése csukott szemekkel"
+                                >😝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyelv kiöltése"
+                                >😛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pirulás"
+                                >😳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="grimasz"
+                                >😁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szomorú"
+                                >😔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="megkönnyebbült"
+                                >😌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="elkeseredett"
+                                >😒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csalódott"
+                                >😞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kitartó"
+                                >😣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sírás"
+                                >😢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="öröm"
+                                >😂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sírás"
+                                >😭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="álmos"
+                                >😪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csalódott, de megkönnyebbült"
+                                >😥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hideg veríték"
+                                >😰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="veríték mosoly"
+                                >😅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="veríték"
+                                >😓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kimerült"
+                                >😩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fáradt arc"
+                                >😫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="félelem"
+                                >😨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kiáltás"
+                                >😱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="harag"
+                                >😠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="düh"
+                                >😡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="triumf"
+                                >😤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zavartság"
+                                >😖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nevetés"
+                                >😆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="finom"
+                                >😋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="maszk"
+                                >😷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="napszemüveg"
+                                >😎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="alvás"
+                                >😴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szédülő arc"
+                                >😵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="megdöbbenés"
+                                >😲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="aggódás"
+                                >😟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szomorú"
+                                >😦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szenvedő"
+                                >😧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ördög"
+                                >👿</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyitott száj"
+                                >😮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="grimasz"
+                                >😬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="semleges arc"
+                                >😐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zavarodott"
+                                >😕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="megdöbbent"
+                                >😯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szemtelen mosoly"
+                                >😏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kifejezéstelen"
+                                >😑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="férfi gua pi mao kalapban"
+                                >👲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="férfi turbánban"
+                                >👳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rendőr"
+                                >👮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="építőmunkás"
+                                >👷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="őr"
+                                >💂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="baba"
+                                >👶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fiú"
+                                >👦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lány"
+                                >👧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="férfi"
+                                >👨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nő"
+                                >👩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="idős férfi"
+                                >👴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="idős nő"
+                                >👵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szőke hajú személy"
+                                >👱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="angyal"
+                                >👼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hercegnő"
+                                >👸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mosolygó macska"
+                                >😺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mosolygó macska"
+                                >😸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szívszemű macska"
+                                >😻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="puszi macska"
+                                >😽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szemtelen macska"
+                                >😼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kiáltó macska"
+                                >🙀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="síró macska"
+                                >😿</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="örömteli macska"
+                                >😹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="húzó macska"
+                                >😾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="japán ogre"
+                                >👹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="japán kobold"
+                                >👺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem lát"
+                                >🙈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem hall"
+                                >🙉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem beszél"
+                                >🙊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="koponya"
+                                >💀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="űrlény"
+                                >👽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szar"
+                                >💩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tűz"
+                                >🔥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csillogás"
+                                >✨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csillag"
+                                >🌟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szédülés"
+                                >💫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="robbanás"
+                                >💥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="düh"
+                                >💢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="izzadságcseppek"
+                                >💦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csepp"
+                                >💧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="alvás"
+                                >💤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szél"
+                                >💨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fül"
+                                >👂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szemek"
+                                >👀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="orr"
+                                >👃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyelv"
+                                >👅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="száj"
+                                >👄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="like"
+                                >👍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem tetszik"
+                                >👎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="oké kézjel"
+                                >👌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ütés"
+                                >👊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="öklözés"
+                                >✊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="integetés"
+                                >👋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kéz"
+                                >✋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyitott kezek"
+                                >👐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mutatóujj felfelé"
+                                >👆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mutatóujj lefelé"
+                                >👇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mutatóujj jobbra"
+                                >👉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mutatóujj balra"
+                                >👈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="emelt kezek"
+                                >🙌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="imádság"
+                                >🙏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="taps"
+                                >👏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="izom"
+                                >💪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="járás"
+                                >🚶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="futás"
+                                >🏃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tánc"
+                                >💃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pár"
+                                >👫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="család"
+                                >👪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csók"
+                                >💏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pár szívvel"
+                                >💑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="táncoló pár"
+                                >👯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="oké nő"
+                                >🙆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem jó"
+                                >🙅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="információs asztal személy"
+                                >💁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kezet emelő"
+                                >🙋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="masszázs"
+                                >💆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fodrász"
+                                >💇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="körömápolás"
+                                >💅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="menyasszony fátyollal"
+                                >👰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="púpos arccal"
+                                >🙎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ráncolt homlokkal"
+                                >🙍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="meghajlás"
+                                >🙇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="cilinder"
+                                >🎩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="korona"
+                                >👑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="női kalap"
+                                >👒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sportcipő"
+                                >👟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="férfi cipő"
+                                >👞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szandál"
+                                >👡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="magassarkú"
+                                >👠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csizma"
+                                >👢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="póló"
+                                >👕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyakkendő"
+                                >👔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="női ruházat"
+                                >👚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ruha"
+                                >👗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="futó póló szalaggal"
+                                >🎽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="farmer"
+                                >👖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kimonó"
+                                >👘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bikini"
+                                >👙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="aktatáska"
+                                >💼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="táska"
+                                >👜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tasak"
+                                >👝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pénztárca"
+                                >👛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szemüveg"
+                                >👓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szalag"
+                                >🎀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zárt ernyő"
+                                >🌂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rúzs"
+                                >💄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sárga szív"
+                                >💛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kék szív"
+                                >💙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lila szív"
+                                >💜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zöld szív"
+                                >💚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tört szív"
+                                >💔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szívverés"
+                                >💗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szívverés"
+                                >💓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="két szív"
+                                >💕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csillogó szív"
+                                >💖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="forgó szívek"
+                                >💞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kupido"
+                                >💘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szerelmes levél"
+                                >💌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csók"
+                                >💋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gyűrű"
+                                >💍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="drágakő"
+                                >💎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sziluett"
+                                >👤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="beszéd buborék"
+                                >💬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="láblenyomatok"
+                                >👣</span
+                              >
+                            </div>
+                            <div class="intercom-emoji-picker-group">
+                              <div class="intercom-emoji-picker-group-title">
+                                Természet
+                              </div>
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kutya"
+                                >🐶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="farkas"
+                                >🐺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="macska"
+                                >🐱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="egér"
+                                >🐭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hörcsög"
+                                >🐹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyúl"
+                                >🐰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="béka"
+                                >🐸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tigris"
+                                >🐯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="koala"
+                                >🐨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="medve"
+                                >🐻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="disznó"
+                                >🐷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="disznó orr"
+                                >🐽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tehén"
+                                >🐮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vaddisznó"
+                                >🐗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="majom arc"
+                                >🐵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="majom"
+                                >🐒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ló"
+                                >🐴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="juh"
+                                >🐑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="elefánt"
+                                >🐘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="panda arc"
+                                >🐼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pingvin"
+                                >🐧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="madár"
+                                >🐦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="baba csirke"
+                                >🐤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kibújt csirke"
+                                >🐥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kibújó csirke"
+                                >🐣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csirke"
+                                >🐔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kígyó"
+                                >🐍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="teknős"
+                                >🐢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bogár"
+                                >🐛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="méh"
+                                >🐝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hangya"
+                                >🐜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bogár"
+                                >🐞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csiga"
+                                >🐌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="polip"
+                                >🐙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kagyló"
+                                >🐚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="trópusi hal"
+                                >🐠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hal"
+                                >🐟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="delfin"
+                                >🐬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bálna"
+                                >🐳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="versenyló"
+                                >🐎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sárkány arc"
+                                >🐲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sárkányhal"
+                                >🐡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="teve"
+                                >🐫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="uszkár"
+                                >🐩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lábnyomok"
+                                >🐾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csokor"
+                                >💐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="cseresznyevirág"
+                                >🌸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tulipán"
+                                >🌷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lóherje"
+                                >🍀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rózsa"
+                                >🌹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="napraforgó"
+                                >🌻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hibiszkusz"
+                                >🌺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="juharlevél"
+                                >🍁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="levelek"
+                                >🍃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lehullott levél"
+                                >🍂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fű"
+                                >🌿</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rizs kalász"
+                                >🌾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gomba"
+                                >🍄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kaktusz"
+                                >🌵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pálmafa"
+                                >🌴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gesztenye"
+                                >🌰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csírázó növény"
+                                >🌱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="virágzás"
+                                >🌼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="új hold"
+                                >🌑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="első negyed hold"
+                                >🌓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hold"
+                                >🌔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="telihold"
+                                >🌕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="első negyed hold arccal"
+                                >🌛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hajnal hold"
+                                >🌙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="föld ázsia"
+                                >🌏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vulkán"
+                                >🌋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tejszínhab galaxis"
+                                >🌌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csillagok"
+                                >🌠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="részben napos"
+                                >⛅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hóember"
+                                >⛄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ciklon"
+                                >🌀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ködös"
+                                >🌁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szivárvány"
+                                >🌈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óceán"
+                                >🌊</span
+                              >
+                            </div>
+                            <div class="intercom-emoji-picker-group">
+                              <div class="intercom-emoji-picker-group-title">
+                                Tárgyak
+                              </div>
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bambusz"
+                                >🎍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szív ajándék"
+                                >💝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bábuk"
+                                >🎎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="iskolai táska"
+                                >🎒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="diploma kalap"
+                                >🎓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zászlók"
+                                >🎏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tűzijáték"
+                                >🎆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sparklerek"
+                                >🎇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szélcsengő"
+                                >🎐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rizsföld"
+                                >🎑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tökfej"
+                                >🎃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szellem"
+                                >👻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="Mikulás"
+                                >🎅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="karácsonyfa"
+                                >🎄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ajándék"
+                                >🎁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="Tanabata fa"
+                                >🎋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ünneplés"
+                                >🎉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="konfetti"
+                                >🎊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="lufi"
+                                >🎈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="keresztezett zászlók"
+                                >🎌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kristálygömb"
+                                >🔮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="film kamera"
+                                >🎥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kamera"
+                                >📷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="videokamera"
+                                >📹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="VHS"
+                                >📼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="CD"
+                                >💿</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="DVD"
+                                >📀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="minidisc"
+                                >💽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="floppy lemez"
+                                >💾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="számítógép"
+                                >💻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="iphone"
+                                >📱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="telefonkagyló"
+                                >📞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pager"
+                                >📟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fax"
+                                >📠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="műhold"
+                                >📡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="TV"
+                                >📺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rádió"
+                                >📻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hangos"
+                                >🔊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="harang"
+                                >🔔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="megaphone"
+                                >📢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szónoklat"
+                                >📣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="homokóra"
+                                >⏳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="homokóra"
+                                >⌛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ébresztőóra"
+                                >⏰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="karóra"
+                                >⌚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyitott zár"
+                                >🔓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zár"
+                                >🔒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zár tintás tollal"
+                                >🔏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zár kulccsal"
+                                >🔐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kulcs"
+                                >🔑</span
+                              >
+
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="magnó"
+                                >🔎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="izzó"
+                                >💡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zseblámpa"
+                                >🔦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="elektromos dugó"
+                                >🔌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="akkumulátor"
+                                >🔋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="magnó"
+                                >🔍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fürdő"
+                                >🛀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="WC"
+                                >🚽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kulcs"
+                                >🔧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="anya és csavar"
+                                >🔩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kalapács"
+                                >🔨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ajtó"
+                                >🚪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dohányzás"
+                                >🚬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bomba"
+                                >💣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fegyver"
+                                >🔫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kés"
+                                >🔪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tabletta"
+                                >💊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="injekciós tű"
+                                >💉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pénztárca"
+                                >💰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="yen"
+                                >💴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dollár"
+                                >💵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hitelkártya"
+                                >💳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pénz szárnyakkal"
+                                >💸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hívás"
+                                >📲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="e-mail"
+                                >📧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="beérkező üzenetek"
+                                >📥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kimenő üzenetek"
+                                >📤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="boríték nyíllal"
+                                >📩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="beérkező boríték"
+                                >📨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="postafiók"
+                                >📫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zárt postafiók"
+                                >📪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="postai láda"
+                                >📮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csomag"
+                                >📦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="jegyzet"
+                                >📝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="oldal felfelé"
+                                >📄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="oldal tekercs"
+                                >📃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="könyvjelzők"
+                                >📑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="oszlopdiagram"
+                                >📊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="diagram felfelé"
+                                >📈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="diagram lefelé"
+                                >📉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tekercs"
+                                >📜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="klipsz"
+                                >📋</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="naptár"
+                                >📅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="naptár"
+                                >📆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kártya index"
+                                >📇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fájl mappa"
+                                >📁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyitott fájl mappa"
+                                >📂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gombostű"
+                                >📌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="papírszelet"
+                                >📎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="egyenes vonalzó"
+                                >📏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="háromszög vonalzó"
+                                >📐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zárt könyv"
+                                >📕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zöld könyv"
+                                >📗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kék könyv"
+                                >📘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="narancssárga könyv"
+                                >📙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="jegyzetfüzet"
+                                >📓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="díszített jegyzetfüzet"
+                                >📔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="napló"
+                                >📒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="könyvek"
+                                >📚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="könyv"
+                                >📖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="könyvjelző"
+                                >🔖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="névkitűző"
+                                >📛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="újság"
+                                >📰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="művészet"
+                                >🎨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="klapper"
+                                >🎬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mikrofon"
+                                >🎤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fülhallgató"
+                                >🎧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zenei kották"
+                                >🎼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zenei jel"
+                                >🎵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zenei hangjegyek"
+                                >🎶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zenei billentyűzet"
+                                >🎹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hegedű"
+                                >🎻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="trombita"
+                                >🎺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szaxofon"
+                                >🎷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gitár"
+                                >🎸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="űr invázió"
+                                >👾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="videójáték"
+                                >🎮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fekete joker"
+                                >🃏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="virágos kártyák"
+                                >🎴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mahjong"
+                                >🀄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dobókocka"
+                                >🎲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="célba dobás"
+                                >🎯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="amerikai foci"
+                                >🏈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kosárlabda"
+                                >🏀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="foci"
+                                >⚽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="baseball"
+                                >⚾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tenisz"
+                                >🎾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="billiárd golyó"
+                                >🎱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bowling"
+                                >🎳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="golf"
+                                >⛳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kockás zászló"
+                                >🏁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="trófea"
+                                >🏆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sí"
+                                >🎿</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="snowboardos"
+                                >🏂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="úszó"
+                                >🏊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szörföző"
+                                >🏄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="horgászbot és hal"
+                                >🎣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tea"
+                                >🍵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sake"
+                                >🍶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sör"
+                                >🍺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sörök"
+                                >🍻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="koktél"
+                                >🍸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tropikus ital"
+                                >🍹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="borospohár"
+                                >🍷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="villa és kés"
+                                >🍴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="pizza"
+                                >🍕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hamburger"
+                                >🍔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sült krumpli"
+                                >🍟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csirkecomb"
+                                >🍗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hús csonton"
+                                >🍖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="spagetti"
+                                >🍝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kacsa"
+                                >🍛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rák"
+                                >🍤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bento"
+                                >🍱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sushi"
+                                >🍣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hal tészta"
+                                >🍥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rizsgombóc"
+                                >🍙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rizs keksz"
+                                >🍘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rizs"
+                                >🍚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ramen"
+                                >🍜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ragú"
+                                >🍲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="oden"
+                                >🍢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dango"
+                                >🍡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tojás"
+                                >🍳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kenyér"
+                                >🍞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fánk"
+                                >🍩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="krémes"
+                                >🍮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="jégkrém"
+                                >🍦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fagylalt"
+                                >🍨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="reszelt jég"
+                                >🍧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="születésnap"
+                                >🎂</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="torta"
+                                >🍰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="süti"
+                                >🍪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csokoládé"
+                                >🍫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="cukorka"
+                                >🍬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyalóka"
+                                >🍭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mézesbödön"
+                                >🍯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="alma"
+                                >🍎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="zöld alma"
+                                >🍏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mandarin"
+                                >🍊</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="cseresznye"
+                                >🍒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szőlő"
+                                >🍇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dinnye"
+                                >🍉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="eper"
+                                >🍓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="barack"
+                                >🍑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sárgadinnye"
+                                >🍈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="banán"
+                                >🍌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ananász"
+                                >🍍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="édesburgonya"
+                                >🍠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="padlizsán"
+                                >🍆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="paradicsom"
+                                >🍅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kukorica"
+                                >🌽</span
+                              >
+                            </div>
+                            <div class="intercom-emoji-picker-group">
+                              <div class="intercom-emoji-picker-group-title">
+                                Helyek
+                              </div>
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ház"
+                                >🏠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ház kerttel"
+                                >🏡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="iskola"
+                                >🏫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="iroda"
+                                >🏢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="posta"
+                                >🏣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kórház"
+                                >🏥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bank"
+                                >🏦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bolt"
+                                >🏪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szeretői szálloda"
+                                >🏩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szálloda"
+                                >🏨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="esküvő"
+                                >💒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="templom"
+                                >⛪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="áruház"
+                                >🏬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="városi napfelkelte"
+                                >🌇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="városi naplemente"
+                                >🌆</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="japán kastély"
+                                >🏯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="európai kastély"
+                                >🏰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sátor"
+                                >⛺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gyár"
+                                >🏭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tokiói torony"
+                                >🗼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="Japán"
+                                >🗾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="Fuji-hegy"
+                                >🗻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="napfelkelte hegyek felett"
+                                >🌄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="napfelkelte"
+                                >🌅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csillagos éj"
+                                >🌃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="Szabadság-szobor"
+                                >🗽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="híd éjszaka"
+                                >🌉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="karusszel ló"
+                                >🎠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óriáskerék"
+                                >🎡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szökőkút"
+                                >⛲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vidámpark"
+                                >🎢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hajó"
+                                >🚢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vitorlás"
+                                >⛵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sebességcsónak"
+                                >🚤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rakéta"
+                                >🚀</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ülés"
+                                >💺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="állomás"
+                                >🚉</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gyorsvonat oldalról"
+                                >🚄</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gyorsvonat elölről"
+                                >🚅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="metró"
+                                >🚇</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vasúti kocsi"
+                                >🚃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="busz"
+                                >🚌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kék autó"
+                                >🚙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="autó"
+                                >🚗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="taxi"
+                                >🚕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="teherautó"
+                                >🚚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="forgó fény"
+                                >🚨</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rendőrautó"
+                                >🚓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tűzoltóautó"
+                                >🚒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mentőautó"
+                                >🚑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kerékpár"
+                                >🚲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fodrász"
+                                >💈</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="buszmegálló"
+                                >🚏</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="jegy"
+                                >🎫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="forgalmi lámpa"
+                                >🚥</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="építkezés"
+                                >🚧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kezdő"
+                                >🔰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="üzemanyagkút"
+                                >⛽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="izakaya lámpás"
+                                >🏮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyerőgép"
+                                >🎰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="moai szobor"
+                                >🗿</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="cirkusz sátor"
+                                >🎪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="előadóművészet"
+                                >🎭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kör alakú tűpöck"
+                                >📍</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="háromszög alakú zászló"
+                                >🚩</span
+                              >
+                            </div>
+                            <div class="intercom-emoji-picker-group">
+                              <div class="intercom-emoji-picker-group-title">
+                                Jelek
+                              </div>
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="tíz"
+                                >🔟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="1234"
+                                >🔢</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szimbólumok"
+                                >🔣</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nagybetűs abcd"
+                                >🔠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="abcd"
+                                >🔡</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="abc"
+                                >🔤</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kis nyíl felfelé"
+                                >🔼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kis nyíl lefelé"
+                                >🔽</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="visszatekerés"
+                                >⏪</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gyors előretekerés"
+                                >⏩</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dupla nyíl felfelé"
+                                >⏫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="dupla nyíl lefelé"
+                                >⏬</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rendben"
+                                >🆗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="új"
+                                >🆕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fel"
+                                >🆙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="menő"
+                                >🆒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ingyenes"
+                                >🆓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem megfelelő"
+                                >🆖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="jelentős"
+                                >📶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mozi"
+                                >🎦</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="koko"
+                                >🈁</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u6307"
+                                >🈯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u7a7a"
+                                >🈳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u6e80"
+                                >🈵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u5408"
+                                >🈴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u7981"
+                                >🈲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ideográfiai előny"
+                                >🉐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u5272"
+                                >🈹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u55b6"
+                                >🈺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u6709"
+                                >🈶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u7121"
+                                >🈚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mosdó"
+                                >🚻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="férfi"
+                                >🚹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nő"
+                                >🚺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="baba szimbólum"
+                                >🚼</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="wc"
+                                >🚾</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nem dohányzó"
+                                >🚭</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="u7533"
+                                >🈸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="elfogad"
+                                >🉑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="cl"
+                                >🆑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="sos"
+                                >🆘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="id"
+                                >🆔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="belépés tilos"
+                                >🚫</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kiskorúaknak tilos"
+                                >🔞</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="belépés tilos"
+                                >⛔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="negatív négyzetes keresztjel"
+                                >❎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fehér pipá"
+                                >✅</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szív dekoráció"
+                                >💟</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vs"
+                                >🆚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rezgés mód"
+                                >📳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="mobiltelefon kikapcsolva"
+                                >📴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ab"
+                                >🆎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="gyémánt alak ponttal a közepén"
+                                >💠</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ophiuchus"
+                                >⛎</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hatágú csillag"
+                                >🔯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="ATM"
+                                >🏧</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="diagram"
+                                >💹</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="súlyos dollár jel"
+                                >💲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="valuta csere"
+                                >💱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="x"
+                                >❌</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="felkiáltójel"
+                                >❗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kérdőjel"
+                                >❓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szürke felkiáltójel"
+                                >❕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="szürke kérdőjel"
+                                >❔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="o"
+                                >⭕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="felső"
+                                >🔝</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vég"
+                                >🔚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="vissza"
+                                >🔙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="bekapcsolva"
+                                >🔛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="hamarosan"
+                                >🔜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nyilak óramutató járásával megegyezően"
+                                >🔃</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra12"
+                                >🕛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra1"
+                                >🕐</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra2"
+                                >🕑</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra3"
+                                >🕒</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra4"
+                                >🕓</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra5"
+                                >🕔</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra6"
+                                >🕕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra7"
+                                >🕖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra8"
+                                >🕗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra9"
+                                >🕘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra10"
+                                >🕙</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="óra11"
+                                >🕚</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="súlyos pluszjel"
+                                >➕</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="súlyos mínuszjel"
+                                >➖</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="súlyos osztásjel"
+                                >➗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fehér virág"
+                                >💮</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="100"
+                                >💯</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="rádiógomb"
+                                >🔘</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="link"
+                                >🔗</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="csavaros hurkok"
+                                >➰</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="trident"
+                                >🔱</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kicsi piros háromszög"
+                                >🔺</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fekete négyzet gomb"
+                                >🔲</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fehér négyzet gomb"
+                                >🔳</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="piros kör"
+                                >🔴</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nagy kék kör"
+                                >🔵</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kicsi piros háromszög lefelé"
+                                >🔻</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fehér nagy négyzet"
+                                >⬜</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="fekete nagy négyzet"
+                                >⬛</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nagy narancssárga gyémánt"
+                                >🔶</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="nagy kék gyémánt"
+                                >🔷</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kicsi narancssárga gyémánt"
+                                >🔸</span
+                              >
+                              <span
+                                class="intercom-emoji-picker-emoji"
+                                title="kicsi kék gyémánt"
+                                >🔹</span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="intercom-composer-popover-caret"></div>
+                  </div>
+                  <div class="flex-separation">
+                    <div class="comments-header">
+                      <h2 class="comments-title">Kommentek</h2>
+                      <button id="closeComments" class="close-comments-btn">
+                        &times;
+                      </button>
+                    </div>
+                    <div class="comments-list">
+                      <!-- Kommentek ide kerülnek -->
+                    </div>
+                  </div>
+                  <div class="comment-field-container">
+                    <div class="comment-form">
+                      <textarea
+                        class="test-emoji"
+                        contenteditable="true"
+                        id="newCommentText"
+                        placeholder="Írj megjegyzést..."
+                      ></textarea>
+                      <!-- <button id="newEmoji">
+                        <i class="fa-regular fa-face-smile"></i>
+                      </button> -->
+                      <div class="emoji-panel">
+                        <button id="newEmoji" class="----chat-input-tool---">
+                          <i class="fa-regular fa-face-smile"></i>
+                        </button>
+                      </div>
+
+                      <button id="postComment">
+                        <i class="fa-solid fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Szerkesztés modális ablak -->
+                <div id="editCommentModal" class="modal">
+                  <div class="modal-content">
+                    <div class="edit-line">
+                      <span class="close-edit-modal">&times;</span>
+                      <h2>Szerkesztés</h2>
+                    </div>
+                    <textarea
+                      id="editCommentText"
+                      rows="4"
+                      cols="50"
+                    ></textarea>
+                    <button id="saveEditComment">Mentés</button>
+                  </div>
+                </div>
+
+                <!-- Törlés megerősítő modális ablak -->
+                <div id="deleteCommentModal" class="modal">
+                  <div class="modal-content">
+                    <div>
+                      <span class="close-delete-modal">&times;</span>
+                      <h2>Komment törlése</h2>
+                    </div>
+                    <p>Biztos, hogy törölni szeretnéd ezt a kommentet?</p>
+                    <div class="delete-or-not">
+                      <button id="cancelDeleteComment">Mégse</button>
+                      <button id="confirmDeleteComment">Törlés</button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Válasz Szerkesztés modális ablak -->
+                <div id="editAnswerModal" class="modal">
+                  <div class="modal-content">
+                    <div class="edit-line">
+                      <span class="close-answer-edit-modal">&times;</span>
+                      <h2>Szerkesztés</h2>
+                    </div>
+                    <textarea id="editAnswerText" rows="4" cols="50"></textarea>
+                    <button id="saveEditAnswer">Mentés</button>
+                  </div>
+                </div>
+
+                <!-- Válasz Törlés megerősítő modális ablak -->
+                <div id="deleteAnswerModal" class="modal">
+                  <div class="modal-content">
+                    <div>
+                      <span class="close-answer-delete-modal">&times;</span>
+                      <h2>Komment törlése</h2>
+                    </div>
+                    <p>Biztos, hogy törölni szeretnéd ezt a kommentet?</p>
+                    <div class="delete-or-not">
+                      <button id="cancelDeleteAnswer">Mégse</button>
+                      <button id="confirmDeleteAnswer">Törlés</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="grid-2-column">
+              <div></div>
+              <div class="index-right-flex single-story">
+                <div class="premium-container">
+                  <div class="premium-img-container">
+                    <div class="title-premium">Irány a Prémium!</div>
+                    <div class="description-premium">
+                      Próbáld ki a prémiumot és élvezd egy teljesen új közösség
+                      élményét.
+                    </div>
+
+                    <a href="#" class="premium-btn-link"
+                      ><div class="premium-btn">
+                        Fizess elő
+                        <i
+                          class="fa-solid fa-chevron-right premium-btn-icon"
+                        ></i></div
+                    ></a>
+                  </div>
+                </div>
+                <div class="my-events-container">
+                  <div class="my-events-first-row">
+                    <h1 class="stories-title">Eseményeim</h1>
+                    <a href="#" class="all-stories-link"
+                      >Összes<i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                  <div class="my-events-flex-container">
+                    <div class="my-event-line" id="popular-line">
+                      <div class="my-event-card first single-story" id="card1">
+                        <div class="my-event-upper-container">
+                          <div class="my-upcoming">
+                            <div class="my-event-number">01</div>
+                            <div class="my-event-month">Jan</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="my-event-right-container">
+                      <div class="my-event-upper-info-container">
+                        <a href="#" class="my-event-link">
+                          <h3 class="h3">Új Év: Beöltözős Marvel Parti</h3></a
+                        >
+                      </div>
+                      <div class="my-event-lower-info-container">
+                        <a href="#">
+                          <div class="my-event-line" id="stories-line">
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event1"></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event2"></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event3">
+                                <span id="my-event-plus-number">+10</span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
                       </div>
                     </div>
                   </div>
-                </a>
+                  <div class="my-events-flex-container">
+                    <div class="my-event-line" id="popular-line">
+                      <div class="my-event-card second" id="card1">
+                        <div class="my-event-upper-container">
+                          <div class="my-upcoming">
+                            <div class="my-event-number">07</div>
+                            <div class="my-event-month">Jan</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="my-event-right-container">
+                      <div class="my-event-upper-info-container">
+                        <a href="#" class="my-event-link"
+                          ><h3 class="h3">Autós Show: 2024 Budapest</h3></a
+                        >
+                      </div>
+                      <div class="my-event-lower-info-container">
+                        <a href="#">
+                          <div class="my-event-line" id="stories-line">
+                            <div class="story-container">
+                              <div
+                                class="my-event-card-little my-event2-1"
+                              ></div>
+                            </div>
+                            <div class="story-container">
+                              <div
+                                class="my-event-card-little my-event2-2"
+                              ></div>
+                            </div>
+                            <div class="story-container">
+                              <div class="my-event-card-little my-event3">
+                                <span id="my-event-plus-number">+26</span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="my-category-container">
+                  <div class="my-category-first-row">
+                    <h1 class="stories-title">Kategóriáim</h1>
+                    <a href="#" class="all-stories-link"
+                      >Összes<i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                  </div>
+                  <div class="my-category-flex-container">
+                    <div class="my-category-line" id="popular-line">
+                      <div
+                        class="my-category-card first single-story"
+                        id="card1"
+                      >
+                        <div class="my-category-upper-container"></div>
+                      </div>
+                      <div class="my-category-upper-info-container">
+                        <a href="#" class="my-category-link">
+                          <h3 class="h3">Étel</h3></a
+                        >
+                      </div>
+                    </div>
+                    <div class="my-category-right-container">
+                      <div class="my-category-lower-info-container">
+                        <a href="#">
+                          <div class="my-category-line" id="stories-line">
+                            <div class="story-container">
+                              <div class="my-category-card-little my-category3">
+                                <span id="my-category-checked"
+                                  ><i class="fa-solid fa-check"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="my-category-flex-container">
+                    <div class="my-category-line" id="popular-line">
+                      <div class="my-category-card second" id="card1">
+                        <div class="my-category-upper-container"></div>
+                      </div>
+                      <div class="my-category-upper-info-container">
+                        <a href="#" class="my-category-link">
+                          <h3 class="h3">Gaming</h3></a
+                        >
+                      </div>
+                    </div>
+                    <div class="my-category-right-container">
+                      <div class="my-category-lower-info-container">
+                        <a href="#">
+                          <div class="my-category-line" id="stories-line">
+                            <div class="story-container">
+                              <div class="my-category-card-little my-category3">
+                                <span id="my-category-checked"
+                                  ><i class="fa-solid fa-check"></i
+                                ></span>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="event-about">
-              <h3>Az eseményről</h3>
-              <p id="about-text" class="event-about-text">
-                Csatlakozz hozzánk minden vasárnap egy szórakoztató napra,
-                amikor klasszikus és jól ismert társasjátékokat játszunk! Hozd
-                el versenyszellemedet és a stratégia iránti szeretetedet, mert
-                kihívjuk egymást olyan játékokban, mint a Monopoly, a Scrabble
-                és még sok más. Ez egy remek lehetőség arra, hogy új emberekkel
-                találkozz, fejleszd társasjáték-tudásodat, és élvezd a
-                barátságos versengést! Hozhatsz saját társasjátékokat és
-                rágcsálnivalókat is.
-              </p>
-              <button id="toggle-text-btn" class="show-more">Továbbiak</button>
-            </div>
-            <div class="event-address">
-              <h3>Cím</h3>
-              <p>Evergreen Park, 50. sugárút és 78. utca</p>
-            </div>
-          </div>
-          <div class="event-pricing">
-            <p class="price-range">
-              INGYENES <span class="tax-info">+0% Adók</span>
-            </p>
-            <button class="buy-ticket-button">Jegyvásárlás</button>
           </div>
         </div>
       </section>
     </main>
     <footer></footer>
+    <script>
+      //Slider globális változók
+      let slideIndex = 1;
+      let slides, dots;
+
+      // Globálisan elérhető függvények
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        if (!slides || !dots) {
+          slides = document.querySelectorAll(".slide");
+          dots = document.querySelectorAll(".dot");
+        }
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        // Hide all slides
+        slides.forEach((slide) => {
+          slide.style.display = "none";
+        });
+
+        // Remove active class from all dots
+        dots.forEach((dot) => {
+          dot.classList.remove("active");
+        });
+
+        // Show the current slide and activate the corresponding dot
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+      }
+
+      // Initialize slider after DOM is loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        slides = document.querySelectorAll(".slide");
+        dots = document.querySelectorAll(".dot");
+
+        if (slides.length > 0 && dots.length > 0) {
+          showSlides(slideIndex);
+
+          // Swipe functionality
+          let startX = 0;
+          const slider = document.querySelector(".slider");
+
+          if (slider) {
+            slider.addEventListener("touchstart", (e) => {
+              startX = e.touches[0].clientX;
+            });
+
+            slider.addEventListener("touchend", (e) => {
+              let endX = e.changedTouches[0].clientX;
+              if (startX > endX) {
+                plusSlides(1); // Swipe left
+              } else {
+                plusSlides(-1); // Swipe right
+              }
+            });
+          }
+        }
+      });
+    </script>
     <script src="event-cat.js"></script>
     <script src="search-bar2.js"></script>
     <script src="script.js"></script>
@@ -501,6 +4276,7 @@
     <script src="heart.js"></script>
     <script src="single-story.js"></script>
     <script src="single-event.js"></script>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

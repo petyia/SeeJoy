@@ -106,7 +106,7 @@ h5.name-text.single-st {
   overflow: hidden;
   background-color: var(--black);
 
-  align-self: center;
+  align-self: flex-start;
 }
 
 /* Add the transparent black overlay */
@@ -341,15 +341,17 @@ h5.name-text.single-st {
 .sigle-story-contaner-comments {
   display: flex;
   justify-content: center; /* Balra igazítás */
-  align-items: center; /* Fent kezdődjenek a gyermekelemek */
+  align-items: flex-start; /* Fent kezdődjenek a gyermekelemek */
   position: relative;
   z-index: 1;
+
+  height: 100%;
 }
 
 /* Komment Szekció Stílusok */
 .comments-section-container {
   transform: translateX(-105%); /* Kezdetben kívülről indul */
-  width: 400px;
+  width: 48rem;
   height: 72rem; /* Magasság igazodjon a szülőelemhez */
   max-width: 100%;
   background: var(--white);

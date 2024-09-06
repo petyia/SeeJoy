@@ -31,61 +31,143 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     isFullText = !isFullText;
   });
-});
 
-//Slider
-let slideIndex = 1;
-showSlides(slideIndex);
+  // //Slider
+  // let slideIndex = 1;
+  // let slides = document.querySelectorAll(".slide");
+  // let dots = document.querySelectorAll(".dot");
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides((slideIndex += n));
-}
+  // if (slides.length > 0 && dots.length > 0) {
+  //   showSlides(slideIndex);
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides((slideIndex = n));
-}
+  //   // Next/previous controls
+  //   function plusSlides(n) {
+  //     showSlides((slideIndex += n));
+  //   }
 
-function showSlides(n) {
-  let slides = document.querySelectorAll(".slide");
-  let dots = document.querySelectorAll(".dot");
+  //   // Thumbnail image controls
+  //   function currentSlide(n) {
+  //     showSlides((slideIndex = n));
+  //   }
 
-  if (n > slides.length) {
-    slideIndex = 1;
-  }
-  if (n < 1) {
-    slideIndex = slides.length;
-  }
+  //   function showSlides(n) {
+  //     if (n > slides.length) {
+  //       slideIndex = 1;
+  //     }
+  //     if (n < 1) {
+  //       slideIndex = slides.length;
+  //     }
 
-  // Hide all slides
-  slides.forEach((slide) => {
-    slide.style.display = "none";
-  });
+  //     // Hide all slides
+  //     slides.forEach((slide) => {
+  //       slide.style.display = "none";
+  //     });
 
-  // Remove active class from all dots
-  dots.forEach((dot) => {
-    dot.classList.remove("active");
-  });
+  //     // Remove active class from all dots
+  //     dots.forEach((dot) => {
+  //       dot.classList.remove("active");
+  //     });
 
-  // Show the current slide and activate the corresponding dot
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].classList.add("active");
-}
+  //     // Show the current slide and activate the corresponding dot
+  //     slides[slideIndex - 1].style.display = "block";
+  //     dots[slideIndex - 1].classList.add("active");
+  //   }
 
-// Swipe functionality
-let startX = 0;
+  //   // Add event listeners for the dots
+  //   dots.forEach((dot, index) => {
+  //     dot.addEventListener("click", () => {
+  //       currentSlide(index + 1);
+  //     });
+  //   });
 
-const slider = document.querySelector(".slider");
-slider.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
+  //   // Swipe functionality
+  //   let startX = 0;
+  //   const slider = document.querySelector(".slider");
 
-slider.addEventListener("touchend", (e) => {
-  let endX = e.changedTouches[0].clientX;
-  if (startX > endX) {
-    plusSlides(1); // Swipe left
-  } else {
-    plusSlides(-1); // Swipe right
-  }
+  //   if (slider) {
+  //     slider.addEventListener("touchstart", (e) => {
+  //       startX = e.touches[0].clientX;
+  //     });
+
+  //     slider.addEventListener("touchend", (e) => {
+  //       let endX = e.changedTouches[0].clientX;
+  //       if (startX > endX) {
+  //         plusSlides(1); // Swipe left
+  //       } else {
+  //         plusSlides(-1); // Swipe right
+  //       }
+  //     });
+  //   }
+  // } else {
+  //   console.error("Slider elements not found");
+  // }
+
+  //Galéria PopUp
+  const popup = {
+    init: function () {
+      const figures = document.querySelectorAll("figure");
+      if (figures.length > 0) {
+        figures.forEach((figure) => {
+          figure.addEventListener("click", function () {
+            popup.open(figure);
+          });
+        });
+      } else {
+        console.error("No figure elements found in the gallery for popup.");
+      }
+
+      document.addEventListener("click", function (event) {
+        if (event.target.closest(".popup img")) {
+          return false; // Ha az img-re kattintanak, ne zárjuk be
+        }
+        if (event.target.closest(".popup")) {
+          popup.close();
+        }
+      });
+    },
+    open: function (figure) {
+      document.querySelector(".gallery").classList.add("pop");
+      const popupEl = document.createElement("div");
+      popupEl.classList.add("popup");
+      document.body.appendChild(popupEl);
+
+      const clonedFigure = figure.cloneNode(true);
+      popupEl.appendChild(clonedFigure);
+
+      const bg = document.createElement("div");
+      bg.classList.add("bg");
+      popupEl.appendChild(bg);
+
+      const close = document.createElement("div");
+      close.classList.add("close");
+      close.innerHTML = '<svg><use xlink:href="#close"></use></svg>';
+      clonedFigure.appendChild(close);
+
+      const shadow = document.createElement("div");
+      shadow.classList.add("shadow");
+      clonedFigure.appendChild(shadow);
+
+      const src = clonedFigure.querySelector("img").getAttribute("src");
+      shadow.style.backgroundImage = `url(${src})`;
+      bg.style.backgroundImage = `url(${src})`;
+
+      setTimeout(function () {
+        popupEl.classList.add("pop");
+      }, 10);
+    },
+    close: function () {
+      const gallery = document.querySelector(".gallery");
+      const popup = document.querySelector(".popup");
+
+      if (popup) {
+        gallery.classList.remove("pop");
+        popup.classList.remove("pop");
+        setTimeout(function () {
+          popup.remove();
+        }, 100);
+      }
+    },
+  };
+
+  popup.init();
 });

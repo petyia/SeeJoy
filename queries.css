@@ -23,8 +23,158 @@
 
   --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+@media (min-width: 693px) {
+  .event-card-container {
+    width: 100%;
+    background-color: var(--white);
+    padding: 0.8rem;
+    border-radius: 2.4rem;
+  }
+
+  .event-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: none;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 50vh;
+  }
+
+  .slide img,
+  .slide video {
+    width: 100%;
+
+    border-radius: 2.4rem;
+  }
+
+  .slider-container {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 2.4rem;
+  }
+
+  .event-details {
+    flex-direction: column;
+    gap: 1.6rem;
+    display: flex;
+    padding-top: 0px;
+    height: 100%;
+    background-color: var(--white);
+  }
+
+  .event-banner {
+    position: relative;
+    padding: 2.4rem 2.4rem 1.6rem 2.4rem;
+  }
+
+  .dots-container {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translate(50%, -100%);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 8px;
+    background-color: var(--grey);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.6s ease;
+    box-shadow: var(--popular-sh);
+  }
+
+  .organizer-section {
+    display: none;
+  }
+
+  .event-title {
+    margin-top: 16px;
+    font-size: 3.2rem;
+    font-weight: 800;
+  }
+
+  .event-description {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  .icon-container {
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 1.6rem;
+  }
+
+  .fa-clock {
+    font-size: 2rem;
+  }
+
+  .event-center-info-container {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  .fa-money-bill {
+    font-size: 2rem;
+  }
+
+  .event-date-time {
+    font-size: 1.6rem;
+  }
+
+  .event-about h3 {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .event-about p {
+    font-size: 1.6rem;
+    margin-top: 5px;
+    letter-spacing: 0.1px;
+  }
+
+  .event-address h3 {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  .event-address p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--grey);
+    margin-top: 5px;
+    letter-spacing: 0.1px;
+  }
+
+  .price-range {
+    display: none;
+  }
+}
 
 @media (max-width: 1200px) {
+  .vue-section {
+    display: flex;
+    height: 56rem;
+    width: 32rem;
+    margin: auto;
+    background-color: var(--black);
+  }
   .index-grid-container {
     display: grid;
     grid-template-columns: 60fr 40fr;
