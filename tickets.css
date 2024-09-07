@@ -1,0 +1,487 @@
+:root {
+  --primary: #ff5483;
+  --primary-light: #fff6f5ff;
+  --primary-light-darker: #ffd7e1;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
+  --grey: #aeb0ba;
+
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+
+  --linear-gradient-1: linear-gradient(
+    to right bottom,
+    #455efd,
+    #ff5483,
+    #f46e4b
+  );
+
+  --search-bg: var(--pale-grey);
+  --body-font: "Nunito", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@import url("https://use.typekit.net/ovt6ynt.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  cursor: default;
+
+  overflow: auto;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--pale-grey);
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+.container-stories-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  padding: 10px 0px;
+  text-align: center;
+  margin: auto;
+}
+.container-stories-page .card {
+  max-width: 96vw;
+  min-height: 140px;
+  min-width: 90vw;
+
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid #e3e3e3;
+  margin: 0 auto;
+}
+.tabs {
+  text-align: left;
+  position: relative;
+}
+.tabs input {
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.tabs input + label:hover {
+  color: #777;
+}
+.tabs .tabsShadow {
+  width: 100%;
+  padding: 10px;
+  /* box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.04); */
+  box-sizing: border-box;
+  position: absolute;
+  height: 35px;
+  z-index: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+.content .item {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  position: absolute;
+  padding: 2.4rem;
+  width: 100%;
+  height: 100%;
+}
+
+#tab-1:checked ~ .glider {
+  left: 0px;
+}
+#tab-2:checked + label {
+  color: var(--primary);
+}
+#tab-2:checked ~ .glider {
+  background-color: var(--primary);
+  /* box-shadow: 0px 0px 8px 0px rgba(47, 187, 12, 0.62); */
+}
+
+#tab-3:checked + label {
+  color: #525252;
+}
+
+#tab-1:checked ~ div #content-1,
+#tab-2:checked ~ div #content-2,
+#tab-3:checked ~ div #content-3,
+#tab-4:checked ~ div #content-4,
+#tab-5:checked ~ div #content-5,
+#tab-6:checked ~ div #content-6 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.tabs input + label {
+  transition: all 0.3s;
+  text-align: center;
+  border: none;
+  border-bottom: 0.5pt transparent;
+
+  color: var(--grey);
+  display: inline-flex;
+  -webkit-box-pack: center;
+  padding: 10pt 10pt;
+  vertical-align: top;
+  justify-content: flex-start;
+  background: #333;
+
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0.5px;
+  border-radius: 7px 7px 0 0 !important;
+
+  font-family: var(--body-font);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.content.tickets {
+  margin: 0px auto;
+  text-align: left;
+  line-height: 20px;
+  height: 1600px;
+  width: 100%;
+  border-radius: 3.2rem;
+  /* box-shadow: 0 2px 3px rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 10%); */
+  display: block;
+  /* padding: 1.25rem; */
+  z-index: 2;
+  background-color: transparent;
+  position: relative;
+  margin-top: 4.8rem;
+}
+
+.container-stories-page .card {
+  max-width: 600px;
+  min-height: 140px;
+  border-radius: 10px;
+  border: none;
+  margin: 0 auto;
+  z-index: 4 !important;
+  position: relative;
+
+  background: transparent;
+}
+
+.content p {
+  font-size: 24pt;
+  line-height: 1.2;
+
+  color: var(--grey);
+}
+h2.tab-title.tab-warning,
+h2.tab-title.tab-success,
+h2.tab-title.tab-primary,
+h2.tab-title.tab-default {
+  display: inline-flex;
+  color: #fff;
+  background-position: bottom center;
+  margin-bottom: 0pt !important;
+  margin-top: 6pt;
+  height: 22pt;
+
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-background-clip: text !important;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  -ms-background-clip: text;
+  -ms-text-fill-color: transparent;
+  text-transform: capitalize;
+  font-size: 24px;
+  letter-spacing: 0px;
+  font-family: var(--body-font);
+  font-weight: 800 !important;
+}
+
+/* h2.tab-title.tab-default {
+  background: linear-gradient(10deg, #f7ec9c, #ff8651);
+}
+
+h2.tab-title.tab-success {
+  background: linear-gradient(10deg, #02ce85, #02ceab);
+}
+
+h2.tab-title.tab-primary {
+  background: linear-gradient(
+    60deg,
+    hsl(202deg 100% 75%),
+    hsl(205deg 100% 64%),
+    hsl(230deg 100% 75%),
+    hsl(270deg 100% 72%)
+  );
+}
+
+h2.tab-title.tab-warning {
+  background: linear-gradient(70deg, #c51574, #97389b);
+} */
+
+.tabs input {
+  position: relative;
+  opacity: 0;
+  margin: auto !important;
+  padding: 0;
+}
+label.tab.tab-primary {
+  border-radius: 6pt 0 0 6pt;
+}
+label.tab.tab-warning {
+  border-radius: 0 6pt 6pt 0;
+}
+
+/* Style the dot for active tabs */
+.tabs input:checked + label::after {
+  content: "";
+  position: absolute;
+  bottom: 4px; /* Adjust this to control the vertical positioning */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px; /* Diameter of the dot */
+  height: 4px; /* Diameter of the dot */
+  background-color: var(
+    --primary
+  ); /* Color of the dot, use CSS variable or color code */
+  border-radius: 50%; /* Makes it a circle */
+}
+
+/* Adjust the color of the label based on the checked state */
+.card #tab-1:checked + label,
+.card #tab-2:checked + label,
+.card #tab-3:checked + label,
+.card #tab-4:checked + label,
+.card #tab-5:checked + label,
+.card #tab-6:checked + label {
+  color: var(--primary); /* Color when active */
+}
+
+/* Make sure the label is positioned relative to accommodate the dot */
+.tabs label {
+  position: relative; /* This makes the dot position relative to the label */
+  display: inline-block;
+  padding: 10px; /* Adjust padding as needed */
+}
+
+/* Move the glider based on which tab is checked */
+#tab-1:checked ~ .glider {
+  left: 0.4%;
+}
+
+#tab-2:checked ~ .glider {
+  left: 16%;
+}
+
+#tab-3:checked ~ .glider {
+  left: 32.15%;
+}
+
+#tab-4:checked ~ .glider {
+  left: 46.365%;
+}
+
+#tab-5:checked ~ .glider {
+  left: 61.15%;
+}
+
+#tab-6:checked ~ .glider {
+  left: 76.365%;
+}
+
+.glider {
+  width: 0.6rem;
+
+  height: 0.6rem;
+  border-radius: 50%;
+  position: absolute;
+  /* box-shadow: 0px 0px 8px 0px hsl(262deg 100% 70% / 70%); */
+  background-color: var(--primary);
+  transition: all 0.3s;
+  top: 32px;
+  z-index: 5;
+}
+
+span.numit {
+  font-size: 12pt;
+  font-family: var(--body-font);
+  font-weight: 600;
+  text-shadow: 0.5px 0.5px 0.5px #e7e9f5;
+  color: #0e101a;
+  margin-right: 2px;
+  margin-left: -2px;
+  padding: 0;
+  color: aliceblue;
+  text-shadow: 0.5pt 0.5pt 0.5pt #2d3748;
+}
+.story-card-container {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 4rem;
+  padding: 0.8rem;
+
+  justify-items: center;
+}
+
+#tickets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ticket {
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  position: relative; /* fontos a ::before és ::after pszeudoelemek miatt */
+}
+
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  width: 40px; /* A bevágás szélessége */
+  height: 40px; /* A bevágás magassága */
+  background-color: var(--pale-grey); /* A háttér színéhez igazodik */
+  border-radius: 50%;
+  top: 50%; /* Középre igazítja vertikálisan */
+  transform: translateY(-50%); /* Kiegyenlíti a félkör pozícióját */
+}
+
+.ticket::before {
+  left: -20px; /* Bal oldali bevágás */
+  box-shadow: inset -8px 0px 12px -6px rgba(0, 0, 0, 0.1);
+}
+
+.ticket::after {
+  right: -20px; /* Jobb oldali bevágás */
+  box-shadow: inset 8px 0px 10px -6px rgba(0, 0, 0, 0.1); /* Belső árnyék a félkör jobb oldalán */
+}
+
+.ticket-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+}
+
+.ticket-image.one {
+  background-image: url("img/event-date4.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.ticket-image.two {
+  background-image: url("img/ticket2.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.ticket-image.three {
+  background-image: url("img/ticket3.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.ticket-image.one-old {
+  background-image: url("img/pop4.webp");
+  background-position: center;
+  background-size: 240%;
+}
+
+.ticket-image.two-old {
+  background-image: url("img/ticket2.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.ticket-image.three-old {
+  background-image: url("img/ticket3.webp");
+  background-position: center;
+  background-size: cover;
+}
+
+.ticket-title-price {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.ticket-title {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.ticket-price {
+  background-color: #ffe6ea;
+  color: #ff3366;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.ticket-info-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 2.4rem;
+  border-top: 2px dashed #dddddd;
+}
+
+.ticket-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.ticket-info-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--grey);
+}
+
+.content p.ticket-date,
+.content p.ticket-time,
+.content p.ticket-seat {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 2.4rem;
+  letter-spacing: -0.2px;
+}

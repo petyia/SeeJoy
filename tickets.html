@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="event-date.css" />
     <link rel="stylesheet" href="events.css" />
     <link rel="stylesheet" href="all-stories.css  " />
+    <link rel="stylesheet" href="tickets.css" />
     <link rel="stylesheet" href="queries.css" />
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
@@ -323,15 +324,15 @@
         <div class="phone">
           <div class="phone-footer">
             <div class="nav">
-              <div class="button-body-2-filled">
+              <div class="button-body-2-unfilled">
                 <a href="index.html" class="bottom-nav-link">
-                  <button class="learn-more-2">
-                    <span class="circle-2" aria-hidden="true">
-                      <span class="icon-2 arrow-2"
-                        ><i class="fa-solid fa-home filled"></i
+                  <button class="learn-more-2-unfilled">
+                    <span class="circle-2-unfilled" aria-hidden="true">
+                      <span class="icon-2-unfilled arrow-2-unfilled"
+                        ><i class="fa-solid fa-home icon-inactive"></i
                       ></span>
                     </span>
-                    <div class="button-text-2">Kezdőlap</div>
+                    <div class="button-text-2-unfilled">Kezdőlap</div>
                   </button>
                 </a>
               </div>
@@ -366,15 +367,15 @@
                   </button>
                 </a>
               </div>
-              <div class="button-body-2-unfilled">
+              <div class="button-body-2-filled">
                 <a href="tickets.html" class="bottom-nav-link">
-                  <button class="learn-more-2-unfilled">
-                    <span class="circle-2-unfilled" aria-hidden="true">
-                      <span class="icon-2-unfilled arrow-2-unfilled">
-                        <i class="fa-solid fa-ticket icon-inactive"></i>
+                  <button class="learn-more-2">
+                    <span class="circle-2" aria-hidden="true">
+                      <span class="icon-2 arrow-2">
+                        <i class="fa-solid fa-ticket filled"></i>
                       </span>
                     </span>
-                    <div class="button-text-2-unfilled">Jegyek</div>
+                    <div class="button-text-2">Jegyek</div>
                   </button>
                 </a>
               </div>
@@ -397,7 +398,7 @@
       <section class="events-section">
         <div class="events-container">
           <div class="events-first-row phone-block">
-            <h1 class="page-title stories-t">Történetek</h1>
+            <h1 class="page-title stories-t">Jegyek</h1>
           </div>
           <div class="container-stories-page">
             <div class="card tabs">
@@ -408,21 +409,21 @@
                 checked="checked"
                 name="tab"
               />
-              <label for="tab-1" class="tab tab-primary">Neked</label>
+              <label for="tab-1" class="tab tab-primary">Hamarosan</label>
               <input
                 id="tab-2"
                 type="radio"
                 class="tab tab-selector"
                 name="tab"
               />
-              <label for="tab-2" class="tab tab-success">Követés</label>
+              <label for="tab-2" class="tab tab-success">Régi jegyek</label>
               <input
                 id="tab-3"
                 type="radio"
                 class="tab tab-selector"
                 name="tab"
               />
-              <label for="tab-3" class="tab tab-default">Népszerű</label>
+              <!-- <label for="tab-3" class="tab tab-default">Népszerű</label>
               <input
                 id="tab-4"
                 type="radio"
@@ -444,194 +445,139 @@
                 name="tab"
               />
               <label for="tab-6" class="tab tab-default">Folytasd</label>
-              <div class="tabsShadow"></div>
+              <div class="tabsShadow"></div> -->
               <!-- <div class="glider"></div> -->
 
-              <div class="content">
+              <div class="content tickets">
                 <div class="item" id="content-1">
-                  <div class="story-card-container">
-                    <div class="story-card-img-container story-card1">
-                      <!-- Full card link -->
-                      <a href="single-story.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="index.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story1 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Fodor Anna</h5>
-                            </div>
-                          </div>
-                        </a>
+                  <div id="tickets-container">
+                    <div class="ticket" id="ticket-1">
+                      <div class="ticket-header">
+                        <div class="ticket-image one"></div>
+                        <div class="ticket-title-price">
+                          <h3 class="ticket-title">
+                            Játsszunk híres társasjátékokat, találkozzunk minden
+                            vasárnap!
+                          </h3>
+                          <div class="ticket-price">INGYEN</div>
+                        </div>
+                      </div>
+                      <div class="ticket-info-container">
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Időpont</h6>
+                          <p class="ticket-date">2024 Szeptember 25.</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Óra</h6>
+                          <p class="ticket-time">17:00</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Ülőhely</h6>
+                          <p class="ticket-seat">Nincs Helyjegy</p>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="story-card-img-container story-card2">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story2 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Nagy Bogi</h5>
-                            </div>
-                          </div>
-                        </a>
+                    <div class="ticket" id="ticket-2">
+                      <div class="ticket-header">
+                        <div class="ticket-image two"></div>
+                        <div class="ticket-title-price">
+                          <h3 class="ticket-title">Jégvár fesztivál</h3>
+                          <div class="ticket-price">8000 FT</div>
+                        </div>
+                      </div>
+                      <div class="ticket-info-container">
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Időpont</h6>
+                          <p class="ticket-date">2024 Január 15.</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Óra</h6>
+                          <p class="ticket-time">10:00</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Ülőhely</h6>
+                          <p class="ticket-seat">Nincs helyjegy</p>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="story-card-img-container story-card3">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story3 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kőrösi Ilona</h5>
-                            </div>
-                          </div>
-                        </a>
+                    <div class="ticket" id="ticket-3">
+                      <div class="ticket-header">
+                        <div class="ticket-image three"></div>
+                        <div class="ticket-title-price">
+                          <h3 class="ticket-title">Kínai Újév</h3>
+                          <div class="ticket-price">5000 FT</div>
+                        </div>
                       </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card4">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story4 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Tátási András</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card6">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story6 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Réti Krisztián</h5>
-                            </div>
-                          </div>
-                        </a>
+                      <div class="ticket-info-container">
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Időpont</h6>
+                          <p class="ticket-date">2024 Február 5.</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Óra</h6>
+                          <p class="ticket-time">08:00</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Ülőhely</h6>
+                          <p class="ticket-seat">Helyjegy</p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="item" id="content-2">
-                  <div class="story-card-container">
-                    <div class="story-card-img-container story-card7">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story7 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kén Gréti</h5>
-                            </div>
-                          </div>
-                        </a>
+                  <div id="tickets-container">
+                    <div class="ticket" id="ticket-1">
+                      <div class="ticket-header">
+                        <div class="ticket-image one-old"></div>
+                        <div class="ticket-title-price">
+                          <h3 class="ticket-title">
+                            Izgalmas 30 perces hőlégballon utazás
+                          </h3>
+                          <div class="ticket-price">15000 FT</div>
+                        </div>
+                      </div>
+                      <div class="ticket-info-container">
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Időpont</h6>
+                          <p class="ticket-date">2024 Augusztus 19.</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Óra</h6>
+                          <p class="ticket-time">18:00</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Ülőhely</h6>
+                          <p class="ticket-seat">Helyjegy</p>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="story-card-img-container story-card5">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="index.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story5 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Kalandos Nóra</h5>
-                            </div>
-                          </div>
-                        </a>
+                    <!-- <div class="ticket" id="ticket-2">
+                      <div class="ticket-header">
+                        <div class="ticket-image two-old"></div>
+                        <div class="ticket-title-price">
+                          <h3 class="ticket-title">Jégvár fesztivál</h3>
+                          <div class="ticket-price">8000 FT</div>
+                        </div>
                       </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card4">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story4 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Tátási András</h5>
-                            </div>
-                          </div>
-                        </a>
+                      <div class="ticket-info-container">
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Időpont</h6>
+                          <p class="ticket-date">2024 Január 15.</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Óra</h6>
+                          <p class="ticket-time">10:00</p>
+                        </div>
+                        <div class="ticket-info">
+                          <h6 class="ticket-info-title">Ülőhely</h6>
+                          <p class="ticket-seat">Nincs helyjegy</p>
+                        </div>
                       </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card6">
-                      <!-- Full card link -->
-                      <a href="index.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="events.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story6 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Réti Krisztián</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="story-card-img-container story-card8">
-                      <!-- Full card link -->
-                      <a href="events.html" class="story-full-link"></a>
-                      <div class="story-profile-img-container">
-                        <!-- Inner link -->
-                        <a href="profile.html" class="story-profile-link">
-                          <div class="story-card-profile-pic">
-                            <div class="image-border-none">
-                              <div class="stories-card story8 st-bigger"></div>
-                            </div>
-                            <div class="story-profile-text-container">
-                              <h5 class="name-text">Olajos Johanna</h5>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
+                    </div> -->
                   </div>
                 </div>
                 <div class="item" id="content-3">
