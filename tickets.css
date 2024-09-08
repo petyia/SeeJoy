@@ -172,7 +172,7 @@ main {
   z-index: 2;
   background-color: transparent;
   position: relative;
-  margin-top: 4.8rem;
+  margin-top: 2.4rem;
 }
 
 .container-stories-page .card {
@@ -367,8 +367,8 @@ span.numit {
 .ticket::after {
   content: "";
   position: absolute;
-  width: 48px; /* A bevágás szélessége */
-  height: 48px; /* A bevágás magassága */
+  width: 40px; /* A bevágás szélessége */
+  height: 40px; /* A bevágás magassága */
   background-color: var(--pale-grey); /* A háttér színéhez igazodik */
   border-radius: 50%;
   top: 50%; /* Középre igazítja vertikálisan */
@@ -377,60 +377,43 @@ span.numit {
 
 .ticket::before {
   left: -20px; /* Bal oldali bevágás */
-  box-shadow: inset -20px 0px 6px -19px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -7px 0px 8px -5px rgba(0, 0, 0, 0.1);
 }
 
 .ticket::after {
   right: -20px; /* Jobb oldali bevágás */
-  box-shadow: inset 20px 0px 6px -19px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 7px 0px 8px -5px rgba(0, 0, 0, 0.1);
 }
 
 .ticket-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.6rem;
 }
 
 .ticket-image {
   width: 60px;
   height: 60px;
   border-radius: 15px;
+  background-position: center;
+  background-size: cover;
+  flex-shrink: 0; /* Ne zsugorodjon */
+  min-width: 60px; /* Minimum méret */
+  min-height: 60px; /* Minimum méret */
 }
 
 .ticket-image.one {
   background-image: url("img/event-date4.webp");
-  background-position: center;
-  background-size: cover;
 }
-
 .ticket-image.two {
   background-image: url("img/ticket2.webp");
-  background-position: center;
-  background-size: cover;
 }
-
 .ticket-image.three {
   background-image: url("img/ticket3.webp");
-  background-position: center;
-  background-size: cover;
 }
-
 .ticket-image.one-old {
   background-image: url("img/pop4.webp");
-  background-position: center;
-  background-size: 240%;
-}
-
-.ticket-image.two-old {
-  background-image: url("img/ticket2.webp");
-  background-position: center;
-  background-size: cover;
-}
-
-.ticket-image.three-old {
-  background-image: url("img/ticket3.webp");
-  background-position: center;
-  background-size: cover;
 }
 
 .ticket-title-price {
@@ -438,7 +421,6 @@ span.numit {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px;
 }
 
 .ticket-title {
@@ -453,6 +435,7 @@ span.numit {
   padding: 5px 15px;
   font-weight: bold;
   font-size: 1.2rem;
+  white-space: nowrap; /* Megakadályozza a sortörést */
 }
 
 .ticket-info-container {
@@ -460,6 +443,7 @@ span.numit {
   justify-content: space-between;
   padding-top: 2.4rem;
   border-top: 2px dashed #dddddd;
+  gap: 0.8rem;
 }
 
 .ticket-info {
@@ -484,4 +468,5 @@ span.numit {
   font-weight: 700;
   font-size: 2.4rem;
   letter-spacing: -0.2px;
+  word-wrap: break-word;
 }
