@@ -367,8 +367,8 @@ span.numit {
 .ticket::after {
   content: "";
   position: absolute;
-  width: 40px; /* A bevágás szélessége */
-  height: 40px; /* A bevágás magassága */
+  width: 48px; /* A bevágás szélessége */
+  height: 48px; /* A bevágás magassága */
   background-color: var(--pale-grey); /* A háttér színéhez igazodik */
   border-radius: 50%;
   top: 50%; /* Középre igazítja vertikálisan */
@@ -377,12 +377,12 @@ span.numit {
 
 .ticket::before {
   left: -20px; /* Bal oldali bevágás */
-  box-shadow: inset -8px 0px 12px -6px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -20px 0px 6px -19px rgba(0, 0, 0, 0.1);
 }
 
 .ticket::after {
   right: -20px; /* Jobb oldali bevágás */
-  box-shadow: inset 8px 0px 10px -6px rgba(0, 0, 0, 0.1); /* Belső árnyék a félkör jobb oldalán */
+  box-shadow: inset 20px 0px 6px -19px rgba(0, 0, 0, 0.1);
 }
 
 .ticket-header {
