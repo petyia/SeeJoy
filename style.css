@@ -502,6 +502,9 @@ button:hover .button-text {
 .user-info h2 {
   font-weight: 700;
   font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 800;
 }
 
 .user-info img {

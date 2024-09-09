@@ -1,0 +1,148 @@
+:root {
+  --primary: #ff5483;
+  --primary-light: #fff6f5ff;
+  --primary-light-darker: #ffd7e1;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
+  --grey: #aeb0ba;
+
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+
+  --linear-gradient-1: linear-gradient(
+    to right bottom,
+    #455efd,
+    #ff5483,
+    #f46e4b
+  );
+
+  --search-bg: var(--pale-grey);
+  --body-font: "Nunito", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+@media screen and (max-width: 480px) {
+  .main-nav {
+    display: none;
+  }
+
+  .container {
+    margin-bottom: 0rem;
+  }
+
+  .event-date-card.profile {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    /* justify-content: space-between; */
+    transition: transform 0.3s ease;
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    border-radius: 2.4rem;
+    padding: 1.6rem;
+  }
+
+  .event-date-line.profile {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px; /* Kártyák közötti távolság */
+    justify-content: center; /* Kártyák középre igazítása */
+    padding: 20px; /* Kártyák körüli padding */
+  }
+
+  .upper-img1-1-container.profile {
+    padding: 6.4rem;
+    border-radius: 1.6rem;
+    background: url(./img/e-d1-1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .upper-img1-2-container.profile {
+    padding: 6.4rem;
+    border-radius: 1.6rem;
+    background: url(./img/e-d1-2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+  }
+
+  .event-date-lower-img-container.profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+    background-color: var(--white);
+    padding: 0;
+    border-radius: 2.4rem;
+  }
+
+  .event-date-lower-container-outside.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0rem;
+    gap: 0.8rem;
+  }
+
+  .event-text-upper-container.profile,
+  .upper-info-container.profile,
+  .event-date-lower-text-container.profile,
+  .lower-info-container.profile {
+    padding: 0;
+  }
+
+  .event-date-heart-icon {
+    font-size: 1.6rem;
+    color: var(--grey);
+
+    margin-top: 0.8rem;
+    cursor: pointer;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .event-date-heart-icon-filled {
+    font-size: 1.6rem;
+    color: var(--primary);
+
+    margin-top: 0.8rem;
+    cursor: pointer;
+  }
+
+  .event-text-upper-container.profile {
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  h3.h3.bigger.profile {
+    font-size: 2rem;
+  }
+
+  .event-date-date.profile {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    justify-content: center;
+    font-size: 1.2rem;
+    border-radius: 0.8rem;
+    text-align: center;
+    width: 3.6rem;
+    height: 3.6rem;
+    box-shadow: var(--popular-sh);
+    line-height: 1;
+  }
+
+  .event-date-upper-container-outside.profile {
+    padding: 0.8rem;
+  }
+}
