@@ -55,14 +55,23 @@ body {
 main {
   height: 100%;
   width: 100%;
+}
 
+.events-section.new-event {
+  width: 100%;
+
+  height: auto;
+  /* background-color: var(--white); */
+  margin: 0 auto;
+  border-radius: 1.6rem;
   margin-bottom: 80rem;
 }
 
 .new-event-form-container {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 1200px;
+  height: 72vh;
 
   margin: 0 auto;
   background-color: #fff;
@@ -79,20 +88,27 @@ main {
 }
 
 .new-event-title {
+  margin: 0 auto;
   font-size: 20px;
   font-weight: 800;
 }
 
 .new-close-icon {
+  display: none;
   background: none;
   border: none;
   font-size: 24px;
 }
 
 .new-menu-icon {
+  display: none;
   background: none;
   border: none;
   font-size: 20px;
+}
+
+.progress-bar-container {
+  padding: 0 2rem;
 }
 
 .progress-bar {
@@ -101,13 +117,12 @@ main {
   background-color: #f0f0f0;
   border-radius: 10px;
   margin: 15px 0;
-  padding: 0 20px;
 }
 
 .progress {
   width: 25%;
   height: 100%;
-  background-color: #ff4b5c;
+  background-color: var(--primary);
   border-radius: 10px;
 }
 
@@ -194,6 +209,7 @@ main {
   font-size: 14px;
   color: var(--grey);
   font-weight: 600;
+  padding-bottom: 1.6rem;
 }
 
 .requirements-list li {

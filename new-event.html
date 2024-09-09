@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="single-event.css" />
     <link rel="stylesheet" href="new-event.css" />
 
+    <link rel="stylesheet" href="queries-new-event.css" />
+
     <link rel="stylesheet" href="queries.css" />
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
@@ -43,7 +45,7 @@
   </head>
   <body>
     <header>
-      <nav class="main-nav">
+      <nav class="main-nav new-event">
         <!-- <a href="">
           <img src="" alt="" />
         </a> -->
@@ -324,7 +326,7 @@
 
     <main>
       <div class="container">
-        <div class="phone">
+        <div class="phone new-event">
           <div class="phone-footer">
             <div class="nav">
               <div class="button-body-2-filled">
@@ -398,7 +400,7 @@
           </div>
         </div>
       </div>
-      <section class="events-section">
+      <section class="events-section new-event">
         <div class="new-event-form-container">
           <header class="event-header">
             <button class="new-menu-icon">
@@ -409,9 +411,10 @@
               <i class="fa-solid fa-xmark"></i>
             </button>
           </header>
-
-          <div class="progress-bar">
-            <div class="progress"></div>
+          <div class="progress-bar-container">
+            <div class="progress-bar">
+              <div class="progress"></div>
+            </div>
           </div>
 
           <div class="new-event-scroll-container">
@@ -466,6 +469,35 @@
                 </li>
               </ul>
             </div>
+            <div class="requirements-section">
+              <h3>Követelmények</h3>
+              <ul class="requirements-list">
+                <li>
+                  Különböző részletek és szögek, beleértve az emberek
+                  tevékenység közbeni képeit.
+                </li>
+                <li>
+                  Egy nyugodt helyzet bemutatása, amely pontosan leírja az
+                  eseményt.
+                </li>
+                <li>
+                  Jó minőség: Nincs szükségtelen szűrő, torzítás, ráhelyezett
+                  szöveg vagy szimbólum.
+                </li>
+                <li>
+                  Különböző részletek és szögek, beleértve az emberek
+                  tevékenység közbeni képeit.
+                </li>
+                <li>
+                  Egy nyugodt helyzet bemutatása, amely pontosan leírja az
+                  eseményt.
+                </li>
+                <li>
+                  Jó minőség: Nincs szükségtelen szűrő, torzítás, ráhelyezett
+                  szöveg vagy szimbólum.
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div class="navigation-buttons">
@@ -476,6 +508,7 @@
       </section>
     </main>
     <footer></footer>
+
     <script src="event-cat.js"></script>
     <script src="search-bar2.js"></script>
     <script src="script.js"></script>

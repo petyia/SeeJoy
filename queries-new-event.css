@@ -1,0 +1,50 @@
+@media screen and (max-width: 480px) {
+  .main-nav.new-event {
+    display: none;
+  }
+
+  .phone.new-event {
+    display: none;
+  }
+
+  main {
+    position: relative;
+  }
+
+  .navigation-buttons {
+    position: fixed;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white);
+    width: 100%;
+    height: auto;
+    box-shadow: var(--fixed-bottom);
+    padding: 20px;
+    border-bottom-left-radius: 2.4rem;
+    border-bottom-right-radius: 2.4rem;
+
+    z-index: 9999;
+  }
+
+  .events-section.new-event {
+    width: 100%;
+    height: auto;
+    /* background-color: var(--white); */
+    margin: 0 auto;
+    border-radius: 1.6rem;
+    margin-bottom: 0rem;
+    gap: 1.6rem;
+  }
+
+  .new-event-scroll-container {
+    overflow-y: auto;
+    max-height: 90%;
+    height: 80vh;
+    padding: 2rem 2rem 4rem 2rem;
+  }
+
+  .new-event-form-container {
+    border-radius: 0rem;
+  }
+}
