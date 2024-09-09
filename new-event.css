@@ -155,7 +155,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   color: #ff4b5c;
   cursor: pointer;
 }
@@ -168,7 +168,7 @@ main {
 
 .thumbnail-uploads {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -236,7 +236,9 @@ main {
   border-radius: 25px;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
 }
 
 .back-button {

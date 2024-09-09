@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="all-stories.css  " />
     <link rel="stylesheet" href="tickets.css" />
     <link rel="stylesheet" href="queries.css" />
+
+    <link rel="stylesheet" href="queries-tickets.css" />
+
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
     <link
@@ -40,7 +43,7 @@
   </head>
   <body>
     <header>
-      <nav class="main-nav">
+      <nav class="main-nav tickets">
         <!-- <a href="">
           <img src="" alt="" />
         </a> -->
@@ -56,6 +59,7 @@
               /> -->
             </a>
           </div>
+
           <div class="search-bar">
             <input type="text" placeholder="Keresés" />
           </div>
@@ -76,9 +80,9 @@
                 </button>
               </a>
             </div>
-            <div class="header-profile" id="head1">
+            <div class="header-profile" id="head3">
               <!-- search-bar2 IDE -->
-
+              <h1 class="page-title stories-t only-phone">Jegyek</h1>
               <div
                 class="notification-container"
                 id="notification-container"
@@ -237,7 +241,7 @@
                 </div>
               </div>
             </div>
-            <div class="header-profile" id="head3">
+            <div class="header-profile" id="head1">
               <form
                 class="search-container"
                 action="text"
@@ -417,13 +421,13 @@
                 name="tab"
               />
               <label for="tab-2" class="tab tab-success">Régi jegyek</label>
-              <input
+              <!-- <input
                 id="tab-3"
                 type="radio"
                 class="tab tab-selector"
                 name="tab"
               />
-              <!-- <label for="tab-3" class="tab tab-default">Népszerű</label>
+               <label for="tab-3" class="tab tab-default">Népszerű</label>
               <input
                 id="tab-4"
                 type="radio"

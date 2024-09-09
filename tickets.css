@@ -53,6 +53,10 @@ main {
   width: 100%;
 }
 
+.page-title.stories-t.only-phone {
+  display: none;
+}
+
 .container-stories-page {
   display: flex;
   justify-content: center;

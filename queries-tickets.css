@@ -1,0 +1,31 @@
+@media screen and (max-width: 480px) {
+  .main-nav.tickets .notification-container,
+  .profile-img-container {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .main-nav.tickets .notification-container {
+    display: none;
+  }
+
+  .events-first-row.phone-block {
+    display: none;
+  }
+
+  .header-hello-container {
+    margin-left: 1.6rem;
+    margin-bottom: 0rem;
+    display: none !important;
+  }
+
+  .page-title.stories-t.only-phone {
+    display: block;
+    margin-left: 0;
+  }
+
+  #head3 {
+    order: 2;
+    margin-left: 0;
+  }
+}
