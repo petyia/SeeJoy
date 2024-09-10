@@ -143,6 +143,8 @@ main {
 }
 
 .organizer-name {
+  text-decoration: none;
+  color: var(--black);
   font-size: 16px;
   letter-spacing: -0.4px;
   font-weight: 800;
@@ -161,6 +163,17 @@ main {
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 800;
+  cursor: pointer;
+}
+
+.follow-button.active {
+  background-color: var(--primary);
+  border: none;
+  border-radius: 20px;
+  color: var(--white);
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
 }
 

@@ -171,3 +171,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   popup.init();
 });
+
+// JavaScript to handle follow button click
+document.querySelector(".follow-button").addEventListener("click", function () {
+  const followButton = this;
+  if (followButton.classList.contains("active")) {
+    followButton.innerHTML = "Követés";
+    followButton.classList.remove("active");
+  } else {
+    followButton.innerHTML = "Követed";
+    followButton.classList.add("active");
+  }
+});

@@ -15,3 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Add event listener for the "close" icon
+document
+  .querySelector(".new-close-icon")
+  .addEventListener("click", function () {
+    history.back(); // This will navigate back to the previous page
+  });
+
+// Add event listener for the "back" button
+document.querySelector(".back-button").addEventListener("click", function () {
+  history.back(); // This will also navigate back to the previous page
+});
