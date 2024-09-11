@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Simuláció a fájl feltöltési funkcióra
   mainUploadArea.addEventListener("click", function () {
-    alert("Main image upload clicked!");
+    alert("A fő képet töltheted itt fel");
     // Itt lehet egy file input elemet megjeleníteni, vagy fájl kezelést hozzáadni
   });
 
   thumbnailBoxes.forEach(function (box) {
     box.addEventListener("click", function () {
-      alert("Thumbnail upload clicked!");
+      alert("Képek!");
       // Ugyanígy lehet thumbnail feltöltés funkciókat is kezelni
     });
   });
