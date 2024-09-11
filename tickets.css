@@ -430,6 +430,8 @@ span.numit {
 .ticket-title {
   font-size: 2.4rem;
   margin: 0;
+  text-decoration: none;
+  color: var(--black);
 }
 
 .ticket-price {

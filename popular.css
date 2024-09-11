@@ -110,7 +110,8 @@ a.all-popular-link:hover {
 .popular-card.first {
   /* border: var(--primary) solid 2px; */
   position: relative;
-  background: url("./img/pop1.webp");
+  background: url("./img/e-d1-2.webp");
+  background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 1.6rem;

@@ -3,9 +3,9 @@ const app = new Vue({
   data() {
     return {
       mediaList: [
-        { url: "img/story-event6.webp", type: "image" },
-        { url: "img/e-d1-1.webp", type: "image" },
-        { url: "img/pop4.webp", type: "image" },
+        { url: "img/story-event1.webp", type: "image" },
+        { url: "img/e-d1-2.webp", type: "image" },
+        { url: "vid/tarsas.mp4", type: "video" },
       ],
       current: 0,
       timeline: null, // Add this to store the timeline reference

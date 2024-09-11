@@ -28,8 +28,10 @@
     <link rel="stylesheet" href="all-stories.css" />
     <link rel="stylesheet" href="single-story.css" />
     <link rel="stylesheet" href="single-event.css" />
-
     <link rel="stylesheet" href="queries.css" />
+
+    <link rel="stylesheet" href="queries-single-event.css" />
+
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
     <link
@@ -42,7 +44,7 @@
   </head>
   <body>
     <header>
-      <nav class="main-nav">
+      <nav class="main-nav single-event">
         <!-- <a href="">
           <img src="" alt="" />
         </a> -->
@@ -323,7 +325,7 @@
 
     <main>
       <div class="container">
-        <div class="phone">
+        <div class="phone single-event">
           <div class="phone-footer">
             <div class="nav">
               <div class="button-body-2-filled">
@@ -446,9 +448,26 @@
                   </div>
                 </div>
               </div>
+
               <div class="sigle-story-contaner-comments">
                 <div class="event-card-container">
                   <div class="event-card">
+                    <div class="btn-container-up">
+                      <button class="go-back-icon">
+                        <i class="fa-solid fa-chevron-left single-event"></i>
+                      </button>
+                      <div class="heart-icon single-event">
+                        <i
+                          class="fa-solid fa-heart event-date-heart-icon-filled single-event"
+                        ></i>
+                        <i
+                          class="fa-regular fa-heart event-date-heart-icon single-event"
+                        ></i>
+                      </div>
+                      <button class="edit-profile-icon">
+                        <i class="fa-solid fa-ellipsis single-event"></i>
+                      </button>
+                    </div>
                     <div class="event-banner">
                       <div class="slider-container">
                         <div class="slider">
@@ -489,8 +508,7 @@
                       </div>
                       <div class="event-description">
                         <h1 class="event-title">
-                          Játsszunk híres társasjátékokat, találkozzunk minden
-                          vasárnap!
+                          Játsszunk híres társasjátékokat
                         </h1>
                         <div class="single-event-info-container">
                           <div class="event-left-info-container">
@@ -517,16 +535,16 @@
                             <div class="my-event-line" id="stories-line">
                               <div class="story-container">
                                 <div
-                                  class="my-event-card-big my-event2-7"
+                                  class="my-event-card-big small my-event2-7"
                                 ></div>
                               </div>
                               <div class="story-container">
                                 <div
-                                  class="my-event-card-big my-event2-3"
+                                  class="my-event-card-big small my-event2-3"
                                 ></div>
                               </div>
                               <div class="story-container">
-                                <div class="my-event-card-big my-event3">
+                                <div class="my-event-card-big small my-event3">
                                   <span id="my-event-plus-number-medium"
                                     >+9</span
                                   >

@@ -190,7 +190,7 @@
   .slide {
     min-width: 100%;
     box-sizing: border-box;
-    height: 56vh;
+    height: 48vh;
   }
 
   .event-pricing {
@@ -210,6 +210,14 @@
 
   main {
     margin-bottom: 40rem;
+  }
+
+  .go-back-icon {
+    display: none;
+  }
+
+  .edit-profile-icon {
+    display: none;
   }
 }
 @media (max-width: 1200px) {
@@ -379,7 +387,7 @@
   .slide {
     min-width: 100%;
     box-sizing: border-box;
-    height: 40vh;
+    height: 100%;
   }
 
   .event-pricing {

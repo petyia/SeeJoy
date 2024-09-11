@@ -183,3 +183,8 @@ document.querySelector(".follow-button").addEventListener("click", function () {
     followButton.classList.add("active");
   }
 });
+
+// Add event listener for the "go-back" button
+document.querySelector(".go-back-icon").addEventListener("click", function () {
+  history.back(); // This will also navigate back to the previous page
+});

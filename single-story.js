@@ -157,7 +157,7 @@ document.body.addEventListener("click", function (event) {
               replyList.innerHTML = `
                 <div class="comment-header-img-username">
                   <img src="https://via.placeholder.com/24" alt="Avatar" class="comment-avatar">
-                  <span class="comment-author answer-line">Vendég Felhasználó</span>
+                  <span class="comment-author answer-line">Szabó Lilla</span>
                 </div>
                 <div class="comment-second-row">
                   <p class="reply-text">${replyText}</p>
@@ -253,7 +253,7 @@ document.getElementById("postComment").addEventListener("click", function () {
         <div class="comment-header-first-row">
           <div class="comment-header-img-username">
             <img src="https://via.placeholder.com/32" alt="Avatar" class="comment-avatar">
-            <span class="comment-author">Vendég Felhasználó</span>
+            <span class="comment-author">Szabó Lilla</span>
           </div>
           <div class="comment-time">${timeSince(currentTime)}</div>
         </div>
