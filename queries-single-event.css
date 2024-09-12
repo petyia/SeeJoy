@@ -81,7 +81,7 @@
   }
 
   .event-pricing {
-    position: absolute;
+    position: sticky;
     bottom: 0;
     width: 100%;
     z-index: 9999;
