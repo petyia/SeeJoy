@@ -893,21 +893,18 @@ a.h5 {
 }
 
 .phone {
-  position: absolute;
+  position: fixed; /* Állandóan a viewport alján marad */
   bottom: 0;
   display: flex;
-  /* width: 36em; */
   height: 4.8em;
   background-color: #f3f3f3;
   border-radius: 16rem;
   overflow: hidden;
-
   margin-bottom: 1.6rem;
-
   z-index: 9998;
-
   box-shadow: var(--popular-sh);
 }
+
 
 .phone-footer {
   display: flex;
@@ -1352,3 +1349,9 @@ a.h5 {
   font-family: var(--body-font);
   font-size: 1.6rem;
 }
+
+.my-category-checked {
+  display: block;
+}
+
+my-category-flex-container

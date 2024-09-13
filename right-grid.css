@@ -392,7 +392,7 @@ a.my-event-link:hover {
   cursor: pointer;
 }
 
-.my-category-card.first {
+.my-category-card.firstish {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background: url(./img/mycategory1.webp);
@@ -519,7 +519,7 @@ a.my-category-link:hover {
   color: var(--primary);
 }
 
-#my-category-checked {
+.my-category-checked {
   font-size: 1.4rem;
   color: var(--primary);
 }

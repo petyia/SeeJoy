@@ -113,4 +113,26 @@ function toggleMenuNoti() {
 //Search bar
 document.addEventListener("touchstart", function () {}, true);
 
+document.querySelectorAll(".my-category-checked").forEach((button) => {
+  button.addEventListener("click", function () {
+    // Az aktuális gombhoz tartozó ID
+    const idToRemove = this.getAttribute("data-id");
 
+    // Az elem eltávolítása
+    const elementToRemove = document.querySelector(
+      `.my-category-flex-container#${idToRemove}`
+    );
+    if (elementToRemove) {
+      elementToRemove.remove();
+    }
+
+    // Ellenőrzés, hogy maradt-e még .my-category-flex-container a .my-category-container-ben
+    const container = document.querySelector(".my-category-container");
+    if (
+      container &&
+      container.querySelectorAll(".my-category-flex-container").length === 0
+    ) {
+      container.remove();
+    }
+  });
+});

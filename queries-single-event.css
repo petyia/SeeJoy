@@ -172,4 +172,37 @@
     align-items: center;
     justify-content: center;
   }
+
+  .comment-field-container.messages {
+    box-shadow: rgba(99, 99, 99, 0.1) 0px -2px 8px 0px;
+    padding: 16px 4px 0px 4px;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .main-nav.new-event {
+    display: none;
+  }
+
+  .phone.new-event {
+    display: none;
+  }
+
+  .message-phone-icon,
+  .message-video-icon,
+  .message-three-dot-icon {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: var(--grey);
+    border: 2px solid var(--ice-blue);
+    background-color: var(--white);
+    padding: 0.8rem 4rem;
+    border-radius: 4.8rem;
+
+    transition: all 0.2s ease-in-out;
+  }
 }

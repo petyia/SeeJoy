@@ -835,7 +835,7 @@
           <div class="my-events-container">
             <div class="my-events-first-row">
               <h1 class="stories-title">Eseményeim</h1>
-              <a href="#" class="all-stories-link"
+              <a href="profile.html" class="all-stories-link"
                 >Összes<i class="fa-solid fa-chevron-right"></i>
               </a>
             </div>
@@ -915,19 +915,16 @@
           <div class="my-category-container">
             <div class="my-category-first-row">
               <h1 class="stories-title">Kategóriáim</h1>
-              <a href="#" class="all-stories-link"
-                >Összes<i class="fa-solid fa-chevron-right"></i>
-              </a>
+              <a href="profile.html" class="all-stories-link">Összes<i class="fa-solid fa-chevron-right"></i></a>
             </div>
-            <div class="my-category-flex-container">
+            <div class="my-category-flex-container" id="one">
               <div class="my-category-line" id="popular-line">
-                <div class="my-category-card first" id="card1">
+                <div class="my-category-card firstish" id="card1">
                   <div class="my-category-upper-container"></div>
                 </div>
                 <div class="my-category-upper-info-container">
                   <a href="#" class="my-category-link">
-                    <h3 class="h3">Étel</h3></a
-                  >
+                    <h3 class="h3">Étel</h3></a>
                 </div>
               </div>
               <div class="my-category-right-container">
@@ -936,9 +933,7 @@
                     <div class="my-category-line" id="stories-line">
                       <div class="story-container">
                         <div class="my-category-card-little my-category3">
-                          <span id="my-category-checked"
-                            ><i class="fa-solid fa-check"></i
-                          ></span>
+                          <button class="my-category-checked" data-id="one"><i class="fa-solid fa-check"></i></button>
                         </div>
                       </div>
                     </div>
@@ -946,15 +941,14 @@
                 </div>
               </div>
             </div>
-            <div class="my-category-flex-container">
+            <div class="my-category-flex-container" id="two">
               <div class="my-category-line" id="popular-line">
                 <div class="my-category-card second" id="card1">
                   <div class="my-category-upper-container"></div>
                 </div>
                 <div class="my-category-upper-info-container">
                   <a href="#" class="my-category-link">
-                    <h3 class="h3">Gaming</h3></a
-                  >
+                    <h3 class="h3">Gaming</h3></a>
                 </div>
               </div>
               <div class="my-category-right-container">
@@ -963,9 +957,7 @@
                     <div class="my-category-line" id="stories-line">
                       <div class="story-container">
                         <div class="my-category-card-little my-category3">
-                          <span id="my-category-checked"
-                            ><i class="fa-solid fa-check"></i
-                          ></span>
+                          <button class="my-category-checked" data-id="two"><i class="fa-solid fa-check"></i></button>
                         </div>
                       </div>
                     </div>
@@ -974,6 +966,7 @@
               </div>
             </div>
           </div>
+          
         </div>
       </div>
       <section class="about-section"></section>

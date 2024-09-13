@@ -305,7 +305,7 @@ h5.name-text.single-st {
   margin-left: 0;
 }
 
-.my-category-card.first.single-story {
+.my-category-card.firstish.single-story {
   /* border: var(--primary) solid 2px; */
   position: relative;
   background: url(./img/mycategory1.webp);
