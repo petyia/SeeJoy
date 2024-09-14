@@ -335,7 +335,7 @@
                   <button class="learn-more-2-unfilled">
                     <span class="circle-2-unfilled" aria-hidden="true">
                       <span class="icon-2-unfilled arrow-2-unfilled"
-                        ><i class="fa-solid fa-home"></i
+                        ><i class="fa-solid fa-home icon-inactive"></i
                       ></span>
                     </span>
                     <div class="button-text-2-unfilled">Kezdőlap</div>
@@ -548,7 +548,9 @@
                 </div>
               </div>
             </div>
-            <button class="add"></button>
+            <button class="add">
+              <p><i class="fa-solid fa-pencil"></i></i>Új csevegés</p>
+            </button>
             <div class="overlay"></div>
           </div>
 
@@ -677,12 +679,12 @@
     </main>
     <footer></footer>
     <script>
-      // Add event listener for the "close" icon
-      document
-        .querySelector(".new-close-icon")
-        .addEventListener("click", function () {
-          history.back(); // This will navigate back to the previous page
-        });
+      // // Add event listener for the "close" icon
+      // document
+      //   .querySelector(".new-close-icon")
+      //   .addEventListener("click", function () {
+      //     history.back(); // This will navigate back to the previous page
+      //   });
     </script>
     <script src="event-cat.js"></script>
     <script src="search-bar2.js"></script>

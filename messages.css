@@ -328,18 +328,28 @@ html {
   margin-right: 2px;
 }
 
+.fa-pencil {
+  margin-right: 0.8rem;
+}
+
 .add {
   position: sticky;
   bottom: 25px;
   background-color: var(--theme-color);
-  width: 60px;
+  width: auto;
+  padding: 0 2.4rem;
   height: 60px;
   border: 0;
-  border-radius: 50%;
-  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus'%3e%3cpath d='M12 5v14M5 12h14'/%3e%3c/svg%3e");
+  border-radius: 4.8rem;
+
+  font-size: 1.6rem;
+  color: var(--white);
+  font-weight: 800;
+
+  /* background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-plus'%3e%3cpath d='M12 5v14M5 12h14'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
   background-position: 50%;
-  background-size: 28px;
+  background-size: 28px; */
   box-shadow: 0 0 16px var(--theme-color);
   margin: auto auto -55px;
   flex-shrink: 0;
@@ -558,16 +568,99 @@ html {
   }
 }
 @media (max-width: 780px) {
-  .conversation-area {
-    display: none;
+  .wrapper {
+    position: relative; /* Biztosítja, hogy a position relatív maradjon a területeken */
+    width: 100vw; /* A wrapper teljes szélessége */
+    height: 100vh; /* A wrapper teljes magassága */
+    overflow: hidden; /* Megakadályozza, hogy bármi kilógjon a látható területből */
   }
 
-  .search-bar {
-    margin-left: 0;
-    flex-grow: 1;
+  .conversation-area,
+  .chat-area {
+    position: absolute; /* Az elemek egymásra rétegződnek */
+    top: 0;
+    left: 0;
+    width: 100%; /* Mindkettő a teljes szélességet foglalja el */
+    height: 100%; /* Mindkettő a teljes magasságot foglalja el */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Animáció */
   }
-  .search-bar input {
-    padding-right: 10px;
+
+  .conversation-area {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* Alapértelmezésben teljes szélességben látható */
+  }
+
+  .conversation-area.hidden {
+    opacity: 0;
+    transform: translateX(-100%); /* Elcsúsztatjuk a képernyőről balra */
+  }
+
+  .chat-area {
+    opacity: 0;
+    transform: translateX(100%); /* Elcsúsztatjuk a képernyőről jobbra */
+  }
+
+  .chat-area.active-chat {
+    opacity: 1;
+    transform: translateX(
+      0
+    ); /* Amikor megnyitod, a teljes képernyőn megjelenik */
+  }
+
+  .chat-area-header {
+    padding: 1.6rem;
+  }
+
+  .chat-area-header-first-row,
+  .chat-area-header-second-row {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 16px;
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--theme-bg-color);
+    max-width: 1600px;
+    height: 90vh;
+    margin: 0 auto;
+    overflow: hidden;
+
+    border-radius: 0;
+  }
+  main {
+    background-color: var(--white);
+  }
+
+  .app {
+    transition: height 0.3s ease; /* Animáció a magasság változtatásához */
+  }
+
+  .phone {
+    display: block; /* Alapértelmezett állapotban látható */
+  }
+
+  .chat-area.active-chat ~ .app {
+    height: 100vh; /* Ha a chat-area aktív, az app teljes magasságú lesz */
+  }
+
+  .app.default-height {
+    height: 90vh; /* Alapértelmezett magasság */
+  }
+
+  .phone.single-event.hidden {
+    display: none; /* Ha a chat-area aktív, a phone osztály eltűnik */
+  }
+
+  .msg.active1 {
+    background: none;
+    border-left: none;
+    border-radius: 0;
   }
 }
 
@@ -672,7 +765,7 @@ html {
 .profile-img.messages {
   width: 3.2rem;
   height: 3.2rem;
-  border-radius: 0.8rem;
+  border-radius: 1.2rem;
   -o-object-fit: cover;
   object-fit: cover;
   border: none;
@@ -696,7 +789,7 @@ html {
 }
 
 .conversation-area {
-  padding: 1.6rem;
+  padding: 1.6rem 1.6rem 0 1.6rem;
 }
 
 .conversation-area::-webkit-scrollbar {

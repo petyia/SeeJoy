@@ -214,3 +214,63 @@ function timeSince(date) {
   if (interval > 1) return Math.floor(interval) + " perce";
   return "éppen most";
 }
+
+// Kattintás kezelése a 'msg' elemre (beszélgetés kiválasztás)
+document.querySelectorAll(".msg").forEach((item) => {
+  item.addEventListener("click", function () {
+    // Csak mobil nézetben futtatjuk
+    if (window.innerWidth <= 780) {
+      document.querySelector(".conversation-area").classList.add("hidden"); // Elrejtjük a beszélgetés listát
+      document.querySelector(".chat-area").classList.add("active-chat"); // Megjelenítjük a chat-et
+    }
+
+    // Itt jöhet a többi chat betöltés (pl. profilkép és beszélgetés betöltése)
+    const chatAreaTitle = document.querySelector(".chat-area-title");
+    const userName = this.querySelector(".msg-username").innerText;
+    chatAreaTitle.innerText = userName;
+  });
+});
+
+// Bezárás kezelése a 'new-close-icon' gombra kattintva
+document
+  .querySelector(".new-close-icon")
+  .addEventListener("click", function () {
+    // Csak mobil nézetben futtatjuk
+    if (window.innerWidth <= 780) {
+      document.querySelector(".chat-area").classList.remove("active-chat"); // Elrejtjük a chat-et
+      document.querySelector(".conversation-area").classList.remove("hidden"); // Megjelenítjük a beszélgetés listát
+    }
+  });
+
+// Kattintás kezelése a 'msg' elemre (beszélgetés kiválasztás)
+document.querySelectorAll(".msg").forEach((item) => {
+  item.addEventListener("click", function () {
+    // Csak mobil nézetben futtatjuk
+    if (window.innerWidth <= 780) {
+      document.querySelector(".conversation-area").classList.add("hidden"); // Elrejtjük a beszélgetés listát
+      document.querySelector(".chat-area").classList.add("active-chat"); // Megjelenítjük a chat-et
+      document.querySelector(".phone.single-event").classList.add("hidden"); // Elrejtjük a phone elemet
+      document.querySelector(".app").classList.remove("default-height"); // Eltávolítjuk a 88vh-t
+      document.querySelector(".app").style.height = "100vh"; // Teljes magasságúvá tesszük
+    }
+
+    // Itt jöhet a többi chat betöltés (pl. profilkép és beszélgetés betöltése)
+    const chatAreaTitle = document.querySelector(".chat-area-title");
+    const userName = this.querySelector(".msg-username").innerText;
+    chatAreaTitle.innerText = userName;
+  });
+});
+
+// Bezárás kezelése a 'new-close-icon' gombra kattintva
+document
+  .querySelector(".new-close-icon")
+  .addEventListener("click", function () {
+    // Csak mobil nézetben futtatjuk
+    if (window.innerWidth <= 780) {
+      document.querySelector(".chat-area").classList.remove("active-chat"); // Elrejtjük a chat-et
+      document.querySelector(".conversation-area").classList.remove("hidden"); // Megjelenítjük a beszélgetés listát
+      document.querySelector(".phone").classList.remove("hidden"); // Visszahozzuk a phone elemet
+      document.querySelector(".app").classList.add("default-height"); // 88vh-t alkalmazunk
+      document.querySelector(".app").style.height = "90vh"; // Magasság visszaállítása
+    }
+  });
