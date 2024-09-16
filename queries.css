@@ -1840,10 +1840,6 @@
   .event-center-info-container {
     display: none;
   }
-
-  .events-first-row.single-story {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 560px) {

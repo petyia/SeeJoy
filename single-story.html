@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="all-stories.css" />
     <link rel="stylesheet" href="single-story.css" />
     <link rel="stylesheet" href="queries.css" />
+
+    <link rel="stylesheet" href="queries-single-story.css" />
+
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
     <link
@@ -37,6 +40,14 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -399,10 +410,15 @@
         <div class="events-container single-story">
           <div class="single-story-card-container">
             <div class="flex-container-single-story">
-              <div class="events-first-row single-story phone-block">
+              <div
+                class="events-first-row single-story phone-absolute phone-block"
+              >
                 <div class="story-profile-img-container single-story">
-                  <!-- Inner link -->
-                  <a href="index.html" class="story-profile-link">
+                  <button class="go-back-icon">
+                    <i class="fa-solid fa-chevron-left profile"></i>
+                  </button>
+
+                  <a href="user-profile.html" class="story-profile-link">
                     <div class="story-card-profile-pic single-story">
                       <div class="image-border-none">
                         <div class="stories-card story6"></div>
@@ -413,6 +429,9 @@
                       </div>
                     </div>
                   </a>
+                  <button class="edit-profile-icon">
+                    <i class="fa-solid fa-ellipsis profile"></i>
+                  </button>
                 </div>
                 <div class="single-story-btns">
                   <div class="like-btn-container">
@@ -420,7 +439,7 @@
                       <span id="like-icon"
                         ><i class="fa-regular fa-heart"></i
                       ></span>
-                      <span id="like-count">0</span> Kedvelés
+                      <span id="like-count">89</span>
                     </button>
                   </div>
                   <div class="comment-btn-container">
@@ -428,22 +447,20 @@
                       <span id="comment-icon"
                         ><i class="fa-regular fa-comment"></i
                       ></span>
-                      <span id="comment-count">0</span> Komment
+                      <span id="comment-count">3</span>
                     </button>
                   </div>
                   <div class="share-btn-container">
                     <button class="share__btn">
                       <span id="share-icon"
-                        ><i
-                          class="fa-solid fa-share"
-                          style="color: var(--black)"
-                        ></i
+                        ><i class="fa-solid fa-share"></i
                       ></span>
-                      <span id="share-count">0</span>
+                      <span id="share-count">2</span>
                     </button>
                   </div>
                 </div>
               </div>
+
               <div class="sigle-story-contaner-comments">
                 <div class="story-card-img-container single-story">
                   <div id="vue-component">

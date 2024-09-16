@@ -1,0 +1,235 @@
+:root {
+  --primary: #ff5483;
+  --primary-light: #fff6f5ff;
+  --primary-light-darker: #ffd7e1;
+  --primary-lightest: #fff6f9;
+  --black: #0e0e0e;
+  --pale-grey: #f9faff;
+  /* --pale-grey: #e4e6eb; */
+  /* --pale-grey: #f9faff; */
+  --grey: #aeb0ba;
+
+  --white: #ffffff;
+  --ice-blue: #e5e9fd;
+
+  --yellow: #fdf5eb;
+
+  --linear-gradient-1: linear-gradient(
+    to right bottom,
+    #455efd,
+    #ff5483,
+    #f46e4b
+  );
+
+  --search-bg: var(--pale-grey);
+  --body-font: "Nunito", sans-serif;
+
+  --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --fixed-bottom: rgba(99, 99, 99, 0.1) 0px -2px 8px 0px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--pale-grey);
+  height: 100vh;
+  height: ;   
+
+  overflow: hidden;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}
+
+
+@media screen and (max-width: 480px) {
+  .events-section {
+    margin-bottom: 0;
+    margin: 0;
+  }
+
+  body{
+    overflow: hidden;
+  }
+  main {
+    margin-bottom: 0;
+    background-color: var(--black);
+  }
+
+  .phone-block {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .container {
+    display: none;
+  }
+
+  .events-section{
+    overflow-y: hidden;
+  }
+
+  .events-first-row.single-story.phone-absolute {
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 6.4rem;
+}
+
+  .events-container.single-story {
+    padding: 0;
+  }
+
+  .story-card-img-container.single-story {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popular-lower-container.single-story {
+
+}
+  }
+
+  .vue-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .vue-section {
+    height: 100%;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+  }
+
+  .single-story-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  }
+
+  .flex-container-single-story {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0rem;
+    width: 100%;
+    background-color: var(--black);
+  }
+
+  h5.name-text.single-st {
+    color: var(--white);
+    line-height: 1.8;
+  }
+
+  .profile-header-container-bg {
+    position: relative;
+    background: blue;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: white;
+    border-bottom-left-radius: 2.4rem;
+    border-bottom-right-radius: 2.4rem;
+  }
+
+  .go-back-icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 2.4rem 0.8rem;
+    padding: 1.6rem;
+    border-radius: 50%;
+  }
+
+  .fa-chevron-left.profile {
+    font-size: 2rem;
+    color: var(--white);
+  }
+
+  .edit-profile-icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 2.4rem 0.8rem;
+    padding: 1.6rem;
+    border-radius: 50%;
+  }
+
+  .fa-ellipsis.profile {
+    font-size: 2rem;
+    color: var(--white);
+  }
+
+  .sigle-story-contaner-comments {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+  }
+
+  .single-story-btns {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+
+    color: var(--white);
+
+    z-index: 999;
+
+    margin-right: 2.4rem;
+  }
+
+  .like__btn,
+  .comment__btn,
+  .share__btn {
+    background-color: rgba(99, 99, 99, 0.2);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+
+  .events-first-row.single-story {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 6.4rem;
+  }
+}

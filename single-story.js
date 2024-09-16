@@ -518,3 +518,8 @@ document
         emoji.style.display = title.includes(query) ? "inline-table" : "none";
       });
   });
+
+// Add event listener for the "go-back" button
+document.querySelector(".go-back-icon").addEventListener("click", function () {
+  history.back(); // This will also navigate back to the previous page
+});
