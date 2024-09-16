@@ -28,37 +28,13 @@
   --fixed-bottom: rgba(99, 99, 99, 0.1) 0px -2px 8px 0px;
 }
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {margin: 0; height: 100%; overflow: hidden}
-
-body {
-  font-family: var(--body-font);
-  background-color: var(--pale-grey);
-  height: 100vh;
-  height: ;   
-
-  overflow: hidden;
-}
-
-main {
-  height: 100%;
-  width: 100%;
-}
-
-
 @media screen and (max-width: 480px) {
   .events-section {
     margin-bottom: 0;
     margin: 0;
   }
 
-  body{
+  body {
     overflow: hidden;
   }
   main {
@@ -82,7 +58,7 @@ main {
     display: none;
   }
 
-  .events-section{
+  .events-section {
     overflow-y: hidden;
   }
 
@@ -93,7 +69,7 @@ main {
     align-items: center;
     width: 100%;
     margin-left: 6.4rem;
-}
+  }
 
   .events-container.single-story {
     padding: 0;
@@ -109,8 +85,6 @@ main {
   }
 
   .popular-lower-container.single-story {
-
-}
   }
 
   .vue-component {
