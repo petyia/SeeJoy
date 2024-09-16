@@ -25,6 +25,9 @@
 }
 
 @media screen and (max-width: 480px) {
+  .events-first-row.single-story {
+    display: none;
+  }
   .main-nav.single-event {
     display: none;
   }
