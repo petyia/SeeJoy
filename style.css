@@ -397,6 +397,22 @@ button:hover .button-text {
   -webkit-user-select: none; /* Safari/Chrome */
 }
 
+.profile-img.smaller {
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.8rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border: 2px solid var(--theme-color);
+  /* margin-left: 22px; */
+  cursor: pointer;
+
+  user-select: none;
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-user-select: none; /* Safari/Chrome */
+}
+
 .profile-img::before,
 .profile-img::after {
   --scale: 0;
@@ -905,7 +921,6 @@ a.h5 {
   box-shadow: var(--popular-sh);
 }
 
-
 .phone-footer {
   display: flex;
   justify-content: center;
@@ -1353,5 +1368,3 @@ a.h5 {
 .my-category-checked {
   display: block;
 }
-
-my-category-flex-container

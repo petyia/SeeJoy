@@ -594,9 +594,9 @@ h5.name-text.single-st {
   letter-spacing: -0.2px;
 }
 
-.comment {
-  display: flex;
-  justify-content: space-between;
+.comment-st-ph {
+  /* display: flex;
+  justify-content: space-between; */
 }
 
 .comment-header {
@@ -890,6 +890,14 @@ button#saveEditAnswer:hover {
 .like__btn.withcomment {
   font-size: 1.4rem;
   padding: 0;
+  background: var(--white);
+  font-family: var(--body-font);
+  border-radius: 5px;
+  color: var(--grey);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
 }
 
 .answer__btn.withcomment {
@@ -984,6 +992,7 @@ button#saveEditAnswer:hover {
 .comment-second-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .reply-list {

@@ -156,7 +156,7 @@ document.body.addEventListener("click", function (event) {
 
               replyList.innerHTML = `
                 <div class="comment-header-img-username">
-                  <img src="https://via.placeholder.com/24" alt="Avatar" class="comment-avatar">
+                 <img src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" class="profile-img smaller comment-avatar">
                   <span class="comment-author answer-line">Szabó Lilla</span>
                 </div>
                 <div class="comment-second-row">
@@ -252,7 +252,7 @@ document.getElementById("postComment").addEventListener("click", function () {
       <div class="comment-header">
         <div class="comment-header-first-row">
           <div class="comment-header-img-username">
-            <img src="https://via.placeholder.com/32" alt="Avatar" class="comment-avatar">
+            <img src="https://images.unsplash.com/photo-1600353068440-6361ef3a86e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" class="profile-img smaller comment-avatar">
             <span class="comment-author">Szabó Lilla</span>
           </div>
           <div class="comment-time">${timeSince(currentTime)}</div>
