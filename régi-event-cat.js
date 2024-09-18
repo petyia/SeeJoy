@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // --- Görgetés Kezelése az első nyílhoz ---
+  // --- Görgetés Kezelése ---
   const catSection = document.querySelector(".event-mini");
   const scrollRightCatButton = document.querySelector(".scroll-right-cat");
   const scrollLeftCatButton = document.querySelector(".scroll-left-cat");
@@ -269,22 +269,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     leftArrowContainer.style.display = scrollLeft > 0 ? "block" : "none";
     rightArrowButton.style.display =
-      scrollLeft + clientWidth < scrollWidth ? "block" : "none";
+      scrollLeft < scrollWidth - clientWidth ? "block" : "none";
   }
 
   scrollRightCatButton.addEventListener("click", () => {
     catSection.scrollBy({ left: 300, behavior: "smooth" });
+    setTimeout(updateArrowVisibility, 300);
   });
 
   scrollLeftCatButton.addEventListener("click", () => {
     catSection.scrollBy({ left: -300, behavior: "smooth" });
+    setTimeout(updateArrowVisibility, 300);
   });
 
   catSection.addEventListener("scroll", updateArrowVisibility);
-  window.addEventListener("resize", updateArrowVisibility);
   updateArrowVisibility();
 
-  // --- Görgetés Kezelése a második nyílhoz ---
+  // --- Görgetés Kezelése Másik Szekcióban ---
   const catSectionDate = document.querySelector(".event-mini-date");
   const scrollRightCatButton2 = document.querySelector(".scroll-right-cat2");
   const scrollLeftCatButton2 = document.querySelector(".scroll-left-cat2");
@@ -297,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
     !scrollLeftCatButton2 ||
     !leftArrowContainer2
   ) {
-    console.error("Nem találhatóak az elemek a második görgetéshez!");
+    console.error("Nem találhatóak az elemek!");
     return;
   }
 
@@ -308,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     leftArrowContainer2.style.display = scrollLeft > 0 ? "block" : "none";
     rightArrowButton2.style.display =
-      scrollLeft + clientWidth < scrollWidth ? "block" : "none";
+      scrollLeft < scrollWidth - clientWidth ? "block" : "none";
   }
 
   scrollRightCatButton2.addEventListener("click", () => {
@@ -322,6 +323,85 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   catSectionDate.addEventListener("scroll", updateArrowVisibilityDate);
-  window.addEventListener("resize", updateArrowVisibilityDate);
   updateArrowVisibilityDate();
 });
+
+//Térkép
+document.addEventListener("DOMContentLoaded", function () {
+  const mapButton = document.getElementById("map-button");
+  const mapContainer = document.getElementById("map");
+  let mapLoaded = false;
+  let map;
+
+  mapButton.addEventListener("click", function () {
+    if (!mapLoaded) {
+      // Show the map container
+      mapContainer.style.display = "block";
+
+      // Initialize the map with a slight delay
+      setTimeout(() => {
+        // Initialize the map
+        map = L.map(mapContainer).setView([47.4979, 19.0402], 12); // Budapest coordinates
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution:
+            '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        mapLoaded = true;
+      }, 100); // 100 ms delay to ensure the container is visible
+    } else {
+      // Toggle map visibility
+      if (mapContainer.style.display === "none") {
+        mapContainer.style.display = "block";
+        map.invalidateSize(); // Adjust map size
+      } else {
+        mapContainer.style.display = "none";
+      }
+    }
+  });
+});
+
+// Érintőesemények inicializálása görgethető konténerekhez
+const initTouchEvents = (container, leftButton, rightButton) => {
+  let startX = 0;
+  let startScrollLeft = 0;
+  const scrollAmount = 1.5; // A görgetés mértékének beállítása
+
+  container.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    startScrollLeft = container.scrollLeft;
+  });
+
+  container.addEventListener("touchmove", (e) => {
+    const deltaX = (e.touches[0].clientX - startX) * scrollAmount;
+    container.scrollLeft = startScrollLeft - deltaX;
+    updateButtonStates(container, leftButton, rightButton);
+  });
+
+  container.addEventListener("scroll", () => {
+    updateButtonStates(container, leftButton, rightButton);
+  });
+};
+
+// Az események inicializálása a megfelelő HTML elemekhez
+
+const catSectionDate = document.querySelector(".cat-date-line"); // cat-date-line szekció
+const scrollLeftButton2 = document.querySelector(".scroll-left-cat2"); // balra gomb
+const scrollRightButton2 = document.querySelector(".scroll-right-cat2"); // jobbra gomb
+
+if (catSectionDate && scrollLeftButton2 && scrollRightButton2) {
+  initTouchEvents(catSectionDate, scrollLeftButton2, scrollRightButton2);
+}
+
+const storiesSection = document.querySelector(".events-line"); // events-line szekció
+const scrollLeftStoriesButton = document.querySelector(".scroll-left-cat"); // balra gomb
+const scrollRightStoriesButton = document.querySelector(".scroll-right-cat"); // jobbra gomb
+
+if (storiesSection && scrollLeftStoriesButton && scrollRightStoriesButton) {
+  initTouchEvents(
+    storiesSection,
+    scrollLeftStoriesButton,
+    scrollRightStoriesButton
+  );
+}

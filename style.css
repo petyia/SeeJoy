@@ -1260,6 +1260,7 @@ a.h5 {
 .icon-inactive {
   color: transparent; /* Szín elrejtése */
   -webkit-text-stroke: 2px var(--black); /* Kontúros hatás */
+  font-size: 1.8rem !important;
 }
 
 .event-phone-icon {

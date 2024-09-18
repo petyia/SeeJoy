@@ -349,6 +349,31 @@ h5.name-text.single-st {
 }
 
 /* Komment Szekció Stílusok */
+/* .comments-section-container {
+  transform: translateX(-105%); 
+  width: 48rem;
+  height: 72rem; 
+  max-width: 100%;
+  background: var(--white);
+  overflow: hidden; 
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  z-index: -1;
+  padding: 0.8rem 0rem 0rem 0rem;
+  border-top-right-radius: 1.6rem;
+  border-bottom-right-radius: 1.6rem;
+  box-shadow: var(--popular-sh);
+  display: none;
+  opacity: 0; 
+}
+
+.comments-section-container.active {
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translateX(-3%);
+  opacity: 1; 
+} */
+
+/* Komment Szekció Stílusok */
 .comments-section-container {
   transform: translateX(-105%); /* Kezdetben kívülről indul */
   width: 48rem;
@@ -357,20 +382,22 @@ h5.name-text.single-st {
   background: var(--white);
   overflow: hidden; /* Elrejti a scroll-t az egész szekcióra */
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: -1;
+  z-index: -1; /* Kezdetben alacsonyabb szintű */
+  opacity: 0; /* Kezdetben átlátszó */
   padding: 0.8rem 0rem 0rem 0rem;
   border-top-right-radius: 1.6rem;
   border-bottom-right-radius: 1.6rem;
   box-shadow: var(--popular-sh);
-  display: none;
-  opacity: 0; /* Kezdetben átlátszó */
+  pointer-events: none; /* Nem lehet rá kattintani rejtett állapotban */
 }
 
 .comments-section-container.active {
   flex-direction: column;
   justify-content: space-between;
-  transform: translateX(-3%); /* Aktív állapotban a helyén marad */
+  transform: translateX(0%); /* Aktív állapotban teljesen látható */
   opacity: 1; /* Megjelenés */
+  z-index: 1000; /* Magasabb szintre helyezzük */
+  pointer-events: all; /* Most már kattintható */
 }
 
 .comments-list {
@@ -723,14 +750,13 @@ h5.name-text.single-st {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
-  width: 40%;
+  width: 72%;
   border-radius: 1.6rem;
   z-index: 9999;
 }
 
 .modal-content h2 {
   font-size: 2.4rem;
-  margin-bottom: 1.6rem;
 }
 
 .modal-content p {
@@ -745,7 +771,7 @@ h5.name-text.single-st {
 .close-edit-modal,
 .close-delete-modal {
   color: #aaa;
-  float: right;
+  display: flex;
   font-size: 28px;
   font-weight: bold;
 }
@@ -815,14 +841,27 @@ button#saveEditComment:hover {
   background-color: #fefefe;
   margin: 15% auto;
   padding: 20px;
-  width: 40%;
+  width: 72%;
   border-radius: 1.6rem;
   z-index: 9999;
 }
 
+.edit-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+
+.delete-first-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+
 .modal-content h2 {
   font-size: 2.4rem;
-  margin-bottom: 1.6rem;
 }
 
 .modal-content p {

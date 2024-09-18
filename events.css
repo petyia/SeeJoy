@@ -674,10 +674,12 @@ a.all-events-link:hover {
 
 .event-mini-date {
   display: flex;
-  overflow-x: hidden; /* Display horizontal scroll bar */
+  overflow-x: auto; /* Display horizontal scroll bar */
   background-color: var(--white);
   width: 100%;
   padding-bottom: 2.4rem;
+  scroll-behavior: smooth;
+  white-space: nowrap;
 }
 
 .event-mini-date::before {
@@ -931,4 +933,9 @@ a.all-events-link:hover {
 .event-date-section.fading-out {
   animation: fadeAndBlurOut 0.4s ease-out; /* Rövidebb időtartam */
   display: block; /* Tartsd meg az elemet látható állapotban az animáció alatt */
+}
+.scroll-right-cat2,
+.scroll-left-cat2 {
+  display: block;
+  /* egyéb stílusok */
 }

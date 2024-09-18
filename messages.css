@@ -334,7 +334,7 @@ html {
 
 .add {
   position: sticky;
-  bottom: 25px;
+  bottom: 5%;
   background-color: var(--theme-color);
   width: auto;
   padding: 0 2.4rem;

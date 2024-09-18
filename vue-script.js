@@ -14,7 +14,7 @@ const app = new Vue({
   mounted() {
     // Create a timeline animation with Anime.js
     this.timeline = anime.timeline({
-      autoplay: false,
+      autoplay: true,
       duration: 8000,
       easing: "linear",
       loop: true,

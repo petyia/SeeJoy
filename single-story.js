@@ -17,6 +17,64 @@ const cancelDeleteCommentBtn = document.getElementById("cancelDeleteComment");
 let clickedComment = false;
 let currentComment = null; // Hozzáadva a szerkesztéshez és törléshez
 
+// Új változók inicializálása
+const commentToggleBtn = document.querySelector("#openComments"); // Komment gomb
+const commentsContainer = document.getElementById("commentsSection"); // Komment szekció
+const eventsFirstRowElement = document.querySelector(
+  ".events-first-row.single-story.phone-absolute-s-st.phone-block"
+); // Elrejteni kívánt elem
+
+// Komment szekció nyitása és zárása
+function toggleCommentsContainer() {
+  if (commentsContainer.classList.contains("active")) {
+    // Ha aktív, elindítjuk az animációt a lezáráshoz
+    commentsContainer.classList.remove("active");
+
+    commentsContainer.addEventListener(
+      "transitionend",
+      () => {
+        commentsContainer.style.display = "none"; // Az animáció végeztével eltűnik
+      },
+      { once: true }
+    );
+
+    handleScreenResize(); // Ellenőrizzük az elrejtendő elemeket
+  } else {
+    // Először megjelenítjük a szekciót
+    commentsContainer.style.display = "block"; // Megjelenítjük
+
+    // Késleltetéssel indítjuk az animációt, hogy a transition működjön
+    requestAnimationFrame(() => {
+      commentsContainer.classList.add("active");
+      handleScreenResize(); // Ellenőrizzük az elrejtendő elemeket
+    });
+  }
+}
+
+// Funkció a képernyőméret ellenőrzésére és az elem elrejtésére
+function handleScreenResize() {
+  const screenWidth = window.innerWidth;
+  const commentSectionVisible = commentsContainer.classList.contains("active");
+
+  if (screenWidth <= 780 && commentSectionVisible) {
+    // Ha 480px vagy kisebb a képernyőméret és a komment szekció aktív, elrejtjük az events-first-row-t
+    eventsFirstRowElement.style.display = "none";
+  } else {
+    // Ha nagyobb a képernyőméret, vagy a komment szekció nem aktív, visszaállítjuk az eredeti állapotot
+    eventsFirstRowElement.style.display = "";
+  }
+}
+
+// Gomb esemény hozzáadása
+commentToggleBtn.addEventListener("click", toggleCommentsContainer);
+
+// A képernyőméret változásának figyelése
+window.addEventListener("resize", handleScreenResize);
+
+// Komment szekció bezárása a "close" gombbal
+const closeCommentsBtn = document.getElementById("closeComments");
+closeCommentsBtn.addEventListener("click", toggleCommentsContainer);
+//-------------------------------------------------------------------------------
 // Funkció a kommentek számának frissítésére
 function updateCommentCount(delta) {
   const commentCountElem = document.querySelector("#comment-count");

@@ -427,7 +427,7 @@ a .event-date-price {
 }
 
 .event-mini-date {
-  overflow-x: auto;
+  overflow-x: scroll;
 }
 
 .events-line {
