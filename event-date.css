@@ -93,7 +93,6 @@ a.all-event-date-link:hover {
   ); /* Három kártya egymás mellett, min. 300px szélesség */
   gap: 20px; /* Kártyák közötti távolság */
   justify-content: center; /* Kártyák középre igazítása */
-  padding: 20px; /* Kártyák körüli padding */
 }
 
 /* Média lekérdezések a reszponzivitás érdekében */
@@ -279,7 +278,7 @@ a.all-event-date-link:hover {
   flex-direction: column;
   gap: 3.2rem;
   background-color: var(--white);
-  padding: 1.6rem 2.4rem 2.4rem 2.4rem;
+  padding: 1.6rem 2rem 2.4rem 2rem;
   border-radius: 2.4rem;
 }
 
@@ -400,7 +399,7 @@ a .event-date-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 2rem 0 2rem;
+  padding: 1.2rem 1.6rem 0 1.6rem;
 }
 
 .event-org-date-container {
@@ -427,6 +426,7 @@ a .event-date-price {
 }
 
 .event-mini-date {
+  min-width: 1500px;
   overflow-x: scroll;
 }
 
@@ -580,19 +580,4 @@ a .event-date-price {
   padding: 1.6rem;
   cursor: pointer;
   border-radius: 50%;
-}
-
-.cat-date-line,
-.events-line {
-  display: flex;
-  overflow-x: auto;
-  white-space: nowrap; /* A sorban lévő elemek ne törjenek új sorba */
-  scroll-behavior: smooth; /* Sima görgetés */
-  -webkit-overflow-scrolling: touch; /* Jobb görgetési élmény érintőképernyőn */
-}
-
-/* Elrejti a görgetősávot, ha nem szükséges */
-.cat-date-line::-webkit-scrollbar,
-.events-line::-webkit-scrollbar {
-  display: none;
 }

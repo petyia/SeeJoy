@@ -306,22 +306,30 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollWidth = catSectionDate.scrollWidth;
     const clientWidth = catSectionDate.clientWidth;
 
+    // Bal nyíl csak akkor jelenik meg, ha már görgettünk jobbra
     leftArrowContainer2.style.display = scrollLeft > 0 ? "block" : "none";
+
+    // Jobb nyíl csak akkor jelenik meg, ha van hova jobbra görgetni
     rightArrowButton2.style.display =
       scrollLeft + clientWidth < scrollWidth ? "block" : "none";
   }
 
+  // Jobbra nyíl kattintásra görgetünk és frissítjük a nyilak láthatóságát
   scrollRightCatButton2.addEventListener("click", () => {
     catSectionDate.scrollBy({ left: 300, behavior: "smooth" });
-    setTimeout(updateArrowVisibilityDate, 300);
+    setTimeout(updateArrowVisibilityDate, 300); // Várjunk a görgetés végéig
   });
 
+  // Balra nyíl kattintásra görgetünk és frissítjük a nyilak láthatóságát
   scrollLeftCatButton2.addEventListener("click", () => {
     catSectionDate.scrollBy({ left: -300, behavior: "smooth" });
-    setTimeout(updateArrowVisibilityDate, 300);
+    setTimeout(updateArrowVisibilityDate, 300); // Várjunk a görgetés végéig
   });
 
+  // A görgetési esemény minden alkalommal frissíti a nyilak láthatóságát
   catSectionDate.addEventListener("scroll", updateArrowVisibilityDate);
   window.addEventListener("resize", updateArrowVisibilityDate);
   updateArrowVisibilityDate();
+
+  catSectionDate.addEventListener("touchmove", updateArrowVisibilityDate);
 });

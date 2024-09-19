@@ -629,17 +629,17 @@
 
   .date-cat-btn {
     position: absolute;
-    top: 59%;
-    left: 88%;
-    transform: translate(50%, 0%);
+    top: 40%;
+    left: 92%;
+    transform: translate(50%, -50%);
     gap: 6.4rem;
   }
 
   .cat-left-arrow2 {
     position: absolute;
-    top: 59%;
+    top: 40%;
     left: 5%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
     margin-right: 1.6rem;
     display: flex;
     align-items: center;
@@ -1075,9 +1075,9 @@
 
   .date-cat-btn {
     position: absolute;
-    top: 59%;
+    top: 40%;
     left: 85%;
-    transform: translate(50%, 0%);
+    transform: translate(50%, -50%);
     gap: 6.4rem;
     display: flex;
     align-items: center;
@@ -1287,6 +1287,10 @@
     border-radius: 8rem;
     height: auto;
     width: 100%;
+  }
+
+  .button-body-2-filled.black {
+    display: none;
   }
 
   .button-body-2-unfilled {
@@ -1838,6 +1842,25 @@
     padding: 0.8rem;
   }
   .event-center-info-container {
+    display: none;
+  }
+
+  .cat-date-line,
+  .events-line {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap; /* A sorban lévő elemek ne törjenek új sorba */
+    scroll-behavior: smooth; /* Sima görgetés */
+    -webkit-overflow-scrolling: touch; /* Jobb görgetési élmény érintőképernyőn */
+  }
+
+  /* Elrejti a görgetősávot, ha nem szükséges */
+  .cat-date-line::-webkit-scrollbar,
+  .events-line::-webkit-scrollbar {
+    display: none;
+  }
+
+  .date-cat-btn {
     display: none;
   }
 }
