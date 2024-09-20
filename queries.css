@@ -1750,6 +1750,27 @@
     box-shadow: var(--popular-sh);
   }
 
+  .events-cat-img-7 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/music.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
   .events-lower-container {
     display: flex;
     flex-direction: column;
@@ -2242,6 +2263,29 @@
     border-radius: 3.2rem;
     overflow: hidden;
   }
+
+  .intercom-emoji-picker {
+    width: 295px !important;
+    height: 240px !important;
+  }
+
+  .intercom-composer-popover2 {
+    transform: translateX(50%) !important;
+    z-index: 9996;
+    position: absolute;
+    bottom: 0px;
+    right: calc(50%) !important;
+    box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    border-radius: 6px;
+    transition-duration: 200ms;
+    transition-delay: 0ms;
+    transform-style: flat;
+    transform-origin: 50% 50% 0;
+    opacity: 0;
+    transition: all 0.2s linear;
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 295px) {
@@ -2284,5 +2328,28 @@
 
   .search-box:focus {
     width: 120px;
+  }
+
+  .intercom-emoji-picker {
+    width: 240px !important;
+    height: 200px !important;
+  }
+
+  .intercom-composer-popover2 {
+    transform: translateX(50%) !important;
+    z-index: 9996;
+    position: absolute;
+    bottom: 0px;
+    right: calc(50%) !important;
+    box-shadow: 0 1px 15px 1px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    border-radius: 6px;
+    transition-duration: 200ms;
+    transition-delay: 0ms;
+    transform-style: flat;
+    transform-origin: 50% 50% 0;
+    opacity: 0;
+    transition: all 0.2s linear;
+    visibility: hidden;
   }
 }

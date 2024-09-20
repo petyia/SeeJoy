@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var currentYear = new Date().getFullYear();
   var currentMonth = new Date().getMonth();
 
+  // Generálja a naptárat
   function generateCalendar(year, month) {
     var calendarBody = document.getElementById("calendar-body");
     var monthYear = document.getElementById("month-year");
@@ -14,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var startDay = firstDay === 0 ? 6 : firstDay - 1;
     var date = 1;
 
-    // Kiszámítjuk, hány sorra lesz szükség
     var rowsNeeded = Math.ceil(totalDays / 7);
 
     for (var i = 0; i < rowsNeeded; i++) {
@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
         var cell = document.createElement("td");
 
         if (i === 0 && j < startDay) {
-          // Az előző hónap napjai az első sorban
           var previousMonthDate = new Date(
             year,
             month - 1,
@@ -34,14 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
           cell.dataset.date = previousMonthDate.toDateString();
           cell.classList.add("inactive");
         } else if (date > daysInMonth) {
-          // A következő hónap napjai
           var nextMonthDate = new Date(year, month + 1, date - daysInMonth);
           cell.textContent = nextMonthDate.getDate();
           cell.dataset.date = nextMonthDate.toDateString();
           cell.classList.add("inactive");
           date++;
         } else {
-          // Az aktuális hónap napjai
           var cellDate = new Date(year, month, date);
           cell.textContent = date;
           cell.dataset.date = cellDate.toDateString();
@@ -54,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
             var selectedDateString = this.dataset.date;
             var selectedDate = new Date(selectedDateString);
             setClickedDate(selectedDate);
+            setMiniClickedDate(selectedDate);
             showCardsForDate(selectedDate);
+            closeCalendar(); // Automatikusan bezárja a naptárat kattintás után
           });
 
           date++;
@@ -83,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     monthYear.textContent = monthNames[month] + " " + year;
   }
 
+  // Frissíti a naptárat clicked osztállyal
   function setClickedDate(date) {
     var cells = document.querySelectorAll("#calendar-body td");
     cells.forEach(function (cell) {
@@ -93,6 +93,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Frissíti az events-date clicked osztállyal
+  function setMiniClickedDate(date) {
+    var eventDates = document.querySelectorAll(".events-date");
+    var dateId = `date${date.getFullYear()}${(
+      "0" +
+      (date.getMonth() + 1)
+    ).slice(-2)}${("0" + date.getDate()).slice(-2)}`;
+
+    eventDates.forEach(function (eventDate) {
+      eventDate.classList.remove("clicked");
+      if (eventDate.id === dateId) {
+        eventDate.classList.add("clicked");
+      }
+    });
+  }
+
+  // Megjeleníti a megfelelő eseményt
   function showCardsForDate(date) {
     var dateId = `eventDateSection${date.getFullYear()}${(
       "0" +
@@ -113,6 +130,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Az events-date kattintása esetén szinkronizáljuk a naptárral
+  function handleMiniDateClick() {
+    var eventsDates = document.querySelectorAll(".events-date");
+
+    eventsDates.forEach(function (dateElem) {
+      dateElem.addEventListener("click", function () {
+        var isAlreadyClicked = this.classList.contains("clicked");
+        eventsDates.forEach((d) => d.classList.remove("clicked"));
+        var targetDate = new Date(
+          this.id.substring(4, 8) +
+            "-" +
+            this.id.substring(8, 10) +
+            "-" +
+            this.id.substring(10)
+        );
+
+        if (!isAlreadyClicked) {
+          this.classList.add("clicked");
+          setClickedDate(targetDate); // Frissítjük a naptárt
+          showCardsForDate(targetDate);
+        }
+      });
+    });
+  }
+
+  // Naptár nyitása/zárása gombnyomásra
+  document
+    .getElementById("fa-calendar-days-cat")
+    .addEventListener("click", function () {
+      var calendarDropdown = document.getElementById("calendar-dropdown");
+      calendarDropdown.style.display =
+        calendarDropdown.style.display === "block" ? "none" : "block";
+    });
+
+  // Naptár automatikus bezárása
+  function closeCalendar() {
+    var calendarDropdown = document.getElementById("calendar-dropdown");
+    calendarDropdown.style.display = "none"; // Bezárja a naptárat
+  }
+
+  // Hónap váltás
   document.getElementById("prev-month").addEventListener("click", function () {
     currentMonth--;
     if (currentMonth < 0) {
@@ -120,6 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       currentYear--;
     }
     generateCalendar(currentYear, currentMonth);
+    handleMiniDateClick(); // Frissítjük a mini naptárt is
   });
 
   document.getElementById("next-month").addEventListener("click", function () {
@@ -129,17 +188,12 @@ document.addEventListener("DOMContentLoaded", function () {
       currentYear++;
     }
     generateCalendar(currentYear, currentMonth);
+    handleMiniDateClick(); // Frissítjük a mini naptárt is
   });
 
-  document
-    .getElementById("fa-calendar-days-cat")
-    .addEventListener("click", function () {
-      var calendarDropdown = document.getElementById("calendar-dropdown");
-      calendarDropdown.style.display =
-        calendarDropdown.style.display === "block" ? "none" : "block";
-    });
-
+  // Naptár generálása és mini dátumok kezelése
   generateCalendar(currentYear, currentMonth);
+  handleMiniDateClick();
 
   // --- Mini Dátumok Generálása ---
   const eventMiniDate = document.querySelector(".event-mini-date");
@@ -207,43 +261,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   generateDates(2024);
 
-  // --- Események Kattintása ---
-  const eventsDates = document.querySelectorAll(".events-date");
-
-  eventsDates.forEach((date) => {
-    date.addEventListener("click", function () {
-      const isAlreadyClicked = this.classList.contains("clicked");
-
-      eventsDates.forEach((d) => d.classList.remove("clicked"));
-
-      const sections = document.querySelectorAll(".event-date-section");
-      sections.forEach((section) => {
-        if (section.classList.contains("visible")) {
-          section.classList.add("fading-out");
-
-          section.addEventListener("animationend", function handler() {
-            section.classList.remove("fading-out", "visible");
-            section.style.display = "none";
-            section.removeEventListener("animationend", handler);
-          });
-        }
-      });
-
-      if (!isAlreadyClicked) {
-        this.classList.add("clicked");
-
-        setTimeout(() => {
-          const targetSectionId = `eventDateSection${this.id.substring(4)}`;
-          const targetSection = document.getElementById(targetSectionId);
-
-          if (targetSection) {
-            targetSection.classList.add("visible");
-            targetSection.style.display = "block";
-          }
-        }, 400);
-      }
-    });
-  });
+  // --- Események kattintása és szinkronizálása ---
+  handleMiniDateClick();
 
   // --- Görgetés Kezelése az első nyílhoz ---
   const catSection = document.querySelector(".event-mini");
@@ -306,27 +325,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollWidth = catSectionDate.scrollWidth;
     const clientWidth = catSectionDate.clientWidth;
 
-    // Bal nyíl csak akkor jelenik meg, ha már görgettünk jobbra
     leftArrowContainer2.style.display = scrollLeft > 0 ? "block" : "none";
 
-    // Jobb nyíl csak akkor jelenik meg, ha van hova jobbra görgetni
     rightArrowButton2.style.display =
       scrollLeft + clientWidth < scrollWidth ? "block" : "none";
   }
 
-  // Jobbra nyíl kattintásra görgetünk és frissítjük a nyilak láthatóságát
   scrollRightCatButton2.addEventListener("click", () => {
     catSectionDate.scrollBy({ left: 300, behavior: "smooth" });
-    setTimeout(updateArrowVisibilityDate, 300); // Várjunk a görgetés végéig
+    setTimeout(updateArrowVisibilityDate, 300);
   });
 
-  // Balra nyíl kattintásra görgetünk és frissítjük a nyilak láthatóságát
   scrollLeftCatButton2.addEventListener("click", () => {
     catSectionDate.scrollBy({ left: -300, behavior: "smooth" });
-    setTimeout(updateArrowVisibilityDate, 300); // Várjunk a görgetés végéig
+    setTimeout(updateArrowVisibilityDate, 300);
   });
 
-  // A görgetési esemény minden alkalommal frissíti a nyilak láthatóságát
   catSectionDate.addEventListener("scroll", updateArrowVisibilityDate);
   window.addEventListener("resize", updateArrowVisibilityDate);
   updateArrowVisibilityDate();

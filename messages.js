@@ -274,3 +274,45 @@ document
       document.querySelector(".app").style.height = "90vh"; // Magasság visszaállítása
     }
   });
+
+// Emojipanel megjelenítése
+document.getElementById("newEmoji2").addEventListener("click", function (e) {
+  e.stopPropagation();
+  document
+    .querySelector(".intercom-composer-popover2")
+    .classList.toggle("active");
+});
+
+// Emojipanel elrejtése, ha kívülre kattintunk
+document.addEventListener("click", function (e) {
+  if (
+    !e.target.closest(".emoji-panel") &&
+    !e.target.closest(".intercom-composer-popover2")
+  ) {
+    document
+      .querySelector(".intercom-composer-popover2")
+      .classList.remove("active");
+  }
+});
+
+// Emoji hozzáadása a szövegmezőhöz
+document
+  .querySelectorAll(".intercom-emoji-picker-emoji")
+  .forEach(function (emoji) {
+    emoji.addEventListener("click", function () {
+      document.getElementById("newCommentText").value += this.innerHTML;
+    });
+  });
+
+// Keresés az emoji között
+document
+  .querySelector(".intercom-composer-popover-input2")
+  .addEventListener("input", function () {
+    const query = this.value.toLowerCase();
+    document
+      .querySelectorAll(".intercom-emoji-picker-emoji")
+      .forEach(function (emoji) {
+        const title = emoji.getAttribute("title").toLowerCase();
+        emoji.style.display = title.includes(query) ? "inline-table" : "none";
+      });
+  });

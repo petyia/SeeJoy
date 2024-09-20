@@ -1388,7 +1388,7 @@ button#saveEditAnswer:hover {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid #fff;
-  right: 35px;
+  right: 50%;
 }
 
 /* .chat-input-tool {
