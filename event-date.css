@@ -231,6 +231,7 @@ a.all-event-date-link:hover {
 }
 
 .event-date-number {
+  color: var(--black);
   font-weight: 800;
 }
 

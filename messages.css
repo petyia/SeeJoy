@@ -334,7 +334,7 @@ html {
 
 .add {
   position: sticky;
-  bottom: 5%;
+  bottom: 8%;
   background-color: var(--theme-color);
   width: auto;
   padding: 0 2.4rem;
@@ -574,6 +574,7 @@ html {
     width: 100vw; /* A wrapper teljes szélessége */
     height: 100vh; /* A wrapper teljes magassága */
     overflow: hidden; /* Megakadályozza, hogy bármi kilógjon a látható területből */
+    padding: 0;
   }
 
   .conversation-area,

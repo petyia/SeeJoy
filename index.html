@@ -236,7 +236,7 @@
             </div>
             <div class="header-profile" id="head3">
               <form class="search-container" action="text" style="display: none;">
-                <input id="search-box" type="search"  class="search-box" name="q" />
+                <input placeholder="Keresés" id="search-box" type="search"  class="search-box" name="q" />
                 <label for="search-box" >
                   <i class="fa-solid fa-magnifying-glass search-icon"></i></label>
                 <input type="submit" id="search-submit" />
@@ -570,37 +570,29 @@
             <div class="p-l-scroll-container">
               <div class="popular-line" id="popular-line">  
 
-             
-                <div class="popular-card first" id="card1">
-                  <div class="popular-upper-container">
-                    <div class="popular-date">
-                      <div class="popular-number">26</div>
-                      <div class="popular-month">Szep</div>
-                    </div>
-                    <div class="heart-icon" 1">
-                      <i
-                        class="fa-solid fa-heart popular-heart-icon-filled"
-                      ></i>
-                      <i class="fa-regular fa-heart popular-heart-icon"></i>
-                    </div>
-                  </div>    
-                  <a href="single-event.html" class="popular-link">         
-                  <div class="popular-lower-container">
-                    <div class="upper-info-container">
-                      <h3 class="h3">
-                        
-                        Játsszunk híres társasjátékokat
-                      
-                      </h3>
-                    </div>
-                    <div class="lower-info-container">
-                      <div class="popular-hour">Délután 17:00-től</div>
-                      <a href="single-event.html"><div class="popular-price">Ingyen</div></a>
+                <a href="single-event.html" class="popular-link"> 
+                  <div class="popular-card first" id="card1">
+                    <div class="popular-upper-container">
+                      <div class="popular-date">
+                        <div class="popular-number">21</div>
+                        <div class="popular-month">Szep</div>
+                      </div>
+                      <div class="heart-icon">
+                        <i class="fa-solid fa-heart popular-heart-icon-filled"></i>
+                        <i class="fa-regular fa-heart popular-heart-icon"></i>
+                      </div>
+                    </div>    
+                    <div class="popular-lower-container">
+                      <div class="upper-info-container">
+                        <h3 class="h3">Játsszunk híres társasjátékokat</h3>
+                      </div>
+                      <div class="lower-info-container">
+                        <p class="popular-hour">Délután 17:00-től</p>
+                        <div class="popular-price">Ingyen</div>
+                      </div>
                     </div>
                   </div>
                 </a>
-                </div>
-      
 
                 <div class="popular-card second" id="card2">
                   <div class="popular-upper-container">
@@ -975,6 +967,16 @@
       <section class="contact-section"></section>
     </main>
     <footer></footer>
+
+    <script>
+      document.querySelectorAll('.heart-icon').forEach(icon => {
+        icon.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          // Ide jöhet bármilyen egyéb logika, például egy like funkció
+        });
+      });
+    </script>
     <script src="event-cat.js"></script>
 <script src="search-bar2.js"></script>
 <script src="script.js"></script>

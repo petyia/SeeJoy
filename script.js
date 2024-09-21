@@ -135,4 +135,17 @@ document.querySelectorAll(".my-category-checked").forEach((button) => {
       container.remove();
     }
   });
+
+  document.querySelectorAll(".popular-link").forEach((link) => {
+    link.addEventListener("click", function () {
+      // Mentjük a 'pageData' kulcs alá az URL-t és az oldal nevét
+      sessionStorage.setItem(
+        "pageData",
+        JSON.stringify({
+          url: window.location.href,
+          source: "index",
+        })
+      );
+    });
+  });
 });

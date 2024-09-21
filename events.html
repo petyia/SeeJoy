@@ -619,17 +619,17 @@
           </div>
 
 
-          <div class="event-date-section" id="eventDateSection20240926">
+          <div class="event-date-section" id="eventDateSection20240921">
             <div class="event-date-container">
               <div class="up-c-scroll-container">
                 <div class="event-date-line" id="popular-line">
-
+                <a href="single-event.html">
                   <div class="event-date-card second" id="card21">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">26</div>
+                            <div class="event-date-number">21</div>
                             <div class="event-date-month">Szep</div>
                           </div>
                         </div>
@@ -648,7 +648,7 @@
                       <div class="event-text-upper-container">
                         <div class="event-org-date-container">
                           <div class="my-event-lower-info-container">
-                            <a href="user-profile.html">
+                          
                               <div class="my-event-line" id="stories-line">
                                 <div class="story-container">
                                   <div
@@ -661,7 +661,7 @@
                                   <h3 class="h3">Vágó András</h3>
                                 </div>
                               </div>
-                            </a>
+                         
                           </div>
                           <div class="event-date-hour">Délelőtt 10:30-tól</div>
                         </div>
@@ -679,7 +679,7 @@
                         </div>
                         <div class="lower-info-container">
                           <div class="my-event-lower-info-container">
-                            <a href="#">
+                          
                               <div class="my-event-line" id="stories-line">
                                 <div class="story-container">
                                   <div
@@ -699,22 +699,21 @@
                                   </div>
                                 </div>
                               </div>
-                            </a>
+                      
                           </div>
-                          <a href="single-event.html"
-                            ><div class="event-date-price">ingyen</div></a
-                          >
+                          <div class="event-date-price">ingyen</div>
                         </div>
                       </div>
                     </div>
                   </div>
+                </a>
 
                   <div class="event-date-card" id="card20">
                     <div class="event-date-lower-img-container">
                       <div class="event-date-upper-container-outside">
                         <div class="event-date-upper-container">
                           <div class="event-date-date">
-                            <div class="event-date-number">26</div>
+                            <div class="event-date-number">21</div>
                             <div class="event-date-month">Szep</div>
                           </div>
                         </div>
@@ -1317,8 +1316,7 @@
                               </div>
                             </a>
                           </div>
-                          <a href="#"
-                            ><div class="event-date-price">ingyen</div></a
+                          <div class="event-date-price">ingyen</div></a
                           >
                         </div>
                       </div>
@@ -1335,9 +1333,19 @@
       </section>
     </main>
     <footer></footer>
+
+    <script>
+      document.querySelectorAll('.heart-icon').forEach(icon => {
+        icon.addEventListener('click', function(event) {
+          event.preventDefault();
+          event.stopPropagation();
+          // Ide jöhet bármilyen egyéb logika, például egy like funkció
+        });
+      });
+    </script>
     <script src="event-cat.js"></script>
     <script src="gombok-ani.js"></script>
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <!-- <script src="event-date.js"></script> -->
     <!-- <script src="dynamic-dates.js"></script> -->

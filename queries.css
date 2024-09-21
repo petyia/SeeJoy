@@ -33,6 +33,7 @@
     background-color: var(--white);
     padding: 0.8rem;
     border-radius: 2.4rem;
+    height: 100%;
   }
 
   .event-card {
@@ -1577,6 +1578,51 @@
     transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   }
 
+  .events-card.seventh {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--yellow-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.eight {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--green-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
+  .events-card.ninth {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: var(--pink-cat-bg);
+    padding: 1.6rem 1.6rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    /* Adjust the minimum width of cards as needed */
+    transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  }
+
   .events-line:hover .first:hover {
     transform: scale(1.05);
     cursor: pointer;
@@ -1756,6 +1802,48 @@
 
     justify-content: center;
     background: url("./img/music.png");
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-8 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--white);
+
+    border-radius: 0.8rem;
+    font-size: 1.6rem;
+    text-align: center;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    box-shadow: var(--popular-sh);
+  }
+
+  .events-cat-img-9 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    background: url("./img/gaming.png");
     background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;

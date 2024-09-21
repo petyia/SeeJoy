@@ -80,6 +80,13 @@ document.addEventListener("DOMContentLoaded", function () {
       "December",
     ];
     monthYear.textContent = monthNames[month] + " " + year;
+
+    // Hozzáadjuk a clicked osztályt a mai naphoz és automatikusan megjelenítjük az eseményeket
+    var today = new Date();
+    if (today.getFullYear() === year && today.getMonth() === month) {
+      setClickedDate(today);
+      showCardsForDate(today);
+    }
   }
 
   // Frissíti a naptárat clicked osztállyal
@@ -137,17 +144,16 @@ document.addEventListener("DOMContentLoaded", function () {
     eventsDates.forEach(function (dateElem) {
       dateElem.addEventListener("click", function () {
         var isAlreadyClicked = this.classList.contains("clicked");
-        eventsDates.forEach((d) => d.classList.remove("clicked"));
-        var targetDate = new Date(
-          this.id.substring(4, 8) +
-            "-" +
-            this.id.substring(8, 10) +
-            "-" +
-            this.id.substring(10)
-        );
-
         if (!isAlreadyClicked) {
+          eventsDates.forEach((d) => d.classList.remove("clicked"));
           this.classList.add("clicked");
+          var targetDate = new Date(
+            this.id.substring(4, 8) +
+              "-" +
+              this.id.substring(8, 10) +
+              "-" +
+              this.id.substring(10)
+          );
           setClickedDate(targetDate); // Frissítjük a naptárt
           showCardsForDate(targetDate);
         }
@@ -225,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
       eventsDateElem.id = `date${dateStr.replace(/-/g, "")}`;
 
       if (dateStr === todayDate.toISOString().split("T")[0]) {
-        eventsDateElem.classList.add("first", "today");
+        eventsDateElem.classList.add("first", "today", "clicked"); // Always clicked if today
       }
 
       const upperContainer = document.createElement("div");
@@ -346,4 +352,17 @@ document.addEventListener("DOMContentLoaded", function () {
   updateArrowVisibilityDate();
 
   catSectionDate.addEventListener("touchmove", updateArrowVisibilityDate);
+
+  document.querySelectorAll(".popular-link").forEach((link) => {
+    link.addEventListener("click", function () {
+      // Mentjük a 'pageData' kulcs alá az URL-t és az oldal nevét
+      sessionStorage.setItem(
+        "pageData",
+        JSON.stringify({
+          url: window.location.href,
+          source: "events",
+        })
+      );
+    });
+  });
 });

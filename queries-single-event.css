@@ -33,7 +33,7 @@
   }
 
   .phone.single-event {
-    display: block;
+    display: none;
   }
 
   main {

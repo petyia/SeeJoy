@@ -1359,6 +1359,12 @@ a.h5 {
   background: var(--search-bg);
   color: var(--black);
 }
+
+.search-box::placeholder {
+  color: var(--grey);
+  font-family: var(--body-font);
+}
+
 .search-box:focus + label .search-icon {
   color: var(--black);
 }

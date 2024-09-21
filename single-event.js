@@ -184,7 +184,18 @@ document.querySelector(".follow-button").addEventListener("click", function () {
   }
 });
 
-// Add event listener for the "go-back" button
 document.querySelector(".go-back-icon").addEventListener("click", function () {
-  history.back(); // This will also navigate back to the previous page
+  // Lekérjük a tárolt oldalinformációkat
+  const pageData = JSON.parse(sessionStorage.getItem("pageData"));
+
+  if (pageData) {
+    // Ellenőrizzük, honnan jött a felhasználó, és az alapján navigálunk vissza
+    if (pageData.source === "index") {
+      window.location.href = "index.html"; // Vissza az index oldalra
+    } else if (pageData.source === "events") {
+      window.location.href = "events.html"; // Vissza az events oldalra
+    }
+  } else {
+    history.back(); // Ha nincs elmentett adat, akkor normál visszalépés
+  }
 });

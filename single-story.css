@@ -349,13 +349,13 @@ h5.name-text.single-st {
 }
 
 /* Komment Szekció Stílusok */
-/* .comments-section-container {
-  transform: translateX(-105%); 
+.comments-section-container {
+  transform: translateX(-105%);
   width: 48rem;
-  height: 72rem; 
+  height: 72rem;
   max-width: 100%;
   background: var(--white);
-  overflow: hidden; 
+  overflow: hidden;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: -1;
   padding: 0.8rem 0rem 0rem 0rem;
@@ -363,42 +363,41 @@ h5.name-text.single-st {
   border-bottom-right-radius: 1.6rem;
   box-shadow: var(--popular-sh);
   display: none;
-  opacity: 0; 
+  opacity: 0;
 }
 
 .comments-section-container.active {
   flex-direction: column;
   justify-content: space-between;
   transform: translateX(-3%);
-  opacity: 1; 
-} */
+  opacity: 1;
+}
 
-/* Komment Szekció Stílusok */
-.comments-section-container {
-  transform: translateX(-105%); /* Kezdetben kívülről indul */
+/* .comments-section-container {
+  transform: translateX(-105%);
   width: 48rem;
-  height: 72rem; /* Magasság igazodjon a szülőelemhez */
+  height: 72rem;
   max-width: 100%;
   background: var(--white);
-  overflow: hidden; /* Elrejti a scroll-t az egész szekcióra */
+  overflow: hidden;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  z-index: -1; /* Kezdetben alacsonyabb szintű */
-  opacity: 0; /* Kezdetben átlátszó */
+  z-index: -1;
+  opacity: 0;
   padding: 0.8rem 0rem 0rem 0rem;
   border-top-right-radius: 1.6rem;
   border-bottom-right-radius: 1.6rem;
   box-shadow: var(--popular-sh);
-  pointer-events: none; /* Nem lehet rá kattintani rejtett állapotban */
+  pointer-events: none;
 }
 
 .comments-section-container.active {
   flex-direction: column;
   justify-content: space-between;
-  transform: translateX(0%); /* Aktív állapotban teljesen látható */
-  opacity: 1; /* Megjelenés */
-  z-index: 1000; /* Magasabb szintre helyezzük */
-  pointer-events: all; /* Most már kattintható */
-}
+  transform: translateX(0%);
+  opacity: 1;
+  z-index: 1000;
+  pointer-events: all;
+} */
 
 .comments-list {
   padding: 1.6rem 1.6rem 1.6rem 3.2rem;
