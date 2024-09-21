@@ -194,6 +194,8 @@ document.querySelector(".go-back-icon").addEventListener("click", function () {
       window.location.href = "index.html"; // Vissza az index oldalra
     } else if (pageData.source === "events") {
       window.location.href = "events.html"; // Vissza az events oldalra
+    } else if (pageData.source === "tickets") {
+      window.location.href = "tickets.html"; // Vissza az events oldalra
     }
   } else {
     history.back(); // Ha nincs elmentett adat, akkor normál visszalépés

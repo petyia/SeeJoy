@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   function setupHeartIcons() {
-    // Különböző szív ikon osztályok
     const heartIconClasses = [
       {
         filled: ".event-date-heart-icon-filled",
@@ -13,32 +12,39 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ];
 
-    // Keresd meg az összes szív ikont a dokumentumban
     const heartIcons = document.querySelectorAll(".heart-icon");
 
-    heartIcons.forEach((heartIcon) => {
+    heartIcons.forEach((heartIcon, index) => {
       heartIconClasses.forEach(({ filled, unfilled }) => {
         const filledHeartIcon = heartIcon.querySelector(filled);
         const unfilledHeartIcon = heartIcon.querySelector(unfilled);
 
+        // Az esemény azonosítója (itt érdemes adaptálni a megoldásodat)
+        const eventId = heartIcon.dataset.eventId;
+
         if (filledHeartIcon || unfilledHeartIcon) {
-          let isFilled = false;
+          let isFilled = localStorage.getItem(`heart-${eventId}`) === "true";
 
-          // Kezdetben rejtjük a kitöltött ikont
-          if (filledHeartIcon) filledHeartIcon.style.display = "none";
+          // Alapértelmezett állapot beállítása
+          if (isFilled) {
+            filledHeartIcon.style.display = "inline-block";
+            unfilledHeartIcon.style.display = "none";
+          } else {
+            filledHeartIcon.style.display = "none";
+            unfilledHeartIcon.style.display = "inline-block";
+          }
 
-          // Adjuk hozzá a kattintás eseménykezelőt
+          // Kattintás eseménykezelő
           heartIcon.addEventListener("click", () => {
             isFilled = !isFilled;
+            localStorage.setItem(`heart-${eventId}`, isFilled);
 
             if (isFilled) {
-              if (filledHeartIcon)
-                filledHeartIcon.style.display = "inline-block";
-              if (unfilledHeartIcon) unfilledHeartIcon.style.display = "none";
+              filledHeartIcon.style.display = "inline-block";
+              unfilledHeartIcon.style.display = "none";
             } else {
-              if (filledHeartIcon) filledHeartIcon.style.display = "none";
-              if (unfilledHeartIcon)
-                unfilledHeartIcon.style.display = "inline-block";
+              filledHeartIcon.style.display = "none";
+              unfilledHeartIcon.style.display = "inline-block";
             }
           });
         }
@@ -46,6 +52,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Állítsuk be a szív ikonokat
   setupHeartIcons();
 });
