@@ -17,26 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const favoritesContainer = document.querySelector(
       "#content-3 .event-date-line"
     );
-    favoritesContainer.innerHTML = ""; // Ürítsd ki a konténert a duplikáció elkerülése érdekében
-    const keys = Object.keys(localStorage);
+    favoritesContainer.innerHTML = "";
 
-    keys.forEach((key) => {
+    Object.keys(localStorage).forEach((key) => {
       if (key.startsWith("heart-") && localStorage.getItem(key) === "true") {
         const eventId = key.split("-")[1];
 
-        // Ellenőrizd, hogy a kedvenc esemény már meg van-e jelenítve
-        if (favoritesContainer.querySelector(`[data-event-id="${eventId}"]`)) {
-          return; // Ha már létezik, lépj ki a funkcióból
-        }
+        // Esemény adatok lekérése a LocalStorage-ból
+        const dateNumber =
+          localStorage.getItem(`event-${eventId}-number`) || "";
+        const dateMonth = localStorage.getItem(`event-${eventId}-month`) || "";
+        const eventTitle = localStorage.getItem(`event-${eventId}-title`) || "";
 
-        // A kedvenc esemény adatai (ezeket dinamikusan kellene beállítani)
-        const dateNumber = "26"; // Esemény dátuma
-        const dateMonth = "Szep"; // Esemény hónapja
-        const eventTitle = "Játszunk együtt a legnépszerűbb társasokkal"; // Esemény neve
-
+        // Esemény kártya létrehozása a profil oldalra
         const eventCard = document.createElement("div");
         eventCard.className = "event-date-card profile";
-        eventCard.setAttribute("data-event-id", eventId); // Egyedi azonosító beállítása
+        eventCard.setAttribute("data-event-id", eventId);
         eventCard.innerHTML = `
           <div class="event-date-lower-img-container profile">
             <div class="event-date-upper-container-outside profile">
@@ -61,23 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <div class="event-date-lower-text-container profile">
               <div class="lower-info-container profile">
-                <div class="my-event-lower-info-container">
-                  <a href="#">
-                    <div class="my-event-line" id="stories-line">
-                      <div class="story-container">
-                        <div class="my-event-card-medium smaller my-event2-7"></div>
-                      </div>
-                      <div class="story-container">
-                        <div class="my-event-card-medium smaller my-event2-3"></div>
-                      </div>
-                      <div class="story-container">
-                        <div class="my-event-card-medium smaller my-event3">
-                          <span id="my-event-plus-number-medium">+9</span>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
                 <a href="single-event.html"><div class="event-date-price">INGYEN</div></a>
               </div>
             </div>

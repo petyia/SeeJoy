@@ -649,6 +649,16 @@
       </div>
     </main>
     <footer></footer>
+
+    <script>
+      document.querySelectorAll(".heart-icon").forEach((icon) => {
+        icon.addEventListener("click", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          // Ide jöhet bármilyen egyéb logika, például egy like funkció
+        });
+      });
+    </script>
     <!-- <script src="event-cat.js"></script> -->
     <script src="search-bar2.js"></script>
     <script src="script.js"></script>
