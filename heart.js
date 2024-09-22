@@ -62,12 +62,24 @@ document.addEventListener("DOMContentLoaded", () => {
         `[data-event-id="${eventId}"]`
       );
       const dateNumber =
-        eventElement.querySelector(".popular-number, .upcoming-number")
-          ?.textContent || "";
+        eventElement.querySelector(
+          ".popular-number, .upcoming-number, .event-date-number"
+        )?.textContent || "";
       const dateMonth =
-        eventElement.querySelector(".popular-month, .upcoming-month")
-          ?.textContent || "";
-      const eventTitle = eventElement.querySelector("h3")?.textContent || "";
+        eventElement.querySelector(
+          ".popular-month, .upcoming-month, .event-date-month"
+        )?.textContent || "";
+      const eventTitle =
+        eventElement.querySelector(".h3, h3.bigger")?.textContent || "";
+      const eventPrice =
+        eventElement.querySelector(
+          ".popular-price, .upcoming-price, .event-date-price"
+        )?.textContent || "INGYEN";
+
+      // Háttérkép URL feldolgozása (csak a valódi elérési út)
+      const backgroundImage =
+        window.getComputedStyle(eventElement).backgroundImage;
+      const eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
 
       // Ellenőrizzük, hogy a szív aktív-e, és frissítsük a LocalStorage-t
       if (localStorage.getItem(`heart-${eventId}`) === "true") {
@@ -86,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem(`event-${eventId}-number`, dateNumber);
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
       localStorage.setItem(`event-${eventId}-title`, eventTitle);
+      localStorage.setItem(`event-${eventId}-price`, eventPrice);
+      localStorage.setItem(`event-${eventId}-background`, eventBackground);
     });
   });
 });

@@ -716,6 +716,14 @@ a.all-events-link:hover {
   text-decoration: none;
 }
 
+.organizer-name {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 16px;
+  letter-spacing: -0.4px;
+  font-weight: 800;
+}
+
 .active {
   color: var(--white);
   font-weight: 700;

@@ -359,6 +359,14 @@ a.popular-link h3.h3 {
   font-weight: 600;
 }
 
+.lower-info-container.profile-fav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
 .event-date-hour {
   color: var(--grey);
   font-size: 1.6rem;
