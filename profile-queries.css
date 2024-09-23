@@ -51,6 +51,16 @@
     padding: 1.6rem;
   }
 
+  .event-link {
+    /* border: var(--primary) solid 2px; */
+    position: relative;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+    /* justify-content: space-between; */
+  }
+
   .event-date-line.profile {
     display: flex;
     flex-direction: column;
