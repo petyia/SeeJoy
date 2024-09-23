@@ -249,7 +249,7 @@ document.querySelectorAll(".msg").forEach((item) => {
     if (window.innerWidth <= 780) {
       document.querySelector(".conversation-area").classList.add("hidden"); // Elrejtjük a beszélgetés listát
       document.querySelector(".chat-area").classList.add("active-chat"); // Megjelenítjük a chat-et
-      document.querySelector(".phone.single-event").classList.add("hidden"); // Elrejtjük a phone elemet
+      document.querySelector(".phone.messages").classList.add("hidden"); // Elrejtjük a phone elemet
       document.querySelector(".app").classList.remove("default-height"); // Eltávolítjuk a 88vh-t
       document.querySelector(".app").style.height = "100vh"; // Teljes magasságúvá tesszük
     }

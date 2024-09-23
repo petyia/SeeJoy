@@ -334,7 +334,7 @@ html {
 
 .add {
   position: sticky;
-  bottom: 8%;
+  bottom: 5.6rem;
   background-color: var(--theme-color);
   width: auto;
   padding: 0 2.4rem;
@@ -657,6 +657,10 @@ html {
 
   .phone.single-event.hidden {
     display: none; /* Ha a chat-area aktív, a phone osztály eltűnik */
+  }
+
+  .hidden {
+    display: none;
   }
 
   .msg.active1 {
