@@ -327,6 +327,7 @@ h5.name-text.single-st {
   justify-content: flex-start;
   gap: 4rem;
   width: 100%;
+  height: auto;
 }
 
 /* Meglévő gomb stílusok */
@@ -340,9 +341,9 @@ h5.name-text.single-st {
 /* A konténer stílusa */
 .sigle-story-contaner-comments {
   display: flex;
-  justify-content: center; /* Balra igazítás */
+  /* justify-content: center; Balra igazítás */
   align-items: flex-start; /* Fent kezdődjenek a gyermekelemek */
-  position: relative;
+  /* position: relative; */
   z-index: 1;
 
   height: 100%;
