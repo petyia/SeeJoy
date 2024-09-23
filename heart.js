@@ -182,12 +182,24 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Esemény adatok mentése LocalStorage-be
+      if (window.location.hostname === "localhost") {
+        localStorage.setItem(`event-${eventId}-background`, eventBackground);
+      } else {
+        const relativeUrl = eventBackground.replace(
+          "http://127.0.0.1:5500/",
+          "./"
+        );
+        localStorage.setItem(`event-${eventId}-background`, relativeUrl);
+      }
+
+      // Esemény adatok mentése LocalStorage-be
       localStorage.setItem(`event-${eventId}-number`, dateNumber);
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
       localStorage.setItem(`event-${eventId}-title`, eventTitle);
       localStorage.setItem(`event-${eventId}-price`, eventPrice);
       // Esemény adatok mentése LocalStorage-be
-      console.log(eventBackground); // Ezt add hozzá
+      console.log(`Saving event ${eventId} background: ${eventBackground}`);
+
       localStorage.setItem(`event-${eventId}-background`, eventBackground);
     });
   });
