@@ -186,6 +186,8 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
       localStorage.setItem(`event-${eventId}-title`, eventTitle);
       localStorage.setItem(`event-${eventId}-price`, eventPrice);
+      // Esemény adatok mentése LocalStorage-be
+      console.log(eventBackground); // Ezt add hozzá
       localStorage.setItem(`event-${eventId}-background`, eventBackground);
     });
   });
