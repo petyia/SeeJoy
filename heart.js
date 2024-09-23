@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ".popular-price, .upcoming-price, .event-date-price"
         )?.textContent || "INGYEN";
 
-      // Háttérkép lekérése index.html és events.html oldalakon különböző módon
+      // Háttérkép lekérése
       let eventBackground = "";
 
       // Az index.html oldal háttérképei a kártya elem CSS hátterében vannak
@@ -167,6 +167,9 @@ document.addEventListener("DOMContentLoaded", () => {
           eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
         }
       }
+
+      // Debugging: ellenőrizd a háttérkép URL-jét
+      console.log(`Event background before saving: ${eventBackground}`);
 
       // Ellenőrizzük, hogy a szív aktív-e, és frissítsük a LocalStorage-t
       if (localStorage.getItem(`heart-${eventId}`) === "true") {
@@ -192,15 +195,13 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem(`event-${eventId}-background`, relativeUrl);
       }
 
-      // Esemény adatok mentése LocalStorage-be
       localStorage.setItem(`event-${eventId}-number`, dateNumber);
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
       localStorage.setItem(`event-${eventId}-title`, eventTitle);
       localStorage.setItem(`event-${eventId}-price`, eventPrice);
-      // Esemény adatok mentése LocalStorage-be
-      console.log(`Saving event ${eventId} background: ${eventBackground}`);
 
-      localStorage.setItem(`event-${eventId}-background`, eventBackground);
+      // Debugging: mentett háttérkép URL
+      console.log(`Saving event ${eventId} background: ${eventBackground}`);
     });
   });
 });
