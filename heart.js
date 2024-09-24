@@ -105,10 +105,11 @@
 // });
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Az összes szív ikon kezelése
   document.querySelectorAll(".heart-icon").forEach((heartIcon) => {
     const eventId = heartIcon.getAttribute("data-event-id");
 
-    // Set initial state from LocalStorage
+    // Kezdő állapot beállítása a LocalStorage-ból
     if (localStorage.getItem(`heart-${eventId}`) === "true") {
       heartIcon.querySelector(".fa-solid").style.display = "inline-block";
       heartIcon.querySelector(".fa-regular").style.display = "none";
@@ -118,14 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     heartIcon.addEventListener("click", function () {
-      const eventElement = document.querySelector(
-        `[data-event-id="${eventId}"]`
-      );
+      const eventElement = heartIcon.closest(
+        ".popular-card, .upcoming-card, .event-date-card"
+      ); // Keresd meg a legközelebbi kártyát
 
-      // Check if eventElement exists
       if (!eventElement) {
-        console.error(`Event element not found with eventId: ${eventId}`);
-        return;
+        console.error(`Nem található eseményelem az eventId-vel: ${eventId}`);
+        return; // Kilépés, ha nem található
       }
 
       const dateNumber =
@@ -136,52 +136,19 @@ document.addEventListener("DOMContentLoaded", () => {
         eventElement.querySelector(
           ".popular-month, .upcoming-month, .event-date-month"
         )?.textContent || "";
-      const eventTitle =
-        eventElement.querySelector(".h3, h3.bigger")?.textContent || "";
+      const eventTitle = eventElement.querySelector("h3.h3")?.textContent || "";
       const eventPrice =
         eventElement.querySelector(
           ".popular-price, .upcoming-price, .event-date-price"
         )?.textContent || "INGYEN";
 
+      // Háttérkép lekérése
       let eventBackground = "";
+      const backgroundImage =
+        window.getComputedStyle(eventElement).backgroundImage;
+      eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
 
-      // Handle background image retrieval
-      const path = window.location.pathname;
-
-      // Check for index.html or events.html in the path
-      if (path.includes("index.html")) {
-        const backgroundImage =
-          window.getComputedStyle(eventElement).backgroundImage;
-        if (backgroundImage && backgroundImage.startsWith("url(")) {
-          eventBackground = backgroundImage.slice(5, -2); // Remove "url(" and ")"
-        } else {
-          console.warn("No background image found on index.html!");
-        }
-      } else if (path.includes("events.html")) {
-        const eventBackgroundElement = eventElement.querySelector(
-          '[class^="upper-img"][class$="-container"]'
-        );
-        if (eventBackgroundElement) {
-          const backgroundImage = window.getComputedStyle(
-            eventBackgroundElement
-          ).backgroundImage;
-          if (backgroundImage && backgroundImage.startsWith("url(")) {
-            eventBackground = backgroundImage.slice(5, -2);
-          } else {
-            console.warn("No background image found on events.html!");
-          }
-        } else {
-          console.error(
-            "No element found for background image on events.html!"
-          );
-        }
-      } else {
-        console.error("Current URL does not match any expected paths.");
-      }
-
-      console.log(`Event background before saving: ${eventBackground}`);
-
-      // Toggle heart icon and save state to LocalStorage
+      // Szív állapot frissítése
       if (localStorage.getItem(`heart-${eventId}`) === "true") {
         localStorage.setItem(`heart-${eventId}`, "false");
         this.querySelector(".fa-solid").style.display = "none";
@@ -192,13 +159,8 @@ document.addEventListener("DOMContentLoaded", () => {
         this.querySelector(".fa-regular").style.display = "none";
       }
 
-      // Save event data to LocalStorage
-      const relativeUrl = eventBackground.replace(
-        /https?:\/\/seeejoooy\.netlify\.app\//, // Adjust this regex as necessary
-        "./"
-      );
-
-      localStorage.setItem(`event-${eventId}-background`, relativeUrl);
+      // Esemény adatok mentése LocalStorage-be
+      localStorage.setItem(`event-${eventId}-background`, eventBackground);
       localStorage.setItem(`event-${eventId}-number`, dateNumber);
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
       localStorage.setItem(`event-${eventId}-title`, eventTitle);
