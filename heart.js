@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".heart-icon").forEach((heartIcon) => {
     const eventId = heartIcon.getAttribute("data-event-id");
 
-    // Kezdő állapot beállítása a LocalStorage-ból
+    // Set initial state from LocalStorage
     if (localStorage.getItem(`heart-${eventId}`) === "true") {
       heartIcon.querySelector(".fa-solid").style.display = "inline-block";
       heartIcon.querySelector(".fa-regular").style.display = "none";
@@ -118,17 +118,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     heartIcon.addEventListener("click", function () {
-      const eventId = heartIcon.getAttribute("data-event-id");
-
-      // Esemény adatainak lekérése
       const eventElement = document.querySelector(
         `[data-event-id="${eventId}"]`
       );
 
-      // Ellenőrizni kell, hogy az eventElement létezik-e
+      // Check if eventElement exists
       if (!eventElement) {
-        console.error(`Nem található eseményelem az eventId-vel: ${eventId}`);
-        return; // Ha nem található, akkor kilépünk
+        console.error(`Event element not found with eventId: ${eventId}`);
+        return;
       }
 
       const dateNumber =
@@ -146,17 +143,21 @@ document.addEventListener("DOMContentLoaded", () => {
           ".popular-price, .upcoming-price, .event-date-price"
         )?.textContent || "INGYEN";
 
-      // Háttérkép lekérése index.html és events.html oldalakon különböző módon
       let eventBackground = "";
 
-      // Az index.html oldal háttérképei a kártya elem CSS hátterében vannak
-      if (window.location.pathname.includes("index.html")) {
+      // Handle background image retrieval
+      const path = window.location.pathname;
+
+      // Check for index.html or events.html in the path
+      if (path.includes("index.html")) {
         const backgroundImage =
           window.getComputedStyle(eventElement).backgroundImage;
-        eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
-      }
-      // Az events.html oldal háttérképei külön div-ekben vannak
-      else if (window.location.pathname.includes("events.html")) {
+        if (backgroundImage && backgroundImage.startsWith("url(")) {
+          eventBackground = backgroundImage.slice(5, -2); // Remove "url(" and ")"
+        } else {
+          console.warn("No background image found on index.html!");
+        }
+      } else if (path.includes("events.html")) {
         const eventBackgroundElement = eventElement.querySelector(
           '[class^="upper-img"][class$="-container"]'
         );
@@ -164,43 +165,46 @@ document.addEventListener("DOMContentLoaded", () => {
           const backgroundImage = window.getComputedStyle(
             eventBackgroundElement
           ).backgroundImage;
-          eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
+          if (backgroundImage && backgroundImage.startsWith("url(")) {
+            eventBackground = backgroundImage.slice(5, -2);
+          } else {
+            console.warn("No background image found on events.html!");
+          }
+        } else {
+          console.error(
+            "No element found for background image on events.html!"
+          );
         }
+      } else {
+        console.error("Current URL does not match any expected paths.");
       }
 
-      // Ellenőrizzük, hogy a szív aktív-e, és frissítsük a LocalStorage-t
+      console.log(`Event background before saving: ${eventBackground}`);
+
+      // Toggle heart icon and save state to LocalStorage
       if (localStorage.getItem(`heart-${eventId}`) === "true") {
         localStorage.setItem(`heart-${eventId}`, "false");
-        // Szívet átváltani üresre
         this.querySelector(".fa-solid").style.display = "none";
         this.querySelector(".fa-regular").style.display = "inline-block";
       } else {
         localStorage.setItem(`heart-${eventId}`, "true");
-        // Szívet átváltani kitöltöttre
         this.querySelector(".fa-solid").style.display = "inline-block";
         this.querySelector(".fa-regular").style.display = "none";
       }
 
-      // Esemény adatok mentése LocalStorage-be
-      if (window.location.hostname === "localhost") {
-        localStorage.setItem(`event-${eventId}-background`, eventBackground);
-      } else {
-        const relativeUrl = eventBackground.replace(
-          "http://127.0.0.1:5500/",
-          "./"
-        );
-        localStorage.setItem(`event-${eventId}-background`, relativeUrl);
-      }
+      // Save event data to LocalStorage
+      const relativeUrl = eventBackground.replace(
+        /https?:\/\/seeejoooy\.netlify\.app\//, // Adjust this regex as necessary
+        "./"
+      );
 
-      // Esemény adatok mentése LocalStorage-be
+      localStorage.setItem(`event-${eventId}-background`, relativeUrl);
       localStorage.setItem(`event-${eventId}-number`, dateNumber);
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
       localStorage.setItem(`event-${eventId}-title`, eventTitle);
       localStorage.setItem(`event-${eventId}-price`, eventPrice);
-      // Esemény adatok mentése LocalStorage-be
-      console.log(`Saving event ${eventId} background: ${eventBackground}`);
 
-      localStorage.setItem(`event-${eventId}-background`, eventBackground);
+      console.log(`Saving event ${eventId} background: ${eventBackground}`);
     });
   });
 });

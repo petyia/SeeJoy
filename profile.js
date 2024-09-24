@@ -116,13 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const favoritesContainer = document.querySelector(
       "#content-3 .event-date-line"
     );
-    favoritesContainer.innerHTML = "";
+    favoritesContainer.innerHTML = ""; // Clear the container
 
     Object.keys(localStorage).forEach((key) => {
       if (key.startsWith("heart-") && localStorage.getItem(key) === "true") {
         const eventId = key.split("-")[1];
 
-        // Esemény adatok lekérése a LocalStorage-ból
+        // Retrieve event data from LocalStorage
         const dateNumber =
           localStorage.getItem(`event-${eventId}-number`) || "";
         const dateMonth = localStorage.getItem(`event-${eventId}-month`) || "";
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const eventBackground =
           localStorage.getItem(`event-${eventId}-background`) || "";
 
-        // Esemény kártya létrehozása a profil oldalra
+        // Create event card for the profile page
         const eventCard = document.createElement("div");
         eventCard.className = "event-date-card profile fade-out";
         eventCard.setAttribute("data-event-id", eventId);
@@ -172,31 +172,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Szív ikon kattintás esemény hozzáadása a kedvencekhez
+    // Add click event for heart icons in favorites
     document.querySelectorAll(".heart-icon.profile").forEach((heartIcon) => {
       heartIcon.addEventListener("click", function (e) {
-        e.stopPropagation(); // Megakadályozza, hogy a kattintás a linket aktiválja
-        e.preventDefault(); // Megakadályozza az alapértelmezett eseményt is
+        e.stopPropagation(); // Prevent the click from activating the link
+        e.preventDefault(); // Prevent the default event as well
 
         const eventId = this.getAttribute("data-event-id");
 
-        // Ha a szív aktív, kivesszük a kedvencek közül
+        // If the heart is active, remove from favorites
         if (localStorage.getItem(`heart-${eventId}`) === "true") {
           localStorage.setItem(`heart-${eventId}`, "false");
 
-          // Frissítjük a szív ikont
+          // Update the heart icon
           this.querySelector(".fa-solid").style.display = "none";
           this.querySelector(".fa-regular").style.display = "inline-block";
 
-          // Esemény kártya eltávolítása előtt fade-out animáció
+          // Remove the event card with fade-out animation
           const eventCard = document.querySelector(
             `.event-date-card.profile[data-event-id="${eventId}"]`
           );
           if (eventCard) {
-            eventCard.classList.add("remove"); // Animáció indítása
+            eventCard.classList.add("remove"); // Start animation
             setTimeout(() => {
-              eventCard.remove(); // Késleltetett eltávolítás
-            }, 400); // 400ms az animáció ideje
+              eventCard.remove(); // Delay removal
+            }, 400); // Duration of the animation
           }
         }
       });
@@ -210,5 +210,5 @@ document.addEventListener("DOMContentLoaded", () => {
       history.back();
     });
 
-  loadFavorites();
+  loadFavorites(); // Load favorites on page load
 });
