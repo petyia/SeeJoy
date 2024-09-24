@@ -85,7 +85,7 @@
     background: url(./img/e-d1-2.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
   }
 
   .event-date-lower-img-container.profile {
@@ -238,7 +238,7 @@
     background: url(./img/e-d1-2.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-position: center;
   }
 
   .event-date-lower-img-container.profile {

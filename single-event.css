@@ -465,6 +465,8 @@ main {
   color: #fff;
   font-family: var(--body-font);
   font-size: 32px;
+
+  border-radius: 1.6rem;
 }
 .popup figure figcaption small {
   font-size: 11px;

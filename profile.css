@@ -269,3 +269,12 @@ main {
   position: relative;
   transition: transform 0.3s ease;
 }
+
+.upper-img1-2-container.profile {
+  padding: 14.4rem;
+  border-radius: 2rem;
+  background: url(./img/e-d1-2.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

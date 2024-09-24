@@ -171,9 +171,9 @@ main {
   box-sizing: border-box;
 }
 
-img {
+/* img {
   max-width: 100%;
-}
+} */
 
 body {
   background-color: var(--body-bg-color);
@@ -602,6 +602,7 @@ html {
   .chat-area {
     opacity: 0;
     transform: translateX(100%); /* Elcsúsztatjuk a képernyőről jobbra */
+    background-color: var(--white);
   }
 
   .chat-area.active-chat {
