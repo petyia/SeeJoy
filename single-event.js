@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // }
 
   //Galéria PopUp
+
   const popup = {
     init: function () {
       const figures = document.querySelectorAll("figure");
@@ -184,6 +185,7 @@ document.querySelector(".follow-button").addEventListener("click", function () {
   }
 });
 
+//back
 document.querySelector(".go-back-icon").addEventListener("click", function () {
   // Lekérjük a tárolt oldalinformációkat
   const pageData = JSON.parse(sessionStorage.getItem("pageData"));

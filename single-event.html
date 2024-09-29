@@ -492,6 +492,10 @@
                           <!-- Add more dots as needed -->
                         </div>
                       </div>
+                      <button class="watch-video">
+                        <i class="fa-solid fa-circle-play"></i>
+                        <p>Videó megnézése</p>
+                      </button>
                     </div>
                     <div class="event-details">
                       <div class="organizer-section">
@@ -4293,7 +4297,27 @@
                 plusSlides(-1); // Swipe right
               }
             });
+
+            // Click functionality for right/left navigation
+            slider.addEventListener("click", (e) => {
+              const sliderWidth = slider.offsetWidth;
+              const clickPosition = e.clientX;
+
+              if (clickPosition < sliderWidth / 2) {
+                plusSlides(-1); // Left click
+              } else {
+                plusSlides(1); // Right click
+              }
+            });
           }
+        }
+
+        // Add click event for watch video button to jump to the video slide
+        const watchVideoButton = document.querySelector(".watch-video");
+        if (watchVideoButton) {
+          watchVideoButton.addEventListener("click", () => {
+            currentSlide(3); // Assuming the video is on the third slide
+          });
         }
       });
     </script>

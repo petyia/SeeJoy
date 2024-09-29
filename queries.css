@@ -679,6 +679,12 @@
     font-size: 2rem;
     word-wrap: break-word;
     margin: 0;
+
+    white-space: nowrap; /* Ne tördelje a szöveget új sorba */
+    overflow: hidden; /* Rejtse el a szöveg azon részét, amely nem fér ki */
+    text-overflow: ellipsis; /* Helyezzen el "..." a szöveg végére, ha túl hosszú */
+    display: block; /* Biztosítsa, hogy a blokk elemek viselkedését mutassa */
+    max-width: 100%; /* Állítsa be a maximális szélességet a szülő konténer szerint */
   }
   .ticket-info-title {
     font-size: 1.4rem;
@@ -2168,6 +2174,12 @@
     font-size: 1.6rem;
     word-wrap: break-word;
     margin: 0;
+
+    white-space: nowrap; /* Ne tördelje a szöveget új sorba */
+    overflow: hidden; /* Rejtse el a szöveg azon részét, amely nem fér ki */
+    text-overflow: ellipsis; /* Helyezzen el "..." a szöveg végére, ha túl hosszú */
+    display: block; /* Biztosítsa, hogy a blokk elemek viselkedését mutassa */
+    max-width: 100%; /* Állítsa be a maximális szélességet a szülő konténer szerint */
   }
 
   .ticket-info-title {

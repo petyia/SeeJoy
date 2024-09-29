@@ -421,10 +421,12 @@ span.numit {
 }
 
 .ticket-title-price {
-  flex-grow: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Biztosítsa, hogy a cím és az ár között legyen hely */
   align-items: center;
+  flex-grow: 1; /* A cím és az ár megosztják a helyet */
+  overflow: hidden; /* Ha a belső elemek túllógnak, akkor legyen elrejtve */
+  max-width: 100%; /* Ne lépje túl a konténer szélességét */
 }
 
 .ticket-title {
@@ -432,6 +434,10 @@ span.numit {
   margin: 0;
   text-decoration: none;
   color: var(--black);
+  white-space: nowrap; /* Ne tördelje új sorba */
+  overflow: hidden; /* Rejtse el a túl hosszú szöveget */
+  text-overflow: ellipsis; /* Három pont hozzáadása a vágás végén */
+  max-width: 100%; /* Biztosítsa, hogy a cím ne lógjon ki a konténerből */
 }
 
 .ticket-price {

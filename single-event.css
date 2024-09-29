@@ -89,7 +89,7 @@ main {
 }
 
 .event-banner {
-  /* position: relative; */
+  position: relative;
 }
 
 .banner-image {
@@ -98,7 +98,7 @@ main {
 }
 
 .event-details {
-  padding: 20px;
+  padding: 36px 20px 20px 20px;
   height: 40rem;
   overflow-y: scroll;
 }
@@ -1806,4 +1806,23 @@ main {
   100% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -300, -225, 0, 1);
   }
+}
+
+.watch-video {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-8%, 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  background-color: var(--black);
+  color: var(--white);
+  font-weight: 700;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+
+  box-shadow: var(--popular-sh);
 }
