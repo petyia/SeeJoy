@@ -105,8 +105,6 @@ h5.name-text.single-st {
   border-radius: 1.6rem;
   overflow: hidden;
   background-color: var(--black);
-
-  align-self: flex-start;
 }
 
 /* Add the transparent black overlay */
@@ -345,6 +343,7 @@ h5.name-text.single-st {
   align-items: flex-start; /* Fent kezdődjenek a gyermekelemek */
   /* position: relative; */
   z-index: 1;
+  justify-content: center;
 
   height: 100%;
 }

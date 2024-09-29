@@ -24,6 +24,12 @@
   --popular-sh: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+@media screen and (max-width: 748px) {
+  .upper-img1-2-container.profile {
+    background-position: bottom;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .main-nav {
     display: none;
@@ -85,7 +91,7 @@
     background: url(./img/e-d1-2.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
   }
 
   .event-date-lower-img-container.profile {
@@ -125,6 +131,7 @@
   }
 
   .event-date-heart-icon-filled {
+    position: unset;
     font-size: 1.6rem;
     color: var(--primary);
 
@@ -238,7 +245,7 @@
     background: url(./img/e-d1-2.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
   }
 
   .event-date-lower-img-container.profile {
@@ -278,6 +285,7 @@
   }
 
   .event-date-heart-icon-filled {
+    position: unset;
     font-size: 1.6rem;
     color: var(--primary);
 

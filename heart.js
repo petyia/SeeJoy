@@ -104,8 +104,9 @@
 //   });
 // });
 
+// heart.js
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Az összes szív ikon kezelése
   document.querySelectorAll(".heart-icon").forEach((heartIcon) => {
     const eventId = heartIcon.getAttribute("data-event-id");
 
@@ -119,13 +120,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     heartIcon.addEventListener("click", function () {
-      const eventElement = heartIcon.closest(
-        ".popular-card, .upcoming-card, .event-date-card"
-      ); // Keresd meg a legközelebbi kártyát
+      const eventId = heartIcon.getAttribute("data-event-id");
+
+      // Esemény adatainak lekérése
+      const eventElement = document.querySelector(
+        `[data-event-id="${eventId}"]`
+      );
 
       if (!eventElement) {
         console.error(`Nem található eseményelem az eventId-vel: ${eventId}`);
-        return; // Kilépés, ha nem található
+        return;
       }
 
       const dateNumber =
@@ -136,19 +140,41 @@ document.addEventListener("DOMContentLoaded", () => {
         eventElement.querySelector(
           ".popular-month, .upcoming-month, .event-date-month"
         )?.textContent || "";
-      const eventTitle = eventElement.querySelector("h3.h3")?.textContent || "";
+      const eventTitle =
+        eventElement.querySelector(".h3, h3.bigger")?.textContent || "";
       const eventPrice =
         eventElement.querySelector(
           ".popular-price, .upcoming-price, .event-date-price"
         )?.textContent || "INGYEN";
 
-      // Háttérkép lekérése
       let eventBackground = "";
-      const backgroundImage =
-        window.getComputedStyle(eventElement).backgroundImage;
-      eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
 
-      // Szív állapot frissítése
+      // Háttérkép kezelése különféle URL-eken (gyökér URL, .html kiterjesztéses oldalak)
+      if (
+        window.location.pathname.includes("index.html") ||
+        window.location.pathname === "/" ||
+        window.location.pathname === "/index"
+      ) {
+        const backgroundImage =
+          window.getComputedStyle(eventElement).backgroundImage;
+        eventBackground = backgroundImage.slice(5, -2);
+      } else if (
+        window.location.pathname.includes("events.html") ||
+        window.location.pathname === "/events" ||
+        window.location.pathname === "/events.html"
+      ) {
+        const eventBackgroundElement = eventElement.querySelector(
+          '[class^="upper-img"][class$="-container"]'
+        );
+        if (eventBackgroundElement) {
+          const backgroundImage = window.getComputedStyle(
+            eventBackgroundElement
+          ).backgroundImage;
+          eventBackground = backgroundImage.slice(5, -2);
+        }
+      }
+
+      // Szív ikon állapotának kezelése és mentése a LocalStorage-be
       if (localStorage.getItem(`heart-${eventId}`) === "true") {
         localStorage.setItem(`heart-${eventId}`, "false");
         this.querySelector(".fa-solid").style.display = "none";
@@ -159,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
         this.querySelector(".fa-regular").style.display = "none";
       }
 
-      // Esemény adatok mentése LocalStorage-be
+      // Esemény adatok mentése
       localStorage.setItem(`event-${eventId}-background`, eventBackground);
       localStorage.setItem(`event-${eventId}-number`, dateNumber);
       localStorage.setItem(`event-${eventId}-month`, dateMonth);
