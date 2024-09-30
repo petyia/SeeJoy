@@ -1,4 +1,3 @@
-// JavaScript: Térképkezelés és helyszín keresés
 document.addEventListener("DOMContentLoaded", function () {
   const mapButtons = [
     document.getElementById("map-button"),
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Funkció a térkép betöltéséhez és helyzet megadásához
   function loadMap(latitude = 47.4979, longitude = 19.0402) {
-    // Alapértelmezett: Budapest koordináták
     if (!mapLoaded) {
       mapContainer.style.display = "block";
 
@@ -50,25 +48,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   searchSubmit.addEventListener("click", function () {
     const location = searchInput.value; // Beírt keresési helyszín lekérése
-    if (location) {
-      // API hívás a helyszín kereséséhez az OpenStreetMap Nominatim segítségével
-      fetch(
-        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-          location
-        )}`
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          if (data && data.length > 0) {
-            const { lat, lon } = data[0]; // Kinyerjük a koordinátákat
-            loadMap(parseFloat(lat), parseFloat(lon)); // Térkép középpontja a koordináták szerint
-          } else {
-            alert("Helyszín nem található."); // Ha nincs találat
-          }
-        })
-        .catch((err) => {
-          console.error("Hiba történt a keresés során:", err); // Hibakezelés
-        });
+    if (!location) {
+      alert("Kérlek, adj meg egy helyszínt a kereséshez!");
+      return;
     }
+
+    // API URL létrehozása
+    const apiUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
+      location
+    )}`;
+
+    // Ellenőrzéshez kiírjuk az URL-t a konzolba
+    console.log(apiUrl);
+
+    // API hívás a helyszín kereséséhez az OpenStreetMap Nominatim segítségével
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data.length > 0) {
+          const { lat, lon } = data[0]; // Kinyerjük a koordinátákat
+          loadMap(parseFloat(lat), parseFloat(lon)); // Térkép középpontja a koordináták szerint
+        } else {
+          alert("Helyszín nem található."); // Ha nincs találat
+        }
+      })
+      .catch((err) => {
+        alert(
+          "Nem sikerült kapcsolatot létesíteni a szerverrel. Próbáld újra később."
+        );
+        console.error("Hiba történt a keresés során:", err); // Hibakezelés
+      });
   });
 });

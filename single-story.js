@@ -23,6 +23,30 @@ const commentsContainer = document.getElementById("commentsSection"); // Komment
 const eventsFirstRowElement = document.querySelector(
   ".events-first-row.single-story.phone-absolute-s-st.phone-block"
 ); // Elrejteni kívánt elem
+// Változó a menü megnyitásához és bezárásához
+const menuButton = document.querySelector(".edit-profile-icon");
+const menu = document.querySelector(".story-options-menu");
+
+// Gomb kattintásra megnyitjuk vagy bezárjuk a menüt
+menuButton.addEventListener("click", function (event) {
+  event.stopPropagation(); // Megakadályozza, hogy a kattintás a dokumentumra is átmenjen
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+});
+
+// Ha a dokumentum más területére kattintanak, bezárja a menüt
+document.addEventListener("click", function (event) {
+  if (
+    menu.style.display === "block" &&
+    !menu.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ) {
+    menu.style.display = "none";
+  }
+});
 
 // Komment szekció nyitása és zárása
 function toggleCommentsContainer() {
