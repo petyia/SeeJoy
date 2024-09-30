@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="event-date.css" />
     <link rel="stylesheet" href="events.css" />
     <link rel="stylesheet" href="queries.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
     <link rel="icon" type="image/x-icon" href="./img/logo.svg" />
     <title>SeeJoy | Eseménykereső</title>
     <link
@@ -40,9 +43,7 @@
   <body>
     <header>
       <nav class="main-nav">
-        <!-- <a href="">
-          <img src="" alt="" />
-        </a> -->
+        
         <div class="header">
           <div class="img-logo-container">
             <a href="index.html" class="img-logo-container">
@@ -299,13 +300,17 @@
               <label for="search2-box" >
                 <i class="fa-solid fa-magnifying-glass search-icon2"></i>
                 </label>
-                <div class="right-flex-location-container phone-absolute" id="map-button-alt-3">
-                  <div class="map-img event-phone-size-display-none">
-                    <i class="fa-solid fa-location-dot bp-location"></i>
-                  </div>
-                  <i class="fa-solid fa-location-dot bp-location event-phone-size-display-show"></i>
-                  <span class="location-name event-phone-size-display-show">Budapest</span>
-                </div>
+                <!-- HTML: Mobil nézet és keresőmező -->
+<div class="right-flex-location-container phone-absolute" id="map-button-alt-3">
+  <div class="map-img event-phone-size-display-none">
+    <i class="fa-solid fa-location-dot bp-location"></i>
+  </div>
+  <i class="fa-solid fa-location-dot bp-location event-phone-size-display-show"></i>
+  <span class="location-name event-phone-size-display-show">Budapest</span>
+</div>
+<input type="text" id="location-search" placeholder="Keresés helyszín alapján..." />
+<input type="submit" id="search2-submit" value="Keresés" />
+
               <input type="submit" id="search2-submit" />
             </form>
 
@@ -406,20 +411,22 @@
         <div class="events-container">
           <div class="events-first-row phone-block">
             <h1 class="page-title event-phone-size-display-none">Események</h1>
-            <div class="location-container phone-block">
-              <div class="left-flex-location-container phone-block">
-                <div class="text-info-location phone-block">
-                  <div class="location event-phone-size-display-none">Tartózkodási Hely</div>
-                  <span class="location-name event-phone-size-display-none">Budapest, HUN</span>
-                </div>
-              </div>
+            <!-- HTML: Asztali nézet -->
+<div class="location-container phone-block">
+  <div class="left-flex-location-container phone-block">
+    <div class="text-info-location phone-block">
+      <div class="location event-phone-size-display-none">Tartózkodási Hely</div>
+      <span class="location-name event-phone-size-display-none">Budapest, HUN</span>
+    </div>
+  </div>
+  <div class="right-flex-location-container event-phone-size-display-none" id="map-button-alt-2">
+    <div class="map-img event-phone-size-display-none">
+      <i class="fa-solid fa-location-dot bp-location"></i>
+    </div>   
+  </div>
+</div>
 
-              <div class="right-flex-location-container event-phone-size-display-none" id="map-button-alt-2">
-                <div class="map-img event-phone-size-display-none">
-                  <i class="fa-solid fa-location-dot bp-location"></i>
-                </div>   
-              </div>
-            </div>
+<div id="map" style="height: 400px; width: 100%; display:none;"></div>
           </div>
 
           <div class="scroll-container">
@@ -1116,7 +1123,7 @@
     nomodule
     src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     
   </body>
 </html>

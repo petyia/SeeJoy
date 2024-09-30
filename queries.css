@@ -52,7 +52,7 @@
   .slide {
     min-width: 100%;
     box-sizing: border-box;
-    height: 50vh;
+    height: 56vh;
   }
 
   .slide img,
@@ -82,7 +82,7 @@
 
   .event-banner {
     /* position: relative; */
-    padding: 2.4rem 2.4rem 1.6rem 2.4rem;
+    padding: 0rem 2.4rem 0rem 2.4rem;
   }
 
   .dots-container {
@@ -191,7 +191,7 @@
   .slide {
     min-width: 100%;
     box-sizing: border-box;
-    height: 48vh;
+    height: 56vh;
   }
 
   .event-pricing {
