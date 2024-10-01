@@ -2,6 +2,48 @@ document.addEventListener("DOMContentLoaded", function () {
   var currentYear = new Date().getFullYear();
   var currentMonth = new Date().getMonth();
 
+  // --- Ide illesztheted be a kódot a dátum frissítéshez ---
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Már",
+    "Ápr",
+    "Máj",
+    "Jún",
+    "Júl",
+    "Aug",
+    "Szep",
+    "Okt",
+    "Nov",
+    "Dec",
+  ];
+
+  document.querySelectorAll(".event-date-section").forEach((section) => {
+    const id = section.id;
+    const yearMonthDay = id.replace("eventDateSection", ""); // pl.: 20241001
+
+    if (yearMonthDay.length === 8) {
+      const year = yearMonthDay.substring(0, 4); // 2024
+      const month = parseInt(yearMonthDay.substring(4, 6), 10); // 10 (október)
+      const day = yearMonthDay.substring(6, 8); // 01
+
+      const monthName = monthNames[month - 1]; // Okt (10. hónap)
+
+      section.querySelectorAll(".event-date-card").forEach((card) => {
+        const dayElement = card.querySelector(".event-date-number");
+        const monthElement = card.querySelector(".event-date-month");
+
+        if (dayElement) {
+          dayElement.textContent = day; // Beállítjuk a napot
+        }
+
+        if (monthElement) {
+          monthElement.textContent = monthName; // Beállítjuk a hónapot rövidítve
+        }
+      });
+    }
+  });
+
   // Generálja a naptárat
   function generateCalendar(year, month) {
     var calendarBody = document.getElementById("calendar-body");
@@ -365,4 +407,78 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   });
+
+  const monthNamesLine = [
+    "Január",
+    "Február",
+    "Március",
+    "Április",
+    "Május",
+    "Június",
+    "Július",
+    "Augusztus",
+    "Szeptember",
+    "Október",
+    "November",
+    "December",
+  ];
+
+  const dateDisplay = document.querySelector(".date-year-month");
+  const miniDateContainer = document.querySelector(".event-mini-date");
+
+  // A dátum frissítése a hónap alapján
+  function updateMonthYearDisplay(dateId) {
+    const year = dateId.substring(4, 8); // Év kinyerése
+    const month = parseInt(dateId.substring(8, 10), 10); // Hónap kinyerése
+    const monthName = monthNamesLine[month - 1]; // Hónap név kinyerése
+    dateDisplay.textContent = `${monthName}, ${year}`; // Frissítés
+  }
+
+  // Ellenőrizzük, hogy melyik az első látható dátum a mini naptárban
+  function checkVisibleDates() {
+    const dates = document.querySelectorAll(".events-date");
+    let firstVisibleDate = null;
+
+    dates.forEach((date) => {
+      const rect = date.getBoundingClientRect();
+      // Ellenőrizzük, hogy az elem látható-e a naptár container belsejében
+      if (
+        rect.left >= miniDateContainer.getBoundingClientRect().left &&
+        rect.right <= window.innerWidth
+      ) {
+        if (
+          !firstVisibleDate ||
+          rect.left < firstVisibleDate.getBoundingClientRect().left
+        ) {
+          firstVisibleDate = date;
+        }
+      }
+    });
+
+    if (firstVisibleDate) {
+      const dateId = firstVisibleDate.id;
+      updateMonthYearDisplay(dateId);
+    }
+  }
+
+  // Görgetés esemény figyelése a mini naptárban
+  miniDateContainer.addEventListener("scroll", function () {
+    checkVisibleDates();
+  });
+
+  // Nyilak kattintásának kezelése
+  document
+    .querySelector(".scroll-right-cat2")
+    .addEventListener("click", function () {
+      setTimeout(checkVisibleDates, 300); // Kis késleltetéssel frissítjük a látható elemeket
+    });
+
+  document
+    .querySelector(".scroll-left-cat2")
+    .addEventListener("click", function () {
+      setTimeout(checkVisibleDates, 300); // Kis késleltetéssel frissítjük a látható elemeket
+    });
+
+  // Betöltéskor beállítjuk az aktuális dátumot
+  checkVisibleDates();
 });

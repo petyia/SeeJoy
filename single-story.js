@@ -14,6 +14,12 @@ const closeDeleteModal = document.querySelector(".close-delete-modal");
 const confirmDeleteCommentBtn = document.getElementById("confirmDeleteComment");
 const cancelDeleteCommentBtn = document.getElementById("cancelDeleteComment");
 
+// Törlés megerősítő modális ablak kommentnél
+const muteStoryModal = document.getElementById("muteStoryModal");
+const closeMuteModal = document.querySelector(".close-mute-modal");
+const confirmMuteStoryBtn = document.getElementById("confirmMuteStory");
+const cancelMuteStoryBtn = document.getElementById("cancelMuteStory");
+
 let clickedComment = false;
 let currentComment = null; // Hozzáadva a szerkesztéshez és törléshez
 
@@ -23,30 +29,6 @@ const commentsContainer = document.getElementById("commentsSection"); // Komment
 const eventsFirstRowElement = document.querySelector(
   ".events-first-row.single-story.phone-absolute-s-st.phone-block"
 ); // Elrejteni kívánt elem
-// Változó a menü megnyitásához és bezárásához
-const menuButton = document.querySelector(".edit-profile-icon");
-const menu = document.querySelector(".story-options-menu");
-
-// Gomb kattintásra megnyitjuk vagy bezárjuk a menüt
-menuButton.addEventListener("click", function (event) {
-  event.stopPropagation(); // Megakadályozza, hogy a kattintás a dokumentumra is átmenjen
-  if (menu.style.display === "block") {
-    menu.style.display = "none";
-  } else {
-    menu.style.display = "block";
-  }
-});
-
-// Ha a dokumentum más területére kattintanak, bezárja a menüt
-document.addEventListener("click", function (event) {
-  if (
-    menu.style.display === "block" &&
-    !menu.contains(event.target) &&
-    !menuButton.contains(event.target)
-  ) {
-    menu.style.display = "none";
-  }
-});
 
 // Komment szekció nyitása és zárása
 function toggleCommentsContainer() {
@@ -384,6 +366,31 @@ setInterval(() => {
   });
 }, 60000); // Minden percben frissít
 
+// Változó a menü megnyitásához és bezárásához
+const menuButton = document.querySelector(".edit-profile-icon");
+const menu = document.querySelector(".story-options-menu");
+
+// Gomb kattintásra megnyitjuk vagy bezárjuk a menüt
+menuButton.addEventListener("click", function (event) {
+  event.stopPropagation(); // Megakadályozza, hogy a kattintás a dokumentumra is átmenjen
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+});
+
+// Ha a dokumentum más területére kattintanak, bezárja a menüt
+document.addEventListener("click", function (event) {
+  if (
+    menu.style.display === "block" &&
+    !menu.contains(event.target) &&
+    !menuButton.contains(event.target)
+  ) {
+    menu.style.display = "none";
+  }
+});
+
 // Globalis változók
 
 let currentReply = null;
@@ -437,6 +444,13 @@ document.body.addEventListener("click", function (event) {
     const comment = event.target.closest(".comment");
     currentComment = comment;
     deleteCommentModal.style.display = "block";
+  }
+
+  // Történet némítása funkció
+  if (event.target.matches(".mute-story")) {
+    const comment = event.target.closest(".story-option-menu");
+    currentComment = comment;
+    muteStoryModal.style.display = "block";
   }
 
   // Reply törlés funkció

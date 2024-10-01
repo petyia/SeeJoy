@@ -771,11 +771,15 @@ h5.name-text.single-st {
   margin-bottom: 1.6rem;
 }
 
-.delete-or-not {
+.delete-or-not,
+.mute-or-not,
+.unfollow-or-not {
   align-self: flex-end;
 }
 
 .close-edit-modal,
+.close-delete-modal,
+.close-delete-modal,
 .close-delete-modal {
   color: #aaa;
   display: flex;
@@ -784,6 +788,8 @@ h5.name-text.single-st {
 }
 
 .close-edit-modal:hover,
+.close-delete-modal:hover,
+.close-mute-modal:hover,
 .close-delete-modal:hover {
   color: black;
   text-decoration: none;
@@ -791,7 +797,11 @@ h5.name-text.single-st {
 }
 
 button#confirmDeleteComment,
-button#cancelDeleteComment {
+button#cancelDeleteComment,
+button#confirmMuteStory,
+button#cancelMuteStory,
+button#confirmUnfollowStory,
+button#cancelUnfollowStory {
   font-size: 1.6rem;
   padding: 1.6rem 2.4rem;
   color: var(--primary);
@@ -799,7 +809,11 @@ button#cancelDeleteComment {
 }
 
 button#confirmDeleteComment:hover,
-button#cancelDeleteComment:hover {
+button#cancelDeleteComment:hover,
+button#confirmMuteStory:hover,
+button#cancelMuteStory:hover,
+button#confirmUnfollowStory:hover,
+button#cancelUnfollowStory:hover {
   background-color: var(--pale-grey);
   border-radius: 3.2rem;
 }

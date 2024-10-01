@@ -431,6 +431,54 @@
                       <p>Saját történet létrehozása</p>
                     </button>
                   </div>
+
+                  <!-- Némítás megerősítő modális ablak -->
+                  <div id="muteStoryModal" class="modal">
+                    <div class="modal-content">
+                      <div class="mute-line">
+                        <h2>Vágó András történeteinek némítása</h2>
+                        <span class="close-mute-modal">&times;</span>
+                      </div>
+                      <p>
+                        Biztos, hogy némítani szeretnéd Vágó András történeteit?
+                      </p>
+                      <div class="mute-or-not">
+                        <button id="cancelMuteStory">Mégse</button>
+                        <button id="confirmMuteStory">Némítás</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Törlés megerősítő modális ablak -->
+                  <div id="unfollowStoryModal" class="modal">
+                    <div class="modal-content">
+                      <div class="unfollow-line">
+                        <h2>Vágó András követésének leállítása</h2>
+                        <span class="close-unfollow-modal">&times;</span>
+                      </div>
+                      <p>Biztos, hogy nem szeretnéd Vágó Andrást követni?</p>
+                      <div class="unfollow-or-not">
+                        <button id="cancelunFollowStory">Mégse</button>
+                        <button id="confirmunFollowStory">Kikövetés</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Válasz Szerkesztés modális ablak -->
+                  <div id="reportStoryModal" class="modal">
+                    <div class="modal-content">
+                      <div class="report-line">
+                        <span class="close-story-report-modal">&times;</span>
+                        <h2>Szerkesztés</h2>
+                      </div>
+                      <textarea
+                        id="reportStoryText"
+                        rows="4"
+                        cols="50"
+                      ></textarea>
+                      <button id="saveReportAnswer">Mentés</button>
+                    </div>
+                  </div>
                 </div>
                 <div class="story-profile-img-container single-story">
                   <a href="user-profile.html" class="story-profile-link">

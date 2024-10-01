@@ -297,6 +297,11 @@ main {
   box-shadow: rgba(99, 99, 99, 0.1) 0px -2px 8px 0px;
 }
 
+.event-price-left-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .price-range {
   display: flex;
   flex-direction: column;

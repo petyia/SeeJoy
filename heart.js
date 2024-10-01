@@ -106,6 +106,16 @@
 
 // heart.js
 
+// heart.js
+
+// heart.js
+
+// heart.js
+
+// heart.js
+
+// heart.js
+
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".heart-icon").forEach((heartIcon) => {
     const eventId = heartIcon.getAttribute("data-event-id");
@@ -132,45 +142,72 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const dateNumber =
-        eventElement.querySelector(
-          ".popular-number, .upcoming-number, .event-date-number"
-        )?.textContent || "";
-      const dateMonth =
-        eventElement.querySelector(
-          ".popular-month, .upcoming-month, .event-date-month"
-        )?.textContent || "";
-      const eventTitle =
-        eventElement.querySelector(".h3, h3.bigger")?.textContent || "";
-      const eventPrice =
-        eventElement.querySelector(
-          ".popular-price, .upcoming-price, .event-date-price"
-        )?.textContent || "INGYEN";
-
+      let dateNumber = "";
+      let dateMonth = "";
+      let eventTitle = "";
+      let eventPrice = "";
       let eventBackground = "";
 
-      // Háttérkép kezelése különféle URL-eken (gyökér URL, .html kiterjesztéses oldalak)
+      // Feltételes logika az URL-ek alapján
       if (
-        window.location.pathname.includes("index.html") ||
-        window.location.pathname === "/" ||
-        window.location.pathname === "/index"
+        window.location.pathname.includes("single-event.html") ||
+        window.location.pathname === "/single-event" ||
+        window.location.pathname === "/single-event.html"
       ) {
-        const backgroundImage =
-          window.getComputedStyle(eventElement).backgroundImage;
-        eventBackground = backgroundImage.slice(5, -2);
-      } else if (
-        window.location.pathname.includes("events.html") ||
-        window.location.pathname === "/events" ||
-        window.location.pathname === "/events.html"
-      ) {
-        const eventBackgroundElement = eventElement.querySelector(
-          '[class^="upper-img"][class$="-container"]'
-        );
-        if (eventBackgroundElement) {
-          const backgroundImage = window.getComputedStyle(
-            eventBackgroundElement
-          ).backgroundImage;
-          eventBackground = backgroundImage.slice(5, -2);
+        // A teljes dátum lekérése
+        const dateElement = eventElement.querySelector(".event-date");
+
+        if (dateElement) {
+          const fullDateText = dateElement.textContent.trim(); // Szöveg lekérése és trimmelése
+          console.log(`Found date text: ${fullDateText}`); // Ellenőrzés
+
+          // Dátum feldolgozása: nap és hónap kivonása a szövegből
+          const dateParts = fullDateText.split(" "); // ["2024", "Szeptember", "23.", "Szombat"]
+          if (dateParts.length >= 3) {
+            // A nap kivonása (az utolsó szám)
+            dateNumber = dateParts[2].replace(".", ""); // "23"
+
+            // A hónap rövidítése ("Szeptember" -> "Szep")
+            const monthLookup = {
+              Január: "Jan",
+              Február: "Feb",
+              Március: "Már",
+              Április: "Ápr",
+              Május: "Máj",
+              Június: "Jún",
+              Július: "Júl",
+              Augusztus: "Aug",
+              Szeptember: "Szep",
+              Október: "Okt",
+              November: "Nov",
+              December: "Dec",
+            };
+            dateMonth = monthLookup[dateParts[1]] || dateParts[1]; // "Szeptember" -> "Szep"
+          } else {
+            console.error(`Unexpected date format: ${fullDateText}`);
+          }
+        } else {
+          console.error("Nem található .event-date elem.");
+        }
+
+        // Az esemény további adatainak lekérdezése
+        eventTitle =
+          eventElement.querySelector(".event-title")?.textContent.trim() || "";
+        eventPrice =
+          eventElement.querySelector(".price-range")?.textContent.trim() ||
+          "INGYEN";
+
+        // Az első kép megkeresése a sliderben
+        const sliderElement = document.querySelector(".slider");
+        if (sliderElement) {
+          const slideImageElement = sliderElement.querySelector(".slide img");
+          if (slideImageElement) {
+            eventBackground = slideImageElement.src; // Az <img> src attribútumából kapjuk meg a képet
+          } else {
+            console.error("Nem található kép a sliderben.");
+          }
+        } else {
+          console.error("Nem található slider elem.");
         }
       }
 
@@ -193,6 +230,10 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem(`event-${eventId}-price`, eventPrice);
 
       console.log(`Saving event ${eventId} background: ${eventBackground}`);
+      console.log(`Saving event ${eventId} title: ${eventTitle}`);
+      console.log(`Saving event ${eventId} date (day): ${dateNumber}`);
+      console.log(`Saving event ${eventId} month: ${dateMonth}`);
+      console.log(`Saving event ${eventId} price: ${eventPrice}`);
     });
   });
 });

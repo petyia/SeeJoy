@@ -435,7 +435,7 @@ a .event-date-price {
 }
 
 .event-mini-date {
-  min-width: 1500px;
+  /* min-width: 1500px; */
   overflow-x: scroll;
 }
 
