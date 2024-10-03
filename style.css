@@ -113,7 +113,7 @@ main {
   border-radius: 16rem;
   font-family: var(--body-font);
   font-size: 1.6rem;
-  font-weight: 200;
+  font-weight: 600;
   padding: 0 2rem 0 4rem;
   box-shadow: 0 0 0 2px rgba(134, 140, 160, 0.02);
   color: var(--grey);

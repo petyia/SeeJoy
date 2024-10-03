@@ -430,8 +430,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateMonthYearDisplay(dateId) {
     const year = dateId.substring(4, 8); // Év kinyerése
     const month = parseInt(dateId.substring(8, 10), 10); // Hónap kinyerése
-    const monthName = monthNamesLine[month - 1]; // Hónap név kinyerése
-    dateDisplay.textContent = `${monthName}, ${year}`; // Frissítés
+    const monthNameLine = monthNamesLine[month - 1]; // Hónap név kinyerése
+    dateDisplay.textContent = `${monthNameLine}, ${year}`; // Frissítés
   }
 
   // Ellenőrizzük, hogy melyik az első látható dátum a mini naptárban
@@ -478,6 +478,15 @@ document.addEventListener("DOMContentLoaded", function () {
     .addEventListener("click", function () {
       setTimeout(checkVisibleDates, 300); // Kis késleltetéssel frissítjük a látható elemeket
     });
+
+  // Érintőképernyős események kezelése mobil eszközökön
+  miniDateContainer.addEventListener("touchmove", function () {
+    checkVisibleDates();
+  });
+
+  miniDateContainer.addEventListener("touchend", function () {
+    checkVisibleDates();
+  });
 
   // Betöltéskor beállítjuk az aktuális dátumot
   checkVisibleDates();
