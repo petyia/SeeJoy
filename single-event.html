@@ -467,6 +467,38 @@
                       <button class="edit-profile-icon">
                         <i class="fa-solid fa-ellipsis single-event"></i>
                       </button>
+
+                      <div
+                        class="single-event-options-menu"
+                        style="display: none"
+                      >
+                        <button
+                          class="unfollow-single-event comment__btn"
+                          id="openComments"
+                        >
+                          <i class="fa-solid fa-comment"></i>
+                          <p>Esemény kommentek</p>
+                        </button>
+                        <button class="mute-single-event">
+                          <i
+                            class="fa-solid fa-share"
+                            style="color: var(--black)"
+                          ></i>
+                          <p>Esemény megosztása</p>
+                        </button>
+                        <button class="report-single-event">
+                          <i class="fa-solid fa-triangle-exclamation"></i>
+                          <p>Esemény jelentése</p>
+                        </button>
+                        <a href="new-event.html">
+                          <button class="create-single-event">
+                            <i
+                              class="fa-solid fa-circle-plus single-event-option"
+                            ></i>
+                            <p>Saját esemény létrehozása</p>
+                          </button>
+                        </a>
+                      </div>
                     </div>
                     <div class="event-banner">
                       <div class="slider-container">
@@ -512,7 +544,7 @@
                       </div>
                       <div class="event-description">
                         <h1 class="event-title">
-                          Játsszunk híres társasjátékokat
+                          Játszunk együtt a legnépszerűbb társasokkal
                         </h1>
                         <div class="single-event-info-container">
                           <div class="event-left-info-container">
@@ -520,7 +552,9 @@
                               <i class="fa-regular fa-clock"></i>
                             </div>
                             <div class="event-date-time">
-                              <p class="event-date">2024 Október 01. Kedd</p>
+                              <p class="event-date">
+                                2024 Október 03. Csütörtök
+                              </p>
                               <p class="event-time">17:00 - 21:00</p>
                             </div>
                           </div>
@@ -4341,6 +4375,7 @@
     <script src="https://cdn.jsdelivr.net/npm/animejs@3"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <!-- <script src="vue-script.js"></script> -->
+    <script src="emoji-picker.js"></script>
     <script src="emoji-picker.js"></script>
   </body>
 </html>

@@ -106,16 +106,6 @@
 
 // heart.js
 
-// heart.js
-
-// heart.js
-
-// heart.js
-
-// heart.js
-
-// heart.js
-
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".heart-icon").forEach((heartIcon) => {
     const eventId = heartIcon.getAttribute("data-event-id");
@@ -150,11 +140,98 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Feltételes logika az URL-ek alapján
       if (
+        window.location.pathname.includes("index.html") ||
+        window.location.pathname === "/" ||
+        window.location.pathname === "/index"
+      ) {
+        // Az index.html oldal lekérdezései
+        const dateElementNumber = eventElement.querySelector(
+          ".popular-number, .upcoming-number"
+        );
+        const dateElementMonth = eventElement.querySelector(
+          ".popular-month, .upcoming-month"
+        );
+        if (dateElementNumber && dateElementMonth) {
+          dateNumber = dateElementNumber.textContent.trim(); // Dátum napja
+          dateMonth = dateElementMonth.textContent.trim().slice(0, 3); // Hónap rövidítése ("Január" -> "Jan")
+        }
+
+        eventTitle =
+          eventElement.querySelector(".h3")?.textContent.trim() || "";
+        eventPrice =
+          eventElement
+            .querySelector(".popular-price, .upcoming-price")
+            ?.textContent.trim() || "INGYEN";
+
+        const backgroundImage =
+          window.getComputedStyle(eventElement).backgroundImage;
+        eventBackground = backgroundImage.slice(5, -2); // A "url(" és ")" eltávolítása
+      } else if (
+        window.location.pathname.includes("events.html") ||
+        window.location.pathname === "/events" ||
+        window.location.pathname === "/events.html"
+      ) {
+        // Az events.html oldal lekérdezései
+        const dateElementNumber =
+          eventElement.querySelector(".event-date-number");
+        const dateElementMonth =
+          eventElement.querySelector(".event-date-month");
+        if (dateElementNumber && dateElementMonth) {
+          dateNumber = dateElementNumber.textContent.trim(); // Dátum napja
+          dateMonth = dateElementMonth.textContent.trim().slice(0, 3); // Hónap rövidítése ("Szeptember" -> "Szep")
+        }
+
+        eventTitle =
+          eventElement.querySelector(".h3.bigger")?.textContent.trim() || "";
+        eventPrice =
+          eventElement.querySelector(".event-date-price")?.textContent.trim() ||
+          "INGYEN";
+
+        const eventBackgroundElement = eventElement.querySelector(
+          '[class^="upper-img"][class$="-container"]'
+        );
+        if (eventBackgroundElement) {
+          const backgroundImage = window.getComputedStyle(
+            eventBackgroundElement
+          ).backgroundImage;
+          eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
+        }
+      } else if (
+        window.location.pathname.includes("profile.html") ||
+        window.location.pathname === "/profile" ||
+        window.location.pathname === "/profile.html"
+      ) {
+        // Az events.html oldal lekérdezései
+        const dateElementNumber =
+          eventElement.querySelector(".event-date-number");
+        const dateElementMonth =
+          eventElement.querySelector(".event-date-month");
+        if (dateElementNumber && dateElementMonth) {
+          dateNumber = dateElementNumber.textContent.trim(); // Dátum napja
+          dateMonth = dateElementMonth.textContent.trim().slice(0, 3); // Hónap rövidítése ("Szeptember" -> "Szep")
+        }
+
+        eventTitle =
+          eventElement.querySelector(".h3.bigger")?.textContent.trim() || "";
+        eventPrice =
+          eventElement.querySelector(".event-date-price")?.textContent.trim() ||
+          "INGYEN";
+
+        const eventBackgroundElement = eventElement.querySelector(
+          '[class^="upper-img"][class$="-container profile"]'
+        );
+        if (eventBackgroundElement) {
+          const backgroundImage = window.getComputedStyle(
+            eventBackgroundElement
+          ).backgroundImage;
+          eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
+        }
+      } else if (
         window.location.pathname.includes("single-event.html") ||
         window.location.pathname === "/single-event" ||
         window.location.pathname === "/single-event.html"
       ) {
-        // A teljes dátum lekérése
+        // A single-event.html oldal lekérdezései
         const dateElement = eventElement.querySelector(".event-date");
 
         if (dateElement) {
@@ -164,10 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Dátum feldolgozása: nap és hónap kivonása a szövegből
           const dateParts = fullDateText.split(" "); // ["2024", "Szeptember", "23.", "Szombat"]
           if (dateParts.length >= 3) {
-            // A nap kivonása (az utolsó szám)
             dateNumber = dateParts[2].replace(".", ""); // "23"
-
-            // A hónap rövidítése ("Szeptember" -> "Szep")
             const monthLookup = {
               Január: "Jan",
               Február: "Feb",
@@ -190,19 +264,17 @@ document.addEventListener("DOMContentLoaded", () => {
           console.error("Nem található .event-date elem.");
         }
 
-        // Az esemény további adatainak lekérdezése
         eventTitle =
           eventElement.querySelector(".event-title")?.textContent.trim() || "";
         eventPrice =
           eventElement.querySelector(".price-range")?.textContent.trim() ||
           "INGYEN";
 
-        // Az első kép megkeresése a sliderben
         const sliderElement = document.querySelector(".slider");
         if (sliderElement) {
           const slideImageElement = sliderElement.querySelector(".slide img");
           if (slideImageElement) {
-            eventBackground = slideImageElement.src; // Az <img> src attribútumából kapjuk meg a képet
+            eventBackground = slideImageElement.src;
           } else {
             console.error("Nem található kép a sliderben.");
           }

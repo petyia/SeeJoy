@@ -125,7 +125,7 @@
   .event-text-upper-container.profile {
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 1.4rem;
   }
 
   h3.h3.bigger.profile {
@@ -278,7 +278,7 @@
   .event-text-upper-container.profile {
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 1.4rem;
   }
 
   h3.h3.bigger.profile {

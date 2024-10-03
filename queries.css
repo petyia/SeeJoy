@@ -169,9 +169,9 @@
     letter-spacing: 0.1px;
   }
 
-  .price-range {
+  /* .price-range {
     display: none;
-  }
+  } */
 }
 
 @media (max-width: 2000px) {
@@ -383,6 +383,8 @@
     margin: 0 auto;
 
     max-width: 1693px;
+
+    padding-bottom: 8rem;
   }
 
   .slide {
@@ -392,7 +394,7 @@
   }
 
   .event-pricing {
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 3.2rem;
   }
   .new-event-scroll-container {
