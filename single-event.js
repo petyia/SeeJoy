@@ -1,109 +1,231 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const aboutText = document.getElementById("about-text");
-  const toggleBtn = document.getElementById("toggle-text-btn");
+  const urlParams = new URLSearchParams(window.location.search);
+  const eventId = urlParams.get("eventId"); // Esemény ID lekérése az URL-ből
 
-  const fullText = `Csatlakozz hozzánk minden vasárnap egy szórakoztató napra,
-                amikor klasszikus és jól ismert társasjátékokat játszunk! Hozd
-                el versenyszellemedet és a stratégia iránti szeretetedet, mert
-                kihívjuk egymást olyan játékokban, mint a Monopoly, a Scrabble
-                és még sok más. Ez egy remek lehetőség arra, hogy új emberekkel
-                találkozz, fejleszd társasjáték-tudásodat, és élvezd a
-                barátságos versengést! Hozhatsz saját társasjátékokat és
-                rágcsálnivalókat is.`;
+  if (eventId) {
+    console.log(`Esemény ID az URL-ben: ${eventId}`);
 
-  const shortText = `Csatlakozz hozzánk minden vasárnap egy szórakoztató napra,
-                amikor klasszikus és jól ismert társasjátékokat játszunk! Hozd
-                el versenyszellemedet és a stratégia iránti szeretetedet, mert
-                kihívjuk egymást olyan játékokban, mint a Monopoly...`;
+    // Előre definiált események adatai
+    const eventsData = {
+      1: {
+        title: "Játszunk együtt a legnépszerűbb társasokkal",
+        date: "2024 Október 03. Csütörtök",
+        time: "17:00 - 21:00",
+        price: "Ingyenes",
+        organizer: "Vágó András",
+        organizerAvatar: "img/story6.webp", // Szervező képe
+        taxInfo: "+0% Adók", // Tax információ
+        description: `Csatlakozz hozzánk minden vasárnap egy szórakoztató napra...`,
+        fullDescription:
+          "Csatlakozz hozzánk minden vasárnap egy szórakoztató napra, amikor klasszikus és jól ismert társasjátékokat játszunk! Hozd el versenyszellemedet és a stratégia iránti szeretetedet, mert kihívjuk egymást olyan játékokban, mint a Monopoly, a Scrabble és még sok más.",
+        address: "Evergreen Park, 50. sugárút és 78. utca",
+        images: ["img/event-date4.webp", "img/event-date4_1.webp"],
+        video: "vid/tarsas.mp4",
+        gallery: [
+          {
+            img: "img/gallery1 (1).webp",
+            caption: "Jenga",
+            description: "Játsszunk híres társasjátékokat!",
+          },
+          {
+            img: "img/gallery1 (2).webp",
+            caption: "Uno",
+            description: "Játsszunk híres társasjátékokat!",
+          },
+          {
+            img: "img/gallery1 (3).webp",
+            caption: "Monopoly",
+            description: "Játsszunk híres társasjátékokat!",
+          },
+        ],
+      },
+      2: {
+        title: "Főzés: Hogyan készíts gyümölcskoktélokat",
+        date: "2024 Október 08. Kedd",
+        time: "18:00 - 20:00",
+        price: "800 Ft",
+        organizer: "Nagy Erika",
+        organizerAvatar: "img/story7.webp", // Szervező képe
+        taxInfo: "+27% Adók", // Tax információ
+        description:
+          "Gyere el, és tanulj meg különböző gyümölcskoktélokat készíteni...",
+        fullDescription: `Gyere el, és tanulj meg különböző gyümölcskoktélokat készíteni. Hozd el barátaidat és élvezd a finom italokat, miközben új recepteket tanulsz.`,
+        address: "Fruit Party Hall, 24. utca és 10. sugárút",
+        images: ["img/cocktail-bg1.webp", "img/cocktail-bg2.webp"],
+        video: "vid/cocktails.mp4",
+        gallery: [
+          {
+            img: "img/cocktail3.webp",
+            caption: "Mojito",
+            description: "Frissítő koktél!",
+          },
+          {
+            img: "img/cocktail2.webp",
+            caption: "Számtalan koktél",
+            description: "Sok más koktél",
+          },
+          {
+            img: "img/cocktail1.webp",
+            caption: "Együtt!",
+            description: "Közös szórakozás együtt!",
+          },
+        ],
+      },
+    };
 
-  let isFullText = false;
+    const event = eventsData[eventId];
+    if (event) {
+      // Esemény adatok frissítése
+      document.querySelector(".event-title").textContent = event.title;
+      document.querySelector(".event-date").textContent = event.date;
+      document.querySelector(".event-time").textContent = event.time;
+      document.querySelector(".price-range").textContent = event.price;
+      document.querySelector(".tax-info").textContent = event.taxInfo; // Tax információ frissítése
+      document.querySelector(".organizer-name").textContent = event.organizer;
 
-  // Alapértelmezett szöveg (rövid)
-  aboutText.textContent = shortText;
+      // Szervező képének frissítése
+      const organizerAvatar = document.querySelector(".organizer-avatar");
+      organizerAvatar.style.backgroundImage = `url(${event.organizerAvatar})`;
 
-  toggleBtn.addEventListener("click", function () {
-    if (isFullText) {
-      aboutText.textContent = shortText;
-      toggleBtn.textContent = "Továbbiak";
+      document.querySelector(".event-about-text").textContent =
+        event.description;
+      document.querySelector(".event-address p").textContent = event.address;
+
+      // "Továbbiak" gomb működése
+      const aboutText = document.querySelector(".event-about-text");
+      const toggleBtn = document.getElementById("toggle-text-btn");
+      let isFullText = false;
+      toggleBtn.addEventListener("click", function () {
+        if (isFullText) {
+          aboutText.textContent = event.description;
+          toggleBtn.textContent = "Továbbiak";
+        } else {
+          aboutText.textContent = event.fullDescription;
+          toggleBtn.textContent = "Kevesebb";
+        }
+        isFullText = !isFullText;
+      });
+
+      // Slider képek frissítése (képek és videó)
+      const slider = document.querySelector(".slider");
+      slider.innerHTML = ""; // Töröljük az alapértelmezett tartalmat
+
+      // Képek hozzáadása a sliderhez
+      event.images.forEach((imageSrc) => {
+        const slideDiv = document.createElement("div");
+        slideDiv.classList.add("slide");
+        slideDiv.innerHTML = `<img src="${imageSrc}" alt="Esemény kép" />`;
+        slider.appendChild(slideDiv);
+      });
+
+      // Videó hozzáadása a sliderhez
+      const videoSlide = document.createElement("div");
+      videoSlide.classList.add("slide");
+      videoSlide.innerHTML = `
+        <video autoplay muted loop>
+          <source src="${event.video}" type="video/mp4" />
+          A böngésződ nem támogatja a videót.
+        </video>
+      `;
+      slider.appendChild(videoSlide);
+
+      // Slider pontok (dots) létrehozása (képek + videó)
+      const dotsContainer = document.querySelector(".dots-container");
+      dotsContainer.innerHTML = ""; // Töröljük az alapértelmezett pontokat
+      const totalSlides = event.images.length + 1; // Képek + videó
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        dot.addEventListener("click", () => currentSlide(i + 1));
+        dotsContainer.appendChild(dot);
+      }
+
+      // Slider inicializálása
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function showSlides(n) {
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        // Minden képet elrejtünk
+        slides.forEach((slide) => (slide.style.display = "none"));
+
+        // Minden pont aktív állapotát töröljük
+        dots.forEach((dot) => dot.classList.remove("active"));
+
+        // Az aktuális képet és pontot megjelenítjük
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+      }
+
+      // Funkciók a képek váltásához
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      // Húzás funkció a sliderhez
+      let startX = 0;
+      slider.addEventListener("touchstart", (e) => {
+        startX = e.touches[0].clientX;
+      });
+
+      slider.addEventListener("touchend", (e) => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX > endX) {
+          plusSlides(1); // Húzás balra (következő kép)
+        } else {
+          plusSlides(-1); // Húzás jobbra (előző kép)
+        }
+      });
+
+      // Pontokra (dots) kattintás
+      const dots = document.querySelectorAll(".dot");
+      dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => currentSlide(index + 1));
+      });
+
+      // Videó megnézése gomb működésének hozzáadása
+      const watchVideoButton = document.querySelector(".watch-video");
+      if (watchVideoButton) {
+        watchVideoButton.addEventListener("click", () => {
+          currentSlide(totalSlides); // A videó a legutolsó slide
+        });
+      }
+
+      // Galéria frissítése
+      const gallery = document.querySelector(".gallery");
+      gallery.innerHTML = ""; // Galéria kiürítése
+      event.gallery.forEach((item) => {
+        const figure = document.createElement("figure");
+        figure.innerHTML = `
+          <img src="${item.img}" alt="${item.caption}" />
+          <figcaption>
+            ${item.caption}
+            <small>${item.description}</small>
+          </figcaption>
+        `;
+        gallery.appendChild(figure);
+      });
     } else {
-      aboutText.textContent = fullText;
-      toggleBtn.textContent = "Kevesebb";
+      console.error(`Nem található esemény az eventId: ${eventId} alapján.`);
     }
-    isFullText = !isFullText;
-  });
+  } else {
+    console.error("Nincs esemény ID az URL-ben.");
+  }
 
-  // //Slider
-  // let slideIndex = 1;
-  // let slides = document.querySelectorAll(".slide");
-  // let dots = document.querySelectorAll(".dot");
-
-  // if (slides.length > 0 && dots.length > 0) {
-  //   showSlides(slideIndex);
-
-  //   // Next/previous controls
-  //   function plusSlides(n) {
-  //     showSlides((slideIndex += n));
-  //   }
-
-  //   // Thumbnail image controls
-  //   function currentSlide(n) {
-  //     showSlides((slideIndex = n));
-  //   }
-
-  //   function showSlides(n) {
-  //     if (n > slides.length) {
-  //       slideIndex = 1;
-  //     }
-  //     if (n < 1) {
-  //       slideIndex = slides.length;
-  //     }
-
-  //     // Hide all slides
-  //     slides.forEach((slide) => {
-  //       slide.style.display = "none";
-  //     });
-
-  //     // Remove active class from all dots
-  //     dots.forEach((dot) => {
-  //       dot.classList.remove("active");
-  //     });
-
-  //     // Show the current slide and activate the corresponding dot
-  //     slides[slideIndex - 1].style.display = "block";
-  //     dots[slideIndex - 1].classList.add("active");
-  //   }
-
-  //   // Add event listeners for the dots
-  //   dots.forEach((dot, index) => {
-  //     dot.addEventListener("click", () => {
-  //       currentSlide(index + 1);
-  //     });
-  //   });
-
-  //   // Swipe functionality
-  //   let startX = 0;
-  //   const slider = document.querySelector(".slider");
-
-  //   if (slider) {
-  //     slider.addEventListener("touchstart", (e) => {
-  //       startX = e.touches[0].clientX;
-  //     });
-
-  //     slider.addEventListener("touchend", (e) => {
-  //       let endX = e.changedTouches[0].clientX;
-  //       if (startX > endX) {
-  //         plusSlides(1); // Swipe left
-  //       } else {
-  //         plusSlides(-1); // Swipe right
-  //       }
-  //     });
-  //   }
-  // } else {
-  //   console.error("Slider elements not found");
-  // }
-
-  //Galéria PopUp
-
+  // Galéria PopUp funkciók megtartása
   const popup = {
     init: function () {
       const figures = document.querySelectorAll("figure");
@@ -113,8 +235,6 @@ document.addEventListener("DOMContentLoaded", function () {
             popup.open(figure);
           });
         });
-      } else {
-        console.error("No figure elements found in the gallery for popup.");
       }
 
       document.addEventListener("click", function (event) {
@@ -127,7 +247,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     },
     open: function (figure) {
-      document.querySelector(".gallery").classList.add("pop");
+      const gallery = document.querySelector(".gallery");
+      gallery.classList.add("pop");
+
       const popupEl = document.createElement("div");
       popupEl.classList.add("popup");
       document.body.appendChild(popupEl);
@@ -210,21 +332,19 @@ document.querySelector(".follow-button").addEventListener("click", function () {
   }
 });
 
-//back
+// Back navigation
 document.querySelector(".go-back-icon").addEventListener("click", function () {
-  // Lekérjük a tárolt oldalinformációkat
   const pageData = JSON.parse(sessionStorage.getItem("pageData"));
 
   if (pageData) {
-    // Ellenőrizzük, honnan jött a felhasználó, és az alapján navigálunk vissza
     if (pageData.source === "index") {
-      window.location.href = "index.html"; // Vissza az index oldalra
+      window.location.href = "index.html";
     } else if (pageData.source === "events") {
-      window.location.href = "events.html"; // Vissza az events oldalra
+      window.location.href = "events.html";
     } else if (pageData.source === "tickets") {
-      window.location.href = "tickets.html"; // Vissza az events oldalra
+      window.location.href = "tickets.html";
     }
   } else {
-    history.back(); // Ha nincs elmentett adat, akkor normál visszalépés
+    history.back();
   }
 });

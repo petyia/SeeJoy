@@ -318,6 +318,15 @@ a.all-event-date-link:hover {
   background-position: center;
 }
 
+.upper-img8-container {
+  padding: 13.6rem;
+  border-radius: 1.6rem;
+  background: url(./img/pop2.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .upper-img3-container {
   padding: 13.6rem;
   border-radius: 1.6rem;

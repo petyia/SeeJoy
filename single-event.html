@@ -534,7 +534,7 @@
                         <a href="user-profile.html" class="organizer-section">
                           <div alt="Szervező" class="organizer-avatar"></div>
                           <div class="organizer-info">
-                            <h2 class="organizer-name">Vágó András</h2>
+                            <h2 class="organizer-name"></h2>
                             <p class="organizer-role">Szervező</p>
                           </div>
                         </a>
@@ -543,19 +543,15 @@
                         </div>
                       </div>
                       <div class="event-description">
-                        <h1 class="event-title">
-                          Játszunk együtt a legnépszerűbb társasokkal
-                        </h1>
+                        <h1 class="event-title"></h1>
                         <div class="single-event-info-container">
                           <div class="event-left-info-container">
                             <div class="icon-container" alt="Óra kép">
                               <i class="fa-regular fa-clock"></i>
                             </div>
                             <div class="event-date-time">
-                              <p class="event-date">
-                                2024 Október 03. Csütörtök
-                              </p>
-                              <p class="event-time">17:00 - 21:00</p>
+                              <p class="event-date"></p>
+                              <p class="event-time"></p>
                             </div>
                           </div>
                           <div class="event-center-info-container">
@@ -563,8 +559,8 @@
                               <i class="fa-solid fa-money-bill"></i>
                             </div>
                             <div class="event-date-time">
-                              <p class="event-date">INGYENES</p>
-                              <p class="event-time">0% Adók</p>
+                              <p class="event-date"></p>
+                              <p class="event-time"></p>
                             </div>
                           </div>
                           <a href="#">
@@ -592,17 +588,7 @@
                       </div>
                       <div class="event-about">
                         <h3>Az eseményről</h3>
-                        <p id="about-text" class="event-about-text">
-                          Csatlakozz hozzánk minden vasárnap egy szórakoztató
-                          napra, amikor klasszikus és jól ismert társasjátékokat
-                          játszunk! Hozd el versenyszellemedet és a stratégia
-                          iránti szeretetedet, mert kihívjuk egymást olyan
-                          játékokban, mint a Monopoly, a Scrabble és még sok
-                          más. Ez egy remek lehetőség arra, hogy új emberekkel
-                          találkozz, fejleszd társasjáték-tudásodat, és élvezd a
-                          barátságos versengést! Hozhatsz saját társasjátékokat
-                          és rágcsálnivalókat is.
-                        </p>
+                        <p id="about-text" class="event-about-text"></p>
                         <button id="toggle-text-btn" class="show-more">
                           Továbbiak
                         </button>
@@ -618,30 +604,21 @@
                             <img src="img/gallery1 (1).webp" alt="" />
                             <figcaption>
                               Jenga
-                              <small
-                                >Játsszunk híres társasjátékokat, találkozzunk
-                                minden vasárnap!</small
-                              >
+                              <small></small>
                             </figcaption>
                           </figure>
                           <figure>
                             <img src="img/gallery1 (2).webp" alt="" />
                             <figcaption>
                               Uno
-                              <small
-                                >Játsszunk híres társasjátékokat, találkozzunk
-                                minden vasárnap!</small
-                              >
+                              <small></small>
                             </figcaption>
                           </figure>
                           <figure>
                             <img src="img/gallery1 (3).webp" alt="" />
                             <figcaption>
                               Monopoly
-                              <small
-                                >Játsszunk híres társasjátékokat, találkozzunk
-                                minden vasárnap!</small
-                              >
+                              <small></small>
                             </figcaption>
                           </figure>
                           <!--<figure>
@@ -751,8 +728,8 @@
                     </div>
                     <div class="event-pricing">
                       <div class="event-price-left-container">
-                        <p class="price-range">INGYENES</p>
-                        <span class="tax-info">+0% Adók</span>
+                        <p class="price-range"></p>
+                        <span class="tax-info"></span>
                       </div>
                       <button>
                         <a href="tickets.html" class="buy-ticket-button"
@@ -4263,97 +4240,7 @@
       </section>
     </main>
     <footer></footer>
-    <script>
-      //Slider globális változók
-      let slideIndex = 1;
-      let slides, dots;
 
-      // Globálisan elérhető függvények
-      function plusSlides(n) {
-        showSlides((slideIndex += n));
-      }
-
-      function currentSlide(n) {
-        showSlides((slideIndex = n));
-      }
-
-      function showSlides(n) {
-        if (!slides || !dots) {
-          slides = document.querySelectorAll(".slide");
-          dots = document.querySelectorAll(".dot");
-        }
-
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-
-        // Hide all slides
-        slides.forEach((slide) => {
-          slide.style.display = "none";
-        });
-
-        // Remove active class from all dots
-        dots.forEach((dot) => {
-          dot.classList.remove("active");
-        });
-
-        // Show the current slide and activate the corresponding dot
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].classList.add("active");
-      }
-
-      // Initialize slider after DOM is loaded
-      document.addEventListener("DOMContentLoaded", function () {
-        slides = document.querySelectorAll(".slide");
-        dots = document.querySelectorAll(".dot");
-
-        if (slides.length > 0 && dots.length > 0) {
-          showSlides(slideIndex);
-
-          // Swipe functionality
-          let startX = 0;
-          const slider = document.querySelector(".slider");
-
-          if (slider) {
-            slider.addEventListener("touchstart", (e) => {
-              startX = e.touches[0].clientX;
-            });
-
-            slider.addEventListener("touchend", (e) => {
-              let endX = e.changedTouches[0].clientX;
-              if (startX > endX) {
-                plusSlides(1); // Swipe left
-              } else {
-                plusSlides(-1); // Swipe right
-              }
-            });
-
-            // Click functionality for right/left navigation
-            slider.addEventListener("click", (e) => {
-              const sliderWidth = slider.offsetWidth;
-              const clickPosition = e.clientX;
-
-              if (clickPosition < sliderWidth / 2) {
-                plusSlides(-1); // Left click
-              } else {
-                plusSlides(1); // Right click
-              }
-            });
-          }
-        }
-
-        // Add click event for watch video button to jump to the video slide
-        const watchVideoButton = document.querySelector(".watch-video");
-        if (watchVideoButton) {
-          watchVideoButton.addEventListener("click", () => {
-            currentSlide(3); // Assuming the video is on the third slide
-          });
-        }
-      });
-    </script>
     <!-- <script src="event-cat.js"></script> -->
     <script src="search-bar2.js"></script>
     <script src="script.js"></script>
@@ -4362,6 +4249,7 @@
     <script src="heart.js"></script>
     <script src="single-story.js"></script>
     <script src="single-event.js"></script>
+    <script src="single-event-dynamic.js"></script>
 
     <script
       type="module"

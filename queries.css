@@ -195,7 +195,7 @@
   }
 
   .event-pricing {
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 3.2rem;
   }
   .new-event-scroll-container {
@@ -1220,6 +1220,15 @@
     padding: 12rem;
     border-radius: 1.6rem;
     background: url(./img/event-date2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .upper-img8-container {
+    padding: 12rem;
+    border-radius: 1.6rem;
+    background: url(./img/pop2.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

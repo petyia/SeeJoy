@@ -45,38 +45,4 @@ document.addEventListener("DOMContentLoaded", function () {
       loadMap(47.4979, 19.0402); // Budapest koordináták
     });
   });
-
-  searchSubmit.addEventListener("click", function () {
-    const location = searchInput.value; // Beírt keresési helyszín lekérése
-    if (!location) {
-      alert("Kérlek, adj meg egy helyszínt a kereséshez!");
-      return;
-    }
-
-    // API URL létrehozása
-    const apiUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(
-      location
-    )}`;
-
-    // Ellenőrzéshez kiírjuk az URL-t a konzolba
-    console.log(apiUrl);
-
-    // API hívás a helyszín kereséséhez az OpenStreetMap Nominatim segítségével
-    fetch(apiUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data && data.length > 0) {
-          const { lat, lon } = data[0]; // Kinyerjük a koordinátákat
-          loadMap(parseFloat(lat), parseFloat(lon)); // Térkép középpontja a koordináták szerint
-        } else {
-          alert("Helyszín nem található."); // Ha nincs találat
-        }
-      })
-      .catch((err) => {
-        alert(
-          "Nem sikerült kapcsolatot létesíteni a szerverrel. Próbáld újra később."
-        );
-        console.error("Hiba történt a keresés során:", err); // Hibakezelés
-      });
-  });
 });

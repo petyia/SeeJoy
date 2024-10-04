@@ -357,6 +357,12 @@
   .fa-comment {
     margin-right: 1.6rem;
   }
+
+  .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 100%;
+  }
 }
 
 @media screen and (max-width: 410px) {
