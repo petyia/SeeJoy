@@ -348,8 +348,7 @@ h3.h3 {
 a {
   text-decoration: none;
 }
-
-a .popular-price {
+.popular-price, .story-price {
   text-transform: uppercase;
   font-weight: 800;
   color: var(--primary);

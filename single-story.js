@@ -30,6 +30,50 @@ const eventsFirstRowElement = document.querySelector(
   ".events-first-row.single-story.phone-absolute-s-st.phone-block"
 ); // Elrejteni kívánt elem
 
+// URL paraméterek lekérdezése
+const urlParams = new URLSearchParams(window.location.search);
+const storyId = urlParams.get("storyId"); // Esemény ID-t kiolvassuk az URL-ből
+
+if (storyId) {
+  // Előre definiált események adatai
+  const storiesData = {
+    1: {
+      title: "Játszunk együtt a legnépszerűbb társasokkal!",
+      date: "2024 Október 3.",
+      time: "17:00-től",
+      price: "Ingyen",
+      organizer: "Vágó András",
+      organizerAvatar: "img/story6.webp", // Szervező képe
+    },
+    2: {
+      title: "Főzés: Hogyan készíts gyümölcskoktélokat",
+      date: "2024 Október 08.",
+      time: "18:00-től",
+      price: "800 Ft",
+      organizer: "Nagy Bogi",
+      organizerAvatar: "img/story2.webp", // Szervező képe
+    },
+    // További események
+  };
+
+  // Esemény adatok megjelenítése a DOM-ban
+  const story = storiesData[storyId];
+  if (story) {
+    document.querySelector(".h3").textContent = story.title;
+    document.querySelector(".popular-hour").textContent = story.date;
+    document.querySelector(".story-price").textContent = story.price;
+    document.querySelector(".name-text").textContent = story.organizer;
+
+    // Szervező képének frissítése
+    const organizerAvatar = document.querySelector(".stories-card");
+    organizerAvatar.style.backgroundImage = `url(${story.organizerAvatar})`;
+  } else {
+    console.error("Esemény nem található.");
+  }
+} else {
+  console.error("Nincs esemény ID az URL-ben.");
+}
+
 // Komment szekció nyitása és zárása
 function toggleCommentsContainer() {
   if (commentsContainer.classList.contains("active")) {
