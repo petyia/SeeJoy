@@ -44,6 +44,74 @@ document.addEventListener("DOMContentLoaded", function () {
         date: "2024 Október 08. Kedd",
         time: "18:00 - 20:00",
         price: "800 Ft",
+        organizer: "Nagy Bogi",
+        organizerAvatar: "img/story2.webp", // Szervező képe
+        taxInfo: "+27% Adók", // Tax információ
+        description:
+          "Gyere el, és tanulj meg különböző gyümölcskoktélokat készíteni...",
+        fullDescription: `Gyere el, és tanulj meg különböző gyümölcskoktélokat készíteni. Hozd el barátaidat és élvezd a finom italokat, miközben új recepteket tanulsz.`,
+        address: "Fruit Party Hall, 24. utca és 10. sugárút",
+        images: ["img/cocktail-bg1.webp", "img/cocktail-bg2.webp"],
+        video: "vid/cocktails.mp4",
+        gallery: [
+          {
+            img: "img/cocktail3.webp",
+            caption: "Mojito",
+            description: "Frissítő koktél!",
+          },
+          {
+            img: "img/cocktail2.webp",
+            caption: "Számtalan koktél",
+            description: "Sok más koktél",
+          },
+          {
+            img: "img/cocktail1.webp",
+            caption: "Együtt!",
+            description: "Közös szórakozás együtt!",
+          },
+        ],
+      },
+      3: {
+        title: "Kreatív Self-Care: Egyedi sminkek készítése",
+        date: "2024 Október 13. Vasárnap",
+        time: "Délelőtt 11:00-től",
+        price: "2000 Ft",
+        organizer: "Kén Gréti",
+        organizerAvatar: "img/story7.webp", // Szervező képe
+        taxInfo: "+27% Adók", // Tax információ
+        description: `Az esemény lehetőséget ad számodra, hogy felfedezd a sminkkészítés művészetét, miközben kifejezheted saját egyéniségedet. A workshop során megtanulhatod...`,
+        fullDescription:
+          "Az esemény lehetőséget ad számodra, hogy felfedezd a sminkkészítés művészetét, miközben kifejezheted saját egyéniségedet. A workshop során megtanulhatod, hogyan használhatod kreatívan a különböző sminktermékeket, hogy egyedi és stílusos megjelenést hozz létre. Tapasztalt oktatók vezetésével saját elképzeléseid szerint alkothatsz, miközben a self-care és a kreativitás fontosságát is hangsúlyozzuk. Csatlakozz, és tapasztald meg a sminkkészítés örömét egy inspiráló közösségben!",
+        address: "Budapest, Kései utca 12.",
+        images: [
+          "img/makeup (5).webp",
+          "img/makeup (1).webp",
+          "img/makeup (3).webp",
+        ],
+        video: "vid/sminkes.mp4",
+        gallery: [
+          {
+            img: "img/makeup (4).webp",
+            caption: "Tapasztalt oktatóval",
+            description: "Egyedi sminkek készítése",
+          },
+          {
+            img: "img/makeup (2).webp",
+            caption: "Saját egyedi ötleteiddel",
+            description: "Egyedi sminkek készítése",
+          },
+          {
+            img: "img/makeup (6).webp",
+            caption: "Hatalmas sminkes palettával",
+            description: "Egyedi sminkek készítése",
+          },
+        ],
+      },
+      4: {
+        title: "Főzés: Hogyan készíts gyümölcskoktélokat",
+        date: "2024 Október 08. Kedd",
+        time: "18:00 - 20:00",
+        price: "800 Ft",
         organizer: "Nagy Erika",
         organizerAvatar: "img/story7.webp", // Szervező képe
         taxInfo: "+27% Adók", // Tax információ
