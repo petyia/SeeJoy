@@ -83,6 +83,18 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".tax-info").textContent = event.taxInfo; // Tax információ frissítése
       document.querySelector(".organizer-name").textContent = event.organizer;
 
+      // Dinamikusan beállítjuk az event ID-t a .event-card és .heart-icon elemekre
+      const eventCard = document.querySelector(".event-card");
+      const heartIcon = document.querySelector(".heart-icon");
+
+      if (eventCard) {
+        eventCard.setAttribute("data-event-id", eventId);
+      }
+
+      if (heartIcon) {
+        heartIcon.setAttribute("data-event-id", eventId);
+      }
+
       // Szervező képének frissítése
       const organizerAvatar = document.querySelector(".organizer-avatar");
       organizerAvatar.style.backgroundImage = `url(${event.organizerAvatar})`;
