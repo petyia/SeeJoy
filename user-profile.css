@@ -126,6 +126,11 @@ main {
   color: var(--black);
 }
 
+.profile-stat-item-long-named-id p.numbers-profile2 {
+  font-weight: 800;
+  color: var(--black);
+}
+
 .profile-stat-item-long-named-id p {
   font-weight: 700;
   color: var(--grey);

@@ -32,7 +32,7 @@ const eventsFirstRowElement = document.querySelector(
 
 // URL paraméterek lekérdezése
 const urlParams = new URLSearchParams(window.location.search);
-const storyId = urlParams.get("storyId"); // Esemény ID-t kiolvassuk az URL-ből
+const storyId = urlParams.get("storyId"); // Story ID-t kiolvassuk az URL-ből
 
 if (storyId) {
   // Előre definiált események adatai
@@ -44,6 +44,11 @@ if (storyId) {
       price: "Ingyen",
       organizer: "Vágó András",
       organizerAvatar: "img/story6.webp", // Szervező képe
+      mediaList: [
+        { url: "img/story-event1.webp", type: "image" },
+        { url: "img/e-d1-2.webp", type: "image" },
+        { url: "vid/tarsas.mp4", type: "video" },
+      ],
     },
     2: {
       title: "Főzés: Hogyan készíts gyümölcskoktélokat",
@@ -52,13 +57,31 @@ if (storyId) {
       price: "800 Ft",
       organizer: "Nagy Bogi",
       organizerAvatar: "img/story2.webp", // Szervező képe
+      mediaList: [
+        { url: "img/cocktail-bg1.webp", type: "image" },
+        { url: "img/cocktail-bg2.webp", type: "image" },
+        { url: "vid/cocktails.mp4", type: "video" },
+      ],
     },
-    // További események
+    3: {
+      title: "Kreatív Self-Care: Egyedi sminkek készítése",
+      date: "2024 Október 13. Vasárnap",
+      time: "Délelőtt 11:00-től",
+      price: "2000 Ft",
+      organizer: "Kén Gréti",
+      organizerAvatar: "img/story7.webp", // Szervező képe
+      mediaList: [
+        { url: "vid/sminkes.mp4", type: "video" },
+        { url: "img/makeup (5).webp", type: "image" },
+        { url: "img/makeup (3).webp", type: "image" },
+        { url: "img/makeup (1).webp", type: "image" },
+      ],
+    },
   };
 
-  // Esemény adatok megjelenítése a DOM-ban
   const story = storiesData[storyId];
   if (story) {
+    // DOM elemek frissítése a történet részleteivel
     document.querySelector(".h3").textContent = story.title;
     document.querySelector(".popular-hour").textContent = story.date;
     document.querySelector(".story-price").textContent = story.price;
@@ -67,11 +90,16 @@ if (storyId) {
     // Szervező képének frissítése
     const organizerAvatar = document.querySelector(".stories-card");
     organizerAvatar.style.backgroundImage = `url(${story.organizerAvatar})`;
+
+    // Dinamikus média átadása a Vue.js-nek
+    if (app) {
+      app.mediaList = story.mediaList;
+    }
   } else {
-    console.error("Esemény nem található.");
+    console.error("Történet nem található.");
   }
 } else {
-  console.error("Nincs esemény ID az URL-ben.");
+  console.error("Nincs történet ID az URL-ben.");
 }
 
 // Komment szekció nyitása és zárása

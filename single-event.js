@@ -108,34 +108,34 @@ document.addEventListener("DOMContentLoaded", function () {
         ],
       },
       4: {
-        title: "Főzés: Hogyan készíts gyümölcskoktélokat",
+        title: "Hőlékballonozás: 30 perc a levegőben",
         date: "2024 Október 08. Kedd",
-        time: "18:00 - 20:00",
-        price: "800 Ft",
-        organizer: "Nagy Erika",
-        organizerAvatar: "img/story7.webp", // Szervező képe
+        time: "17:00 - 17:30",
+        price: "7500 Ft",
+        organizer: "Nándor Réka",
+        organizerAvatar: "img/story5.webp", // Szervező képe
         taxInfo: "+27% Adók", // Tax információ
         description:
-          "Gyere el, és tanulj meg különböző gyümölcskoktélokat készíteni...",
-        fullDescription: `Gyere el, és tanulj meg különböző gyümölcskoktélokat készíteni. Hozd el barátaidat és élvezd a finom italokat, miközben új recepteket tanulsz.`,
-        address: "Fruit Party Hall, 24. utca és 10. sugárút",
-        images: ["img/cocktail-bg1.webp", "img/cocktail-bg2.webp"],
-        video: "vid/cocktails.mp4",
+          "Felejthetetlen élmények várnak rád, miközben a levegőben szállva csodálhatod meg a tájat. Ez a 30 perces kaland lehetőséget ad arra, hogy új szemszögből láthasd a világot, és...",
+        fullDescription: `Felejthetetlen élmények várnak rád, miközben a levegőben szállva csodálhatod meg a tájat. Ez a 30 perces kaland lehetőséget ad arra, hogy új szemszögből láthasd a világot, és átélhesd a hőlékballonozás varázsát. A tapasztalt pilóták biztonságos környezetben kalauzolnak, így te csak élvezheted a lebegést és a panorámát. Csatlakozz hozzánk, és tapasztald meg a szabadság érzését a felhők között!`,
+        address: "Érd, Mező utca 26.",
+        images: ["img/hobal.webp"],
+        video: "vid/holekball.mp4",
         gallery: [
           {
-            img: "img/cocktail3.webp",
-            caption: "Mojito",
-            description: "Frissítő koktél!",
+            img: "img/story-event6.webp",
+            caption: "Utazás a felhők közé",
+            description: "Hőlékballonozás: 30 perc a levegőben",
           },
           {
-            img: "img/cocktail2.webp",
-            caption: "Számtalan koktél",
-            description: "Sok más koktél",
+            img: "img/hobalg (2).webp",
+            caption: "Profi szakemberekkel",
+            description: "Hőlékballonozás: 30 perc a levegőben",
           },
           {
-            img: "img/cocktail1.webp",
-            caption: "Együtt!",
-            description: "Közös szórakozás együtt!",
+            img: "img/hobalg (1).webp",
+            caption: "Együtt, minden korosztálynak!",
+            description: "Hőlékballonozás: 30 perc a levegőben",
           },
         ],
       },

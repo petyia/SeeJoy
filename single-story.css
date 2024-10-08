@@ -226,7 +226,7 @@ h5.name-text.single-st {
 }
 
 /* Navigációs sáv stílusai */
-.vue-nav {
+/* .vue-nav {
   box-sizing: border-box;
   display: grid;
   justify-items: center;
@@ -238,13 +238,26 @@ h5.name-text.single-st {
   position: absolute;
   top: 2.4rem;
   width: 100%;
+} */
+
+.vue-nav {
+  box-sizing: border-box;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+
+  height: 0.8rem;
+  padding: 0 1.6rem;
+  position: absolute;
+  top: 2.4rem;
+  width: 100%;
 }
 
 .nav-item-single-story {
   position: relative;
   width: 100%; /* Állítsd be az igényed szerint */
   height: 4px; /* Állítsd be az igényed szerint */
-  margin: 0 1.6rem;
+  margin: 0 0.4rem;
   background-color: #555; /* Példa háttérszín, módosítsd az igényeid szerint */
   border-radius: 0.8rem; /* Kerekített sarkok, opcionális */
 }
