@@ -49,6 +49,7 @@ if (storyId) {
         { url: "img/e-d1-2.webp", type: "image" },
         { url: "vid/tarsas.mp4", type: "video" },
       ],
+      eventId: 1,
     },
     2: {
       title: "Főzés: Hogyan készíts gyümölcskoktélokat",
@@ -62,10 +63,11 @@ if (storyId) {
         { url: "img/cocktail-bg2.webp", type: "image" },
         { url: "vid/cocktails.mp4", type: "video" },
       ],
+      eventId: 2,
     },
     3: {
       title: "Kreatív Self-Care: Egyedi sminkek készítése",
-      date: "2024 Október 13. Vasárnap",
+      date: "2024 Október 13.",
       time: "Délelőtt 11:00-től",
       price: "2000 Ft",
       organizer: "Kén Gréti",
@@ -76,6 +78,7 @@ if (storyId) {
         { url: "img/makeup (3).webp", type: "image" },
         { url: "img/makeup (1).webp", type: "image" },
       ],
+      eventId: 3,
     },
   };
 
@@ -87,16 +90,32 @@ if (storyId) {
     document.querySelector(".story-price").textContent = story.price;
     document.querySelector(".name-text").textContent = story.organizer;
 
+    // Szervező neve beállítása
+    document.querySelector(".unfollow-story .organizer-name").textContent =
+      story.organizer;
+    document.querySelector(".mute-story .organizer-name").textContent =
+      story.organizer;
+
+    const eventLink = document.querySelector(".event-link");
+    eventLink.href = `single-event.html?eventId=${story.eventId}`;
+
     // Szervező képének frissítése
     const organizerAvatar = document.querySelector(".stories-card");
     organizerAvatar.style.backgroundImage = `url(${story.organizerAvatar})`;
 
     // Dinamikus média átadása a Vue.js-nek
     if (app) {
-      app.mediaList = story.mediaList;
+      app.mediaList = story.mediaList; // Itt állítjuk be a médiaelemeket
+      app.initTimeline(); // Inicializáljuk az idővonalat
+    }
+
+    // Frissítjük a data-story-id attribútumot a következő történethez
+    const vueComponent = document.getElementById("vue-component");
+    if (vueComponent) {
+      vueComponent.setAttribute("data-story-id", storyId);
     }
   } else {
-    console.error("Történet nem található.");
+    console.error("Történet nem található az ID alapján: ", storyId);
   }
 } else {
   console.error("Nincs történet ID az URL-ben.");

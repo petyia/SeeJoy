@@ -708,10 +708,13 @@ h5.name-text.single-st {
 .fa-trash-can,
 .fa-pen,
 .fa-rectangle-xmark,
-.fa-user-xmark,
 .fa-triangle-exclamation,
 .fa-circle-plus.story-option {
   margin-right: 1.6rem;
+}
+
+.fa-user-xmark {
+  margin-right: 1.2rem;
 }
 
 .fa-rectangle-xmark {
@@ -1475,3 +1478,7 @@ button#saveEditAnswer:hover {
   background: #f0f0f0;
   border-radius: 0.8rem;
 }
+
+/* .unfollow-story .organizer-name {
+  font-weight: 500;
+} */

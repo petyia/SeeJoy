@@ -153,6 +153,12 @@ a.all-stories-link:hover {
 
   /* Adjust the minimum width of cards as needed */
   transition: transform 0.3s ease; /* Smooth transition for card movement */
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  transition: transform 0.3s ease;
 }
 
 .image-border::before {

@@ -1,3 +1,5 @@
+const TOTAL_STORIES = 3; // Az összes rendelkezésre álló történet száma
+
 const app = new Vue({
   el: "#vue-component",
   data() {
@@ -10,14 +12,15 @@ const app = new Vue({
   },
   mounted() {
     this.initHammer();
+    this.initTimeline(); // Inicializáljuk az idővonalat itt
   },
   methods: {
     // Timeline inicializálása és dinamikus frissítése
     initTimeline() {
       if (this.mediaList.length > 0) {
         this.timeline = anime.timeline({
-          autoplay: true,
-          duration: 8000,
+          autoplay: false,
+          duration: 6000,
           easing: "linear",
           loop: false,
           complete: () => {
@@ -51,20 +54,7 @@ const app = new Vue({
         ".story-card-img-container.single-story"
       );
       const hammertime = new Hammer(container);
-
-      // Swipe event kezelés balra és jobbra léptetéshez
-      hammertime.on("tap", (e) => {
-        let containerRect = container.getBoundingClientRect();
-        let containerCenter = containerRect.left + containerRect.width / 2;
-
-        if (e.center.x > containerCenter) {
-          // Jobbra kattintás (következő kép)
-          this.nextMedia();
-        } else {
-          // Balra kattintás (előző kép)
-          this.prevMedia();
-        }
-      });
+      console.log("Hammer.js initialized");
 
       // Pause timeline when pressing down
       hammertime.on("press", () => {
@@ -77,20 +67,33 @@ const app = new Vue({
         if (this.timeline) this.timeline.play();
         this.autoPlayActive = true; // Autoplay folytatása
       });
+
+      // Tap event kezelés
+      hammertime.on("tap", (e) => {
+        console.log("Tap event detected");
+        let containerRect = container.getBoundingClientRect();
+        let containerCenter = containerRect.left + containerRect.width / 2;
+
+        if (e.center.x > containerCenter) {
+          this.nextMedia();
+          console.log("Next media");
+        } else {
+          this.prevMedia();
+          console.log("Previous media");
+        }
+      });
     },
 
-    // Következő média elem (kép/videó) – ha az utolsó médium, akkor történetet vált
     nextMedia() {
       if (this.current < this.mediaList.length - 1) {
         this.current++;
         this.timeline.seek(this.current * 8000);
         this.timeline.play();
       } else {
-        this.nextStory(); // Következő történetre ugrik, ha az aktuális médium véget ér
+        this.nextStory(); // Következő történetre ugrik
       }
     },
 
-    // Előző média elem (kép/videó)
     prevMedia() {
       if (this.current > 0) {
         this.current--;
@@ -101,18 +104,22 @@ const app = new Vue({
 
     // Történetek közötti váltás
     nextStory() {
-      // Automatikusan vagy gombbal válthatunk a következő történetre
       const currentStoryId = parseInt(
         this.$root.$el.getAttribute("data-story-id"),
         10
       );
-      const nextStoryId = currentStoryId + 1;
 
-      if (nextStoryId <= TOTAL_STORIES) {
-        // TOTAL_STORIES változót adj hozzá az összes történet számával
+      if (!isNaN(currentStoryId)) {
+        let nextStoryId = currentStoryId + 1;
+
+        // Ha elérjük az utolsó történetet, az elsőhöz ugrik vissza
+        if (nextStoryId > TOTAL_STORIES) {
+          nextStoryId = 1;
+        }
+
         window.location.href = `single-story.html?storyId=${nextStoryId}`;
       } else {
-        console.log("Nincsenek további történetek.");
+        console.error("Hibás storyId: ", currentStoryId);
       }
     },
   },
