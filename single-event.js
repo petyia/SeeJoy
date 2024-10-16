@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const eventsData = {
       1: {
         title: "Játszunk együtt a legnépszerűbb társasokkal",
-        date: "2024 Október 03. Csütörtök",
+        date: "2024 Október 16. Szerda",
         time: "17:00 - 21:00",
         price: "Ingyenes",
         organizer: "Vágó András",
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       2: {
         title: "Főzés: Hogyan készíts gyümölcskoktélokat",
-        date: "2024 Október 08. Kedd",
+        date: "2024 Október 20. Vasárnap",
         time: "18:00 - 20:00",
         price: "800 Ft",
         organizer: "Nagy Bogi",
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       3: {
         title: "Kreatív Self-Care: Egyedi sminkek készítése",
-        date: "2024 Október 13. Vasárnap",
+        date: "2024 Október 27. Vasárnap",
         time: "Délelőtt 11:00-től",
         price: "2000 Ft",
         organizer: "Kén Gréti",
@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       4: {
         title: "Hőlékballonozás: 30 perc a levegőben",
-        date: "2024 Október 08. Kedd",
+        date: "2024 November 01. Péntek",
         time: "17:00 - 17:30",
         price: "7500 Ft",
         organizer: "Nándor Réka",
@@ -136,6 +136,102 @@ document.addEventListener("DOMContentLoaded", function () {
             img: "img/hobalg (1).webp",
             caption: "Együtt, minden korosztálynak!",
             description: "Hőlékballonozás: 30 perc a levegőben",
+          },
+        ],
+      },
+      5: {
+        title: "Fotózás: Kezdő fotósoknak modell fotózás",
+        date: "2024 Október 17. Csütörtök",
+        time: "16:00 - 17:30",
+        price: "3000 Ft",
+        organizer: "Peter Nyoni",
+        organizerAvatar: "img/story12.webp", // Szervező képe
+        taxInfo: "+27% Adók", // Tax információ
+        description:
+          "A tökéletes lehetőség számodra, hogy elsajátítsd a modell fotózás alapjait. Tapasztalt oktatók segítségével megtanulhatod, hogyan dolgozz modellekkel, miközben fejleszted technikai tudásodat a fények, kompozíciók és...",
+        fullDescription: `A tökéletes lehetőség számodra, hogy elsajátítsd a modell fotózás alapjait. Tapasztalt oktatók segítségével megtanulhatod, hogyan dolgozz modellekkel, miközben fejleszted technikai tudásodat a fények, kompozíciók és pózok terén. Gyakorlat közben felfedezheted saját stílusodat, és izgalmas fotós pillanatokat örökíthetsz meg. Csatlakozz, és fedezd fel, hogyan alkothatsz magabiztosan a kamerán keresztül!`,
+        address: "Budapest, Szabadság utca 98.",
+        images: ["img/photog1.webp"],
+        video: "vid/photoV.mp4",
+        gallery: [
+          {
+            img: "img/story-event7.webp",
+            caption: "Filmes tanulási lehetőség is",
+            description: "Fotózás: Kezdő fotósoknak modell fotózás",
+          },
+          {
+            img: "img/upcoming1.webp",
+            caption: "Profi szakemberekkel",
+            description: "Fotózás: Kezdő fotósoknak modell fotózás",
+          },
+          {
+            img: "img/photoG2.webp",
+            caption: "Magabiztos kamerahasználat",
+            description: "Fotózás: Kezdő fotósoknak modell fotózás",
+          },
+        ],
+      },
+      6: {
+        title: "Sörfesztivál: 100+ kézműves sör",
+        date: "2024 Október 19. Szombat",
+        time: "09:00 - 23:30",
+        price: "800 Ft",
+        organizer: "Lékó Panka",
+        organizerAvatar: "img/story2.webp", // Szervező képe
+        taxInfo: "+27% Adók", // Tax információ
+        description:
+          "Fedezdd fel a legkülönlegesebb ízeket a sörvilágban. Több mint 100 kézműves sör közül válogathatsz, mindegyik saját egyedi karakterrel és aromával, amelyek...",
+        fullDescription: `Fedezdd fel a legkülönlegesebb ízeket a sörvilágban. Több mint 100 kézműves sör közül válogathatsz, mindegyik saját egyedi karakterrel és aromával, amelyek garantáltan lenyűgöznek. Fedezd fel a helyi sörfőzdék remekeit, beszélgess a sörmesterekkel, és élvezd a baráti hangulatot egy igazi sörrajongó közösségben. Ez az esemény tökéletes alkalom, hogy új kedvenceket találj és felejthetetlen élményekkel gazdagodj!`,
+        address: "Budapest, Otthon tér 1-12.",
+        images: ["img/beerB1.webp"],
+        video: "vid/beerV.mp4",
+        gallery: [
+          {
+            img: "img/beerG1.webp",
+            caption: "Sör minden mennyiségben",
+            description: "Sörfesztivál: 100+ kézműves sör",
+          },
+          {
+            img: "img/beerG2.webp",
+            caption: "Jó társaság",
+            description: "Sörfesztivál: 100+ kézműves sör",
+          },
+          {
+            img: "img/beerG3.webp",
+            caption: "Bulizva",
+            description: "Sörfesztivál: 100+ kézműves sör",
+          },
+        ],
+      },
+      7: {
+        title: "Techno Party: Felejthetetlen éjszaka",
+        date: "2024 Október 18. Péntek",
+        time: "22:00 - 04:00",
+        price: "1200 Ft",
+        organizer: "Kovács Kinga",
+        organizerAvatar: "img/story1.webp", // Szervező képe
+        taxInfo: "+27% Adók", // Tax információ
+        description:
+          "Egy éjszakára magával ragad a lüktető ütemek világa. Merülj el a techno zenében, ahol a legjobb DJ-k pörgetik a lemezeket, és a fények, valamint a hangzás teljesen új dimenzióba repít. Ez a buli lehetőséget ad, hogy kiszakadj a mindennapokból és...",
+        fullDescription: `Egy éjszakára magával ragad a lüktető ütemek világa. Merülj el a techno zenében, ahol a legjobb DJ-k pörgetik a lemezeket, és a fények, valamint a hangzás teljesen új dimenzióba repít. Ez a buli lehetőséget ad, hogy kiszakadj a mindennapokból és átadd magad a ritmusnak, miközben új barátokat ismerhetsz meg egy energikus közösségben. Készülj fel egy éjszakára, amit soha nem felejtesz el!`,
+        address: "Budapest, Árpád tér 2.",
+        images: ["img/event-date3.webp"],
+        video: "vid/technoV.mp4",
+        gallery: [
+          {
+            img: "img/th1.webp",
+            caption: "#retrocuccok",
+            description: "Techno Party: Felejthetetlen éjszaka",
+          },
+          {
+            img: "img/th2.webp",
+            caption: "#agyadeldobod",
+            description: "Techno Party: Felejthetetlen éjszaka",
+          },
+          {
+            img: "img/th3.webp",
+            caption: "#dj",
+            description: "Techno Party: Felejthetetlen éjszaka",
           },
         ],
       },

@@ -89,6 +89,36 @@ document.addEventListener("DOMContentLoaded", () => {
           eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
         }
       } else if (
+        window.location.pathname.includes("tickets.html") ||
+        window.location.pathname === "/tickets" ||
+        window.location.pathname === "/tickets.html"
+      ) {
+        // Az tickets.html oldal lekérdezései
+        const dateElementNumber =
+          eventElement.querySelector(".event-date-number");
+        const dateElementMonth =
+          eventElement.querySelector(".event-date-month");
+        if (dateElementNumber && dateElementMonth) {
+          dateNumber = dateElementNumber.textContent.trim(); // Dátum napja
+          dateMonth = dateElementMonth.textContent.trim().slice(0, 3); // Hónap rövidítése ("Szeptember" -> "Szep")
+        }
+
+        eventTitle =
+          eventElement.querySelector(".h3.bigger")?.textContent.trim() || "";
+        eventPrice =
+          eventElement.querySelector(".event-date-price")?.textContent.trim() ||
+          "INGYEN";
+
+        const eventBackgroundElement = eventElement.querySelector(
+          '[class^="upper-img"][class$="-container"]'
+        );
+        if (eventBackgroundElement) {
+          const backgroundImage = window.getComputedStyle(
+            eventBackgroundElement
+          ).backgroundImage;
+          eventBackground = backgroundImage.slice(5, -2); // "url(" és ")" levágása
+        }
+      } else if (
         window.location.pathname.includes("profile.html") ||
         window.location.pathname === "/profile" ||
         window.location.pathname === "/profile.html"

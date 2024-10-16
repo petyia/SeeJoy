@@ -39,7 +39,7 @@ if (storyId) {
   const storiesData = {
     1: {
       title: "Játszunk együtt a legnépszerűbb társasokkal!",
-      date: "2024 Október 3.",
+      date: "2024 Október 16.",
       time: "17:00-től",
       price: "Ingyen",
       organizer: "Vágó András",
@@ -53,7 +53,7 @@ if (storyId) {
     },
     2: {
       title: "Főzés: Hogyan készíts gyümölcskoktélokat",
-      date: "2024 Október 08.",
+      date: "2024 Október 20.",
       time: "18:00-től",
       price: "800 Ft",
       organizer: "Nagy Bogi",
@@ -67,7 +67,7 @@ if (storyId) {
     },
     3: {
       title: "Kreatív Self-Care: Egyedi sminkek készítése",
-      date: "2024 Október 13.",
+      date: "2024 Október 27.",
       time: "Délelőtt 11:00-től",
       price: "2000 Ft",
       organizer: "Kén Gréti",
