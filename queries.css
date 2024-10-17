@@ -463,7 +463,7 @@
   .index-left-flex {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 1.6rem;
     width: 100% !important;
   }
 
@@ -510,9 +510,8 @@
   }
 
   .upcoming-card {
-    height: auto;
+    height: 48rem;
     width: 100%;
-    gap: 24vh;
   }
 
   /* EVENTS OLDAL */
@@ -955,7 +954,7 @@
   .p-l-scroll-container {
     overflow-x: hidden;
     position: relative;
-    padding: 0 0rem 0.8rem 0rem;
+    padding: 0 0rem 1.6rem 0rem;
 
     -webkit-overflow-scrolling: touch;
   }
@@ -1036,12 +1035,10 @@
   }
 
   .upcoming-line {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
-    padding: 0rem;
+    padding: 0rem 1.2rem 0rem 1.2rem;
     flex-wrap: nowrap;
   }
 
@@ -1161,9 +1158,6 @@
     padding-bottom: 0rem;
   }
 
-  .event-mini-date::before {
-    display: none;
-  }
   .events-date.first {
     margin-left: 0.8rem;
   }
@@ -1933,7 +1927,19 @@
   }
 
   .event-mini-date::after {
-    display: none;
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 65%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 
   .container-stories-page .card {
@@ -2035,6 +2041,38 @@
 }
 
 @media screen and (max-width: 480px) {
+  .event-mini-date::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.25) 65%,
+      rgba(255, 255, 255, 0.1) 70%
+    );
+  }
+
+  .event-mini-date::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 1) 6%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
   .img-logo {
     width: 7rem; /* kisebb logó a kisebb képernyőkön */
   }

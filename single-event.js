@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         organizer: "Vágó András",
         organizerAvatar: "img/story6.webp", // Szervező képe
         taxInfo: "+0% Adók", // Tax információ
-        description: `Csatlakozz hozzánk minden vasárnap egy szórakoztató napra...`,
+        description: `Csatlakozz hozzánk minden vasárnap egy szórakoztató napra, amikor klasszikus és jól ismert társasjátékokat játszunk! Hozd el versenyszellemedet és...`,
         fullDescription:
           "Csatlakozz hozzánk minden vasárnap egy szórakoztató napra, amikor klasszikus és jól ismert társasjátékokat játszunk! Hozd el versenyszellemedet és a stratégia iránti szeretetedet, mert kihívjuk egymást olyan játékokban, mint a Monopoly, a Scrabble és még sok más.",
         address: "Evergreen Park, 50. sugárút és 78. utca",

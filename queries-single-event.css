@@ -366,6 +366,11 @@
     box-sizing: border-box;
     height: 100%;
   }
+
+  .conversation-area {
+    position: relative;
+    padding: 1.6rem 0.8rem 0 0.8rem;
+  }
 }
 
 @media screen and (max-width: 410px) {
