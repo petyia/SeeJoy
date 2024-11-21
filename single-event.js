@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         title: "Játszunk együtt a legnépszerűbb társasokkal",
         date: "2024 Október 16. Szerda",
         time: "17:00 - 21:00",
+        postedTime: "16 órával ezelőtt",
         price: "Ingyenes",
         organizer: "Vágó András",
         organizerAvatar: "img/story6.webp", // Szervező képe
@@ -241,11 +242,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (event) {
       // Esemény adatok frissítése
       document.querySelector(".event-title").textContent = event.title;
+      document.querySelector(".single-story-post-date").textContent =
+        event.postedTime;
       document.querySelector(".event-date").textContent = event.date;
       document.querySelector(".event-time").textContent = event.time;
       document.querySelector(".price-range").textContent = event.price;
+      document.querySelector(".event-money").textContent = event.price;
+      document.querySelector(".event-money-2").textContent = event.taxInfo;
       document.querySelector(".tax-info").textContent = event.taxInfo; // Tax információ frissítése
-      document.querySelector(".organizer-name").textContent = event.organizer;
+      // Kiválasztja az összes olyan elemet, amely .organizer-name vagy .name-text osztályú
+      const names = document.querySelectorAll(".organizer-name, .name-text");
+
+      // Iterál az összes találaton, és beállítja a textContent értéket
+      names.forEach((element) => {
+        element.textContent = event.organizer;
+      });
 
       // Dinamikusan beállítjuk az event ID-t a .event-card és .heart-icon elemekre
       const eventCard = document.querySelector(".event-card");

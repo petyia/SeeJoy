@@ -144,6 +144,9 @@
   .event-date-time {
     font-size: 1.6rem;
   }
+  .event-money-cost {
+    font-size: 1.6rem;
+  }
 
   .event-about h3 {
     font-size: 20px;
@@ -334,7 +337,7 @@
   h5.name-text.single-st {
     font-size: 1.6rem;
     text-align: left;
-    line-height: 1.1;
+    line-height: 1.6;
   }
 
   .single-story-post-date {

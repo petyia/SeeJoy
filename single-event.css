@@ -150,6 +150,12 @@ main {
   font-weight: 800;
 }
 
+.single-story-post-date {
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.1;
+}
+
 .organizer-role {
   font-size: 14px;
   color: var(--grey);
@@ -221,12 +227,36 @@ main {
   font-size: 14px;
 }
 
+.event-money-cost {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 14px;
+}
+
 .event-date {
   color: var(--black);
   font-weight: 800;
 }
 
 .event-time {
+  color: var(--grey);
+}
+
+.event-money {
+  color: var(--grey);
+}
+
+.event-money-2 {
+  color: var(--grey);
+}
+
+.event-money {
+  color: var(--black);
+  font-weight: 800;
+}
+
+.event-money-2 {
   color: var(--grey);
 }
 
